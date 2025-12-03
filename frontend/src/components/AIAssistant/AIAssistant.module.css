@@ -1,0 +1,150 @@
+.assistantCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.assistantHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.headerSubtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.inputRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.textInput {
+  width: 100%;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: white;
+  padding: 12px 40px 12px 12px; /* Right padding for mic */
+  border-radius: 12px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.textInput:focus {
+  border-color: #0ea5e9;
+}
+
+.iconButton {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.iconButton:hover {
+  color: #0ea5e9;
+  background-color: rgba(14, 165, 233, 0.1);
+}
+
+.iconButtonActive {
+  color: #ef4444; /* Red for recording */
+  animation: pulse 1.5s infinite;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 8px;
+}
+
+.askButton {
+  flex: 1;
+  background-color: #0ea5e9; /* Sky blue */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.askButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.surpriseButton {
+  flex: 1;
+  background: linear-gradient(135deg, #ea580c, #f97316); /* Orange gradient */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.surpriseButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.giftIcon {
+  font-size: 1rem;
+}
+
+.statusRow {
+  min-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.statusLabel {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: #fca5a5; /* Light red */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}

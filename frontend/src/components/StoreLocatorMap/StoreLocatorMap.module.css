@@ -1,0 +1,85 @@
+/* StoreLocatorMap.module.css */
+
+.locatorRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 0 32px;
+}
+
+/* heading text */
+.locatorTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin: 0 0 2px;
+}
+
+.locatorSubtitle {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0 0 12px;
+}
+
+/* glass card wrapper */
+.mapShell {
+  position: relative;
+  margin-top: 4px;
+  border-radius: 28px;
+  padding: 14px;
+  max-width: 860px;
+  background:
+    radial-gradient(circle at top left,
+      rgba(248, 250, 252, 0.20),
+      rgba(15, 23, 42, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.75);
+}
+
+/* subtle glowing border */
+.mapShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #22d3ee, #a855f7, #f97316);
+  opacity: 0.25;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Leaflet map itself */
+.mapEl {
+  width: 100%;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* popup text */
+.popupBlock {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.popupName {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.popupArea {
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.popupMeta {
+  color: #4b5563;
+}

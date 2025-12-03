@@ -1,0 +1,78 @@
+.overlayRoot {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.overlayCard {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 80%;
+  background: #020617;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 10;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #ef4444;
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.leafletMap {
+  flex: 1;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid #1e293b;
+  background: #020617;
+}
+
+.placeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.placeName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.placeArea {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.directionsButton {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #020617;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+}

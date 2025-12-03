@@ -1,0 +1,314 @@
+/* FULL SCREEN OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.6), rgba(2, 6, 23, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* GLASS CARD (The specific style you requested) */
+.authCard {
+  width: 400px;
+  max-width: 90vw;
+  /* Glass Effect */
+  background: rgba(255, 255, 255, 0.05); /* Very transparent base */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 20px rgba(0, 0, 0, 0.2);
+  
+  position: relative;
+  overflow: hidden;
+  color: white;
+  animation: scaleUp 0.3s ease-out;
+}
+
+/* Top Shine Line */
+.authCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+/* Left Shine Line */
+.authCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.1)
+  );
+  opacity: 0.7;
+}
+
+/* CONTENT */
+.cardInner {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10; /* Ensure content is above pseudo-elements */
+}
+
+/* TOP BAR - Centered Alignment */
+.topRow {
+  display: flex;
+  justify-content: center; /* Center the tabs */
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative; /* For absolute positioning of close button */
+}
+
+.roleTabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.roleTab {
+  padding: 6px 20px; /* Slightly wider click area */
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.roleTabActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* HEADER */
+.titleRow {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left; /* Ensure labels align left even if parent is centered */
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2); /* Darker inner for contrast */
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.primaryBtn {
+  margin-top: 12px;
+  border-radius: 12px;
+  border: none;
+  padding: 14px;
+  /* Vibrant gradient to pop against the glass */
+  background: linear-gradient(135deg, #ea580c, #f97316); 
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+}
+
+.modeToggleWrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modeLink {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.modeLink:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* LIGHT MODE OVERRIDES 
+   Used when parent passes isDark={false} 
+   We invert the glass to be "frosted white" */
+.authCardLight {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+.authCardLight .title {
+  background: none;
+  -webkit-text-fill-color: #0f172a;
+}
+
+.authCardLight .input {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+.authCardLight .input::placeholder {
+  color: #64748b;
+}
+
+.authCardLight .input:focus {
+  background: white;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+}
+
+.authCardLight .roleTabs {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
+
+.authCardLight .roleTab {
+  color: #64748b;
+}
+
+.authCardLight .roleTabActive {
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.authCardLight .label {
+  color: #475569;
+}
+
+.authCardLight .closeBtn {
+  background: rgba(0,0,0,0.05);
+  color: #64748b;
+}
+
+.authCardLight .modeLink {
+  color: #64748b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

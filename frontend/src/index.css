@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- GLOBAL APP RESET FOR FULL-PAGE DYNE ---------- */
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Keep the app in dark mode by default */
+  color-scheme: dark;
+  color: #f1f5f9;
+  background-color: #0f172a;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make the page behave like a full-screen web app */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f1f5f9;
+
+  /* IMPORTANT: no flex centering here */
+  display: block;
+}
+
+/* Let React root fill the entire viewport */
+#root {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: keep simple link + button styles, but non-opinionated */
+a {
+  font-weight: 500;
+  color: #38bdf8;
+  text-decoration: none;
+}
+a:hover {
+  color: #0ea5e9;
+}
+
+/* These are only fallbacks – your component CSS will override */
+button {
+  font-family: inherit;
+}
+
+/* We don’t need the light-mode override block anymore – App handles theme */

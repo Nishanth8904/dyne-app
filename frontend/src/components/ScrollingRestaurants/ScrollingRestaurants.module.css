@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
+
+:root {
+  --scroll-font-text: "Open Sans", system-ui, sans-serif;
+  --scroll-light: #ffffff;
+  --scroll-dark: #020617;
+  --scroll-brand: #ffeba7;
+}
+
+/* Section wrapper */
+.hotelsSection {
+  width: min(1200px, 90%);
+  margin: 32px auto 80px;
+  padding: 8px 0 40px;
+  font-family: var(--scroll-font-text);
+}
+
+/* Title above the sticky cards */
+.hotelsTitle {
+  padding: 24px 0 40px;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--scroll-brand);
+}
+
+/* list of cards */
+.hotelsList {
+  display: grid;
+  gap: 40px;
+}
+
+/* each sticky “page” */
+.hotelsItem {
+  position: sticky;
+  top: 80px; /* sits under navbar + page header */
+  right: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 220px auto;
+
+  border-radius: 32px;
+  overflow: hidden;
+  background-color: var(--scroll-dark);
+  border: 1px solid rgba(15, 23, 42, 0.85);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.7);
+  transform: scale(1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* side-by-side on larger screens */
+@media (min-width: 768px) {
+  .hotelsItem {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+    grid-template-rows: minmax(420px, 70vh);
+  }
+}
+
+/* image column */
+.hotelsItemFigure {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+  .hotelsItemFigure {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+}
+
+.hotelsItemFigure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* content column */
+.hotelsItemInfo {
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+  padding: 40px 32px;
+  background: radial-gradient(circle at 0 0, #1f2937, #020617);
+  color: var(--scroll-light);
+  display: grid;
+  align-content: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .hotelsItemInfo {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+  }
+}
+
+.hotelsItemSubtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.hotelsItemTitle {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hotelsItemExcerpt {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.hotelsItemMeta {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin-bottom: 18px;
+}
+
+/* button */
+.hotelsItemLink {
+  width: max-content;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  color: #020617;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.3s ease, color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotelsItemLink:hover {
+  background: #0f172a;
+  color: #f9fafb;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* subtle scale while scrolling on supported browsers */
+@supports (animation-timeline: view()) {
+  .hotelsItem:not(:last-child) {
+    animation-name: cardScale;
+    animation-timeline: view();
+    animation-range: entry 85% cover 45%;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes cardScale {
+  0%,
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+}
+
+/* empty state text */
+.emptyState {
+  padding: 24px 0;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+.actionRow {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.viewBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+.inlineMapWrapper {
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.inlineMap {
+  width: 100%;
+  height: 260px;
+}
+
+/* tiny blue dot for the user marker */
+.userMarker .user-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #3b82f6;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+}

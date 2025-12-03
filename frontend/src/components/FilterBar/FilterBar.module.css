@@ -1,0 +1,59 @@
+.filterBarRoot {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+}
+
+.filterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.filterInput {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.filterInput::placeholder {
+  color: #6b7280;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.applyButton {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  background: #4ade80;
+  color: #052e16;
+  cursor: pointer;
+}
+
+.resetButton {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .filterRow {
+    flex-direction: row;
+  }
+}

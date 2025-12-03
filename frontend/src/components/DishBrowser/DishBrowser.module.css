@@ -1,0 +1,150 @@
+/* DishBrowser.module.css */
+
+.dishBrowserRoot {
+  padding: 12px 0;
+}
+
+.dishHeaderRow {
+  margin-bottom: 6px;
+}
+
+.dishTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin: 0 0 2px;
+}
+
+.dishSubtitle {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* 🧊 GLASSY TOGGLE BAR  ---------------------------------- */
+
+.menuBar {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin: 14px 0 16px;
+  padding: 6px 10px;
+
+  border-radius: 25px;
+  background: radial-gradient(circle at top left,
+      rgba(248, 250, 252, 0.20),
+      rgba(15, 23, 42, 0.70));
+  border: 1px solid rgba(148, 163, 184, 0.65);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.6);
+
+  list-style: none; /* no bullets */
+}
+
+/* base pill */
+.menuItem {
+  position: relative;
+  padding: 8px 16px;
+  margin: 2px 4px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+
+  color: #e5e7eb;
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* glass highlight behind each pill */
+.menuItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+
+  background: rgba(15, 23, 42, 0.4);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7);
+  transform: scale(1);
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* subtle glossy line on top */
+.menuItem::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 3px;
+  height: 40%;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* hover */
+.menuItem:hover::before {
+  background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+  transform: scale(1.12);
+}
+
+.menuItem:hover {
+  color: #111827;
+}
+
+.menuItem:hover::after {
+  opacity: 1;
+}
+
+/* active pill */
+.menuItemActive::before {
+  background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+  transform: scale(1.16);
+}
+
+.menuItemActive {
+  color: #111827;
+}
+
+.menuItemActive::after {
+  opacity: 1;
+}
+
+/* RESULTS ------------------------------------------------ */
+
+.dishResultBlock {
+  margin-top: 8px;
+}
+
+.noResultText {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.cardGridLike {
+  display: grid;
+  gap: 12px;
+}
