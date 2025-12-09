@@ -1,126 +1,208 @@
 .adminRoot {
-  margin: 12px 20px 0;
-  padding: 12px 14px;
-  border-radius: 16px;
+  margin: 16px 16px 24px;
+  padding: 16px 20px 24px;
+  border-radius: 18px;
   background: #020617;
-  border: 1px solid #111827;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+
+/* header row */
 
 .adminHeaderRow {
   display: flex;
-  justify-content: space-between;
-  gap: 8px;
   align-items: center;
-  margin-bottom: 8px;
+  justify-content: space-between;
 }
 
 .adminTitle {
   font-size: 1rem;
   font-weight: 600;
-  margin: 0;
   color: #f9fafb;
+  margin: 0;
 }
 
 .adminSubtitle {
+  margin: 2px 0 0;
   font-size: 0.8rem;
   color: #9ca3af;
-  margin: 2px 0 0;
 }
 
 .logoutButton {
-  border: none;
+  padding: 6px 14px;
   border-radius: 999px;
-  padding: 6px 10px;
-  background: #f97316;
-  color: #020617;
+  border: none;
   font-size: 0.8rem;
-  font-weight: 600;
+  background: #fb7185;
+  color: #111827;
   cursor: pointer;
 }
 
+/* tabs */
+
 .adminTabs {
+  margin-top: 8px;
   display: inline-flex;
-  gap: 4px;
-  margin: 8px 0;
+  padding: 4px;
   border-radius: 999px;
   background: #020617;
-  border: 1px solid #1f2937;
-  padding: 3px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
 }
 
 .adminTabBtn {
   border: none;
-  border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 0.8rem;
   background: transparent;
   color: #9ca3af;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 999px;
   cursor: pointer;
 }
 
 .adminTabBtnActive {
-  background: #0ea5e9;
+  background: #38bdf8;
   color: #020617;
-  font-weight: 600;
 }
 
+/* messages */
+
 .adminError {
-  font-size: 0.8rem;
-  color: #f97316;
-  margin-bottom: 6px;
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: #fecaca;
 }
 
 .adminSuccess {
-  font-size: 0.8rem;
-  color: #22c55e;
-  margin-bottom: 6px;
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: #bbf7d0;
 }
+
+/* forms */
 
 .formGrid {
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px 16px;
-  margin-top: 8px;
-}
-
-.formGridSingle {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
 }
 
 .formCol {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .formLabel {
   font-size: 0.8rem;
-  color: #d1d5db;
+  color: #9ca3af;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 .formInput {
-  padding: 6px 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #1f2937;
   background: #020617;
-  color: #f9fafb;
-  font-size: 0.85rem;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: #38bdf8;
 }
 
 .submitButton {
   margin-top: 10px;
-  padding: 8px 10px;
-  border-radius: 10px;
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 8px 18px;
   border: none;
   background: #22c55e;
-  color: #020617;
+  color: #022c22;
   font-size: 0.85rem;
-  font-weight: 600;
   cursor: pointer;
+}
+
+/* dish form */
+
+.formGridSingle {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* table */
+
+.sectionTitle {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.tableWrap {
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  overflow: hidden;
+  max-height: 360px;
+  overflow-y: auto;
+  background: #020617;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.table thead {
+  background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table th,
+.table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.table th {
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: #020617;
+}
+
+.cellName {
+  color: #f9fafb;
+  font-weight: 500;
+}
+
+.cellSub {
+  color: #9ca3af;
+  font-size: 0.72rem;
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 18px 0;
+  color: #9ca3af;
 }

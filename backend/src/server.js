@@ -1,31 +1,31 @@
-// server.js
-const express = require('express');
-const cors = require('cors');
-const db = require('./db');          // main SmartDine DB (restaurants, dishes, restaurant_dishes)
-const userDb = require('./dbUsers'); // smartdine_users DB
-const adminDb = require('./dbAdmin'); // smartdine_admin DB
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const db = require("./db");
+const userDb = require("./dbUsers");
+const adminDb = require("./dbAdmin");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const app = express();
 const PORT = 3000;
-const JWT_SECRET = 'smartdine_super_secret_key';
+const JWT_SECRET = "smartdine_super_secret_key";
 
-// --------------------- MIDDLEWARE ---------------------
+// ✅ middlewares FIRST
 app.use(
   cors({
-    origin: 'http://localhost:5173', // your React dev URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-  }),
+  })
 );
 
-app.use(express.json());
+app.use(express.json()); // 👈 MUST be before routers
 
-app.get('/', (req, res) => {
-  res.send('Dyne backend running on port 3000');
-});
+// ✅ then AI router
+const aiRouter = require("./routes/ai");
+app.use("/api/ai", aiRouter);
 
 // Admin auth middleware
 function requireAdmin(req, res, next) {
@@ -150,22 +150,32 @@ app.get('/health', (req, res) => {
 });
 
 // --------------------- AUTH: REGISTER ---------------------
-
-// User register (with name)
+// User register (with name + age)
 app.post('/api/auth/user/register', async (req, res) => {
-  const { name, email, password } = req.body || {};
-  if (!name || !email || !password) {
-    return res.status(400).json({ error: 'Name, email and password required' });
+  console.log('REGISTER BODY:', req.body);   // 🔍 debug log
+
+  const { name, age, email, password } = req.body || {};
+
+  // validation
+  if (!name || !email || !password || age == null) {
+    return res
+      .status(400)
+      .json({ error: 'Name, age, email and password required' });
+  }
+
+  const ageNumber = Number(age);
+  if (Number.isNaN(ageNumber) || ageNumber <= 0) {
+    return res.status(400).json({ error: 'Invalid age' });
   }
 
   try {
     const hash = await bcrypt.hash(password, 10);
 
-    await userDb.query('INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)', [
-      name,
-      email,
-      hash,
-    ]);
+    // ✅ age is explicitly inserted here
+    await userDb.query(
+      'INSERT INTO users (name, age, email, password_hash) VALUES (?, ?, ?, ?)',
+      [name, ageNumber, email, hash]
+    );
 
     return res.status(201).json({ message: 'User registered' });
   } catch (err) {
@@ -182,7 +192,6 @@ app.post('/api/auth/user/register', async (req, res) => {
     });
   }
 });
-
 // Admin register (with name)
 app.post('/api/auth/admin/register', async (req, res) => {
   const { name, email, password } = req.body || {};
@@ -212,7 +221,6 @@ app.post('/api/auth/admin/register', async (req, res) => {
 // --------------------- AUTH: LOGIN ---------------------
 
 // User login
-// User login
 app.post('/api/auth/user/login', async (req, res) => {
   const { email, password } = req.body || {};
   if (!email || !password) {
@@ -220,9 +228,7 @@ app.post('/api/auth/user/login', async (req, res) => {
   }
 
   try {
-    const [rows] = await userDb.query('SELECT * FROM users WHERE email = ?', [
-      email,
-    ]);
+    const [rows] = await userDb.query('SELECT * FROM users WHERE email = ?', [email]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -234,26 +240,25 @@ app.post('/api/auth/user/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // 👉 make sure name is inside the token + response
     const token = jwt.sign(
-      {
-        id: user.id,
-        email: user.email,
-        name: user.name,   // <— THIS
-        role: 'user',
-      },
+      { id: user.id, email: user.email, name: user.name, role: 'user' },
       JWT_SECRET,
       { expiresIn: '2h' }
     );
 
-    res.json({
+    const payload = {
       token,
       user: {
         id: user.id,
         email: user.email,
-        name: user.name,   // <— AND THIS
+        name: user.name,
+        age: user.age,      // ✅ AGE HERE
       },
-    });
+    };
+
+    console.log('LOGIN RESPONSE BODY:', payload); // 🔍 debug
+
+    res.json(payload);
   } catch (err) {
     console.error('User login error', err);
     res.status(500).json({ error: 'User login failed' });
@@ -392,7 +397,7 @@ app.get('/api/restaurants/:id', async (req, res) => {
   }
 });
 
-// --------------------- AI ASSISTANT ---------------------
+// --------------------- AI ASSISTANT (English-only) ---------------------
 
 app.post('/api/assistant/query', async (req, res) => {
   const { message } = req.body;
@@ -404,90 +409,92 @@ app.post('/api/assistant/query', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM restaurants');
 
-    // Score every restaurant against the user query
-    const scored = rows.map(r => ({
+    const scored = rows.map((r) => ({
       r,
       score: scoreRestaurantAgainstQuery(r, queryTokens, queryConcepts),
     }));
 
-    const positive = scored.filter(x => x.score > 0);
+    const positive = scored.filter((x) => x.score > 0);
 
     let finalList;
 
+    // NO MATCH → FALLBACK (English-only)
     if (positive.length === 0) {
-      // fallback: top-rated
       finalList = rows
         .slice()
         .sort((a, b) => (b.rating || 0) - (a.rating || 0))
         .slice(0, 3);
 
       return res.json({
-        explanation:
-          'கேட்ட மாதிரி நேரடியான இடம் கிடைக்கல. ஆனா உங்க அருகில இருக்க சில பிரபலமான இடங்கள் இதோ:',
-        suggestions: finalList.map(r => ({
+        explanation: "We couldn't find an exact match. Here are some popular places:",
+        suggestions: finalList.map((r) => ({
           name: r.name,
           area: r.area,
           rating: r.rating,
-          reason: `${r.name} ${r.area} பகுதியில் பிரபலமான இடம்.`,
+          cuisine: r.cuisine,
+          reason: `${r.name} in ${r.area} is a popular choice among students.`,
         })),
       });
     }
 
-    // Sort by match score and take top 3
+    // WE HAVE MATCHES (English-only)
     finalList = positive
       .sort((a, b) => b.score - a.score)
       .slice(0, 3)
-      .map(x => x.r);
-
-    const tamilExplanation = `நீங்கள் கேட்டது: "${message}".
-உங்கள் மனநிலையும் உணவு விருப்பத்தையும் பொருத்து சில நல்ல இடங்கள் இதோ:`;
+      .map((x) => x.r);
 
     return res.json({
-      explanation: tamilExplanation,
-      suggestions: finalList.map(r => ({
+      explanation: `Based on "${message}", here are some great matches:`,
+      suggestions: finalList.map((r) => ({
         name: r.name,
         area: r.area,
         rating: r.rating,
-        reason: `${r.name} ${r.area} பகுதியில் இருக்கும் ${r.cuisine} இடம். உங்க current mood & விருப்பத்துக்கு செம்ம match ஆகும்.`,
+        cuisine: r.cuisine,
+        reason: `${r.name} in ${r.area} serves ${r.cuisine} cuisine and matches your preferences well.`,
       })),
     });
   } catch (err) {
     console.error('Assistant error', err);
-    res.status(500).json({ error: 'SmartDine AI error' });
+    res.status(500).json({ error: 'Assistant unavailable' });
   }
 });
 
-// Surprise me
-// Surprise me – UNIFORM random from ALL restaurants
-app.get('/api/assistant/surprise', async (req, res) => {
+// --------------------- DISHES PUBLIC API ---------------------
+
+// List all dishes with optional restaurant names
+app.get('/api/dishes', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM restaurants'); // ⚠️ no LIMIT here
+    const [rows] = await db.query(
+      `SELECT 
+         d.id,
+         d.name,
+         d.description,
+         d.tags,
+         d.base_price,
+         GROUP_CONCAT(r.name SEPARATOR ', ') AS restaurants
+       FROM dishes d
+       LEFT JOIN restaurant_dishes rd ON rd.dish_id = d.id
+       LEFT JOIN restaurants r ON r.id = rd.restaurant_id
+       GROUP BY d.id
+       ORDER BY d.id DESC`
+    );
 
-    console.log('Surprise pool size:', rows.length); // debug
+    const result = rows.map(d => ({
+      id: d.id,
+      name: d.name,
+      description: d.description || '',
+      tags: d.tags ? d.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
+      basePrice: d.base_price !== null ? Number(d.base_price) : null,
+      restaurants: d.restaurants || '',
+    }));
 
-    if (!rows || rows.length === 0) {
-      return res.json({
-        name: null,
-        message: 'No restaurants found in the database.',
-        cuisine: null,
-        rating: null,
-      });
-    }
-
-    // pure uniform random, every restaurant same chance
-    const pick = rows[Math.floor(Math.random() * rows.length)];
-
-    res.json({
-      name: pick.name,
-      message: `Surprise! இன்று ${pick.name} try பண்ணிக்கோங்க. ${pick.area} பகுதியில் ரொம்பப் பிரபலமா இருக்குது, rating ${pick.rating ?? 'N/A'}.`,
-      cuisine: pick.cuisine,
-      rating: pick.rating,
-    });
+    res.json(result);
   } catch (err) {
-    console.error('Surprise error', err);
-    res.status(500).json({ error: 'Surprise failed' });
+    console.error('Error fetching dishes', err);
+    res.status(500).json({ error: 'Failed to fetch dishes' });
   }
 });
+
 // --------------------- ADMIN ENDPOINTS ---------------------
 
 // Add restaurant (admin only)
@@ -584,6 +591,59 @@ app.post('/api/admin/dishes', requireAdmin, async (req, res) => {
     res.status(500).json({ error: 'Could not add dish' });
   }
 });
+// ========= TEST + SURPRISE ROUTES (keep near the bottom) =========
+
+// Simple test route to confirm this server.js is the file that is running
+app.get('/__test', (req, res) => {
+  res.json({ ok: true, message: 'server.js is the one running' });
+});
+
+// Surprise recommendation – used by "Surprise Me" button
+async function surpriseHandler(req, res) {
+  try {
+    console.log('🔥 Surprise handler hit');
+
+    const [rows] = await db.query(
+      `SELECT *
+       FROM restaurants
+       WHERE rating IS NOT NULL
+       ORDER BY rating DESC
+       LIMIT 15`
+    );
+
+    if (!rows || rows.length === 0) {
+      return res
+        .status(404)
+        .json({ error: 'No restaurants available for surprise.' });
+    }
+
+    const random = rows[Math.floor(Math.random() * rows.length)];
+
+    const suggestion = {
+      name: random.name,
+      area: random.area,
+      rating:
+        random.rating !== null ? Number(random.rating) : null,
+      cuisine: random.cuisine,
+      reason: `${random.name} in ${random.area} is a great surprise pick with rating ${
+        random.rating ?? 'N/A'
+      }.`,
+    };
+
+    return res.json({ suggestion });
+  } catch (err) {
+    console.error('Surprise assistant error', err);
+    return res
+      .status(500)
+      .json({ error: 'Surprise suggestion failed' });
+  }
+}
+
+// support both paths, just in case
+app.get('/api/assistant/surprise', surpriseHandler);
+app.get('/api/ai/assistant/surprise', surpriseHandler);
+
+// ==========================================================
 
 // --------------------- START SERVER ---------------------
 

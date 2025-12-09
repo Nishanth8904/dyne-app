@@ -28,15 +28,25 @@ function getMapsUrl(r) {
   )}`;
 }
 
-function InlineRouteMap({ restaurant }) {
+/**
+ * InlineRouteMap
+ * - fetches user location
+ * - fetches road route from OSRM
+ * - draws route
+ * - shows distance + ETA pill on top of the map
+ */
+function InlineRouteMap({ restaurant, className }) {
   const [userPos, setUserPos] = useState(null);
   const [routeCoords, setRouteCoords] = useState(null);
+  const [distanceKm, setDistanceKm] = useState(null);
+  const [durationMin, setDurationMin] = useState(null);
 
   const dest = [restaurant.latitude, restaurant.longitude];
 
-  // 1) Get user location
   useEffect(() => {
-    setRouteCoords(null); // reset old route
+    setRouteCoords(null);
+    setDistanceKm(null);
+    setDurationMin(null);
 
     if (!navigator.geolocation) return;
 
@@ -52,23 +62,31 @@ function InlineRouteMap({ restaurant }) {
     );
   }, [restaurant.id]);
 
-  // 2) Get road route from OSRM when we have both points
   useEffect(() => {
     if (!userPos) return;
     const [uLat, uLng] = userPos;
     const [rLat, rLng] = dest;
 
-    // OSRM expects lng,lat order
     const url = `https://router.project-osrm.org/route/v1/driving/${uLng},${uLat};${rLng},${rLat}?overview=full&geometries=geojson`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         if (!data.routes || !data.routes[0]) return;
-        const coords = data.routes[0].geometry.coordinates.map(
+        const route = data.routes[0];
+
+        const coords = route.geometry.coordinates.map(
           ([lng, lat]) => [lat, lng]
         );
         setRouteCoords(coords);
+
+        // distance in km + time in min
+        if (typeof route.distance === "number") {
+          setDistanceKm(route.distance / 1000);
+        }
+        if (typeof route.duration === "number") {
+          setDurationMin(route.duration / 60);
+        }
       })
       .catch((err) => {
         console.error("OSRM routing error", err);
@@ -79,110 +97,157 @@ function InlineRouteMap({ restaurant }) {
   const center = userPos || dest;
 
   return (
-    <MapContainer center={center} zoom={14} className={styles.inlineMap}>
-      <TileLayer
-        attribution="&copy; OpenStreetMap contributors"
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-
-      {/* User location */}
-      {userPos && <Marker position={userPos} icon={userIcon} />}
-
-      {/* Restaurant marker */}
-      <Marker position={dest} icon={markerIcon} />
-
-      {/* Real route if available, else simple straight line fallback */}
-      {routeCoords ? (
-        <Polyline positions={routeCoords} />
-      ) : (
-        userPos && <Polyline positions={[userPos, dest]} />
+    <div className={styles.mapWrapper}>
+      {/* pill */}
+      {distanceKm != null && durationMin != null && (
+        <div className={styles.routeInfoPill}>
+          <span className={styles.routeDot} />
+          {distanceKm.toFixed(1)} km
+          <span className={styles.routeDot} />
+          {Math.round(durationMin)} min
+        </div>
       )}
-    </MapContainer>
+
+      {/* map */}
+      <MapContainer
+        center={center}
+        zoom={14}
+        className={className || styles.leafletMap}
+      >
+        <TileLayer
+          attribution="&copy; OpenStreetMap contributors"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {userPos && <Marker position={userPos} icon={userIcon} />}
+        <Marker position={dest} icon={markerIcon} />
+
+        {routeCoords ? (
+          <Polyline positions={routeCoords} />
+        ) : (
+          userPos && <Polyline positions={[userPos, dest]} />
+        )}
+      </MapContainer>
+    </div>
   );
 }
-
 export default function ScrollingRestaurants({ restaurants = [] }) {
-  const [activeRestaurant, setActiveRestaurant] = useState(null);
+  const [activeRestaurantId, setActiveRestaurantId] = useState(null);
 
   if (!restaurants.length) return null;
+
+  const activeRestaurant = restaurants.find((r) => r.id === activeRestaurantId);
 
   function handleNavigateClick(r) {
     if (!r.latitude || !r.longitude) {
       alert("This restaurant doesn't have map coordinates yet.");
       return;
     }
+    setActiveRestaurantId((prev) => (prev === r.id ? null : r.id));
+  }
 
-    setActiveRestaurant((prev) =>
-      prev && prev.id === r.id ? null : r // toggle open/close
-    );
+  function closeModal() {
+    setActiveRestaurantId(null);
   }
 
   return (
     <div className={styles.cHotels}>
-      {restaurants.map((r) => {
-       const imageUrl = r.imageUrl || `/${r.id}.jpg`;   // because file is in public root
-        const isActive =
-          activeRestaurant && String(activeRestaurant.id) === String(r.id);
+      <div className={styles.cHotelsStrip}>
+        {restaurants.map((r) => {
+          const imageUrl = r.imageUrl || `/${r.id}.jpg`;
+          const isActive = activeRestaurantId === r.id;
 
-        return (
-          <article key={r.id} className={styles.cHotelsItem}>
-            {/* IMAGE */}
-            <figure className={styles.cHotelsFigure}>
-              <img
-                src={imageUrl}
-                alt={r.name}
-                onError={(e) => {
-                  e.target.src = "/fallback-restaurant.jpg";
-                }}
-              />
-            </figure>
+          const costText =
+            r.avgCostForTwo != null ? `₹${r.avgCostForTwo} for two` : null;
 
-            {/* INFO */}
-            <div className={styles.cHotelsInfo}>
-              <h2 className={styles.cHotelsTitle}>{r.name}</h2>
-              <p className={styles.cHotelsSubtitle}>
-                {r.cuisine} • {r.area}
-              </p>
+          return (
+            <article key={r.id} className={styles.cHotelsCard}>
+              {/* IMAGE */}
+              <figure className={styles.cHotelsFigure}>
+                <img
+                  src={imageUrl}
+                  alt={r.name}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = "/fallback-restaurant.jpg";
+                  }}
+                />
+              </figure>
 
-              <p className={styles.cHotelsExcerpt}>
-                {r.description || "Great food, must try!"}
-              </p>
+              {/* INFO */}
+              <div className={styles.cHotelsInfo}>
+                <h3 className={styles.cHotelsTitle}>{r.name}</h3>
+                <p className={styles.cHotelsSubtitle}>
+                  {r.cuisine} • {r.area}
+                </p>
 
-              <p>
-                ⭐ {r.rating || "N/A"} • ₹{r.avgCostForTwo || "?"} for two
-              </p>
+                <p className={styles.cHotelsMeta}>
+                  {r.rating != null && (
+                    <span className={styles.metaChip}>⭐ {r.rating}</span>
+                  )}
+                  {costText && (
+                    <span className={styles.metaChip}>{costText}</span>
+                  )}
+                </p>
 
-              <div className={styles.actionRow}>
-                {/* ✅ Google Maps link is back */}
-                <a
-                  href={getMapsUrl(r)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.viewBtn}
-                >
-                  View on Google Maps
-                </a>
+                <p className={styles.cHotelsExcerpt}>
+                  {r.description || "Popular student spot with quick service."}
+                </p>
 
-                {/* ✅ In-page Dyne map */}
-                <button
-                  type="button"
-                  className={styles.navBtn}
-                  onClick={() => handleNavigateClick(r)}
-                >
-                  {isActive ? "Hide Dyne Map" : "Navigate in Dyne Map"}
-                </button>
-              </div>
+                <div className={styles.actionRow}>
+                  <a
+                    href={getMapsUrl(r)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.viewBtn}
+                  >
+                    View in Google Maps
+                  </a>
 
-              {/* INLINE LEAFLET MAP */}
-              {isActive && (
-                <div className={styles.inlineMapWrapper}>
-                  <InlineRouteMap restaurant={r} />
+                  {r.latitude && r.longitude && (
+                    <button
+                      type="button"
+                      className={styles.navBtn}
+                      onClick={() => handleNavigateClick(r)}
+                    >
+                      {isActive ? "Close Dyne map" : "Navigate in Dyne map"}
+                    </button>
+                  )}
                 </div>
-              )}
-            </div>
-          </article>
-        );
-      })}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      {/* 🔵 Fullscreen Dyne map modal */}
+      {activeRestaurant && (
+        <div className={styles.mapOverlay} onClick={closeModal}>
+          <div
+            className={styles.mapModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <header className={styles.mapModalHeader}>
+              <div>
+                <h4 className={styles.mapTitle}>{activeRestaurant.name}</h4>
+                <p className={styles.mapSubtitle}>
+                  {activeRestaurant.area} • {activeRestaurant.cuisine}
+                </p>
+              </div>
+              <button
+                type="button"
+                className={styles.mapCloseBtn}
+                onClick={closeModal}
+              >
+                Close
+              </button>
+            </header>
+<div className={styles.fullMap}>
+  <InlineRouteMap restaurant={activeRestaurant} />
+</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

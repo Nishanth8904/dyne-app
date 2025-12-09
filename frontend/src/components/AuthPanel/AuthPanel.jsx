@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import styles from './AuthPanel.module.css';
 
-
 const API_BASE = 'http://localhost:3000';
 
 function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
   const [role, setRole] = useState('user');
   const [mode, setMode] = useState('login');      // "login" | "register"
-  const [name, setName] = useState('');           // NEW: name field
+  const [name, setName] = useState('');           // name field
+  const [age, setAge] = useState('');             // ✅ age field
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState('');
@@ -19,9 +19,9 @@ function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
     setStatus('');
     setIsError(false);
 
-    // when switching back to login we can clear name
     if (nextMode === 'login') {
       setName('');
+      setAge('');          // ✅ clear age when switching to login
     }
   }
 
@@ -30,12 +30,28 @@ function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
     setStatus('');
     setIsError(false);
 
-    // basic validation
-    if (mode === 'register' && !name.trim()) {
-      setStatus('Please enter your name.');
-      setIsError(true);
-      return;
+    // ----- basic validation -----
+    if (mode === 'register') {
+      if (!name.trim()) {
+        setStatus('Please enter your name.');
+        setIsError(true);
+        return;
+      }
+
+      if (!age) {
+        setStatus('Please enter your age.');
+        setIsError(true);
+        return;
+      }
+
+      const ageNumber = Number(age);
+      if (Number.isNaN(ageNumber) || ageNumber <= 0) {
+        setStatus('Please enter a valid age.');
+        setIsError(true);
+        return;
+      }
     }
+
     if (!email || !password) {
       setStatus('Please enter email and password.');
       setIsError(true);
@@ -50,10 +66,14 @@ function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
           ? `/api/auth/${role}/register`
           : `/api/auth/${role}/login`;
 
-      // send name only when registering
       const body =
         mode === 'register'
-          ? { name: name.trim(), email, password }
+          ? {
+              name: name.trim(),
+              age: Number(age),    // ✅ send age to backend
+              email,
+              password,
+            }
           : { email, password };
 
       const res = await fetch(`${API_BASE}${path}`, {
@@ -77,12 +97,25 @@ function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
         return;
       }
 
-      // LOGIN SUCCESS
+      // ---------- LOGIN SUCCESS ----------
       if (role === 'user') {
-        // backend now returns { id, email, name }
-        onUserLogin?.(data.user);
+        if (data.token) {
+          localStorage.setItem('smartdine_user_token', data.token);
+        }
+
+        onUserLogin?.({
+          ...data.user,
+          token: data.token,
+        });
       } else {
-        onAdminLogin?.(data.admin);
+        if (data.token) {
+          localStorage.setItem('smartdine_admin_token', data.token);
+        }
+
+        onAdminLogin?.({
+          ...data.admin,
+          token: data.token,
+        });
       }
 
       onClose?.();
@@ -158,18 +191,32 @@ function AuthPanel({ onUserLogin, onAdminLogin, onClose, isDark }) {
 
           {/* Form */}
           <form className={styles.form} onSubmit={handleSubmit}>
-            {/* Name only in register mode */}
+            {/* Name + Age only in register mode */}
             {mode === 'register' && (
-              <div>
-                <label className={styles.label}>Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                  placeholder="Your name"
-                />
-              </div>
+              <>
+                <div>
+                  <label className={styles.label}>Name</label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div>
+                  <label className={styles.label}>Age</label>
+                  <input
+                    className={styles.input}
+                    type="number"
+                    min="1"
+                    value={age}
+                    onChange={e => setAge(e.target.value)}
+                    placeholder="Your age"
+                  />
+                </div>
+              </>
             )}
 
             <div>

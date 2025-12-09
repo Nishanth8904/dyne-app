@@ -1,3 +1,4 @@
+/* Card container */
 .card {
   background: #020617;
   border-radius: 24px;
@@ -9,19 +10,22 @@
   flex-direction: column;
 }
 
+/* --- IMAGE AREA: same shape for all --- */
 .imageWrap {
   width: 100%;
-  height: 190px;
+  aspect-ratio: 4 / 3;      /* ✅ same aspect ratio for every card */
   overflow: hidden;
+  background: #020617;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;        /* crops but keeps proportions */
 }
 
+/* --- TEXT CONTENT --- */
 .content {
   padding: 18px 20px 20px;
   display: flex;
@@ -44,10 +48,12 @@
   color: #9ca3af;
 }
 
+/* --- ACTION BUTTONS --- */
 .actions {
   margin-top: 12px;
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .viewBtn,
@@ -60,25 +66,22 @@
   color: #e5e7eb;
   text-decoration: none;
   cursor: pointer;
-  /* Additional styling for the Google Maps button to match screenshot color */
-  border-color: #3b82f6; 
+}
+
+/* Google Maps button – blue accent */
+.viewBtn {
+  border-color: #3b82f6;
   color: #93c5fd;
 }
 
+/* Dyne Map button – green accent */
 .navBtn {
-  /* Styling for the Dyne Map (Navigate) button to match the green color in screenshot */
   background: #22c55e;
   border-color: #16a34a;
   color: #022c22;
 }
-.image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-/* existing card styles ... */
 
+/* --- INLINE MAP --- */
 .inlineMap {
   margin-top: 14px;
   border-radius: 20px;
@@ -96,4 +99,15 @@
   margin-top: 8px;
   font-size: 0.8rem;
   color: #9ca3af;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 18px;
+  }
+
+  .content {
+    padding: 14px 14px 16px;
+  }
 }

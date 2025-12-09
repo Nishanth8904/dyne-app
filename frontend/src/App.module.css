@@ -1789,3 +1789,26 @@
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
 }/* in App.module.css */
+.recommendationWrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-top: -14px;     /* moves it UP */
+  margin-bottom: 22px;   /* tighter bottom spacing */
+
+  padding: 0 20px;
+}
+
+.recommendationWrapper > section {
+  width: 100%;
+  max-width: 520px;     /* smaller card width */
+}
+.card {
+  margin-bottom: 32px;
+}
+.card {
+  margin-top: 20px;
+}
+.gameSection {
+  padding: 40px 24px 56px;
+}

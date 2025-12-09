@@ -4,6 +4,9 @@ import styles from './AIAssistant.module.css';
 
 const API_BASE = 'http://localhost:3000';
 
+// helper: detect Tamil characters
+const hasTamil = (text) => /[\u0B80-\u0BFF]/.test(text || '');
+
 export default function AIAssistant() {
   const [text, setText] = useState('');
   const [status, setStatus] = useState('Idle');
@@ -20,84 +23,116 @@ export default function AIAssistant() {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) {
       setIsSpeechAvailable(false);
-      setStatus('Speech API not available in this browser.');
+      setStatus('Speech recognition is not available in this browser.');
     }
   }, []);
 
-  // ---------------- BACKEND HELPERS ----------------
+  // ---------------- CORE QUERY FLOW (used by text + voice) ----------------
 
-  async function sendMessage(message) {
-    if (!message?.trim()) return;
+  async function runQuery(message) {
+    const msg = (message || '').trim();
+    if (!msg) return;
 
     setLoading(true);
     setErrorText('');
+    setSuggestions([]);
+    setStatus('Thinking…');
 
     try {
-      const res = await fetch(`${API_BASE}/api/assistant/query`, {
+      // 1) Always ask backend smart scorer for restaurant suggestions
+      const baseRes = await fetch(`${API_BASE}/api/assistant/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ message: msg })
       });
 
-      const data = await res.json();
-      console.log('[Assistant reply]', data);
+      const baseData = await baseRes.json();
+      console.log('[Assistant /query]', baseData);
 
-      if (!res.ok) {
-        throw new Error(data.error || 'Request failed');
+      if (!baseRes.ok) {
+        throw new Error(baseData.error || 'Assistant query failed');
       }
 
-      setStatus(data.explanation || 'Got some suggestions.');
-      setSuggestions(data.suggestions || []);
+      // Show the DB-scored suggestions in cards
+      setSuggestions(baseData.suggestions || []);
+
+      const isTamilInput = hasTamil(msg);
+
+      // 2) If Tamil input → do NOT call Groq, just show neutral English status
+      if (isTamilInput) {
+        setStatus('Here are some suggestions.');
+        return;
+      }
+
+      // 3) English input → also call Groq AI assistant
+      const aiRes = await fetch(`${API_BASE}/api/ai/assistant`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+
+      const aiData = await aiRes.json();
+      console.log('[Groq /api/ai/assistant]', aiData);
+
+      if (aiRes.ok && aiData.reply) {
+        setStatus(`DYNE AI says: ${aiData.reply}`);
+      } else {
+        // fallback to explanation from DB if AI failed
+        setStatus(baseData.explanation || 'Here are some suggestions.');
+      }
     } catch (err) {
-      console.error('Assistant error:', err);
+      console.error('runQuery error:', err);
       setStatus('Server error');
-      setErrorText('Could not talk to Dyne backend.');
+      setErrorText('Something went wrong while getting suggestions.');
     } finally {
       setLoading(false);
     }
   }
 
   async function handleAskClick() {
-    const msg = text.trim();
-    if (!msg) return;
-    setStatus('Thinking…');
-    await sendMessage(msg);
+    if (!text.trim()) return;
+    await runQuery(text);
   }
+async function handleSurpriseClick() {
+  setLoading(true);
+  setStatus('Picking a surprise place for you…');
+  setErrorText('');
+  setSuggestions([]);
 
-  async function handleSurpriseClick() {
-    setLoading(true);
-    setStatus('Picking a surprise…');
-    setErrorText('');
-    setSuggestions([]);
+  try {
+    const res = await fetch(`${API_BASE}/api/assistant/surprise`);
+    const data = await res.json();
+    console.log('[Surprise]', data);
 
-    try {
-      const res = await fetch(`${API_BASE}/api/assistant/surprise`);
-      const data = await res.json();
-      console.log('[Surprise]', data);
+    if (!res.ok) throw new Error(data.error || 'Request failed');
 
-      if (!res.ok) throw new Error(data.error || 'Request failed');
+    // ✅ your backend returns { suggestion: { ... } }
+    if (data && data.suggestion) {
+      const s = data.suggestion;
 
-      if (data && data.name) {
-        setStatus(data.message || 'Here is a random pick!');
-        setSuggestions([
-          {
-            name: data.name,
-            area: data.area,
-            rating: data.rating,
-            reason: data.message
-          }
-        ]);
-      } else {
-        setStatus('No restaurants found.');
-      }
-    } catch (err) {
-      console.error('Surprise error:', err);
-      setStatus('Server error');
-      setErrorText('Could not fetch surprise recommendation.');
-    } finally {
-      setLoading(false);
+      setStatus(
+        s.reason || 'Here is a random restaurant you can try today.'
+      );
+
+      setSuggestions([
+        {
+          name: s.name,
+          area: s.area,
+          rating: s.rating,
+          reason: s.reason,
+        },
+      ]);
+    } else {
+      setStatus('No restaurants found.');
     }
+  } catch (err) {
+    console.error('Surprise error:', err);
+    setStatus('Server error');
+    setErrorText('Could not fetch a surprise recommendation.');
+  } finally {
+    setLoading(false);
   }
+}
 
   // ---------------- SPEECH RECOGNITION ----------------
 
@@ -118,11 +153,10 @@ export default function AIAssistant() {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) {
       setIsSpeechAvailable(false);
-      setErrorText('Speech API not available in this browser.');
+      setErrorText('Speech recognition is not available in this browser.');
       return;
     }
 
-    // kill any previous instance
     if (recognitionRef.current) {
       try {
         recognitionRef.current.abort();
@@ -133,8 +167,9 @@ export default function AIAssistant() {
     const recognition = new SR();
     recognitionRef.current = recognition;
 
-    // keep it VERY simple for debugging
-    recognition.lang = 'ta-IN';  // you can change to 'ta-IN'
+    // You can still set ta-IN so users can talk in Tamil.
+    // AI will be called only if text is English.
+    recognition.lang = 'ta-IN';
     recognition.interimResults = false;
     recognition.continuous = false;
     recognition.maxAlternatives = 1;
@@ -142,7 +177,7 @@ export default function AIAssistant() {
     recognition.onstart = () => {
       console.log('🎙 onstart');
       setIsListening(true);
-      setStatus('Listening…');
+      setStatus('Listening… speak in Tamil or English.');
       setErrorText('');
     };
 
@@ -152,11 +187,12 @@ export default function AIAssistant() {
       setIsListening(false);
 
       if (transcript && transcript.trim()) {
-        setText(transcript.trim());
-        setStatus('Heard: ' + transcript.trim());
-        sendMessage(transcript.trim());
+        const cleaned = transcript.trim();
+        setText(cleaned);
+        setStatus('Heard: ' + cleaned);
+        runQuery(cleaned); // reuse the same flow as text Ask
       } else {
-        setStatus('Did not catch that. Try again.');
+        setStatus('Could not understand. Please try again.');
       }
     };
 
@@ -165,16 +201,15 @@ export default function AIAssistant() {
       setIsListening(false);
 
       if (event.error === 'not-allowed') {
-        setStatus('Mic permission blocked.');
+        setStatus('Microphone permission blocked.');
         setErrorText(
-          'Allow microphone permission in Chrome (click the lock icon near the URL).'
+          'Allow microphone access in your browser settings (lock icon near the URL).'
         );
       } else if (event.error === 'no-speech') {
-        setStatus('No speech detected. Speak louder 😊');
-        // no extra error text – this is a soft error
+        setStatus('No speech detected. Please speak louder or closer to the mic.');
       } else if (event.error === 'audio-capture') {
-        setStatus('No microphone selected.');
-        setErrorText('Select an input device in System Settings > Sound > Input.');
+        setStatus('No microphone detected.');
+        setErrorText('Select an input device in your system sound settings.');
       } else {
         setStatus('Voice error: ' + event.error);
         setErrorText('Voice error: ' + event.error);
@@ -197,7 +232,7 @@ export default function AIAssistant() {
 
   function handleMicClick() {
     if (!isSpeechAvailable) {
-      setErrorText('Speech API not available in this browser.');
+      setErrorText('Speech recognition is not available in this browser.');
       return;
     }
     if (isListening) {
@@ -217,7 +252,7 @@ export default function AIAssistant() {
           <span>Ask Dyne</span>
         </div>
         <p className={styles.headerSubtitle}>
-          Talk in Tamil or type your craving.
+          Type or speak your craving. If you use Tamil, Dyne will show suggestions but AI text stays in English.
         </p>
       </header>
 
@@ -225,7 +260,7 @@ export default function AIAssistant() {
         <input
           type="text"
           className={styles.textInput}
-          placeholder="Eg: மலிவு பிரியாணி near Gandhipuram"
+          placeholder="Ex: cheap biryani near Gandhipuram"
           value={text}
           onChange={(e) => setText(e.target.value)}
           disabled={loading}
@@ -242,7 +277,7 @@ export default function AIAssistant() {
               ? isListening
                 ? 'Stop listening'
                 : 'Speak to Dyne'
-              : 'Speech API not available'
+              : 'Speech recognition not available'
           }
         >
           <Mic size={16} />
@@ -269,10 +304,10 @@ export default function AIAssistant() {
       <div className={styles.statusRow}>
         <span className={styles.statusText}>{status}</span>
         {isSpeechAvailable ? (
-          <span className={styles.speechBadge}>✅ Speech API Available</span>
+          <span className={styles.speechBadge}>✅ Voice input supported</span>
         ) : (
           <span className={styles.speechBadgeWarning}>
-            ⚠️ Speech API not available
+            ⚠️ Voice input not available in this browser
           </span>
         )}
       </div>

@@ -4,215 +4,273 @@
   --scroll-font-text: "Open Sans", system-ui, sans-serif;
   --scroll-light: #ffffff;
   --scroll-dark: #020617;
-  --scroll-brand: #ffeba7;
 }
 
-/* Section wrapper */
-.hotelsSection {
-  width: min(1200px, 90%);
-  margin: 32px auto 80px;
-  padding: 8px 0 40px;
+/* whole strip */
+.cHotels {
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px 0 18px;
   font-family: var(--scroll-font-text);
 }
 
-/* Title above the sticky cards */
-.hotelsTitle {
-  padding: 24px 0 40px;
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  color: var(--scroll-brand);
+/* nice thin scrollbar */
+.cHotels::-webkit-scrollbar {
+  height: 8px;
 }
 
-/* list of cards */
-.hotelsList {
-  display: grid;
-  gap: 40px;
+.cHotels::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* each sticky “page” */
-.hotelsItem {
-  position: sticky;
-  top: 80px; /* sits under navbar + page header */
-  right: 0;
-  left: 0;
+.cHotels::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 999px;
+}
 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 220px auto;
+/* inner flex row like Swiggy cards */
+.cHotelsStrip {
+  display: flex;
+  gap: 16px;
+  padding: 6px 2px 10px;
+}
 
-  border-radius: 32px;
+/* each restaurant card */
+.cHotelsCard {
+  min-width: 290px;
+  max-width: 320px;
+  background: var(--scroll-dark);
+  border-radius: 22px;
   overflow: hidden;
-  background-color: var(--scroll-dark);
-  border: 1px solid rgba(15, 23, 42, 0.85);
-  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.7);
-  transform: scale(1);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.85);
+  display: flex;
+  flex-direction: column;
+  color: var(--scroll-light);
 }
 
-/* side-by-side on larger screens */
-@media (min-width: 768px) {
-  .hotelsItem {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
-    grid-template-rows: minmax(420px, 70vh);
-  }
+/* image */
+.cHotelsFigure {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
 }
 
-/* image column */
-.hotelsItemFigure {
-  grid-column: 1 / -1;
-  grid-row: 1 / 2;
-}
-
-@media (min-width: 768px) {
-  .hotelsItemFigure {
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-  }
-}
-
-.hotelsItemFigure img {
-  display: block;
+.cHotelsFigure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* content column */
-.hotelsItemInfo {
-  grid-column: 1 / -1;
-  grid-row: 2 / -1;
-  padding: 40px 32px;
-  background: radial-gradient(circle at 0 0, #1f2937, #020617);
-  color: var(--scroll-light);
-  display: grid;
-  align-content: center;
-  gap: 12px;
-}
-
-@media (min-width: 768px) {
-  .hotelsItemInfo {
-    grid-column: 2 / -1;
-    grid-row: 1 / -1;
-  }
-}
-
-.hotelsItemSubtitle {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  color: #94a3b8;
-}
-
-.hotelsItemTitle {
-  font-size: 2.1rem;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-
-.hotelsItemExcerpt {
-  margin-top: 4px;
-  margin-bottom: 14px;
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #e2e8f0;
-}
-
-.hotelsItemMeta {
-  font-size: 0.9rem;
-  color: #cbd5f5;
-  margin-bottom: 18px;
-}
-
-/* button */
-.hotelsItemLink {
-  width: max-content;
-  padding: 12px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1px solid #e5e7eb;
-  background-color: #f9fafb;
-  color: #020617;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: background 0.3s ease, color 0.3s ease,
-    transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hotelsItemLink:hover {
-  background: #0f172a;
-  color: #f9fafb;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  transform: translateY(-2px);
-}
-
-/* subtle scale while scrolling on supported browsers */
-@supports (animation-timeline: view()) {
-  .hotelsItem:not(:last-child) {
-    animation-name: cardScale;
-    animation-timeline: view();
-    animation-range: entry 85% cover 45%;
-    animation-fill-mode: both;
-  }
-}
-
-@keyframes cardScale {
-  0%,
-  70% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0.85;
-  }
-}
-
-/* empty state text */
-.emptyState {
-  padding: 24px 0;
-  font-size: 0.95rem;
-  color: #9ca3af;
-}
-.actionRow {
+/* content */
+.cHotelsInfo {
+  padding: 14px 16px 16px;
   display: flex;
-  gap: 14px;
-  margin-top: 18px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.viewBtn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  border: 1px solid #111;
-  background: #fff;
-  color: #111;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.navBtn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: #22c55e;
-  color: white;
-  text-decoration: none;
+.cHotelsTitle {
+  font-size: 1rem;
   font-weight: 700;
 }
-.inlineMapWrapper {
-  margin-top: 16px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+
+.cHotelsSubtitle {
+  font-size: 0.8rem;
+  color: #9ca3af;
 }
+
+.cHotelsMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.metaChip {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.cHotelsExcerpt {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: #e5e7eb;
+}
+
+/* buttons row */
+.actionRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.viewBtn,
+.navBtn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s;
+}
+
+/* Google Maps button – light */
+.viewBtn {
+  background: #f9fafb;
+  color: #020617;
+  border-color: #e5e7eb;
+}
+
+.viewBtn:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.55);
+}
+
+/* Dyne map button – green */
+.navBtn {
+  background: #22c55e;
+  color: #f9fafb;
+  border-color: #16a34a;
+}
+
+.navBtn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.65);
+}
+
 
 .inlineMap {
   width: 100%;
-  height: 260px;
+  height: 220px;
 }
 
-/* tiny blue dot for the user marker */
+/* wrapper around Leaflet map + pill */
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* the actual Leaflet map */
+.leafletMap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;              /* map stays below the pill */
+}
+
+/* pill with distance + time */
+.routeInfoPill {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+  z-index: 1000;           /* 🚀 above tiles & markers */
+  pointer-events: none;    /* clicks go through to the map */
+}
+
+.routeDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.9);
+}
+
+/* full-screen modal overlay for Dyne map */
+.mapOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+/* modal card */
+.mapModal {
+  width: min(900px, 95vw);
+  height: min(520px, 80vh);
+  background: #020617;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header inside modal */
+.mapModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: radial-gradient(circle at 0 0, #111827, #020617);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+.mapTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.mapSubtitle {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* close button */
+.mapCloseBtn {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.mapCloseBtn:hover {
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.7);
+}
+
+/* big map in the modal */
+.fullMap {
+  flex: 1;
+  width: 100%;
+}
+
+/* user marker dot */
 .userMarker .user-dot {
   width: 16px;
   height: 16px;
@@ -220,4 +278,21 @@
   background: #3b82f6;
   border: 3px solid #ffffff;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+}
+
+/* Leaflet fixes */
+.cHotels :global(.leaflet-container img),
+.cHotels :global(.leaflet-tile) {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.cHotels :global(.leaflet-container) {
+  background: #ffffff;
+  color: #111827;
+}
+
+.cHotels :global(.leaflet-control),
+.cHotels :global(.leaflet-control-attribution) {
+  color: #111827 !important;
 }

@@ -1,11 +1,9 @@
-/* DishBrowser.module.css */
-
 .dishBrowserRoot {
-  padding: 12px 0;
+  padding: 16px 0 8px;
 }
 
 .dishHeaderRow {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .dishTitle {
@@ -21,130 +19,294 @@
   margin: 0;
 }
 
-/* 🧊 GLASSY TOGGLE BAR  ---------------------------------- */
+/* ===================== DISH STRIP (Swiggy style) ===================== */
 
-.menuBar {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-
-  margin: 14px 0 16px;
-  padding: 6px 10px;
-
-  border-radius: 25px;
-  background: radial-gradient(circle at top left,
-      rgba(248, 250, 252, 0.20),
-      rgba(15, 23, 42, 0.70));
-  border: 1px solid rgba(148, 163, 184, 0.65);
-
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.85),
-    0 0 0 1px rgba(15, 23, 42, 0.6);
-
-  list-style: none; /* no bullets */
+.dishStrip {
+  display: flex;
+  gap: 18px;
+  padding: 12px 4px 4px;
+  margin: 0 0 14px;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 
-/* base pill */
-.menuItem {
-  position: relative;
-  padding: 8px 16px;
-  margin: 2px 4px;
-  border-radius: 999px;
+.dishStrip::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.dishStripItem {
+  flex: 0 0 auto;
+}
+
+.dishTile {
+  border: none;
+  background: transparent;
+  padding: 0;
   cursor: pointer;
-  white-space: nowrap;
-
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
-
-  color: #e5e7eb;
-  transition:
-    color 0.18s ease,
-    transform 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 72px;
 }
 
-/* glass highlight behind each pill */
-.menuItem::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  z-index: -1;
-
-  background: rgba(15, 23, 42, 0.4);
-  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7);
-  transform: scale(1);
-  transition:
-    background 0.18s ease,
-    box-shadow 0.18s ease,
-    transform 0.18s ease;
+/* just so the class exists */
+.dishTileActive {
 }
 
-/* subtle glossy line on top */
-.menuItem::after {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 3px;
-  height: 40%;
+/* circular image bubble */
+.dishImageWrap {
+  width: 72px;
+  height: 72px;
   border-radius: 999px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
+  background: radial-gradient(circle at 30% 0%, #ffffff, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+  transform: translateY(0);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border 0.18s ease;
+  border: 2px solid transparent;
+}
+
+.dishImage {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.dishLabel {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  text-align: center;
 }
 
 /* hover */
-.menuItem:hover::before {
-  background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
-  transform: scale(1.12);
+.dishTile:hover .dishImageWrap {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.6);
 }
 
-.menuItem:hover {
-  color: #111827;
+/* active */
+.dishTileActive .dishImageWrap {
+  border-color: #22c55e;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(34, 197, 94, 0.45);
 }
 
-.menuItem:hover::after {
-  opacity: 1;
+.dishTileActive .dishLabel {
+  color: #fbbf24;
 }
 
-/* active pill */
-.menuItemActive::before {
-  background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
-  transform: scale(1.16);
+/* ===================== RESTAURANT ROW ===================== */
+
+.resultHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 4px 0 8px;
 }
 
-.menuItemActive {
-  color: #111827;
+.resultTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin: 0;
 }
 
-.menuItemActive::after {
-  opacity: 1;
-}
-
-/* RESULTS ------------------------------------------------ */
-
-.dishResultBlock {
-  margin-top: 8px;
-}
-
-.noResultText {
-  font-size: 0.85rem;
+.resultMeta {
+  font-size: 0.75rem;
   color: #9ca3af;
 }
 
-.cardGridLike {
-  display: grid;
-  gap: 12px;
+/* Horizontal scroll row for RestaurantCard */
+.cardRow {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+}
+
+.cardRow::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cardRow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cardRow::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 999px;
+}
+
+.cardRowItem {
+  flex: 0 0 260px; /* width of each restaurant card */
+}
+
+/* Fallback text */
+.noResultText {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 4px 0 0;
+  max-width: 360px;
+}
+
+/* === Dyne map button under each restaurant card in dishes tab === */
+.navBtnDish {
+  margin-top: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid #16a34a;
+  background: #22c55e;
+  color: #f9fafb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.18s ease, box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.navBtnDish:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(22, 163, 74, 0.6);
+}
+
+/* === Full-screen map modal (same vibe as Nearby popup) === */
+
+.mapOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+.mapModal {
+  width: min(900px, 95vw);
+  height: min(520px, 80vh);
+  background: #020617;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: radial-gradient(circle at 0 0, #111827, #020617);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+.mapTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.mapSubtitle {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.mapCloseBtn {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.mapCloseBtn:hover {
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.7);
+}
+
+/* wrapper around Leaflet map + pill */
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* the actual Leaflet map */
+.leafletMap {
+  width: 100%;
+  height: 100%;
+}
+
+/* big map area in modal */
+.fullMap {
+  flex: 1;
+  width: 100%;
+}
+
+/* pill with distance + time */
+.routeInfoPill {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.routeDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.9);
+}
+
+/* user marker dot for Leaflet */
+.userMarker .user-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #3b82f6;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+}
+
+/* Make map tiles fully visible inside card/modal */
+:global(.leaflet-container img),
+:global(.leaflet-tile) {
+  opacity: 1 !important;
+  filter: none !important;
 }

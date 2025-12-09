@@ -1,3 +1,4 @@
+// src/App.jsx
 import { useState, useEffect } from 'react';
 import {
   Sun,
@@ -10,18 +11,19 @@ import {
 } from 'lucide-react';
 import styles from './App.module.css';
 
-
 // Component Imports
-
 import NearMePanel from './components/NearMePanel/NearMePanel';
 import DishBrowser from './components/DishBrowser/DishBrowser';
 import StoreLocatorMap from './components/StoreLocatorMap/StoreLocatorMap';
 import AuthPanel from './components/AuthPanel/AuthPanel';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import AIAssistant from './components/AIAssistant/AIAssistant';
-import ScrollingRestaurants from "./components/ScrollingRestaurants/ScrollingRestaurants";
+import ScrollingRestaurants from './components/ScrollingRestaurants/ScrollingRestaurants';
+import AiRecommendations from './components/AiRecommendations/AiRecommendations';
+import PriceCalculator from './components/PriceCalculator/PriceCalculator';
 
-// Change here if backend URL changes later
+import FoodGame from './components/FoodGame/FoodGame';
+
 const API_BASE = 'http://localhost:3000';
 
 function App() {
@@ -43,9 +45,9 @@ function App() {
 
   const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState('');
-    // 👇 add this effect
 
-  // --- DATA LOADING LOGIC ---
+
+
   function buildQueryString(activeFilters) {
     const params = new URLSearchParams();
     if (activeFilters.area) params.append('area', activeFilters.area);
@@ -155,6 +157,36 @@ function App() {
     localStorage.removeItem('smartdine_admin_token');
     setCurrentAdmin(null);
   }
+  function handleCampusEmail() {
+  // Optional: ask for college name
+  const college = window.prompt("What's your college name?", "");
+
+  const to = "dynestudentapp@gmail.com";
+  const subject = "Request: Dyne app for our college";
+
+  const bodyLines = [
+    "Hi Dyne team,",
+    "",
+    "We would love to bring the Dyne student food app to our campus.",
+    college ? `College name: ${college}` : "College name: __________",
+    "",
+    "We believe Dyne would help students discover nearby food spots, split bills easily,",
+    "and make planning group meals much simpler.",
+    "",
+    "Please get in touch with us about the next steps.",
+    "",
+    "Thanks,",
+    "A student interested in Dyne"
+  ];
+
+  const body = bodyLines.join("\n");
+
+  const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoUrl;
+}
 
   const themeClass = isDark
     ? styles.appRoot
@@ -176,16 +208,16 @@ function App() {
           </div>
 
           <div className={styles.navActions}>
-   {(currentUser || currentAdmin) && (
-  <span className={styles.statusText}>
-    {currentAdmin
-      ? `Admin: ${currentAdmin?.name ?? currentAdmin?.email}`
-      : `Hi, ${
-          currentUser?.name
-            ?? currentUser?.email?.split('@')[0]   // fallback: part before @
-        }`}
-  </span>
-)}
+            {(currentUser || currentAdmin) && (
+              <span className={styles.statusText}>
+                {currentAdmin
+                  ? `Admin: ${currentAdmin?.name ?? currentAdmin?.email}`
+                  : `Hi, ${
+                      currentUser?.name ??
+                      currentUser?.email?.split('@')[0]
+                    }`}
+              </span>
+            )}
             <button
               onClick={() => setIsDark(!isDark)}
               className={styles.themeToggle}
@@ -223,8 +255,15 @@ function App() {
         </div>
       </div>
 
+    
+       
+
+
       {/* MAIN CONTENT – everything scrollable / linked from footer */}
       <main id="nearby" className={styles.mainLayout}>
+        {/* AI recommendations based on logged-in user's age */}
+        <AiRecommendations currentUser={currentUser} />
+
         {/* Nearby header */}
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Nearby spots</h1>
@@ -243,6 +282,7 @@ function App() {
                 { id: 'dishes', label: 'Dishes' },
                 { id: 'nearMe', label: 'Near Me' },
                 { id: 'storeLocator', label: 'Store Locator' },
+                { id: 'priceCalc', label: 'Price calculator' },
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -267,9 +307,7 @@ function App() {
                   type="text"
                   placeholder="Area..."
                   value={filters.area}
-                  onChange={e =>
-                    handleChangeFilters('area', e.target.value)
-                  }
+                  onChange={e => handleChangeFilters('area', e.target.value)}
                   className={styles.filterInput}
                 />
                 <input
@@ -304,26 +342,22 @@ function App() {
 
           {/* CONTENT: scrollable column */}
           <div className={styles.contentArea}>
-            {loading && (
-              <p className={styles.loadingText}>Loading...</p>
-            )}
-            {loadError && (
-              <p className={styles.errorText}>{loadError}</p>
-            )}
+            {loading && <p className={styles.loadingText}>Loading...</p>}
+            {loadError && <p className={styles.errorText}>{loadError}</p>}
 
             {!loading && !loadError && (
               <>
-               {activeTab === 'hotels' && (
-  <div className={styles.resultsContainer}>
-    <div className={styles.resultsHeader}>
-      <h2>Found {restaurants.length} hotels</h2>
-      <p>Scroll down to see each spot one by one.</p>
-    </div>
+                {activeTab === 'hotels' && (
+                  <div className={styles.resultsContainer}>
+                    <div className={styles.resultsHeader}>
+                      <h2>Found {restaurants.length} hotels</h2>
+                      <p>Scroll down to see each spot one by one.</p>
+                    </div>
 
-    {/* New sticky-scroll layout */}
-    <ScrollingRestaurants restaurants={restaurants} />
-  </div>
-)}
+                    <ScrollingRestaurants restaurants={restaurants} />
+                  </div>
+                )}
+
                 {activeTab === 'dishes' && (
                   <DishBrowser restaurants={restaurants} />
                 )}
@@ -331,18 +365,25 @@ function App() {
                 {activeTab === 'nearMe' && (
                   <NearMePanel restaurants={restaurants} />
                 )}
-{activeTab === 'storeLocator' && (
-  <div
-    id="store-locator-section"          // 👈 important
-    className={styles.mapContainer}
-  >
-    <StoreLocatorMap restaurants={restaurants} />
-  </div>
-)}
+
+                {activeTab === 'storeLocator' && (
+                  <div
+                    id="store-locator-section"
+                    className={styles.mapContainer}
+                  >
+                    <StoreLocatorMap restaurants={restaurants} />
+                  </div>
+                )}
+
+                {activeTab === 'priceCalc' && (
+                  <PriceCalculator restaurants={restaurants} />
+                )}
               </>
             )}
           </div>
         </div>
+      
+
 
         {/* WHY DYNE SECTION */}
         <section id="why-dyne" className={styles.storySection}>
@@ -441,6 +482,7 @@ function App() {
             </video>
           </div>
         </section>
+        <FoodGame/>
 <section id="voice" className={styles.brandBand}>
   <div className={styles.brandBandInner}>
     <div className={styles.brandBandText}>
@@ -453,6 +495,7 @@ function App() {
         and budget-friendly messes into one simple view.
       </p>
     </div>
+   
 
     <div className={styles.brandBandGrid}>
       {/* Card 1 */}
@@ -478,6 +521,7 @@ function App() {
           </p>
         </div>
       </div>
+      
 
       {/* Card 3 */}
       <div className={`${styles.brandCard} ${styles.brandCardWallet}`}>
@@ -494,15 +538,21 @@ function App() {
   </div>
 </section>
 
+
+
+
         {/* BIG ORANGE CTA STRIP */}
         <section className={styles.brandCta}>
           <div className={styles.brandCtaInner}>
             <h2 className={styles.brandCtaTitle}>
               Ready to make “Where do we eat?” effortless?
             </h2>
-            <button className={styles.brandCtaButton}>
-              Get Dyne for your campus
-            </button>
+           <button
+  className={styles.brandCtaButton}
+  onClick={handleCampusEmail}
+>
+  Get Dyne for your campus
+</button>
           </div>
         </section>
 
@@ -555,6 +605,7 @@ function App() {
             <div className={styles.footerLogoBox}>D</div>
             <span className={styles.footerLogoText}>Dyne</span>
           </div>
+         
 
           <nav className={styles.footerNav}>
             <a href="#nearby">Nearby spots</a>
@@ -571,22 +622,23 @@ function App() {
         </div>
       </footer>
 
-      {showAuth && (
-        <AuthPanel
-          isDark={isDark}
-          onUserLogin={user => {
-            setCurrentUser(user);
-            setCurrentAdmin(null);
-            setShowAuth(false);
-          }}
-          onAdminLogin={admin => {
-            setCurrentAdmin(admin);
-            setCurrentUser(null);
-            setShowAuth(false);
-          }}
-          onClose={() => setShowAuth(false)}
-        />
-      )}
+    {showAuth && (
+  <AuthPanel
+    isDark={isDark}
+    onUserLogin={user => {
+      console.log('LOGIN USER FROM BACKEND:', user);  // 🔍 debug
+      setCurrentUser(user);
+      setCurrentAdmin(null);
+      setShowAuth(false);
+    }}
+    onAdminLogin={admin => {
+      setCurrentAdmin(admin);
+      setCurrentUser(null);
+      setShowAuth(false);
+    }}
+    onClose={() => setShowAuth(false)}
+  />
+)}
     </div>
   );
 }

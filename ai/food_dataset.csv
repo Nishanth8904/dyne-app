@@ -1,0 +1,501 @@
+Age,Food_Type,Dish,Spice_Level,Rating
+72,Dessert,Idli,Spicy,2
+55,Vegetarian,Idli,Medium,5
+52,Fast Food,Salad,Medium,2
+28,Non-Veg,Pasta,Medium,5
+8,Non-Veg,Biryani,Low,1
+46,Healthy,Pasta,Spicy,4
+16,Dessert,Pasta,Spicy,1
+62,Vegetarian,Biryani,Spicy,2
+63,Non-Veg,Pizza,Spicy,5
+62,Healthy,Burger,Spicy,2
+56,Healthy,Burger,Medium,5
+73,Fast Food,Idli,Low,1
+52,Vegetarian,Idli,Spicy,4
+10,Healthy,Pizza,Spicy,4
+61,Fast Food,Dosa,Low,2
+66,Fast Food,Burger,Medium,2
+77,Fast Food,Biryani,Spicy,4
+66,Healthy,Salad,Medium,5
+54,Non-Veg,Idli,Medium,2
+10,Healthy,Burger,Spicy,2
+16,Dessert,Pizza,Low,2
+39,Vegetarian,Dosa,Spicy,2
+36,Non-Veg,Biryani,Spicy,4
+32,Fast Food,Pasta,Low,1
+79,Dessert,Pasta,Medium,3
+32,Fast Food,Biryani,Medium,5
+9,Dessert,Pasta,Medium,2
+56,Dessert,Idli,Spicy,3
+57,Vegetarian,Burger,Spicy,1
+62,Dessert,Burger,Spicy,1
+75,Vegetarian,Dosa,Spicy,1
+24,Non-Veg,Dosa,Medium,2
+10,Fast Food,Idli,Medium,3
+44,Fast Food,Pizza,Medium,1
+66,Vegetarian,Salad,Spicy,5
+70,Vegetarian,Biryani,Low,1
+52,Dessert,Dosa,Spicy,5
+43,Healthy,Idli,Medium,1
+30,Healthy,Dosa,Medium,4
+66,Non-Veg,Salad,Spicy,1
+70,Fast Food,Pasta,Medium,4
+9,Non-Veg,Pasta,Spicy,2
+24,Non-Veg,Salad,Spicy,5
+11,Fast Food,Dosa,Spicy,4
+57,Vegetarian,Idli,Low,3
+11,Healthy,Burger,Medium,1
+71,Fast Food,Pasta,Medium,3
+74,Fast Food,Burger,Medium,3
+32,Healthy,Burger,Low,3
+30,Healthy,Dosa,Low,3
+36,Healthy,Pasta,Spicy,5
+21,Vegetarian,Burger,Low,2
+33,Vegetarian,Pizza,Low,1
+50,Fast Food,Biryani,Medium,4
+31,Dessert,Burger,Spicy,1
+14,Non-Veg,Burger,Medium,5
+31,Fast Food,Dosa,Low,3
+16,Non-Veg,Biryani,Medium,4
+66,Dessert,Salad,Medium,4
+76,Healthy,Burger,Spicy,1
+40,Fast Food,Pizza,Spicy,1
+18,Healthy,Biryani,Low,3
+78,Dessert,Salad,Spicy,2
+38,Non-Veg,Idli,Low,2
+9,Healthy,Pasta,Medium,4
+58,Healthy,Dosa,Spicy,3
+49,Vegetarian,Burger,Spicy,1
+42,Dessert,Burger,Low,5
+25,Dessert,Pasta,Spicy,2
+72,Non-Veg,Biryani,Medium,5
+71,Fast Food,Dosa,Low,3
+78,Dessert,Idli,Medium,2
+61,Dessert,Idli,Spicy,4
+27,Fast Food,Biryani,Spicy,4
+36,Healthy,Biryani,Spicy,1
+77,Non-Veg,Pasta,Medium,3
+61,Non-Veg,Pizza,Spicy,1
+45,Fast Food,Idli,Spicy,1
+32,Non-Veg,Burger,Spicy,2
+45,Non-Veg,Biryani,Medium,1
+47,Fast Food,Pizza,Low,2
+28,Healthy,Biryani,Medium,2
+64,Vegetarian,Biryani,Low,3
+38,Dessert,Dosa,Low,3
+49,Fast Food,Dosa,Spicy,2
+58,Fast Food,Salad,Low,3
+43,Vegetarian,Pizza,Low,5
+52,Dessert,Burger,Spicy,4
+14,Healthy,Dosa,Medium,4
+43,Non-Veg,Idli,Medium,1
+56,Dessert,Burger,Spicy,3
+53,Non-Veg,Idli,Medium,4
+11,Healthy,Salad,Low,5
+50,Healthy,Dosa,Low,2
+28,Non-Veg,Burger,Low,5
+73,Fast Food,Pasta,Spicy,2
+41,Vegetarian,Biryani,Spicy,3
+39,Dessert,Pizza,Spicy,1
+59,Vegetarian,Pizza,Spicy,1
+9,Non-Veg,Biryani,Medium,1
+10,Fast Food,Pasta,Spicy,5
+78,Non-Veg,Pasta,Medium,1
+44,Healthy,Idli,Medium,3
+57,Healthy,Pasta,Medium,3
+51,Fast Food,Burger,Spicy,5
+51,Fast Food,Pasta,Spicy,2
+38,Dessert,Salad,Spicy,4
+52,Fast Food,Pizza,Spicy,1
+61,Dessert,Burger,Medium,5
+11,Non-Veg,Burger,Spicy,1
+77,Fast Food,Biryani,Medium,2
+58,Vegetarian,Burger,Medium,4
+16,Healthy,Pizza,Spicy,3
+57,Healthy,Salad,Spicy,4
+38,Fast Food,Pizza,Low,5
+14,Dessert,Burger,Low,3
+16,Vegetarian,Pasta,Medium,3
+9,Non-Veg,Idli,Low,1
+29,Non-Veg,Pasta,Medium,2
+42,Healthy,Salad,Spicy,2
+71,Fast Food,Pizza,Spicy,3
+68,Fast Food,Dosa,Low,5
+60,Vegetarian,Pasta,Medium,4
+34,Non-Veg,Pasta,Low,1
+29,Fast Food,Pasta,Low,3
+48,Dessert,Burger,Medium,2
+79,Non-Veg,Biryani,Low,1
+42,Fast Food,Biryani,Low,5
+40,Dessert,Burger,Medium,1
+62,Non-Veg,Pasta,Spicy,4
+62,Non-Veg,Idli,Medium,5
+69,Non-Veg,Salad,Medium,5
+25,Vegetarian,Idli,Spicy,5
+35,Vegetarian,Biryani,Medium,2
+40,Vegetarian,Burger,Spicy,3
+58,Fast Food,Dosa,Spicy,4
+67,Vegetarian,Pasta,Spicy,3
+68,Vegetarian,Salad,Spicy,1
+22,Dessert,Dosa,Spicy,3
+53,Fast Food,Biryani,Medium,2
+11,Vegetarian,Idli,Medium,3
+71,Vegetarian,Pasta,Spicy,4
+75,Non-Veg,Biryani,Medium,2
+62,Dessert,Idli,Medium,2
+25,Fast Food,Biryani,Low,3
+48,Non-Veg,Salad,Low,5
+64,Dessert,Biryani,Low,2
+64,Dessert,Dosa,Low,3
+44,Non-Veg,Burger,Spicy,4
+25,Dessert,Dosa,Medium,4
+51,Healthy,Salad,Spicy,4
+65,Vegetarian,Biryani,Low,3
+24,Healthy,Idli,Medium,5
+44,Healthy,Pizza,Low,1
+58,Non-Veg,Dosa,Medium,4
+43,Vegetarian,Idli,Spicy,4
+48,Fast Food,Biryani,Low,3
+28,Non-Veg,Pizza,Spicy,5
+61,Non-Veg,Burger,Low,2
+17,Healthy,Idli,Low,1
+70,Non-Veg,Dosa,Spicy,1
+68,Dessert,Pasta,Low,2
+14,Vegetarian,Burger,Medium,1
+17,Vegetarian,Idli,Spicy,5
+38,Healthy,Burger,Spicy,3
+73,Dessert,Idli,Spicy,4
+62,Fast Food,Idli,Low,4
+50,Non-Veg,Biryani,Spicy,1
+59,Fast Food,Biryani,Spicy,3
+76,Non-Veg,Idli,Medium,4
+25,Fast Food,Salad,Medium,3
+45,Healthy,Salad,Low,5
+31,Vegetarian,Pizza,Spicy,5
+43,Dessert,Biryani,Low,1
+51,Vegetarian,Dosa,Low,4
+26,Healthy,Salad,Medium,5
+70,Vegetarian,Salad,Medium,4
+35,Dessert,Dosa,Low,5
+24,Fast Food,Idli,Low,1
+64,Vegetarian,Dosa,Medium,5
+57,Fast Food,Pasta,Low,1
+57,Healthy,Salad,Low,2
+74,Vegetarian,Idli,Medium,5
+49,Fast Food,Dosa,Low,5
+26,Vegetarian,Dosa,Spicy,2
+13,Non-Veg,Pizza,Spicy,1
+25,Vegetarian,Idli,Low,4
+62,Vegetarian,Burger,Spicy,3
+11,Non-Veg,Idli,Low,2
+35,Dessert,Burger,Medium,1
+17,Vegetarian,Salad,Medium,3
+78,Healthy,Dosa,Low,5
+25,Non-Veg,Biryani,Spicy,4
+51,Fast Food,Burger,Spicy,3
+36,Healthy,Idli,Spicy,2
+42,Non-Veg,Pizza,Medium,4
+74,Vegetarian,Pizza,Spicy,5
+35,Dessert,Biryani,Medium,4
+39,Healthy,Biryani,Medium,3
+18,Dessert,Salad,Spicy,3
+73,Fast Food,Burger,Spicy,2
+18,Fast Food,Idli,Spicy,5
+44,Healthy,Burger,Spicy,2
+59,Healthy,Idli,Medium,4
+58,Vegetarian,Pizza,Medium,4
+55,Dessert,Salad,Low,1
+38,Non-Veg,Biryani,Low,2
+42,Fast Food,Dosa,Spicy,3
+78,Dessert,Burger,Spicy,2
+27,Healthy,Burger,Low,4
+57,Healthy,Salad,Medium,3
+78,Non-Veg,Pizza,Medium,2
+9,Healthy,Pasta,Spicy,3
+68,Fast Food,Pasta,Low,3
+58,Vegetarian,Dosa,Low,4
+64,Fast Food,Pasta,Low,5
+40,Healthy,Idli,Low,1
+13,Healthy,Burger,Spicy,2
+71,Vegetarian,Idli,Medium,4
+35,Vegetarian,Idli,Medium,1
+64,Non-Veg,Idli,Medium,3
+76,Non-Veg,Pizza,Low,2
+8,Non-Veg,Dosa,Spicy,3
+69,Dessert,Dosa,Spicy,3
+71,Non-Veg,Dosa,Medium,1
+8,Dessert,Salad,Spicy,3
+43,Non-Veg,Dosa,Spicy,1
+15,Vegetarian,Biryani,Low,4
+61,Healthy,Pizza,Low,4
+19,Non-Veg,Idli,Low,3
+39,Fast Food,Dosa,Medium,5
+44,Vegetarian,Salad,Spicy,5
+74,Vegetarian,Dosa,Low,3
+9,Fast Food,Pizza,Spicy,3
+36,Vegetarian,Pizza,Spicy,2
+59,Vegetarian,Burger,Medium,4
+17,Fast Food,Pizza,Medium,3
+50,Dessert,Burger,Medium,5
+57,Fast Food,Pizza,Spicy,5
+41,Non-Veg,Dosa,Spicy,2
+57,Fast Food,Biryani,Medium,2
+53,Non-Veg,Salad,Low,1
+60,Fast Food,Idli,Medium,5
+54,Dessert,Biryani,Low,3
+13,Vegetarian,Dosa,Spicy,4
+59,Vegetarian,Idli,Medium,5
+15,Fast Food,Dosa,Low,5
+77,Dessert,Pizza,Medium,5
+22,Dessert,Burger,Medium,1
+79,Healthy,Burger,Medium,4
+64,Vegetarian,Pizza,Spicy,2
+33,Vegetarian,Burger,Medium,4
+17,Fast Food,Dosa,Spicy,1
+79,Fast Food,Idli,Low,3
+10,Fast Food,Salad,Spicy,5
+70,Healthy,Salad,Low,4
+74,Vegetarian,Burger,Medium,3
+70,Healthy,Pasta,Spicy,4
+42,Dessert,Salad,Medium,4
+29,Non-Veg,Salad,Low,2
+37,Vegetarian,Salad,Medium,4
+47,Fast Food,Pasta,Medium,4
+60,Vegetarian,Salad,Low,4
+74,Fast Food,Pasta,Spicy,5
+37,Non-Veg,Pasta,Medium,1
+78,Dessert,Salad,Spicy,4
+34,Dessert,Pizza,Low,1
+30,Non-Veg,Pasta,Low,1
+75,Healthy,Biryani,Medium,4
+24,Vegetarian,Pizza,Spicy,5
+35,Healthy,Dosa,Spicy,3
+24,Fast Food,Pasta,Spicy,3
+53,Non-Veg,Pasta,Low,4
+72,Dessert,Salad,Low,5
+46,Fast Food,Dosa,Medium,3
+79,Non-Veg,Pasta,Low,3
+67,Vegetarian,Idli,Medium,1
+10,Vegetarian,Salad,Low,4
+41,Fast Food,Idli,Low,5
+19,Dessert,Pizza,Low,3
+36,Healthy,Pasta,Medium,2
+46,Vegetarian,Dosa,Spicy,1
+61,Non-Veg,Idli,Medium,5
+72,Dessert,Burger,Medium,1
+36,Healthy,Idli,Low,4
+47,Dessert,Idli,Low,1
+30,Healthy,Idli,Medium,3
+28,Healthy,Pizza,Medium,5
+66,Non-Veg,Salad,Medium,3
+20,Fast Food,Idli,Spicy,2
+29,Healthy,Idli,Low,1
+35,Non-Veg,Pizza,Medium,2
+38,Fast Food,Idli,Low,5
+17,Non-Veg,Biryani,Spicy,2
+17,Dessert,Idli,Spicy,4
+11,Non-Veg,Salad,Low,5
+13,Fast Food,Pasta,Spicy,2
+55,Dessert,Pizza,Low,2
+52,Vegetarian,Pizza,Spicy,4
+64,Fast Food,Salad,Low,4
+8,Fast Food,Pizza,Medium,3
+78,Healthy,Pasta,Low,5
+76,Vegetarian,Pasta,Low,5
+48,Non-Veg,Biryani,Low,5
+40,Fast Food,Pasta,Medium,2
+42,Dessert,Pasta,Medium,4
+39,Vegetarian,Pasta,Low,4
+66,Non-Veg,Biryani,Spicy,4
+60,Fast Food,Burger,Medium,1
+44,Healthy,Pizza,Spicy,4
+13,Dessert,Salad,Low,3
+63,Non-Veg,Salad,Low,1
+42,Healthy,Pizza,Spicy,5
+40,Non-Veg,Salad,Low,3
+64,Fast Food,Pizza,Medium,5
+79,Dessert,Idli,Spicy,2
+79,Vegetarian,Dosa,Medium,4
+65,Vegetarian,Biryani,Spicy,4
+63,Healthy,Pasta,Medium,2
+36,Dessert,Dosa,Medium,2
+67,Fast Food,Biryani,Medium,4
+33,Vegetarian,Burger,Spicy,3
+79,Non-Veg,Idli,Spicy,5
+51,Healthy,Biryani,Low,2
+44,Healthy,Burger,Low,4
+22,Vegetarian,Pasta,Low,1
+11,Fast Food,Biryani,Medium,1
+63,Fast Food,Pasta,Spicy,4
+47,Healthy,Burger,Low,4
+54,Dessert,Pasta,Spicy,5
+34,Dessert,Pizza,Spicy,2
+12,Vegetarian,Pasta,Medium,5
+23,Dessert,Burger,Low,2
+76,Healthy,Pizza,Low,3
+37,Vegetarian,Pasta,Spicy,4
+33,Non-Veg,Salad,Low,5
+32,Dessert,Idli,Medium,2
+26,Fast Food,Dosa,Spicy,4
+20,Healthy,Idli,Low,2
+61,Non-Veg,Burger,Spicy,3
+69,Vegetarian,Idli,Spicy,5
+30,Non-Veg,Idli,Medium,3
+62,Dessert,Idli,Low,3
+73,Dessert,Salad,Low,3
+28,Healthy,Dosa,Spicy,2
+34,Fast Food,Pasta,Medium,2
+25,Fast Food,Pasta,Medium,4
+41,Non-Veg,Biryani,Low,5
+29,Vegetarian,Idli,Spicy,3
+70,Healthy,Salad,Spicy,5
+76,Healthy,Biryani,Spicy,4
+24,Vegetarian,Idli,Low,4
+67,Vegetarian,Dosa,Spicy,5
+67,Fast Food,Pasta,Spicy,4
+36,Fast Food,Dosa,Medium,2
+45,Vegetarian,Biryani,Spicy,1
+27,Healthy,Burger,Low,3
+40,Healthy,Burger,Spicy,5
+31,Vegetarian,Dosa,Medium,4
+17,Vegetarian,Dosa,Low,1
+29,Vegetarian,Idli,Spicy,2
+40,Dessert,Idli,Spicy,2
+26,Dessert,Pizza,Spicy,5
+32,Fast Food,Pasta,Medium,2
+22,Fast Food,Pasta,Spicy,2
+73,Healthy,Burger,Medium,3
+57,Vegetarian,Idli,Spicy,3
+26,Non-Veg,Dosa,Low,4
+68,Healthy,Idli,Spicy,4
+20,Vegetarian,Pasta,Medium,3
+17,Dessert,Pasta,Spicy,4
+48,Fast Food,Idli,Spicy,5
+29,Fast Food,Burger,Medium,3
+70,Healthy,Dosa,Medium,5
+32,Non-Veg,Dosa,Spicy,4
+26,Dessert,Burger,Low,4
+16,Dessert,Salad,Low,4
+29,Healthy,Pizza,Low,4
+76,Healthy,Pasta,Low,5
+21,Fast Food,Salad,Spicy,5
+70,Non-Veg,Pizza,Medium,1
+25,Healthy,Biryani,Low,1
+18,Non-Veg,Dosa,Spicy,1
+13,Vegetarian,Pizza,Low,5
+54,Non-Veg,Dosa,Low,3
+55,Vegetarian,Pasta,Low,1
+75,Dessert,Salad,Medium,3
+72,Vegetarian,Burger,Spicy,1
+42,Healthy,Dosa,Medium,5
+44,Dessert,Salad,Spicy,1
+68,Healthy,Biryani,Spicy,4
+22,Fast Food,Biryani,Spicy,3
+40,Non-Veg,Pasta,Spicy,3
+34,Healthy,Biryani,Medium,2
+55,Dessert,Biryani,Low,5
+15,Non-Veg,Dosa,Medium,4
+29,Non-Veg,Idli,Medium,4
+72,Dessert,Burger,Low,4
+47,Healthy,Biryani,Medium,2
+19,Vegetarian,Dosa,Medium,5
+15,Non-Veg,Pasta,Low,3
+21,Healthy,Pasta,Medium,1
+15,Fast Food,Pasta,Medium,2
+68,Dessert,Biryani,Spicy,5
+46,Non-Veg,Burger,Spicy,1
+13,Healthy,Salad,Spicy,4
+10,Vegetarian,Idli,Low,1
+59,Non-Veg,Salad,Spicy,4
+60,Dessert,Dosa,Spicy,3
+28,Dessert,Dosa,Spicy,1
+36,Healthy,Idli,Low,5
+56,Fast Food,Biryani,Medium,4
+67,Healthy,Salad,Low,3
+12,Non-Veg,Salad,Spicy,1
+15,Dessert,Burger,Medium,3
+71,Dessert,Burger,Medium,3
+23,Dessert,Pizza,Spicy,4
+52,Dessert,Idli,Medium,2
+73,Healthy,Pasta,Medium,2
+25,Fast Food,Idli,Spicy,1
+78,Vegetarian,Pizza,Low,4
+26,Vegetarian,Burger,Spicy,2
+69,Non-Veg,Biryani,Low,1
+76,Dessert,Burger,Medium,3
+8,Non-Veg,Burger,Low,3
+24,Healthy,Biryani,Low,3
+29,Vegetarian,Dosa,Medium,1
+11,Fast Food,Biryani,Spicy,3
+51,Healthy,Pasta,Spicy,5
+39,Dessert,Biryani,Low,1
+19,Fast Food,Dosa,Medium,4
+37,Healthy,Burger,Spicy,1
+21,Vegetarian,Pasta,Low,1
+9,Fast Food,Burger,Medium,5
+43,Fast Food,Pizza,Spicy,3
+62,Non-Veg,Pasta,Spicy,5
+9,Fast Food,Biryani,Low,3
+77,Vegetarian,Idli,Medium,3
+8,Fast Food,Idli,Spicy,3
+53,Vegetarian,Dosa,Low,3
+32,Vegetarian,Dosa,Medium,4
+56,Vegetarian,Biryani,Spicy,5
+30,Dessert,Pasta,Spicy,2
+31,Dessert,Pizza,Spicy,5
+11,Dessert,Salad,Medium,4
+62,Vegetarian,Pizza,Spicy,3
+45,Dessert,Salad,Low,2
+36,Dessert,Dosa,Low,1
+25,Fast Food,Pizza,Spicy,1
+42,Healthy,Idli,Spicy,5
+39,Non-Veg,Dosa,Medium,2
+13,Vegetarian,Pizza,Medium,5
+17,Dessert,Dosa,Medium,5
+78,Fast Food,Biryani,Spicy,3
+9,Fast Food,Idli,Low,4
+13,Non-Veg,Pasta,Low,2
+42,Healthy,Salad,Medium,5
+78,Fast Food,Pizza,Medium,5
+67,Fast Food,Burger,Medium,1
+13,Fast Food,Pasta,Low,2
+51,Vegetarian,Salad,Spicy,2
+10,Healthy,Pasta,Medium,1
+13,Healthy,Salad,Medium,5
+32,Dessert,Idli,Spicy,3
+62,Vegetarian,Biryani,Spicy,4
+55,Non-Veg,Burger,Medium,2
+11,Non-Veg,Salad,Medium,1
+24,Healthy,Pizza,Low,3
+74,Vegetarian,Burger,Low,3
+65,Fast Food,Pasta,Medium,1
+18,Healthy,Idli,Low,2
+61,Dessert,Idli,Spicy,5
+11,Fast Food,Pasta,Spicy,3
+39,Fast Food,Pizza,Medium,4
+50,Non-Veg,Pasta,Spicy,4
+8,Dessert,Pizza,Spicy,4
+22,Dessert,Biryani,Spicy,5
+73,Dessert,Burger,Medium,4
+49,Fast Food,Salad,Medium,1
+57,Vegetarian,Burger,Low,4
+23,Healthy,Pizza,Low,5
+64,Non-Veg,Salad,Spicy,3
+37,Non-Veg,Salad,Medium,5
+53,Dessert,Pasta,Spicy,2
+76,Non-Veg,Salad,Medium,2
+78,Healthy,Dosa,Low,1
+70,Fast Food,Biryani,Spicy,4
+27,Vegetarian,Biryani,Spicy,5
+39,Fast Food,Salad,Spicy,3
+73,Vegetarian,Biryani,Medium,2
+56,Healthy,Pasta,Low,1
+21,Dessert,Dosa,Low,4
+48,Dessert,Pizza,Medium,1
+13,Non-Veg,Pasta,Spicy,2
+18,Non-Veg,Biryani,Spicy,2
+15,Non-Veg,Pizza,Low,2
+74,Healthy,Pizza,Spicy,5
+19,Fast Food,Dosa,Spicy,2
+21,Vegetarian,Idli,Medium,4
+21,Non-Veg,Pizza,Medium,4

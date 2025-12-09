@@ -1,4 +1,5 @@
-import { useState } from 'react';
+// src/components/AdminPanel/AdminPanel.jsx
+import { useState, useMemo } from 'react';
 import styles from './AdminPanel.module.css';
 
 function AdminPanel({ admin, onLogout, reloadRestaurants }) {
@@ -14,7 +15,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
     landmark: '',
     rating: '',
     latitude: '',
-    longitude: ''
+    longitude: '',
   });
 
   const [dishForm, setDishForm] = useState({
@@ -22,10 +23,16 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
     description: '',
     tags: '',
     basePrice: '',
-    restaurantIds: ''
+    restaurantIds: '',
   });
 
-  const adminToken = admin?.token || localStorage.getItem('smartdine_admin_token');
+  // ✅ token from props or from localStorage
+  const adminToken = useMemo(
+    () => admin?.token || localStorage.getItem('smartdine_admin_token'),
+    [admin]
+  );
+
+  const hasValidToken = Boolean(adminToken);
 
   function handleRestaurantChange(e) {
     const { name, value } = e.target;
@@ -41,6 +48,11 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
     e.preventDefault();
     setErrorText('');
     setSuccessText('');
+
+    if (!hasValidToken) {
+      setErrorText('Invalid admin token. Please log in again as admin.');
+      return;
+    }
 
     try {
       const body = {
@@ -59,16 +71,16 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
           : undefined,
         longitude: restaurantForm.longitude
           ? Number(restaurantForm.longitude)
-          : undefined
+          : undefined,
       };
 
       const res = await fetch('http://localhost:3000/api/admin/restaurants', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`
+          Authorization: `Bearer ${adminToken}`,
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
 
       const data = await res.json();
@@ -86,10 +98,11 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
         landmark: '',
         rating: '',
         latitude: '',
-        longitude: ''
+        longitude: '',
       });
       reloadRestaurants();
     } catch (err) {
+      console.error('Add restaurant error', err);
       setErrorText('Network error adding restaurant');
     }
   }
@@ -98,6 +111,11 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
     e.preventDefault();
     setErrorText('');
     setSuccessText('');
+
+    if (!hasValidToken) {
+      setErrorText('Invalid admin token. Please log in again as admin.');
+      return;
+    }
 
     try {
       const restaurantIds = dishForm.restaurantIds
@@ -114,16 +132,16 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
           .map(t => t.trim())
           .filter(Boolean),
         basePrice: dishForm.basePrice ? Number(dishForm.basePrice) : undefined,
-        restaurantIds
+        restaurantIds,
       };
 
       const res = await fetch('http://localhost:3000/api/admin/dishes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`
+          Authorization: `Bearer ${adminToken}`,
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
 
       const data = await res.json();
@@ -138,9 +156,10 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
         description: '',
         tags: '',
         basePrice: '',
-        restaurantIds: ''
+        restaurantIds: '',
       });
     } catch (err) {
+      console.error('Add dish error', err);
       setErrorText('Network error adding dish');
     }
   }
@@ -153,6 +172,11 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
           <p className={styles.adminSubtitle}>
             Logged in as {admin?.email || 'admin'}.
           </p>
+          {!hasValidToken && (
+            <p className={styles.adminError}>
+              Invalid admin token. Please log out and log in again.
+            </p>
+          )}
         </div>
         <button
           type="button"
@@ -210,6 +234,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.cuisine}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="e.g. North Indian, South Indian"
               />
             </label>
             <label className={styles.formLabel}>
@@ -219,6 +244,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.area}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="e.g. Gandhipuram"
               />
             </label>
             <label className={styles.formLabel}>
@@ -228,6 +254,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.landmark}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="Near PSG, above TOVO, etc."
               />
             </label>
           </div>
@@ -240,6 +267,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.avgCostForTwo}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="e.g. 400"
               />
             </label>
             <label className={styles.formLabel}>
@@ -249,6 +277,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.rating}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="e.g. 4.3"
               />
             </label>
             <label className={styles.formLabel}>
@@ -258,6 +287,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.latitude}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="11.02…"
               />
             </label>
             <label className={styles.formLabel}>
@@ -267,6 +297,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
                 value={restaurantForm.longitude}
                 onChange={handleRestaurantChange}
                 className={styles.formInput}
+                placeholder="76.99…"
               />
             </label>
           </div>
@@ -288,6 +319,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
               className={styles.formInput}
             />
           </label>
+
           <label className={styles.formLabel}>
             Description
             <textarea
@@ -298,6 +330,7 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
               rows={3}
             />
           </label>
+
           <label className={styles.formLabel}>
             Tags (comma separated)
             <input
@@ -305,8 +338,10 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
               value={dishForm.tags}
               onChange={handleDishChange}
               className={styles.formInput}
+              placeholder="biryani, veg, budget"
             />
           </label>
+
           <label className={styles.formLabel}>
             Base price
             <input
@@ -314,8 +349,10 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
               value={dishForm.basePrice}
               onChange={handleDishChange}
               className={styles.formInput}
+              placeholder="e.g. 120"
             />
           </label>
+
           <label className={styles.formLabel}>
             Restaurant IDs (comma separated)
             <input
