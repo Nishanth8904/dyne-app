@@ -1,501 +1,494 @@
-Age,Food_Type,Dish,Spice_Level,Rating
-72,Dessert,Idli,Spicy,2
-55,Vegetarian,Idli,Medium,5
-52,Fast Food,Salad,Medium,2
-28,Non-Veg,Pasta,Medium,5
-8,Non-Veg,Biryani,Low,1
-46,Healthy,Pasta,Spicy,4
-16,Dessert,Pasta,Spicy,1
-62,Vegetarian,Biryani,Spicy,2
-63,Non-Veg,Pizza,Spicy,5
-62,Healthy,Burger,Spicy,2
-56,Healthy,Burger,Medium,5
-73,Fast Food,Idli,Low,1
-52,Vegetarian,Idli,Spicy,4
-10,Healthy,Pizza,Spicy,4
-61,Fast Food,Dosa,Low,2
-66,Fast Food,Burger,Medium,2
-77,Fast Food,Biryani,Spicy,4
-66,Healthy,Salad,Medium,5
-54,Non-Veg,Idli,Medium,2
-10,Healthy,Burger,Spicy,2
-16,Dessert,Pizza,Low,2
-39,Vegetarian,Dosa,Spicy,2
-36,Non-Veg,Biryani,Spicy,4
-32,Fast Food,Pasta,Low,1
-79,Dessert,Pasta,Medium,3
-32,Fast Food,Biryani,Medium,5
-9,Dessert,Pasta,Medium,2
-56,Dessert,Idli,Spicy,3
-57,Vegetarian,Burger,Spicy,1
-62,Dessert,Burger,Spicy,1
-75,Vegetarian,Dosa,Spicy,1
-24,Non-Veg,Dosa,Medium,2
-10,Fast Food,Idli,Medium,3
-44,Fast Food,Pizza,Medium,1
-66,Vegetarian,Salad,Spicy,5
-70,Vegetarian,Biryani,Low,1
-52,Dessert,Dosa,Spicy,5
-43,Healthy,Idli,Medium,1
-30,Healthy,Dosa,Medium,4
-66,Non-Veg,Salad,Spicy,1
-70,Fast Food,Pasta,Medium,4
-9,Non-Veg,Pasta,Spicy,2
-24,Non-Veg,Salad,Spicy,5
-11,Fast Food,Dosa,Spicy,4
-57,Vegetarian,Idli,Low,3
-11,Healthy,Burger,Medium,1
-71,Fast Food,Pasta,Medium,3
-74,Fast Food,Burger,Medium,3
-32,Healthy,Burger,Low,3
-30,Healthy,Dosa,Low,3
-36,Healthy,Pasta,Spicy,5
-21,Vegetarian,Burger,Low,2
-33,Vegetarian,Pizza,Low,1
-50,Fast Food,Biryani,Medium,4
-31,Dessert,Burger,Spicy,1
-14,Non-Veg,Burger,Medium,5
-31,Fast Food,Dosa,Low,3
-16,Non-Veg,Biryani,Medium,4
-66,Dessert,Salad,Medium,4
-76,Healthy,Burger,Spicy,1
-40,Fast Food,Pizza,Spicy,1
-18,Healthy,Biryani,Low,3
-78,Dessert,Salad,Spicy,2
-38,Non-Veg,Idli,Low,2
-9,Healthy,Pasta,Medium,4
-58,Healthy,Dosa,Spicy,3
-49,Vegetarian,Burger,Spicy,1
-42,Dessert,Burger,Low,5
-25,Dessert,Pasta,Spicy,2
-72,Non-Veg,Biryani,Medium,5
-71,Fast Food,Dosa,Low,3
-78,Dessert,Idli,Medium,2
-61,Dessert,Idli,Spicy,4
-27,Fast Food,Biryani,Spicy,4
-36,Healthy,Biryani,Spicy,1
-77,Non-Veg,Pasta,Medium,3
-61,Non-Veg,Pizza,Spicy,1
-45,Fast Food,Idli,Spicy,1
-32,Non-Veg,Burger,Spicy,2
-45,Non-Veg,Biryani,Medium,1
-47,Fast Food,Pizza,Low,2
-28,Healthy,Biryani,Medium,2
-64,Vegetarian,Biryani,Low,3
-38,Dessert,Dosa,Low,3
-49,Fast Food,Dosa,Spicy,2
-58,Fast Food,Salad,Low,3
-43,Vegetarian,Pizza,Low,5
-52,Dessert,Burger,Spicy,4
-14,Healthy,Dosa,Medium,4
-43,Non-Veg,Idli,Medium,1
-56,Dessert,Burger,Spicy,3
-53,Non-Veg,Idli,Medium,4
-11,Healthy,Salad,Low,5
-50,Healthy,Dosa,Low,2
-28,Non-Veg,Burger,Low,5
-73,Fast Food,Pasta,Spicy,2
-41,Vegetarian,Biryani,Spicy,3
-39,Dessert,Pizza,Spicy,1
-59,Vegetarian,Pizza,Spicy,1
-9,Non-Veg,Biryani,Medium,1
-10,Fast Food,Pasta,Spicy,5
-78,Non-Veg,Pasta,Medium,1
-44,Healthy,Idli,Medium,3
-57,Healthy,Pasta,Medium,3
-51,Fast Food,Burger,Spicy,5
-51,Fast Food,Pasta,Spicy,2
-38,Dessert,Salad,Spicy,4
-52,Fast Food,Pizza,Spicy,1
-61,Dessert,Burger,Medium,5
-11,Non-Veg,Burger,Spicy,1
-77,Fast Food,Biryani,Medium,2
-58,Vegetarian,Burger,Medium,4
-16,Healthy,Pizza,Spicy,3
-57,Healthy,Salad,Spicy,4
-38,Fast Food,Pizza,Low,5
-14,Dessert,Burger,Low,3
-16,Vegetarian,Pasta,Medium,3
-9,Non-Veg,Idli,Low,1
-29,Non-Veg,Pasta,Medium,2
-42,Healthy,Salad,Spicy,2
-71,Fast Food,Pizza,Spicy,3
-68,Fast Food,Dosa,Low,5
-60,Vegetarian,Pasta,Medium,4
-34,Non-Veg,Pasta,Low,1
-29,Fast Food,Pasta,Low,3
-48,Dessert,Burger,Medium,2
-79,Non-Veg,Biryani,Low,1
-42,Fast Food,Biryani,Low,5
-40,Dessert,Burger,Medium,1
-62,Non-Veg,Pasta,Spicy,4
-62,Non-Veg,Idli,Medium,5
-69,Non-Veg,Salad,Medium,5
-25,Vegetarian,Idli,Spicy,5
-35,Vegetarian,Biryani,Medium,2
-40,Vegetarian,Burger,Spicy,3
-58,Fast Food,Dosa,Spicy,4
-67,Vegetarian,Pasta,Spicy,3
-68,Vegetarian,Salad,Spicy,1
-22,Dessert,Dosa,Spicy,3
-53,Fast Food,Biryani,Medium,2
-11,Vegetarian,Idli,Medium,3
-71,Vegetarian,Pasta,Spicy,4
-75,Non-Veg,Biryani,Medium,2
-62,Dessert,Idli,Medium,2
-25,Fast Food,Biryani,Low,3
-48,Non-Veg,Salad,Low,5
-64,Dessert,Biryani,Low,2
-64,Dessert,Dosa,Low,3
-44,Non-Veg,Burger,Spicy,4
-25,Dessert,Dosa,Medium,4
-51,Healthy,Salad,Spicy,4
-65,Vegetarian,Biryani,Low,3
-24,Healthy,Idli,Medium,5
-44,Healthy,Pizza,Low,1
-58,Non-Veg,Dosa,Medium,4
-43,Vegetarian,Idli,Spicy,4
-48,Fast Food,Biryani,Low,3
-28,Non-Veg,Pizza,Spicy,5
-61,Non-Veg,Burger,Low,2
-17,Healthy,Idli,Low,1
-70,Non-Veg,Dosa,Spicy,1
-68,Dessert,Pasta,Low,2
-14,Vegetarian,Burger,Medium,1
-17,Vegetarian,Idli,Spicy,5
-38,Healthy,Burger,Spicy,3
-73,Dessert,Idli,Spicy,4
-62,Fast Food,Idli,Low,4
-50,Non-Veg,Biryani,Spicy,1
-59,Fast Food,Biryani,Spicy,3
-76,Non-Veg,Idli,Medium,4
-25,Fast Food,Salad,Medium,3
-45,Healthy,Salad,Low,5
-31,Vegetarian,Pizza,Spicy,5
-43,Dessert,Biryani,Low,1
-51,Vegetarian,Dosa,Low,4
-26,Healthy,Salad,Medium,5
-70,Vegetarian,Salad,Medium,4
-35,Dessert,Dosa,Low,5
-24,Fast Food,Idli,Low,1
-64,Vegetarian,Dosa,Medium,5
-57,Fast Food,Pasta,Low,1
-57,Healthy,Salad,Low,2
-74,Vegetarian,Idli,Medium,5
-49,Fast Food,Dosa,Low,5
-26,Vegetarian,Dosa,Spicy,2
-13,Non-Veg,Pizza,Spicy,1
-25,Vegetarian,Idli,Low,4
-62,Vegetarian,Burger,Spicy,3
-11,Non-Veg,Idli,Low,2
-35,Dessert,Burger,Medium,1
-17,Vegetarian,Salad,Medium,3
-78,Healthy,Dosa,Low,5
-25,Non-Veg,Biryani,Spicy,4
-51,Fast Food,Burger,Spicy,3
-36,Healthy,Idli,Spicy,2
-42,Non-Veg,Pizza,Medium,4
-74,Vegetarian,Pizza,Spicy,5
-35,Dessert,Biryani,Medium,4
-39,Healthy,Biryani,Medium,3
-18,Dessert,Salad,Spicy,3
-73,Fast Food,Burger,Spicy,2
-18,Fast Food,Idli,Spicy,5
-44,Healthy,Burger,Spicy,2
-59,Healthy,Idli,Medium,4
-58,Vegetarian,Pizza,Medium,4
-55,Dessert,Salad,Low,1
-38,Non-Veg,Biryani,Low,2
-42,Fast Food,Dosa,Spicy,3
-78,Dessert,Burger,Spicy,2
-27,Healthy,Burger,Low,4
-57,Healthy,Salad,Medium,3
-78,Non-Veg,Pizza,Medium,2
-9,Healthy,Pasta,Spicy,3
-68,Fast Food,Pasta,Low,3
-58,Vegetarian,Dosa,Low,4
-64,Fast Food,Pasta,Low,5
-40,Healthy,Idli,Low,1
-13,Healthy,Burger,Spicy,2
-71,Vegetarian,Idli,Medium,4
-35,Vegetarian,Idli,Medium,1
-64,Non-Veg,Idli,Medium,3
-76,Non-Veg,Pizza,Low,2
-8,Non-Veg,Dosa,Spicy,3
-69,Dessert,Dosa,Spicy,3
-71,Non-Veg,Dosa,Medium,1
-8,Dessert,Salad,Spicy,3
-43,Non-Veg,Dosa,Spicy,1
-15,Vegetarian,Biryani,Low,4
-61,Healthy,Pizza,Low,4
-19,Non-Veg,Idli,Low,3
-39,Fast Food,Dosa,Medium,5
-44,Vegetarian,Salad,Spicy,5
-74,Vegetarian,Dosa,Low,3
-9,Fast Food,Pizza,Spicy,3
-36,Vegetarian,Pizza,Spicy,2
-59,Vegetarian,Burger,Medium,4
-17,Fast Food,Pizza,Medium,3
-50,Dessert,Burger,Medium,5
-57,Fast Food,Pizza,Spicy,5
-41,Non-Veg,Dosa,Spicy,2
-57,Fast Food,Biryani,Medium,2
-53,Non-Veg,Salad,Low,1
-60,Fast Food,Idli,Medium,5
-54,Dessert,Biryani,Low,3
-13,Vegetarian,Dosa,Spicy,4
-59,Vegetarian,Idli,Medium,5
-15,Fast Food,Dosa,Low,5
-77,Dessert,Pizza,Medium,5
-22,Dessert,Burger,Medium,1
-79,Healthy,Burger,Medium,4
-64,Vegetarian,Pizza,Spicy,2
-33,Vegetarian,Burger,Medium,4
-17,Fast Food,Dosa,Spicy,1
-79,Fast Food,Idli,Low,3
-10,Fast Food,Salad,Spicy,5
-70,Healthy,Salad,Low,4
-74,Vegetarian,Burger,Medium,3
-70,Healthy,Pasta,Spicy,4
-42,Dessert,Salad,Medium,4
-29,Non-Veg,Salad,Low,2
-37,Vegetarian,Salad,Medium,4
-47,Fast Food,Pasta,Medium,4
-60,Vegetarian,Salad,Low,4
-74,Fast Food,Pasta,Spicy,5
-37,Non-Veg,Pasta,Medium,1
-78,Dessert,Salad,Spicy,4
-34,Dessert,Pizza,Low,1
-30,Non-Veg,Pasta,Low,1
-75,Healthy,Biryani,Medium,4
-24,Vegetarian,Pizza,Spicy,5
-35,Healthy,Dosa,Spicy,3
-24,Fast Food,Pasta,Spicy,3
-53,Non-Veg,Pasta,Low,4
-72,Dessert,Salad,Low,5
-46,Fast Food,Dosa,Medium,3
-79,Non-Veg,Pasta,Low,3
-67,Vegetarian,Idli,Medium,1
-10,Vegetarian,Salad,Low,4
-41,Fast Food,Idli,Low,5
-19,Dessert,Pizza,Low,3
-36,Healthy,Pasta,Medium,2
-46,Vegetarian,Dosa,Spicy,1
-61,Non-Veg,Idli,Medium,5
-72,Dessert,Burger,Medium,1
-36,Healthy,Idli,Low,4
-47,Dessert,Idli,Low,1
-30,Healthy,Idli,Medium,3
-28,Healthy,Pizza,Medium,5
-66,Non-Veg,Salad,Medium,3
-20,Fast Food,Idli,Spicy,2
-29,Healthy,Idli,Low,1
-35,Non-Veg,Pizza,Medium,2
-38,Fast Food,Idli,Low,5
-17,Non-Veg,Biryani,Spicy,2
-17,Dessert,Idli,Spicy,4
-11,Non-Veg,Salad,Low,5
-13,Fast Food,Pasta,Spicy,2
-55,Dessert,Pizza,Low,2
-52,Vegetarian,Pizza,Spicy,4
-64,Fast Food,Salad,Low,4
-8,Fast Food,Pizza,Medium,3
-78,Healthy,Pasta,Low,5
-76,Vegetarian,Pasta,Low,5
-48,Non-Veg,Biryani,Low,5
-40,Fast Food,Pasta,Medium,2
-42,Dessert,Pasta,Medium,4
-39,Vegetarian,Pasta,Low,4
-66,Non-Veg,Biryani,Spicy,4
-60,Fast Food,Burger,Medium,1
-44,Healthy,Pizza,Spicy,4
-13,Dessert,Salad,Low,3
-63,Non-Veg,Salad,Low,1
-42,Healthy,Pizza,Spicy,5
-40,Non-Veg,Salad,Low,3
-64,Fast Food,Pizza,Medium,5
-79,Dessert,Idli,Spicy,2
-79,Vegetarian,Dosa,Medium,4
-65,Vegetarian,Biryani,Spicy,4
-63,Healthy,Pasta,Medium,2
-36,Dessert,Dosa,Medium,2
-67,Fast Food,Biryani,Medium,4
-33,Vegetarian,Burger,Spicy,3
-79,Non-Veg,Idli,Spicy,5
-51,Healthy,Biryani,Low,2
-44,Healthy,Burger,Low,4
-22,Vegetarian,Pasta,Low,1
-11,Fast Food,Biryani,Medium,1
-63,Fast Food,Pasta,Spicy,4
-47,Healthy,Burger,Low,4
-54,Dessert,Pasta,Spicy,5
-34,Dessert,Pizza,Spicy,2
-12,Vegetarian,Pasta,Medium,5
-23,Dessert,Burger,Low,2
-76,Healthy,Pizza,Low,3
-37,Vegetarian,Pasta,Spicy,4
-33,Non-Veg,Salad,Low,5
-32,Dessert,Idli,Medium,2
-26,Fast Food,Dosa,Spicy,4
-20,Healthy,Idli,Low,2
-61,Non-Veg,Burger,Spicy,3
-69,Vegetarian,Idli,Spicy,5
-30,Non-Veg,Idli,Medium,3
-62,Dessert,Idli,Low,3
-73,Dessert,Salad,Low,3
-28,Healthy,Dosa,Spicy,2
-34,Fast Food,Pasta,Medium,2
-25,Fast Food,Pasta,Medium,4
-41,Non-Veg,Biryani,Low,5
-29,Vegetarian,Idli,Spicy,3
-70,Healthy,Salad,Spicy,5
-76,Healthy,Biryani,Spicy,4
-24,Vegetarian,Idli,Low,4
-67,Vegetarian,Dosa,Spicy,5
-67,Fast Food,Pasta,Spicy,4
-36,Fast Food,Dosa,Medium,2
-45,Vegetarian,Biryani,Spicy,1
-27,Healthy,Burger,Low,3
-40,Healthy,Burger,Spicy,5
-31,Vegetarian,Dosa,Medium,4
-17,Vegetarian,Dosa,Low,1
-29,Vegetarian,Idli,Spicy,2
-40,Dessert,Idli,Spicy,2
-26,Dessert,Pizza,Spicy,5
-32,Fast Food,Pasta,Medium,2
-22,Fast Food,Pasta,Spicy,2
-73,Healthy,Burger,Medium,3
-57,Vegetarian,Idli,Spicy,3
-26,Non-Veg,Dosa,Low,4
-68,Healthy,Idli,Spicy,4
-20,Vegetarian,Pasta,Medium,3
-17,Dessert,Pasta,Spicy,4
-48,Fast Food,Idli,Spicy,5
-29,Fast Food,Burger,Medium,3
-70,Healthy,Dosa,Medium,5
-32,Non-Veg,Dosa,Spicy,4
-26,Dessert,Burger,Low,4
-16,Dessert,Salad,Low,4
-29,Healthy,Pizza,Low,4
-76,Healthy,Pasta,Low,5
-21,Fast Food,Salad,Spicy,5
-70,Non-Veg,Pizza,Medium,1
-25,Healthy,Biryani,Low,1
-18,Non-Veg,Dosa,Spicy,1
-13,Vegetarian,Pizza,Low,5
-54,Non-Veg,Dosa,Low,3
-55,Vegetarian,Pasta,Low,1
-75,Dessert,Salad,Medium,3
-72,Vegetarian,Burger,Spicy,1
-42,Healthy,Dosa,Medium,5
-44,Dessert,Salad,Spicy,1
-68,Healthy,Biryani,Spicy,4
-22,Fast Food,Biryani,Spicy,3
-40,Non-Veg,Pasta,Spicy,3
-34,Healthy,Biryani,Medium,2
-55,Dessert,Biryani,Low,5
-15,Non-Veg,Dosa,Medium,4
-29,Non-Veg,Idli,Medium,4
-72,Dessert,Burger,Low,4
-47,Healthy,Biryani,Medium,2
-19,Vegetarian,Dosa,Medium,5
-15,Non-Veg,Pasta,Low,3
-21,Healthy,Pasta,Medium,1
-15,Fast Food,Pasta,Medium,2
-68,Dessert,Biryani,Spicy,5
-46,Non-Veg,Burger,Spicy,1
-13,Healthy,Salad,Spicy,4
-10,Vegetarian,Idli,Low,1
-59,Non-Veg,Salad,Spicy,4
-60,Dessert,Dosa,Spicy,3
-28,Dessert,Dosa,Spicy,1
-36,Healthy,Idli,Low,5
-56,Fast Food,Biryani,Medium,4
-67,Healthy,Salad,Low,3
-12,Non-Veg,Salad,Spicy,1
-15,Dessert,Burger,Medium,3
-71,Dessert,Burger,Medium,3
-23,Dessert,Pizza,Spicy,4
-52,Dessert,Idli,Medium,2
-73,Healthy,Pasta,Medium,2
-25,Fast Food,Idli,Spicy,1
-78,Vegetarian,Pizza,Low,4
-26,Vegetarian,Burger,Spicy,2
-69,Non-Veg,Biryani,Low,1
-76,Dessert,Burger,Medium,3
-8,Non-Veg,Burger,Low,3
-24,Healthy,Biryani,Low,3
-29,Vegetarian,Dosa,Medium,1
-11,Fast Food,Biryani,Spicy,3
-51,Healthy,Pasta,Spicy,5
-39,Dessert,Biryani,Low,1
-19,Fast Food,Dosa,Medium,4
-37,Healthy,Burger,Spicy,1
-21,Vegetarian,Pasta,Low,1
-9,Fast Food,Burger,Medium,5
-43,Fast Food,Pizza,Spicy,3
-62,Non-Veg,Pasta,Spicy,5
-9,Fast Food,Biryani,Low,3
-77,Vegetarian,Idli,Medium,3
-8,Fast Food,Idli,Spicy,3
-53,Vegetarian,Dosa,Low,3
-32,Vegetarian,Dosa,Medium,4
-56,Vegetarian,Biryani,Spicy,5
-30,Dessert,Pasta,Spicy,2
-31,Dessert,Pizza,Spicy,5
-11,Dessert,Salad,Medium,4
-62,Vegetarian,Pizza,Spicy,3
-45,Dessert,Salad,Low,2
-36,Dessert,Dosa,Low,1
-25,Fast Food,Pizza,Spicy,1
-42,Healthy,Idli,Spicy,5
-39,Non-Veg,Dosa,Medium,2
-13,Vegetarian,Pizza,Medium,5
-17,Dessert,Dosa,Medium,5
-78,Fast Food,Biryani,Spicy,3
-9,Fast Food,Idli,Low,4
-13,Non-Veg,Pasta,Low,2
-42,Healthy,Salad,Medium,5
-78,Fast Food,Pizza,Medium,5
-67,Fast Food,Burger,Medium,1
-13,Fast Food,Pasta,Low,2
-51,Vegetarian,Salad,Spicy,2
-10,Healthy,Pasta,Medium,1
-13,Healthy,Salad,Medium,5
-32,Dessert,Idli,Spicy,3
-62,Vegetarian,Biryani,Spicy,4
-55,Non-Veg,Burger,Medium,2
-11,Non-Veg,Salad,Medium,1
-24,Healthy,Pizza,Low,3
-74,Vegetarian,Burger,Low,3
-65,Fast Food,Pasta,Medium,1
-18,Healthy,Idli,Low,2
-61,Dessert,Idli,Spicy,5
-11,Fast Food,Pasta,Spicy,3
-39,Fast Food,Pizza,Medium,4
-50,Non-Veg,Pasta,Spicy,4
-8,Dessert,Pizza,Spicy,4
-22,Dessert,Biryani,Spicy,5
-73,Dessert,Burger,Medium,4
-49,Fast Food,Salad,Medium,1
-57,Vegetarian,Burger,Low,4
-23,Healthy,Pizza,Low,5
-64,Non-Veg,Salad,Spicy,3
-37,Non-Veg,Salad,Medium,5
-53,Dessert,Pasta,Spicy,2
-76,Non-Veg,Salad,Medium,2
-78,Healthy,Dosa,Low,1
-70,Fast Food,Biryani,Spicy,4
-27,Vegetarian,Biryani,Spicy,5
-39,Fast Food,Salad,Spicy,3
-73,Vegetarian,Biryani,Medium,2
-56,Healthy,Pasta,Low,1
-21,Dessert,Dosa,Low,4
-48,Dessert,Pizza,Medium,1
-13,Non-Veg,Pasta,Spicy,2
-18,Non-Veg,Biryani,Spicy,2
-15,Non-Veg,Pizza,Low,2
-74,Healthy,Pizza,Spicy,5
-19,Fast Food,Dosa,Spicy,2
-21,Vegetarian,Idli,Medium,4
-21,Non-Veg,Pizza,Medium,4
+Age,Food_Type,Dish,Spice_Level,Time,Rating
+32,Veg Meals,Curd Rice,Low,Afternoon,4
+32,Pizza,Chicken Pizza,Low,Evening,5
+72,Pizza,Cheese Pizza,Low,Evening,4
+52,Pizza,Chicken Pizza,Spicy,Night,2
+32,Breakfast,Poori,Spicy,Morning,4
+28,Biryani,Veg Biryani,Spicy,Afternoon,4
+32,Dessert,Cake,Low,Night,4
+56,Dessert,Brownie,Low,Evening,5
+62,Dessert,Brownie,Low,Night,3
+34,Biryani,Mutton Biryani,Medium,Night,5
+23,Shawarma,Paneer Shawarma,Low,Evening,4
+53,Veg Meals,Veg Meals,Low,Afternoon,4
+23,Shawarma,Chicken Shawarma,Spicy,Evening,2
+72,Breakfast,Poori,Medium,Morning,2
+72,Shawarma,Chicken Shawarma,Medium,Evening,2
+35,Shawarma,Paneer Shawarma,Medium,Evening,4
+61,Veg Meals,Curd Rice,Low,Afternoon,4
+53,Veg Meals,Veg Meals,Spicy,Afternoon,5
+67,Pizza,Cheese Pizza,Low,Night,5
+10,Dessert,Cake,Low,Evening,2
+33,Shawarma,Paneer Shawarma,Spicy,Evening,4
+59,Breakfast,Pongal,Medium,Morning,4
+64,Shawarma,Chicken Shawarma,Medium,Night,4
+53,Dessert,Brownie,Low,Night,2
+65,Biryani,Mutton Biryani,Spicy,Afternoon,4
+15,Dessert,Ice Cream,Low,Evening,3
+19,Dessert,Brownie,Low,Evening,3
+40,Veg Meals,Veg Meals,Spicy,Afternoon,3
+71,Veg Meals,Sambar Rice,Medium,Afternoon,4
+51,Dessert,Cake,Low,Evening,4
+17,Breakfast,Vada,Medium,Morning,3
+66,Veg Meals,Curd Rice,Medium,Afternoon,4
+17,Breakfast,Poori,Medium,Morning,4
+19,Biryani,Chicken Biryani,Spicy,Afternoon,3
+61,Veg Meals,Veg Meals,Low,Afternoon,2
+20,Breakfast,Poori,Medium,Morning,2
+65,Pizza,Chicken Pizza,Low,Evening,4
+70,Dessert,Ice Cream,Low,Night,5
+54,Breakfast,Pongal,Spicy,Morning,5
+73,Veg Meals,Veg Meals,Spicy,Afternoon,4
+42,Pizza,Veg Pizza,Low,Night,2
+60,Veg Meals,Curd Rice,Medium,Afternoon,4
+37,Veg Meals,Sambar Rice,Spicy,Afternoon,4
+20,Breakfast,Poori,Medium,Morning,2
+40,Dessert,Brownie,Low,Evening,4
+53,Shawarma,Chicken Shawarma,Medium,Evening,4
+59,Shawarma,Paneer Shawarma,Medium,Night,2
+65,Biryani,Chicken Biryani,Low,Night,4
+31,Veg Meals,Veg Meals,Low,Afternoon,3
+18,Shawarma,Paneer Shawarma,Medium,Night,2
+73,Biryani,Mutton Biryani,Medium,Night,5
+70,Biryani,Veg Biryani,Medium,Afternoon,3
+65,Dessert,Cake,Low,Night,5
+36,Breakfast,Dosa,Medium,Morning,3
+13,Veg Meals,Veg Meals,Spicy,Afternoon,5
+40,Dessert,Cake,Low,Evening,5
+51,Biryani,Chicken Biryani,Spicy,Afternoon,2
+45,Veg Meals,Veg Meals,Low,Afternoon,4
+29,Biryani,Mutton Biryani,Spicy,Night,2
+16,Biryani,Chicken Biryani,Low,Afternoon,5
+68,Dessert,Brownie,Low,Night,2
+14,Breakfast,Dosa,Low,Morning,4
+21,Pizza,Veg Pizza,Medium,Evening,5
+28,Veg Meals,Curd Rice,Low,Afternoon,5
+66,Breakfast,Poori,Low,Morning,2
+70,Veg Meals,Sambar Rice,Spicy,Afternoon,5
+53,Dessert,Cake,Low,Evening,2
+21,Breakfast,Pongal,Low,Morning,2
+18,Pizza,Veg Pizza,Low,Night,4
+67,Breakfast,Dosa,Low,Morning,2
+73,Pizza,Cheese Pizza,Spicy,Night,5
+40,Breakfast,Dosa,Medium,Morning,2
+72,Dessert,Ice Cream,Low,Evening,2
+43,Veg Meals,Sambar Rice,Low,Afternoon,2
+73,Pizza,Cheese Pizza,Spicy,Night,5
+45,Pizza,Cheese Pizza,Low,Evening,2
+12,Biryani,Mutton Biryani,Spicy,Afternoon,2
+68,Veg Meals,Veg Meals,Spicy,Afternoon,3
+34,Veg Meals,Veg Meals,Spicy,Afternoon,4
+57,Veg Meals,Sambar Rice,Spicy,Afternoon,3
+16,Breakfast,Idli,Spicy,Morning,5
+72,Veg Meals,Curd Rice,Medium,Afternoon,5
+34,Shawarma,Paneer Shawarma,Medium,Evening,4
+15,Dessert,Ice Cream,Low,Evening,4
+60,Dessert,Cake,Low,Evening,3
+11,Shawarma,Chicken Shawarma,Low,Night,3
+42,Pizza,Chicken Pizza,Spicy,Evening,2
+63,Dessert,Cake,Low,Night,4
+65,Breakfast,Pongal,Medium,Morning,5
+15,Dessert,Ice Cream,Low,Evening,5
+14,Pizza,Chicken Pizza,Medium,Evening,3
+43,Dessert,Ice Cream,Low,Evening,4
+58,Biryani,Mutton Biryani,Spicy,Night,2
+10,Breakfast,Pongal,Low,Morning,4
+25,Dessert,Brownie,Low,Night,4
+24,Veg Meals,Sambar Rice,Low,Afternoon,4
+30,Pizza,Chicken Pizza,Spicy,Night,2
+70,Dessert,Ice Cream,Low,Evening,5
+59,Breakfast,Poori,Medium,Morning,4
+15,Shawarma,Chicken Shawarma,Medium,Evening,2
+69,Veg Meals,Veg Meals,Medium,Afternoon,3
+62,Pizza,Cheese Pizza,Medium,Evening,2
+22,Breakfast,Dosa,Spicy,Morning,2
+19,Shawarma,Chicken Shawarma,Medium,Evening,2
+14,Breakfast,Vada,Medium,Morning,3
+56,Breakfast,Poori,Spicy,Morning,3
+21,Shawarma,Paneer Shawarma,Low,Night,3
+43,Veg Meals,Sambar Rice,Low,Afternoon,2
+33,Pizza,Chicken Pizza,Spicy,Evening,4
+40,Veg Meals,Sambar Rice,Medium,Afternoon,2
+60,Breakfast,Poori,Low,Morning,2
+22,Dessert,Brownie,Low,Night,5
+12,Pizza,Veg Pizza,Spicy,Evening,3
+48,Pizza,Cheese Pizza,Spicy,Night,5
+35,Shawarma,Chicken Shawarma,Medium,Night,4
+12,Veg Meals,Sambar Rice,Spicy,Afternoon,2
+70,Biryani,Chicken Biryani,Spicy,Night,4
+34,Veg Meals,Veg Meals,Low,Afternoon,4
+34,Veg Meals,Sambar Rice,Medium,Afternoon,5
+46,Biryani,Veg Biryani,Medium,Night,5
+20,Veg Meals,Veg Meals,Medium,Afternoon,5
+44,Veg Meals,Sambar Rice,Spicy,Afternoon,2
+35,Breakfast,Pongal,Medium,Morning,2
+13,Biryani,Chicken Biryani,Medium,Night,4
+64,Shawarma,Chicken Shawarma,Low,Night,3
+67,Veg Meals,Veg Meals,Low,Afternoon,4
+44,Biryani,Veg Biryani,Low,Night,5
+33,Biryani,Veg Biryani,Spicy,Afternoon,4
+15,Biryani,Chicken Biryani,Low,Night,4
+59,Pizza,Veg Pizza,Medium,Evening,4
+49,Dessert,Brownie,Low,Evening,5
+12,Pizza,Chicken Pizza,Low,Night,4
+52,Dessert,Cake,Low,Evening,5
+50,Shawarma,Paneer Shawarma,Medium,Night,5
+32,Shawarma,Paneer Shawarma,Low,Night,5
+23,Breakfast,Pongal,Low,Morning,4
+24,Breakfast,Poori,Low,Morning,4
+58,Pizza,Veg Pizza,Medium,Night,5
+57,Biryani,Chicken Biryani,Medium,Afternoon,2
+21,Shawarma,Paneer Shawarma,Low,Evening,2
+37,Veg Meals,Curd Rice,Spicy,Afternoon,4
+36,Veg Meals,Veg Meals,Medium,Afternoon,2
+72,Veg Meals,Veg Meals,Spicy,Afternoon,4
+52,Breakfast,Idli,Spicy,Morning,2
+30,Biryani,Mutton Biryani,Spicy,Night,5
+72,Shawarma,Paneer Shawarma,Low,Night,2
+63,Veg Meals,Curd Rice,Medium,Afternoon,4
+53,Dessert,Ice Cream,Low,Evening,4
+64,Pizza,Cheese Pizza,Low,Evening,2
+37,Pizza,Cheese Pizza,Spicy,Night,2
+33,Breakfast,Dosa,Low,Morning,3
+47,Breakfast,Idli,Low,Morning,5
+54,Breakfast,Idli,Medium,Morning,3
+66,Shawarma,Paneer Shawarma,Spicy,Night,5
+52,Breakfast,Idli,Low,Morning,2
+21,Pizza,Cheese Pizza,Medium,Evening,2
+65,Dessert,Ice Cream,Low,Night,5
+59,Breakfast,Pongal,Spicy,Morning,4
+30,Veg Meals,Curd Rice,Medium,Afternoon,3
+47,Biryani,Veg Biryani,Spicy,Night,5
+51,Biryani,Mutton Biryani,Medium,Night,3
+60,Dessert,Brownie,Low,Evening,5
+18,Shawarma,Paneer Shawarma,Spicy,Night,5
+16,Shawarma,Paneer Shawarma,Spicy,Evening,5
+53,Shawarma,Paneer Shawarma,Medium,Evening,4
+73,Pizza,Veg Pizza,Medium,Night,2
+51,Breakfast,Vada,Low,Morning,4
+65,Biryani,Mutton Biryani,Low,Night,3
+34,Pizza,Cheese Pizza,Medium,Evening,2
+54,Shawarma,Chicken Shawarma,Low,Evening,2
+53,Breakfast,Pongal,Low,Morning,4
+34,Veg Meals,Veg Meals,Low,Afternoon,3
+20,Shawarma,Paneer Shawarma,Low,Evening,3
+38,Biryani,Mutton Biryani,Spicy,Night,4
+12,Biryani,Chicken Biryani,Medium,Night,5
+16,Dessert,Cake,Low,Night,3
+54,Veg Meals,Sambar Rice,Medium,Afternoon,2
+45,Breakfast,Poori,Spicy,Morning,4
+48,Shawarma,Chicken Shawarma,Low,Night,2
+47,Biryani,Veg Biryani,Medium,Night,5
+42,Shawarma,Paneer Shawarma,Low,Night,2
+64,Dessert,Brownie,Low,Night,4
+51,Pizza,Veg Pizza,Spicy,Night,2
+69,Biryani,Chicken Biryani,Spicy,Afternoon,5
+62,Veg Meals,Veg Meals,Spicy,Afternoon,5
+34,Shawarma,Paneer Shawarma,Spicy,Evening,4
+48,Veg Meals,Sambar Rice,Low,Afternoon,4
+17,Pizza,Chicken Pizza,Low,Night,3
+65,Biryani,Mutton Biryani,Medium,Afternoon,2
+35,Veg Meals,Veg Meals,Low,Afternoon,3
+49,Breakfast,Dosa,Low,Morning,2
+63,Shawarma,Chicken Shawarma,Low,Evening,5
+43,Dessert,Brownie,Low,Night,4
+52,Breakfast,Vada,Spicy,Morning,2
+65,Shawarma,Paneer Shawarma,Spicy,Night,2
+14,Shawarma,Chicken Shawarma,Low,Night,4
+48,Biryani,Veg Biryani,Low,Night,4
+70,Breakfast,Vada,Medium,Morning,4
+41,Breakfast,Pongal,Spicy,Morning,3
+74,Dessert,Cake,Low,Night,2
+21,Breakfast,Vada,Medium,Morning,5
+46,Veg Meals,Veg Meals,Low,Afternoon,4
+49,Breakfast,Pongal,Low,Morning,3
+58,Shawarma,Paneer Shawarma,Low,Evening,5
+22,Pizza,Cheese Pizza,Spicy,Evening,5
+42,Shawarma,Paneer Shawarma,Low,Evening,3
+12,Breakfast,Pongal,Spicy,Morning,3
+65,Shawarma,Paneer Shawarma,Spicy,Evening,2
+72,Dessert,Ice Cream,Low,Evening,4
+13,Veg Meals,Veg Meals,Medium,Afternoon,4
+11,Dessert,Brownie,Low,Evening,5
+14,Breakfast,Dosa,Spicy,Morning,3
+39,Biryani,Chicken Biryani,Spicy,Afternoon,5
+63,Veg Meals,Veg Meals,Medium,Afternoon,5
+21,Shawarma,Paneer Shawarma,Low,Evening,4
+51,Veg Meals,Veg Meals,Medium,Afternoon,4
+64,Shawarma,Paneer Shawarma,Low,Night,2
+12,Shawarma,Paneer Shawarma,Low,Night,4
+71,Dessert,Cake,Low,Night,4
+59,Pizza,Cheese Pizza,Spicy,Night,4
+15,Breakfast,Pongal,Low,Morning,3
+12,Dessert,Cake,Low,Night,5
+51,Breakfast,Vada,Spicy,Morning,4
+21,Dessert,Brownie,Low,Evening,4
+17,Biryani,Chicken Biryani,Medium,Night,4
+29,Biryani,Chicken Biryani,Low,Afternoon,2
+19,Breakfast,Idli,Spicy,Morning,2
+36,Dessert,Brownie,Low,Night,2
+64,Veg Meals,Sambar Rice,Low,Afternoon,3
+39,Veg Meals,Veg Meals,Medium,Afternoon,5
+27,Pizza,Cheese Pizza,Medium,Night,4
+30,Dessert,Ice Cream,Low,Evening,2
+44,Veg Meals,Sambar Rice,Spicy,Afternoon,5
+48,Breakfast,Idli,Medium,Morning,5
+28,Shawarma,Paneer Shawarma,Spicy,Night,5
+36,Shawarma,Paneer Shawarma,Low,Evening,2
+59,Pizza,Cheese Pizza,Spicy,Night,4
+35,Dessert,Cake,Low,Night,3
+54,Dessert,Cake,Low,Evening,3
+38,Dessert,Brownie,Low,Evening,5
+67,Breakfast,Dosa,Spicy,Morning,2
+18,Dessert,Cake,Low,Evening,3
+47,Biryani,Veg Biryani,Low,Night,4
+35,Breakfast,Vada,Low,Morning,2
+34,Biryani,Mutton Biryani,Medium,Afternoon,3
+56,Veg Meals,Veg Meals,Medium,Afternoon,3
+74,Biryani,Mutton Biryani,Medium,Night,2
+12,Shawarma,Chicken Shawarma,Spicy,Evening,2
+64,Biryani,Mutton Biryani,Low,Night,2
+57,Veg Meals,Veg Meals,Low,Afternoon,4
+36,Shawarma,Chicken Shawarma,Spicy,Night,2
+16,Dessert,Cake,Low,Evening,2
+63,Shawarma,Chicken Shawarma,Low,Night,5
+12,Dessert,Ice Cream,Low,Night,5
+18,Dessert,Brownie,Low,Night,4
+24,Breakfast,Vada,Low,Morning,2
+32,Breakfast,Poori,Medium,Morning,5
+67,Dessert,Brownie,Low,Night,3
+18,Breakfast,Idli,Medium,Morning,5
+63,Dessert,Cake,Low,Evening,5
+14,Veg Meals,Curd Rice,Low,Afternoon,5
+47,Veg Meals,Curd Rice,Low,Afternoon,4
+66,Dessert,Brownie,Low,Night,3
+25,Shawarma,Paneer Shawarma,Spicy,Evening,5
+30,Veg Meals,Curd Rice,Spicy,Afternoon,4
+69,Veg Meals,Veg Meals,Low,Afternoon,3
+40,Pizza,Chicken Pizza,Medium,Night,3
+68,Dessert,Cake,Low,Night,3
+41,Pizza,Cheese Pizza,Medium,Night,4
+20,Pizza,Veg Pizza,Spicy,Evening,4
+56,Veg Meals,Curd Rice,Spicy,Afternoon,5
+22,Breakfast,Poori,Medium,Morning,5
+56,Dessert,Ice Cream,Low,Evening,4
+72,Biryani,Mutton Biryani,Medium,Afternoon,5
+30,Shawarma,Chicken Shawarma,Low,Evening,4
+25,Dessert,Ice Cream,Low,Evening,4
+30,Shawarma,Chicken Shawarma,Medium,Night,2
+28,Veg Meals,Curd Rice,Low,Afternoon,2
+37,Dessert,Cake,Low,Evening,3
+66,Breakfast,Idli,Medium,Morning,3
+19,Pizza,Chicken Pizza,Medium,Evening,2
+31,Dessert,Cake,Low,Night,5
+15,Biryani,Veg Biryani,Spicy,Night,4
+64,Breakfast,Idli,Medium,Morning,5
+61,Biryani,Veg Biryani,Spicy,Afternoon,2
+65,Dessert,Cake,Low,Night,5
+39,Pizza,Chicken Pizza,Low,Evening,3
+70,Veg Meals,Curd Rice,Spicy,Afternoon,3
+27,Veg Meals,Curd Rice,Low,Afternoon,3
+17,Breakfast,Poori,Low,Morning,5
+49,Shawarma,Chicken Shawarma,Medium,Evening,3
+23,Breakfast,Vada,Spicy,Morning,5
+28,Veg Meals,Veg Meals,Medium,Afternoon,4
+44,Biryani,Veg Biryani,Medium,Afternoon,4
+67,Veg Meals,Curd Rice,Low,Afternoon,4
+51,Breakfast,Poori,Low,Morning,2
+16,Shawarma,Chicken Shawarma,Spicy,Evening,5
+70,Veg Meals,Sambar Rice,Spicy,Afternoon,3
+11,Dessert,Brownie,Low,Night,2
+68,Breakfast,Pongal,Low,Morning,4
+29,Shawarma,Chicken Shawarma,Low,Night,2
+18,Biryani,Mutton Biryani,Spicy,Afternoon,4
+16,Breakfast,Idli,Spicy,Morning,4
+13,Dessert,Ice Cream,Low,Night,4
+71,Shawarma,Chicken Shawarma,Spicy,Night,3
+36,Biryani,Veg Biryani,Medium,Night,2
+60,Biryani,Mutton Biryani,Medium,Afternoon,3
+65,Pizza,Veg Pizza,Spicy,Evening,4
+69,Pizza,Veg Pizza,Low,Evening,2
+41,Dessert,Brownie,Low,Evening,4
+47,Biryani,Veg Biryani,Medium,Afternoon,5
+68,Shawarma,Paneer Shawarma,Low,Evening,5
+63,Biryani,Veg Biryani,Medium,Afternoon,3
+74,Shawarma,Chicken Shawarma,Low,Evening,2
+28,Veg Meals,Veg Meals,Medium,Afternoon,2
+67,Biryani,Mutton Biryani,Spicy,Night,5
+16,Dessert,Ice Cream,Low,Night,3
+42,Breakfast,Vada,Spicy,Morning,4
+68,Shawarma,Chicken Shawarma,Low,Night,4
+70,Pizza,Chicken Pizza,Low,Evening,5
+28,Veg Meals,Sambar Rice,Spicy,Afternoon,4
+44,Biryani,Veg Biryani,Medium,Night,4
+51,Veg Meals,Curd Rice,Low,Afternoon,5
+48,Dessert,Ice Cream,Low,Evening,4
+65,Dessert,Brownie,Low,Night,3
+13,Pizza,Cheese Pizza,Low,Night,5
+33,Pizza,Veg Pizza,Medium,Evening,2
+21,Veg Meals,Sambar Rice,Spicy,Afternoon,5
+52,Breakfast,Dosa,Spicy,Morning,5
+61,Veg Meals,Veg Meals,Medium,Afternoon,5
+27,Breakfast,Idli,Medium,Morning,2
+40,Breakfast,Vada,Medium,Morning,4
+58,Breakfast,Pongal,Spicy,Morning,3
+47,Veg Meals,Veg Meals,Spicy,Afternoon,5
+37,Pizza,Chicken Pizza,Low,Night,2
+19,Dessert,Brownie,Low,Evening,4
+33,Biryani,Veg Biryani,Low,Afternoon,3
+47,Dessert,Ice Cream,Low,Evening,3
+44,Breakfast,Poori,Low,Morning,4
+59,Veg Meals,Sambar Rice,Medium,Afternoon,3
+15,Breakfast,Idli,Low,Morning,2
+20,Veg Meals,Curd Rice,Medium,Afternoon,5
+52,Biryani,Chicken Biryani,Medium,Night,5
+31,Dessert,Ice Cream,Low,Night,3
+51,Shawarma,Paneer Shawarma,Low,Evening,2
+32,Pizza,Chicken Pizza,Spicy,Night,2
+33,Veg Meals,Curd Rice,Low,Afternoon,2
+16,Shawarma,Chicken Shawarma,Medium,Evening,5
+61,Dessert,Ice Cream,Low,Evening,5
+54,Veg Meals,Veg Meals,Medium,Afternoon,3
+53,Shawarma,Paneer Shawarma,Spicy,Night,4
+31,Pizza,Veg Pizza,Spicy,Night,5
+44,Breakfast,Dosa,Spicy,Morning,5
+16,Shawarma,Chicken Shawarma,Medium,Night,2
+65,Pizza,Chicken Pizza,Medium,Evening,2
+49,Breakfast,Dosa,Low,Morning,4
+74,Dessert,Brownie,Low,Night,3
+13,Breakfast,Idli,Low,Morning,2
+28,Veg Meals,Sambar Rice,Spicy,Afternoon,2
+27,Veg Meals,Sambar Rice,Medium,Afternoon,3
+74,Veg Meals,Veg Meals,Low,Afternoon,4
+64,Shawarma,Paneer Shawarma,Spicy,Night,3
+16,Dessert,Cake,Low,Evening,2
+18,Dessert,Cake,Low,Night,2
+59,Biryani,Mutton Biryani,Spicy,Night,5
+48,Shawarma,Paneer Shawarma,Low,Evening,5
+40,Biryani,Mutton Biryani,Medium,Night,3
+29,Biryani,Chicken Biryani,Spicy,Night,4
+58,Veg Meals,Veg Meals,Low,Afternoon,3
+67,Biryani,Mutton Biryani,Low,Night,3
+38,Breakfast,Poori,Medium,Morning,2
+34,Biryani,Chicken Biryani,Medium,Night,3
+73,Veg Meals,Curd Rice,Low,Afternoon,5
+44,Pizza,Veg Pizza,Low,Evening,3
+36,Pizza,Chicken Pizza,Low,Night,3
+37,Pizza,Veg Pizza,Low,Night,3
+25,Shawarma,Chicken Shawarma,Low,Night,5
+21,Shawarma,Chicken Shawarma,Medium,Night,5
+18,Shawarma,Chicken Shawarma,Low,Night,2
+41,Dessert,Cake,Low,Night,3
+63,Veg Meals,Sambar Rice,Low,Afternoon,3
+41,Veg Meals,Curd Rice,Medium,Afternoon,4
+28,Shawarma,Chicken Shawarma,Medium,Night,5
+41,Breakfast,Poori,Spicy,Morning,4
+52,Dessert,Cake,Low,Evening,2
+60,Veg Meals,Sambar Rice,Low,Afternoon,4
+39,Pizza,Cheese Pizza,Spicy,Evening,2
+23,Pizza,Chicken Pizza,Medium,Evening,4
+54,Veg Meals,Curd Rice,Low,Afternoon,4
+43,Breakfast,Pongal,Spicy,Morning,5
+43,Veg Meals,Veg Meals,Spicy,Afternoon,3
+58,Dessert,Ice Cream,Low,Night,2
+22,Shawarma,Paneer Shawarma,Spicy,Night,2
+51,Breakfast,Dosa,Medium,Morning,2
+72,Shawarma,Chicken Shawarma,Spicy,Night,2
+65,Breakfast,Vada,Low,Morning,3
+10,Veg Meals,Sambar Rice,Low,Afternoon,2
+37,Pizza,Cheese Pizza,Spicy,Evening,5
+14,Biryani,Chicken Biryani,Spicy,Night,4
+17,Shawarma,Paneer Shawarma,Medium,Night,3
+57,Shawarma,Chicken Shawarma,Medium,Evening,3
+15,Pizza,Chicken Pizza,Medium,Night,2
+22,Shawarma,Chicken Shawarma,Spicy,Evening,3
+52,Shawarma,Chicken Shawarma,Spicy,Evening,3
+34,Pizza,Veg Pizza,Medium,Night,2
+44,Veg Meals,Veg Meals,Spicy,Afternoon,4
+55,Shawarma,Chicken Shawarma,Medium,Evening,4
+52,Breakfast,Pongal,Low,Morning,4
+60,Pizza,Veg Pizza,Low,Night,2
+11,Pizza,Cheese Pizza,Low,Evening,3
+33,Shawarma,Paneer Shawarma,Low,Night,4
+70,Breakfast,Vada,Medium,Morning,4
+11,Biryani,Veg Biryani,Medium,Afternoon,4
+61,Shawarma,Chicken Shawarma,Low,Evening,4
+26,Pizza,Chicken Pizza,Low,Evening,3
+37,Shawarma,Chicken Shawarma,Medium,Evening,3
+55,Dessert,Cake,Low,Evening,4
+72,Breakfast,Dosa,Medium,Morning,4
+66,Veg Meals,Sambar Rice,Spicy,Afternoon,3
+20,Pizza,Veg Pizza,Medium,Evening,3
+26,Dessert,Brownie,Low,Night,2
+32,Biryani,Chicken Biryani,Spicy,Afternoon,5
+19,Shawarma,Paneer Shawarma,Low,Evening,3
+36,Pizza,Chicken Pizza,Medium,Evening,4
+68,Shawarma,Paneer Shawarma,Low,Evening,4
+46,Shawarma,Paneer Shawarma,Medium,Night,2
+52,Breakfast,Vada,Medium,Morning,4
+38,Dessert,Cake,Low,Night,4
+33,Dessert,Brownie,Low,Night,5
+33,Pizza,Cheese Pizza,Spicy,Evening,4
+65,Breakfast,Idli,Medium,Morning,5
+68,Biryani,Chicken Biryani,Low,Afternoon,3
+10,Breakfast,Idli,Low,Morning,4
+29,Pizza,Cheese Pizza,Low,Night,2
+58,Breakfast,Idli,Low,Morning,4
+11,Biryani,Mutton Biryani,Spicy,Night,5
+66,Breakfast,Pongal,Low,Morning,3
+57,Biryani,Chicken Biryani,Low,Afternoon,4
+14,Pizza,Veg Pizza,Spicy,Night,2
+35,Pizza,Chicken Pizza,Medium,Evening,3
+26,Breakfast,Vada,Medium,Morning,5
+66,Shawarma,Paneer Shawarma,Medium,Evening,5
+34,Breakfast,Idli,Low,Morning,5
+19,Dessert,Cake,Low,Evening,4
+34,Pizza,Veg Pizza,Spicy,Night,4
+18,Dessert,Ice Cream,Low,Night,3
+53,Biryani,Veg Biryani,Medium,Night,3
+20,Shawarma,Paneer Shawarma,Low,Evening,2
+34,Dessert,Cake,Low,Night,5
+34,Veg Meals,Veg Meals,Low,Afternoon,4
+46,Dessert,Cake,Low,Evening,5
+32,Breakfast,Pongal,Low,Morning,4
+55,Dessert,Cake,Low,Evening,3
+36,Veg Meals,Veg Meals,Medium,Afternoon,3
+39,Breakfast,Idli,Spicy,Morning,2
+14,Biryani,Mutton Biryani,Medium,Afternoon,2
+44,Breakfast,Pongal,Medium,Morning,3
+73,Dessert,Cake,Low,Evening,2
+17,Biryani,Veg Biryani,Medium,Afternoon,5
+32,Biryani,Mutton Biryani,Low,Afternoon,2
+30,Pizza,Cheese Pizza,Low,Night,5
+38,Pizza,Veg Pizza,Spicy,Night,3
+25,Dessert,Ice Cream,Low,Night,3
+56,Biryani,Veg Biryani,Spicy,Afternoon,4
+11,Pizza,Veg Pizza,Spicy,Evening,3
+20,Breakfast,Vada,Low,Morning,2
+62,Dessert,Cake,Low,Evening,5
+59,Dessert,Brownie,Low,Night,2
+50,Pizza,Cheese Pizza,Medium,Night,2
+73,Dessert,Ice Cream,Low,Night,3
+36,Veg Meals,Sambar Rice,Low,Afternoon,5
+41,Biryani,Veg Biryani,Medium,Night,5
+61,Dessert,Ice Cream,Low,Evening,2
+39,Breakfast,Poori,Medium,Morning,2
+11,Dessert,Ice Cream,Low,Evening,5
+51,Breakfast,Dosa,Low,Morning,4
+51,Biryani,Chicken Biryani,Spicy,Night,5
+38,Veg Meals,Veg Meals,Low,Afternoon,5
+23,Veg Meals,Veg Meals,Medium,Afternoon,3
+23,Biryani,Mutton Biryani,Spicy,Night,5
+24,Pizza,Veg Pizza,Low,Evening,4
+63,Shawarma,Paneer Shawarma,Low,Evening,4
+22,Breakfast,Pongal,Spicy,Morning,3
+41,Shawarma,Paneer Shawarma,Low,Night,4
+49,Veg Meals,Curd Rice,Spicy,Afternoon,4
+50,Pizza,Veg Pizza,Medium,Night,5
+62,Veg Meals,Sambar Rice,Medium,Afternoon,5
+11,Veg Meals,Sambar Rice,Medium,Afternoon,5
+58,Dessert,Ice Cream,Low,Evening,3
+72,Shawarma,Chicken Shawarma,Low,Evening,3
+64,Dessert,Ice Cream,Low,Night,3
+63,Shawarma,Chicken Shawarma,Medium,Night,2
+21,Breakfast,Pongal,Spicy,Morning,3

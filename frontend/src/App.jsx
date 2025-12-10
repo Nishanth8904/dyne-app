@@ -21,7 +21,7 @@ import AIAssistant from './components/AIAssistant/AIAssistant';
 import ScrollingRestaurants from './components/ScrollingRestaurants/ScrollingRestaurants';
 import AiRecommendations from './components/AiRecommendations/AiRecommendations';
 import PriceCalculator from './components/PriceCalculator/PriceCalculator';
-
+import AdminAnalytics from './components/AdminAnalytics/AdminAnalytics';
 import FoodGame from './components/FoodGame/FoodGame';
 
 const API_BASE = 'http://localhost:3000';
@@ -258,12 +258,14 @@ function App() {
     
        
 
-
+{currentAdmin && (
+  <AdminAnalytics restaurants={restaurants} admin={currentAdmin} />
+        )}
       {/* MAIN CONTENT – everything scrollable / linked from footer */}
       <main id="nearby" className={styles.mainLayout}>
         {/* AI recommendations based on logged-in user's age */}
         <AiRecommendations currentUser={currentUser} />
-
+      
         {/* Nearby header */}
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Nearby spots</h1>
@@ -442,13 +444,13 @@ function App() {
         {/* SPLIT HERO – VOICE SEARCH / CAMPUS LIFE */}
         <section id="voice" className={styles.splitHero}>
           <div className={styles.splitText}>
-            <p className={styles.splitEyebrow}>Made for campus life</p>
+            <p className={styles.storyEyebrow}>Made for campus life</p>
             <h2 className={styles.splitTitle}>
               We&apos;re on a mission to make eating
               <br />
               feel effortless for students.
             </h2>
-            <p className={styles.splitBody}>
+            <p className={styles.storyText}>
               Dyne understands late-night cravings, tight budgets and
               exam weeks. We surface spots that match your mood, your
               wallet, and your walkable radius around campus.

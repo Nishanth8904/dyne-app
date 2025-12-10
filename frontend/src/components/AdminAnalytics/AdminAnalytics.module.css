@@ -1,0 +1,281 @@
+
+
+.wrap {
+  margin: 32px auto 24px;
+  padding: 20px 18px 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: radial-gradient(circle at 0 0, #111827, #020617 55%);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  max-width: 1080px;
+}
+
+.headerRow {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(34, 197, 94, 0.14);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.badge svg {
+  opacity: 0.9;
+}
+
+.title {
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* KPI cards row */
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.kpiCard {
+  padding: 12px 12px 14px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 0 0, #020617, #020617 55%);
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kpiIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.kpiIcon svg {
+  width: 16px;
+  height: 16px;
+  color: #4ade80;
+}
+
+.kpiLabel {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.kpiValue {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* distribution cards */
+
+.distributionRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.distCard {
+  padding: 12px 12px 14px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 0 0, #020617, #020617 55%);
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+}
+
+.distHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.distHeader svg {
+  width: 14px;
+  height: 14px;
+  color: #60a5fa;
+}
+
+.distList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.distItem {}
+
+.distLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #e5e7eb;
+  margin-bottom: 2px;
+}
+
+.distCount {
+  font-variant-numeric: tabular-nums;
+  color: #9ca3af;
+}
+
+/* bar */
+
+.barTrack {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22c55e, #4ade80);
+}
+
+.barFillAlt {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #fb923c, #f97316);
+}
+
+/* Top rated card */
+
+.topCard {
+  padding: 12px 12px 14px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 0 0, #020617, #020617 55%);
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+}
+
+.topHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.topHeader svg {
+  width: 14px;
+  height: 14px;
+  color: #fbbf24;
+}
+
+.topList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.topItem:last-child {
+  border-bottom: none;
+}
+
+.topName {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #f9fafb;
+}
+
+.topMeta {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.topRating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(24, 24, 27, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  color: #facc15;
+}
+
+.topRating svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* states */
+
+.emptyText {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .kpiRow {
+    grid-template-columns: 1fr;
+  }
+
+  .distributionRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 16px 14px 18px;
+    border-radius: 20px;
+  }
+}

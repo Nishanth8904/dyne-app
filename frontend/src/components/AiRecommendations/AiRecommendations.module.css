@@ -94,12 +94,14 @@
 
 .controlsRow {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;          /* 👈 allow 3 items to wrap on small screens */
+  gap: 12px;
   margin: 8px 0 10px;
 }
 
 .controlGroup {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 120px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -115,7 +117,7 @@
 .pillSelectWrapper {
   display: inline-flex;
   align-items: center;
-  width: 100%;                     /* 👈 make it stretch nicely */
+  width: 100%;
   padding: 2px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.8);
@@ -130,11 +132,11 @@
   font-size: 12px;
   padding: 4px 12px;
   border-radius: 999px;
-  width: 100%;                     /* 👈 click anywhere in the pill */
+  width: 100%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  cursor: pointer;                 /* 👈 show it’s interactive */
+  cursor: pointer;
 }
 
 /* List & rating bars */
@@ -157,7 +159,7 @@
   position: relative;
   background: radial-gradient(circle at 0 0, #22c55e22, #020617);
   box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3),
-    0 0 28px rgba(34, 197, 94, 0.25); /* 🌈 glow around top dish */
+    0 0 28px rgba(34, 197, 94, 0.25);
 }
 
 .listItemHeader {
@@ -213,4 +215,21 @@
 .emptyText {
   font-size: 12px;
   opacity: 0.7;
+}
+
+.loginText {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* small screens */
+@media (max-width: 640px) {
+  .controlsRow {
+    gap: 8px;
+  }
+
+  .controlGroup {
+    flex: 1 1 100%;
+  }
 }

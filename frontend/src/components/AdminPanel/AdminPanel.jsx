@@ -1,4 +1,4 @@
-// src/components/AdminPanel/AdminPanel.jsx
+
 import { useState, useMemo } from 'react';
 import styles from './AdminPanel.module.css';
 
@@ -26,7 +26,6 @@ function AdminPanel({ admin, onLogout, reloadRestaurants }) {
     restaurantIds: '',
   });
 
-  // ✅ token from props or from localStorage
   const adminToken = useMemo(
     () => admin?.token || localStorage.getItem('smartdine_admin_token'),
     [admin]

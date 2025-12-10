@@ -16,26 +16,75 @@ const FOOD_MAP = {
   pizza: "Fast Food",
   pasta: "Fast Food",
   shawarma: "Non-Veg",
-  "vegmeals": "Vegetarian",
+  vegmeals: "Vegetarian",
   "veg meals": "Vegetarian",
   cake: "Dessert",
   brownie: "Dessert",
   icecream: "Dessert",
   "ice cream": "Dessert",
+
+  // from your data
+  sambarrice: "Vegetarian",
+  vada: "Vegetarian",
+};
+
+const norm = (val) => (val ?? "").toString().trim().toLowerCase();
+
+/** Detect current time of day for default TIME filter
+ * We keep the INTERNAL values as:
+ *  "Morning" | "Afternoon" | "Evening" | "Night"
+ * because that's what your backend probably expects.
+ */
+const getInitialPreferredTime = () => {
+  const hour = new Date().getHours();
+
+  if (hour >= 5 && hour < 11) return "Morning";    // Breakfast
+  if (hour >= 11 && hour < 16) return "Afternoon"; // Lunch
+  if (hour >= 16 && hour < 22) return "Evening";   // Dinner
+  return "Night";                                  // Late night
 };
 
 function normalizeFoodType(item) {
-  const rawName = item.Dish || "";
-  const key = rawName.toLowerCase().replace(/\s+/g, ""); // "Veg Meals" -> "vegmeals"
+  const dishRaw = item.Dish || "";
+  const dish = dishRaw.toLowerCase();
+  const key = dish.replace(/\s+/g, "");
+  const foodTypeCol = (item.Food_Type || "").toLowerCase().replace(/\s+/g, "");
 
-  if (FOOD_MAP[key]) {
-    return FOOD_MAP[key];              // ✅ our mapping wins
+  // 🔹 Strong rules based on words in the dish name
+  if (dish.includes("chicken") || dish.includes("mutton")) {
+    return "Non-Veg";
   }
 
-  // fall back to backend value if we don't know this dish
-  return item.Food_Type || "Other";
-}
+  if (dish.includes("paneer") || dish.includes("veg")) {
+    return "Vegetarian";
+  }
 
+  // 🔹 Use our manual map (Dosa, Idli, Cake, etc.)
+  if (FOOD_MAP[key]) {
+    return FOOD_MAP[key];
+  }
+
+  // 🔹 Fall back: some categories imply veg/non-veg
+  if (foodTypeCol === "shawarma" || foodTypeCol === "biryani") {
+    // if dish didn't say veg/paneer/chicken/mutton above, treat as Non-Veg by default
+    return "Non-Veg";
+  }
+
+  if (foodTypeCol === "vegmeals" || foodTypeCol === "breakfast") {
+    return "Vegetarian";
+  }
+
+  if (foodTypeCol === "pizza") {
+    // pizzas without chicken/mutton/veg/paneer in the name → just Fast Food
+    return "Fast Food";
+  }
+
+  if (foodTypeCol === "dessert") {
+    return "Dessert";
+  }
+
+  return "Other";
+}
 function normalizeSpice(item) {
   return item.Spice_Level || "Medium";
 }
@@ -45,8 +94,11 @@ function AiRecommendations({ currentUser }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const [foodType, setFoodType] = useState("Healthy");
-  const [spiceLevel, setSpiceLevel] = useState("Medium");
+  // 🔹 filters
+  const [foodType, setFoodType] = useState("Any");
+  const [spiceLevel, setSpiceLevel] = useState("Any");
+  // internal value: "Morning" | "Afternoon" | "Evening" | "Night"
+  const [preferredTime, setPreferredTime] = useState(getInitialPreferredTime());
   const [refreshCounter, setRefreshCounter] = useState(0);
 
   useEffect(() => {
@@ -62,8 +114,11 @@ function AiRecommendations({ currentUser }) {
 
     const params = new URLSearchParams({
       age: String(currentUser.age),
-      food_type: foodType,
-      spice_level: spiceLevel,
+      // If backend can handle empty food_type/spice_level for "Any", keep this.
+      // If not, you can just send foodType/spiceLevel directly.
+      food_type: foodType === "Any" ? "" : foodType,
+      spice_level: spiceLevel === "Any" ? "" : spiceLevel,
+      time: preferredTime, // 👉 "Morning" / "Afternoon" / "Evening" / "Night"
     });
 
     fetch(`${AI_BASE}/recommendations?${params.toString()}`)
@@ -100,7 +155,7 @@ function AiRecommendations({ currentUser }) {
         setRecs([]);
       })
       .finally(() => setLoading(false));
-  }, [currentUser, foodType, spiceLevel, refreshCounter]);
+  }, [currentUser, foodType, spiceLevel, preferredTime, refreshCounter]);
 
   if (!currentUser) {
     return (
@@ -121,17 +176,13 @@ function AiRecommendations({ currentUser }) {
     );
   }
 
-  // ✅ Client-side filter *after* normalization
+  // ✅ Client-side filter: FOOD TYPE + SPICE only
   const visibleRecs = recs.filter((r) => {
     const matchesFood =
-      !foodType ||
-      foodType === "Any" ||
-      r.foodType?.toLowerCase() === foodType.toLowerCase();
+      foodType === "Any" || norm(r.foodType) === norm(foodType);
 
     const matchesSpice =
-      !spiceLevel ||
-      spiceLevel === "Any" ||
-      r.spiceLevel?.toLowerCase() === spiceLevel.toLowerCase();
+      spiceLevel === "Any" || norm(r.spiceLevel) === norm(spiceLevel);
 
     return matchesFood && matchesSpice;
   });
@@ -177,6 +228,7 @@ function AiRecommendations({ currentUser }) {
 
       {/* Filters */}
       <div className={styles.controlsRow}>
+        {/* FOOD TYPE / CATEGORY */}
         <div className={styles.controlGroup}>
           <span className={styles.label}>FOOD TYPE</span>
           <div className={styles.pillSelectWrapper}>
@@ -185,6 +237,7 @@ function AiRecommendations({ currentUser }) {
               value={foodType}
               onChange={(e) => setFoodType(e.target.value)}
             >
+              <option value="Any">Any</option>
               <option value="Healthy">Healthy</option>
               <option value="Non-Veg">Non-Veg</option>
               <option value="Vegetarian">Vegetarian</option>
@@ -194,6 +247,7 @@ function AiRecommendations({ currentUser }) {
           </div>
         </div>
 
+        {/* SPICE */}
         <div className={styles.controlGroup}>
           <span className={styles.label}>SPICE</span>
           <div className={styles.pillSelectWrapper}>
@@ -202,9 +256,28 @@ function AiRecommendations({ currentUser }) {
               value={spiceLevel}
               onChange={(e) => setSpiceLevel(e.target.value)}
             >
+              <option value="Any">Any</option>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="Spicy">Spicy</option>
+            </select>
+          </div>
+        </div>
+
+        {/* TIME OF DAY */}
+        <div className={styles.controlGroup}>
+          <span className={styles.label}>TIME</span>
+          <div className={styles.pillSelectWrapper}>
+            <select
+              className={styles.pillSelect}
+              value={preferredTime}
+              onChange={(e) => setPreferredTime(e.target.value)}
+            >
+              {/* value = what backend gets, label = what user sees */}
+              <option value="Morning">Breakfast</option>
+              <option value="Afternoon">Lunch</option>
+              <option value="Evening">Dinner</option>
+              <option value="Night">Late night</option>
             </select>
           </div>
         </div>

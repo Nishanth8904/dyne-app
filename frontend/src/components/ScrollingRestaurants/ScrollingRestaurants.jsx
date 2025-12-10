@@ -28,13 +28,7 @@ function getMapsUrl(r) {
   )}`;
 }
 
-/**
- * InlineRouteMap
- * - fetches user location
- * - fetches road route from OSRM
- * - draws route
- * - shows distance + ETA pill on top of the map
- */
+
 function InlineRouteMap({ restaurant, className }) {
   const [userPos, setUserPos] = useState(null);
   const [routeCoords, setRouteCoords] = useState(null);

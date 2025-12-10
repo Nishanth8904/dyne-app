@@ -4,7 +4,7 @@ import styles from './AIAssistant.module.css';
 
 const API_BASE = 'http://localhost:3000';
 
-// helper: detect Tamil characters
+
 const hasTamil = (text) => /[\u0B80-\u0BFF]/.test(text || '');
 
 export default function AIAssistant() {
@@ -18,7 +18,7 @@ export default function AIAssistant() {
 
   const recognitionRef = useRef(null);
 
-  // Check SpeechRecognition support once
+
   useEffect(() => {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) {
@@ -27,7 +27,7 @@ export default function AIAssistant() {
     }
   }, []);
 
-  // ---------------- CORE QUERY FLOW (used by text + voice) ----------------
+
 
   async function runQuery(message) {
     const msg = (message || '').trim();
@@ -39,7 +39,6 @@ export default function AIAssistant() {
     setStatus('Thinking…');
 
     try {
-      // 1) Always ask backend smart scorer for restaurant suggestions
       const baseRes = await fetch(`${API_BASE}/api/assistant/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,18 +52,17 @@ export default function AIAssistant() {
         throw new Error(baseData.error || 'Assistant query failed');
       }
 
-      // Show the DB-scored suggestions in cards
       setSuggestions(baseData.suggestions || []);
 
       const isTamilInput = hasTamil(msg);
 
-      // 2) If Tamil input → do NOT call Groq, just show neutral English status
+      
       if (isTamilInput) {
         setStatus('Here are some suggestions.');
         return;
       }
 
-      // 3) English input → also call Groq AI assistant
+    
       const aiRes = await fetch(`${API_BASE}/api/ai/assistant`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -77,7 +75,7 @@ export default function AIAssistant() {
       if (aiRes.ok && aiData.reply) {
         setStatus(`DYNE AI says: ${aiData.reply}`);
       } else {
-        // fallback to explanation from DB if AI failed
+       
         setStatus(baseData.explanation || 'Here are some suggestions.');
       }
     } catch (err) {
@@ -106,7 +104,7 @@ async function handleSurpriseClick() {
 
     if (!res.ok) throw new Error(data.error || 'Request failed');
 
-    // ✅ your backend returns { suggestion: { ... } }
+  
     if (data && data.suggestion) {
       const s = data.suggestion;
 
@@ -134,7 +132,7 @@ async function handleSurpriseClick() {
   }
 }
 
-  // ---------------- SPEECH RECOGNITION ----------------
+
 
   function stopRecognition() {
     if (recognitionRef.current) {

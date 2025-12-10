@@ -9,28 +9,24 @@ import numpy as np
 
 app = FastAPI()
 
-# CORS so frontend can call this service
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],   
-    allow_credentials=True,
+    allow_origins=["http://localhost:5173"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ---------- Load dataset & train simple model ----------
+
 df = pd.read_csv("food_dataset.csv")
 
-X = df[["Age", "Food_Type", "Dish", "Spice_Level"]]
+X = df[["Age", "Food_Type", "Dish", "Spice_Level", "Time"]]
 y = df["Rating"]
-
-numeric_features = ["Age"]
-categorical_features = ["Food_Type", "Dish", "Spice_Level"]
 
 preprocess = ColumnTransformer(
     transformers=[
-        ("num", "passthrough", numeric_features),
-        ("cat", OneHotEncoder(handle_unknown="ignore"), categorical_features),
+        ("num", "passthrough", ["Age"]),
+        ("cat", OneHotEncoder(handle_unknown="ignore"), ["Food_Type", "Dish", "Spice_Level", "Time"]),
     ]
 )
 
@@ -48,35 +44,34 @@ pipe.fit(X, y)
 unique_dishes = df["Dish"].unique()
 
 
-def recommend_for_user(age: int, food_type: str, spice_level: str, top_n: int = 5):
-    candidates = pd.DataFrame(
-        {
-            "Age": [age] * len(unique_dishes),
-            "Food_Type": [food_type] * len(unique_dishes),
-            "Dish": unique_dishes,
-            "Spice_Level": [spice_level] * len(unique_dishes),
-        }
-    )
+def recommend_for_user(age, food_type, spice_level, time):
+    candidates = pd.DataFrame({
+        "Age": [age] * len(unique_dishes),
+        "Food_Type": [food_type] * len(unique_dishes),
+        "Dish": unique_dishes,
+        "Spice_Level": [spice_level] * len(unique_dishes),
+        "Time": [time] * len(unique_dishes)
+    })
 
     preds = pipe.predict(candidates)
     candidates["Predicted_Rating"] = preds
 
-    result = (
+    return (
         candidates.sort_values("Predicted_Rating", ascending=False)
-        .head(top_n)
+        .head(5)
         .to_dict(orient="records")
     )
 
-    return result
-
 
 @app.get("/recommendations")
-def get_recommendations(age: int, food_type: str = "Non-Veg", spice_level: str = "Spicy"):
-    """
-    Example: /recommendations?age=21&food_type=Non-Veg&spice_level=Spicy
-    """
+def get_recommendations(
+    age: int,
+    food_type: str = "Biryani",
+    spice_level: str = "Spicy",
+    time: str = "Afternoon"
+):
     if age <= 0:
-        raise HTTPException(status_code=400, detail="Invalid age")
+        raise HTTPException(400, "Invalid age")
 
-    recs = recommend_for_user(age, food_type, spice_level, top_n=5)
+    recs = recommend_for_user(age, food_type, spice_level, time)
     return {"recommendations": recs}

@@ -10,7 +10,7 @@
   gap: 16px;
 }
 
-/* header row */
+
 
 .adminHeaderRow {
   display: flex;
@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-/* tabs */
+
 
 .adminTabs {
   margin-top: 8px;
@@ -67,7 +67,6 @@
   color: #020617;
 }
 
-/* messages */
 
 .adminError {
   margin: 4px 0 0;
@@ -81,7 +80,7 @@
   color: #bbf7d0;
 }
 
-/* forms */
+
 
 .formGrid {
   margin-top: 10px;
@@ -130,7 +129,7 @@
   cursor: pointer;
 }
 
-/* dish form */
+
 
 .formGridSingle {
   margin-top: 10px;
@@ -139,7 +138,7 @@
   gap: 10px;
 }
 
-/* table */
+
 
 .sectionTitle {
   margin-top: 20px;
