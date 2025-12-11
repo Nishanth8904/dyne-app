@@ -87,6 +87,43 @@
   gap: 6px;
   margin-top: 2px;
 }
+/* hours chip */
+.hoursChip {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.03);
+  color: #cfe7ff;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* open / closed badges */
+.openBadge {
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34,197,94,0.18);
+  font-weight: 700;
+}
+
+.closedBadge {
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(239,68,68,0.06);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.12);
+  font-weight: 700;
+}
+
+/* small modal header hours */
+.mapHours {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
 
 .metaChip {
   font-size: 0.75rem;
@@ -296,3 +333,15 @@
 .cHotels :global(.leaflet-control-attribution) {
   color: #111827 !important;
 }
+
+/* ---------- NEW: menu button ---------- */
+.menuBtn {
+  background: #3b82f6;
+  color: #fff;
+  border: 1px solid rgba(59,130,246,0.9);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.menuBtn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(14, 116, 242, 0.25); }

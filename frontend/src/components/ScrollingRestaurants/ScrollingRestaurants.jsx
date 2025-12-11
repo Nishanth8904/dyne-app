@@ -4,6 +4,9 @@ import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import L from "leaflet";
 import styles from "./ScrollingRestaurants.module.css";
 
+import MenuModal from "../MenuModal/MenuModal";
+import { getMenuForRestaurant } from "../../data/menus";
+
 const markerIcon = new L.Icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
@@ -23,12 +26,59 @@ function getMapsUrl(r) {
     return `https://www.google.com/maps/search/?api=1&query=${r.latitude},${r.longitude}`;
   }
   const q = `${r.name || ""} ${r.area || ""} ${r.landmark || ""}`.trim();
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    q
-  )}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }
 
+/* ---------- Helpers for time formatting + open/closed ---------- */
+/** convert "HH:MM:SS" string to Date object for *today* */
+function timeStringToDate(timeStr) {
+  if (!timeStr) return null;
+  const m = timeStr.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
+  if (!m) return null;
+  const [_, hh, mm] = m;
+  const now = new Date();
+  now.setHours(Number(hh), Number(mm), 0, 0);
+  return now;
+}
 
+/** format "HH:MM:SS" -> "7:00 AM" */
+function formatTimeHuman(timeStr) {
+  const d = timeStringToDate(timeStr);
+  if (!d) return "--";
+  let hrs = d.getHours();
+  const mins = d.getMinutes();
+  const ampm = hrs >= 12 ? "PM" : "AM";
+  hrs = hrs % 12;
+  if (hrs === 0) hrs = 12;
+  return `${hrs}:${String(mins).padStart(2, "0")} ${ampm}`;
+}
+
+/** returns true if restaurant is open right now.
+ * Handles overnight closing (e.g. opens 11:00, closes 01:00)
+ */
+function isOpenNow(opensAt, closesAt) {
+  if (!opensAt || !closesAt) return false;
+  const now = new Date();
+  const open = timeStringToDate(opensAt);
+  const close = timeStringToDate(closesAt);
+
+  if (!open || !close) return false;
+
+  // If close is less than open -> overnight (closes next day)
+  if (close.getTime() <= open.getTime()) {
+    // open today at open..midnight OR midnight..close (next day)
+    const endOfDay = new Date(open);
+    endOfDay.setHours(23, 59, 59, 999);
+    const startOfDay = new Date(open);
+    startOfDay.setHours(0, 0, 0, 0);
+
+    return (now >= open && now <= endOfDay) || (now >= startOfDay && now <= close);
+  }
+
+  return now >= open && now <= close;
+}
+
+/* ---------- InlineRouteMap (unchanged) ---------- */
 function InlineRouteMap({ restaurant, className }) {
   const [userPos, setUserPos] = useState(null);
   const [routeCoords, setRouteCoords] = useState(null);
@@ -92,7 +142,6 @@ function InlineRouteMap({ restaurant, className }) {
 
   return (
     <div className={styles.mapWrapper}>
-      {/* pill */}
       {distanceKm != null && durationMin != null && (
         <div className={styles.routeInfoPill}>
           <span className={styles.routeDot} />
@@ -102,7 +151,6 @@ function InlineRouteMap({ restaurant, className }) {
         </div>
       )}
 
-      {/* map */}
       <MapContainer
         center={center}
         zoom={14}
@@ -125,8 +173,12 @@ function InlineRouteMap({ restaurant, className }) {
     </div>
   );
 }
+
+/* ---------- Component ---------- */
 export default function ScrollingRestaurants({ restaurants = [] }) {
   const [activeRestaurantId, setActiveRestaurantId] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuRestaurantId, setMenuRestaurantId] = useState(null);
 
   if (!restaurants.length) return null;
 
@@ -153,6 +205,8 @@ export default function ScrollingRestaurants({ restaurants = [] }) {
 
           const costText =
             r.avgCostForTwo != null ? `₹${r.avgCostForTwo} for two` : null;
+
+          const openNow = isOpenNow(r.opensAt, r.closesAt);
 
           return (
             <article key={r.id} className={styles.cHotelsCard}>
@@ -182,6 +236,18 @@ export default function ScrollingRestaurants({ restaurants = [] }) {
                   {costText && (
                     <span className={styles.metaChip}>{costText}</span>
                   )}
+
+                  {/* Hours chip */}
+                  {(r.opensAt || r.closesAt) && (
+                    <span className={styles.hoursChip}>
+                      {formatTimeHuman(r.opensAt)} – {formatTimeHuman(r.closesAt)}
+                    </span>
+                  )}
+
+                  {/* Open/Closed badge */}
+                  <span className={openNow ? styles.openBadge : styles.closedBadge}>
+                    {openNow ? "Open now" : "Closed"}
+                  </span>
                 </p>
 
                 <p className={styles.cHotelsExcerpt}>
@@ -197,6 +263,17 @@ export default function ScrollingRestaurants({ restaurants = [] }) {
                   >
                     View in Google Maps
                   </a>
+
+                  <button
+                    type="button"
+                    className={styles.menuBtn}
+                    onClick={() => {
+                      setMenuRestaurantId(r.id);
+                      setMenuOpen(true);
+                    }}
+                  >
+                    View items
+                  </button>
 
                   {r.latitude && r.longitude && (
                     <button
@@ -227,6 +304,10 @@ export default function ScrollingRestaurants({ restaurants = [] }) {
                 <p className={styles.mapSubtitle}>
                   {activeRestaurant.area} • {activeRestaurant.cuisine}
                 </p>
+                {/* show hours in modal header */}
+                <p className={styles.mapHours}>
+                  Hours: {formatTimeHuman(activeRestaurant.opensAt)} – {formatTimeHuman(activeRestaurant.closesAt)}
+                </p>
               </div>
               <button
                 type="button"
@@ -236,12 +317,23 @@ export default function ScrollingRestaurants({ restaurants = [] }) {
                 Close
               </button>
             </header>
-<div className={styles.fullMap}>
-  <InlineRouteMap restaurant={activeRestaurant} />
-</div>
+            <div className={styles.fullMap}>
+              <InlineRouteMap restaurant={activeRestaurant} />
+            </div>
           </div>
         </div>
       )}
+
+      {/* Menu modal */}
+      <MenuModal
+        open={menuOpen}
+        onClose={() => {
+          setMenuOpen(false);
+          setMenuRestaurantId(null);
+        }}
+        restaurantName={restaurants.find(rt => rt.id === menuRestaurantId)?.name}
+        items={getMenuForRestaurant(menuRestaurantId)}
+      />
     </div>
   );
 }

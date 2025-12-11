@@ -1,5 +1,6 @@
 // src/components/PriceCalculator/PriceCalculator.jsx
 import { useState, useMemo } from "react";
+import '../../Modal.css';
 import styles from "./PriceCalculator.module.css";
 
 function PriceCalculator({ restaurants = [] }) {
@@ -82,17 +83,29 @@ function PriceCalculator({ restaurants = [] }) {
     };
   }, [totalBill, taxPercent, tipPercent, people, roundUp]);
 
-  // ---- WhatsApp share ----
+  // ---- WhatsApp modal state (replaces prompt) ----
+  const [isWaModalOpen, setIsWaModalOpen] = useState(false);
+  const [waNumber, setWaNumber] = useState("");
+
+  // open modal (was handleSendWhatsApp prompt)
   const handleSendWhatsApp = () => {
     if (!people || Number(people) <= 0) {
+      // you can replace this with an inline UI error if you want
       alert("Add how many people are splitting the bill.");
       return;
     }
+    setIsWaModalOpen(true);
+  };
 
-    const phone = window.prompt(
-      "Enter WhatsApp number with country code (eg. 91XXXXXXXXXX)"
-    );
-    if (!phone) return;
+  // confirm send from modal
+  const confirmWhatsAppSend = () => {
+    const raw = (waNumber || "").trim();
+    const phone = raw.replace(/\D/g, ""); // keep digits only
+    if (!phone) {
+      // simple guard — you can show UI feedback instead
+      alert("Please enter a valid phone number (digits only, include country code).");
+      return;
+    }
 
     const lines = [];
 
@@ -122,14 +135,21 @@ function PriceCalculator({ restaurants = [] }) {
     lines.push(
       `Grand total: *₹${grandTotal.toFixed(0)}* for ${people} people`
     );
-    lines.push(`Each pays: *₹${perPerson.toFixed(0)}*`);
+
+    // perPerson might be float — round for messaging clarity
+    lines.push(`Each pays: *₹${Math.round(perPerson)}*`);
+
+    lines.push("");
+    lines.push("Sent via Dyne Student Eats");
 
     const text = lines.join("\n");
-    const url = `https://wa.me/${encodeURIComponent(
-      phone
-    )}?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
+
+    // clear modal state
+    setIsWaModalOpen(false);
+    setWaNumber("");
   };
 
   return (
@@ -341,6 +361,45 @@ function PriceCalculator({ restaurants = [] }) {
           </button>
         </div>
       </div>
+
+      {/* ---------- WHATSAPP MODAL (in-app, replaces prompt) ---------- */}
+      {isWaModalOpen && (
+        <div className="dyne-modal-overlay">
+          <div className="dyne-modal-card">
+            <h3 className="dyne-modal-title">Send split bill to WhatsApp</h3>
+            <p className="dyne-modal-subtitle">
+              Enter your WhatsApp number with country code. Eg. <strong>91XXXXXXXXXX</strong>
+            </p>
+
+            <input
+              className="dyne-modal-input"
+              placeholder="91XXXXXXXXXX"
+              value={waNumber}
+              onChange={(e) => setWaNumber(e.target.value)}
+            />
+
+            <div className="dyne-modal-actions">
+              <button
+                className="dyne-modal-btn dyne-modal-btn-secondary"
+                type="button"
+                onClick={() => {
+                  setIsWaModalOpen(false);
+                  setWaNumber("");
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                className="dyne-modal-btn dyne-modal-btn-primary"
+                type="button"
+                onClick={confirmWhatsAppSend}
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

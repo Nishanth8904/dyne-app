@@ -23,6 +23,7 @@ import AiRecommendations from './components/AiRecommendations/AiRecommendations'
 import PriceCalculator from './components/PriceCalculator/PriceCalculator';
 import AdminAnalytics from './components/AdminAnalytics/AdminAnalytics';
 import FoodGame from './components/FoodGame/FoodGame';
+import './Modal.css';
 
 const API_BASE = 'http://localhost:3000';
 
@@ -45,8 +46,6 @@ function App() {
 
   const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState('');
-
-
 
   function buildQueryString(activeFilters) {
     const params = new URLSearchParams();
@@ -72,20 +71,33 @@ function App() {
 
       const rawData = await res.json();
 
+      // Robust mapping: support both camelCase and snake_case fields coming from backend
       const mappedData = rawData.map(r => ({
         ...r,
-        avgCostForTwo: Number(r.avgCostForTwo || r.avg_cost_for_two || 0),
-        rating: r.rating !== null ? Number(r.rating) : null,
-        latitude: r.latitude !== null ? Number(r.latitude) : null,
-        longitude: r.longitude !== null ? Number(r.longitude) : null,
+        avgCostForTwo: Number(r.avgCostForTwo ?? r.avg_cost_for_two ?? 0),
+        rating:
+          r.rating !== null && r.rating !== undefined ? Number(r.rating) : null,
+        latitude:
+          r.latitude !== null && r.latitude !== undefined
+            ? Number(r.latitude)
+            : null,
+        longitude:
+          r.longitude !== null && r.longitude !== undefined
+            ? Number(r.longitude)
+            : null,
         tags: Array.isArray(r.tags)
           ? r.tags
           : r.tags
-          ? r.tags.split(',')
+          ? (typeof r.tags === 'string'
+              ? r.tags.split(',').map(t => t.trim()).filter(Boolean)
+              : [])
           : [],
-        isPureVeg: Boolean(r.is_pure_veg),
-        opensAt: r.opens_at,
-        closesAt: r.closes_at,
+        isPureVeg: Boolean(r.is_pure_veg ?? r.isPureVeg),
+        // keep both forms so all components can read either
+        opensAt: r.opensAt ?? r.opens_at ?? null,
+        closesAt: r.closesAt ?? r.closes_at ?? null,
+        opens_at: r.opensAt ?? r.opens_at ?? null,
+        closes_at: r.closesAt ?? r.closes_at ?? null,
       }));
 
       setRestaurants(mappedData);
@@ -102,6 +114,10 @@ function App() {
             avgCostForTwo: 300,
             isPureVeg: false,
             tags: ['Thali'],
+            opensAt: '10:00:00',
+            closesAt: '23:00:00',
+            latitude: 11.016844,
+            longitude: 76.955833,
           },
           {
             id: 2,
@@ -112,6 +128,10 @@ function App() {
             avgCostForTwo: 200,
             isPureVeg: true,
             tags: ['Breakfast'],
+            opensAt: '07:00:00',
+            closesAt: '22:00:00',
+            latitude: 11.029258,
+            longitude: 77.002699,
           },
           {
             id: 3,
@@ -122,6 +142,10 @@ function App() {
             avgCostForTwo: 500,
             isPureVeg: false,
             tags: ['Biryani'],
+            opensAt: '11:00:00',
+            closesAt: '01:00:00',
+            latitude: 11.031689,
+            longitude: 77.01734,
           },
         ];
         setRestaurants(MOCK);
@@ -158,35 +182,34 @@ function App() {
     setCurrentAdmin(null);
   }
   function handleCampusEmail() {
-  // Optional: ask for college name
-  const college = window.prompt("What's your college name?", "");
+    const college = window.prompt("What's your college name?", "");
 
-  const to = "dynestudentapp@gmail.com";
-  const subject = "Request: Dyne app for our college";
+    const to = "dynestudentapp@gmail.com";
+    const subject = "Request: Dyne app for our college";
 
-  const bodyLines = [
-    "Hi Dyne team,",
-    "",
-    "We would love to bring the Dyne student food app to our campus.",
-    college ? `College name: ${college}` : "College name: __________",
-    "",
-    "We believe Dyne would help students discover nearby food spots, split bills easily,",
-    "and make planning group meals much simpler.",
-    "",
-    "Please get in touch with us about the next steps.",
-    "",
-    "Thanks,",
-    "A student interested in Dyne"
-  ];
+    const bodyLines = [
+      "Hi Dyne team,",
+      "",
+      "We would love to bring the Dyne student food app to our campus.",
+      college ? `College name: ${college}` : "College name: __________",
+      "",
+      "We believe Dyne would help students discover nearby food spots, split bills easily,",
+      "and make planning group meals much simpler.",
+      "",
+      "Please get in touch with us about the next steps.",
+      "",
+      "Thanks,",
+      "A student interested in Dyne"
+    ];
 
-  const body = bodyLines.join("\n");
+    const body = bodyLines.join("\n");
 
-  const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
 
-  window.location.href = mailtoUrl;
-}
+    window.location.href = mailtoUrl;
+  }
 
   const themeClass = isDark
     ? styles.appRoot
@@ -255,17 +278,15 @@ function App() {
         </div>
       </div>
 
-    
-       
+      {currentAdmin && (
+        <AdminAnalytics restaurants={restaurants} admin={currentAdmin} />
+      )}
 
-{currentAdmin && (
-  <AdminAnalytics restaurants={restaurants} admin={currentAdmin} />
-        )}
       {/* MAIN CONTENT – everything scrollable / linked from footer */}
       <main id="nearby" className={styles.mainLayout}>
         {/* AI recommendations based on logged-in user's age */}
         <AiRecommendations currentUser={currentUser} />
-      
+
         {/* Nearby header */}
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Nearby spots</h1>
@@ -384,8 +405,6 @@ function App() {
             )}
           </div>
         </div>
-      
-
 
         {/* WHY DYNE SECTION */}
         <section id="why-dyne" className={styles.storySection}>
@@ -485,63 +504,55 @@ function App() {
           </div>
         </section>
         <FoodGame/>
-<section id="voice" className={styles.brandBand}>
-  <div className={styles.brandBandInner}>
-    <div className={styles.brandBandText}>
-      <p className={styles.brandBandEyebrow}>Built for student life</p>
-      <h2 className={styles.brandBandTitle}>
-        A system as dynamic as your campus cravings.
-      </h2>
-      <p className={styles.brandBandBody}>
-        Dyne connects your favourite hangouts, late-night biryani spots,
-        and budget-friendly messes into one simple view.
-      </p>
-    </div>
-   
+        <section id="voice" className={styles.brandBand}>
+          <div className={styles.brandBandInner}>
+            <div className={styles.brandBandText}>
+              <p className={styles.brandBandEyebrow}>Built for student life</p>
+              <h2 className={styles.brandBandTitle}>
+                A system as dynamic as your campus cravings.
+              </h2>
+              <p className={styles.brandBandBody}>
+                Dyne connects your favourite hangouts, late-night biryani spots,
+                and budget-friendly messes into one simple view.
+              </p>
+            </div>
 
-    <div className={styles.brandBandGrid}>
-      {/* Card 1 */}
-      <div className={`${styles.brandCard} ${styles.brandCardData}`}>
-        <div className={styles.brandCardImage} />
-        <div className={styles.brandCardContent}>
-          <h3>Real student data</h3>
-          <p>
-            We map hotspots from real student behaviour, not ads – so every
-            suggestion actually makes sense for campus life.
-          </p>
-        </div>
-      </div>
+            <div className={styles.brandBandGrid}>
+              <div className={`${styles.brandCard} ${styles.brandCardData}`}>
+                <div className={styles.brandCardImage} />
+                <div className={styles.brandCardContent}>
+                  <h3>Real student data</h3>
+                  <p>
+                    We map hotspots from real student behaviour, not ads – so every
+                    suggestion actually makes sense for campus life.
+                  </p>
+                </div>
+              </div>
 
-      {/* Card 2 */}
-      <div className={`${styles.brandCard} ${styles.brandCardGroups}`}>
-        <div className={styles.brandCardImage} />
-        <div className={styles.brandCardContent}>
-          <h3>Made for groups</h3>
-          <p>
-            From “let&apos;s split a bucket” to last-minute class treats, Dyne
-            surfaces places that work for everyone.
-          </p>
-        </div>
-      </div>
-      
+              <div className={`${styles.brandCard} ${styles.brandCardGroups}`}>
+                <div className={styles.brandCardImage} />
+                <div className={styles.brandCardContent}>
+                  <h3>Made for groups</h3>
+                  <p>
+                    From “let&apos;s split a bucket” to last-minute class treats, Dyne
+                    surfaces places that work for everyone.
+                  </p>
+                </div>
+              </div>
 
-      {/* Card 3 */}
-      <div className={`${styles.brandCard} ${styles.brandCardWallet}`}>
-        <div className={styles.brandCardImage} />
-        <div className={styles.brandCardContent}>
-          <h3>Wallet-friendly</h3>
-          <p>
-            Filters by budget, distance and time of day – so you never have to
-            scroll ten apps to find one good option.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
+              <div className={`${styles.brandCard} ${styles.brandCardWallet}`}>
+                <div className={styles.brandCardImage} />
+                <div className={styles.brandCardContent}>
+                  <h3>Wallet-friendly</h3>
+                  <p>
+                    Filters by budget, distance and time of day – so you never have to
+                    scroll ten apps to find one good option.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* BIG ORANGE CTA STRIP */}
         <section className={styles.brandCta}>
@@ -549,12 +560,12 @@ function App() {
             <h2 className={styles.brandCtaTitle}>
               Ready to make “Where do we eat?” effortless?
             </h2>
-           <button
-  className={styles.brandCtaButton}
-  onClick={handleCampusEmail}
->
-  Get Dyne for your campus
-</button>
+            <button
+              className={styles.brandCtaButton}
+              onClick={handleCampusEmail}
+            >
+              Get Dyne for your campus
+            </button>
           </div>
         </section>
 
@@ -607,7 +618,6 @@ function App() {
             <div className={styles.footerLogoBox}>D</div>
             <span className={styles.footerLogoText}>Dyne</span>
           </div>
-         
 
           <nav className={styles.footerNav}>
             <a href="#nearby">Nearby spots</a>
@@ -624,23 +634,23 @@ function App() {
         </div>
       </footer>
 
-    {showAuth && (
-  <AuthPanel
-    isDark={isDark}
-    onUserLogin={user => {
-      console.log('LOGIN USER FROM BACKEND:', user);  // 🔍 debug
-      setCurrentUser(user);
-      setCurrentAdmin(null);
-      setShowAuth(false);
-    }}
-    onAdminLogin={admin => {
-      setCurrentAdmin(admin);
-      setCurrentUser(null);
-      setShowAuth(false);
-    }}
-    onClose={() => setShowAuth(false)}
-  />
-)}
+      {showAuth && (
+        <AuthPanel
+          isDark={isDark}
+          onUserLogin={user => {
+            console.log('LOGIN USER FROM BACKEND:', user);  // 🔍 debug
+            setCurrentUser(user);
+            setCurrentAdmin(null);
+            setShowAuth(false);
+          }}
+          onAdminLogin={admin => {
+            setCurrentAdmin(admin);
+            setCurrentUser(null);
+            setShowAuth(false);
+          }}
+          onClose={() => setShowAuth(false)}
+        />
+      )}
     </div>
   );
 }
