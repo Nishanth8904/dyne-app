@@ -153,14 +153,20 @@
 .btnSecondary{background:#ea580c;color:#fff;padding:12px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
 
 /* SECOND HERO / MISSION */
+/* Important: make sure .storySection stacked above hero overlay and video */
+.storySection{position:relative;z-index:22;margin-top:20px!important;padding-top:24px!important;padding-bottom:28px!important}
+
+/* story inner */
 .storyInner{max-width:1280px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;background:transparent;border:0;border-radius:0;box-shadow:none}
 @media(min-width:1024px){.storyInner{flex-direction:row;align-items:center;gap:56px}}
-.storyVideoWrapper{flex:1;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 25px 80px rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.3);background:radial-gradient(circle at top,#1f2937,#020617)}
+/* ensure video wrapper has a min height so it doesn't collapse and push content */
+.storyVideoWrapper{flex:1;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 25px 80px rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.3);background:radial-gradient(circle at top,#1f2937,#020617);min-height:220px}
 .storyVideo{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
-.storyContent{flex:1;max-width:560px}
+/* make sure story content text is readable on dark background */
+.storyContent{flex:1;max-width:560px;color:#f1f5f9}
 .storyEyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:.16em;color:#f97316;margin-bottom:10px}
-.storyTitle{font-size:1.9rem;line-height:1.25;font-weight:800;margin-bottom:14px}
-.storyText{font-size:.96rem;color:#cbd5e1;margin-bottom:18px;max-width:42rem}
+.storyTitle{font-size:1.9rem;line-height:1.25;font-weight:800;margin-bottom:14px;color:inherit}
+.storyText{font-size:.96rem;color:inherit;margin-bottom:18px;max-width:42rem}
 .storyList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:.93rem;color:#e5e7eb}
 .storyList li{display:flex;align-items:flex-start;gap:8px}
 .storyBulletDot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,#0ea5e9,#22c55e);margin-top:6px}
@@ -201,9 +207,6 @@
 .heroSection::after{content:none}
 .pageHeader{background:#0f172a;margin-top:0;padding-top:24px}
 .pageTitle,.pageSubtitle{background:none;color:#f1f5f9}
-.storySection{margin-top:20px!important;padding-top:24px!important;padding-bottom:28px!important}
-.splitHero{margin-top:20px!important;padding-top:12px!important;padding-bottom:24px!important}
-.mainLayout{padding-top:32px!important}
 .storyTitle{font-size:clamp(1.7rem,3vw,2.2rem)!important;line-height:1.15;margin-bottom:12px}
 .storyText{font-size:.9rem!important;line-height:1.6}
 .nabla-dyne{font-family:"Nabla",system-ui;font-weight:400;font-variation-settings:"EDPT" 102,"EHLT" 12;text-shadow:0 0 6px rgba(255,140,0,.3),0 0 12px rgba(255,110,40,.25)}
@@ -272,3 +275,188 @@
 .recommendationWrapper>section{width:100%;max-width:520px}
 .card{margin-top:20px;margin-bottom:32px}
 .gameSection{padding:40px 24px 56px}
+
+/* ===== Made-for-campus hero ===== */
+.madeCampus {
+  width: 100%;
+  background: transparent;
+  padding: 48px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.madeCampusInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .madeCampusInner { grid-template-columns: 1fr; gap: 24px; padding: 8px 16px; }
+}
+
+/* Media (left) */
+.madeCampusMedia {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 22px 80px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  height: 100%;
+  min-height: 220px;
+  background: linear-gradient(180deg, #0f172a 0%, #07101b 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.madeCampusImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content (right) */
+.madeCampusContent { color: #f1f5f9; max-width: 560px; }
+
+.madeCampusEyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #f97316;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: .85rem;
+}
+
+.madeCampusTitle {
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+  font-weight: 800;
+  color: #ffd36b; /* golden accent */
+  text-shadow: 0 6px 20px rgba(249,115,22,0.12);
+}
+
+.madeCampusBody {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.madeCampusActions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+
+.madeCampusPrimary {
+  background: #ea580c;
+  color: #fff;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 40px rgba(234,88,12,0.14);
+}
+/* ===== Made-for-campus hero ===== */
+.madeCampus {
+  width: 100%;
+  background: transparent;
+  padding: 48px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.madeCampusInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .madeCampusInner { grid-template-columns: 1fr; gap: 24px; padding: 8px 16px; }
+}
+
+/* Media (left) */
+.madeCampusMedia {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 22px 80px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  height: 100%;
+  min-height: 220px;
+  background: linear-gradient(180deg, #0f172a 0%, #07101b 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.madeCampusImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content (right) */
+.madeCampusContent { color: #f1f5f9; max-width: 560px; }
+
+.madeCampusEyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #f97316;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: .85rem;
+}
+
+.madeCampusTitle {
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+  font-weight: 800;
+  color: #ffd36b; /* golden accent */
+  text-shadow: 0 6px 20px rgba(249,115,22,0.12);
+}
+
+.madeCampusBody {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.madeCampusActions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+
+.madeCampusPrimary {
+  background: #ea580c;
+  color: #fff;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 40px rgba(234,88,12,0.14);
+}
+
+.madeCampusPrimary:hover { transform: translateY(-2px); }
+
+.madeCampusSecondary {
+  color: #94a3b8;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid rgba(148,163,184,0.06);
+}
+
+@media (max-width:600px) {
+  .madeCampusTitle { font-size: 1.6rem; }
+  .madeCampusPrimary { width:100%; text-align:center; padding:12px; }
+}

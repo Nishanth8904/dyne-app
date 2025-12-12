@@ -4,29 +4,11 @@ const db = require("../db");
 
 const router = express.Router();
 
-// Detect Tamil script
-function hasTamil(text = "") {
-  return /[\u0B80-\u0BFF]/.test(text);
-}
-
-// Remove Tamil + non-English characters
-function enforceEnglish(text = "") {
-  let cleaned = text;
-
-  cleaned = cleaned.replace(/[\u0B80-\u0BFF]+/g, " "); // remove Tamil letters
-  cleaned = cleaned.replace(/[^\x00-\x7F]/g, " ");    // remove emojis etc
-  cleaned = cleaned.replace(/\s{2,}/g, " ").trim();  // clean spaces
-
-  // Keep only 4 sentences
-  const sentences = cleaned.split(/(?<=[.!?])\s+/);
-  return sentences.slice(0, 4).join(" ");
-}
-
 // Load database into AI-readable summary
 async function buildDatabaseSummary() {
   const [rows] = await db.query(`
     SELECT 
-      r.name, r.area, r.cuisine, r.rating,
+      r.id, r.name, r.area, r.cuisine, r.rating,
       GROUP_CONCAT(DISTINCT d.name SEPARATOR ', ') AS dishes
     FROM restaurants r
     LEFT JOIN restaurant_dishes rd ON rd.restaurant_id = r.id
@@ -34,8 +16,9 @@ async function buildDatabaseSummary() {
     GROUP BY r.id
   `);
 
+  // We keep the ID in the mapping now so the AI can return it
   const summary = rows.map(r =>
-    `Name: ${r.name} | Area: ${r.area || "Coimbatore"} | Cuisine: ${r.cuisine || "N/A"} | Rating: ${r.rating || "N/A"} | Dishes: ${r.dishes || "Not listed"}`
+    `ID: ${r.id} | Name: ${r.name} | Area: ${r.area || "Coimbatore"} | Cuisine: ${r.cuisine || "N/A"} | Rating: ${r.rating || "N/A"} | Dishes: ${r.dishes || "Not listed"}`
   ).join("\n");
 
   return { rows, summary };
@@ -44,9 +27,12 @@ async function buildDatabaseSummary() {
 // MAIN ENDPOINT
 router.post("/assistant", async (req, res) => {
   let { message } = req.body || {};
+  
+  // Basic validation
   if (!message || !message.trim()) {
     return res.json({
-      reply: "Tell me what you feel like eating, for example: 'cheesy food near Gandhipuram' or 'cheap biryani in RS Puram'."
+      reply: "Tell me what you feel like eating! For example: 'cheesy food near Gandhipuram' or 'cheap biryani'.",
+      restaurants: []
     });
   }
 
@@ -54,10 +40,10 @@ router.post("/assistant", async (req, res) => {
     const { rows, summary } = await buildDatabaseSummary();
 
     if (!rows.length) {
-      return res.json({ reply: "No restaurants found in Dyne yet." });
+      return res.json({ reply: "No restaurants found in Dyne yet.", restaurants: [] });
     }
 
-    // ✅ Mistral API call
+    // ✅ Mistral API call with JSON Schema Enforcement
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
@@ -66,25 +52,31 @@ router.post("/assistant", async (req, res) => {
           {
             role: "system",
             content:
-`You are Dyne AI, a restaurant recommendation assistant.
+`You are Dyne AI, a smart restaurant assistant.
+DATA:
+${summary}
 
-RULES:
-- Reply ONLY in clean English.
-- Never use Tamil, Tanglish, or Indian slang.
-- ONLY recommend restaurants present in the database.
-- Mention exact dish names from database when possible.
-
-
-
-DATABASE:
-${summary}`
+INSTRUCTIONS:
+1. Analyze the USER QUERY.
+2. Pick the best matching restaurants from DATA.
+3. You MUST return valid JSON only. Do not speak in plain text outside the JSON.
+4. Output format:
+{
+  "chat": "A short, friendly sentence introducing the choices (in English).",
+  "recommendations": [
+    { "name": "Exact Name", "id": 123, "reason": "Why this matches" }
+  ]
+}
+5.analyse user sentiment and if negative, suggest highly rated places.
+`
           },
           {
             role: "user",
             content: message
           }
         ],
-        temperature: 0.2
+        temperature: 0.2, // Low temp for consistent JSON
+        response_format: { type: "json_object" } // Hints to model to use JSON
       },
       {
         headers: {
@@ -96,43 +88,56 @@ ${summary}`
       }
     );
 
-    let reply = response.data.choices[0].message.content || "";
+    let rawContent = response.data.choices[0].message.content || "";
 
-    // Force English
-    reply = enforceEnglish(reply);
+    // CLEANUP: Sometimes AI wraps JSON in markdown blocks like \`\`\`json ... \`\`\`
+    // We remove them to ensure parsing works.
+    rawContent = rawContent.replace(/```json/g, "").replace(/```/g, "").trim();
 
-    // Broke? Use fallback
-    if (hasTamil(reply) || reply.length < 20) {
-      const top = rows.slice(0, 3).map(r => `${r.name} (${r.cuisine})`).join(", ");
-      reply = `Here are some popular restaurants in Coimbatore from Dyne: ${top}.`;
+    let parsedResponse;
+    try {
+        parsedResponse = JSON.parse(rawContent);
+    } catch (e) {
+        console.error("AI JSON Parse Failed, falling back to raw text", rawContent);
+        // Fallback if AI fails to give JSON
+        parsedResponse = {
+            chat: "Here are some places I found:",
+            recommendations: []
+        };
     }
 
-    res.json({ reply });
+    // Extract detailed object from DB based on AI's ID suggestions
+    // This ensures the frontend gets clean DB data (image urls, ratings, coords) 
+    // rather than AI-hallucinated details.
+    const finalRecommendations = parsedResponse.recommendations.map(rec => {
+        const dbMatch = rows.find(r => r.id == rec.id || r.name === rec.name);
+        return dbMatch ? { ...dbMatch, reason: rec.reason } : null;
+    }).filter(item => item !== null); // Remove nulls
+
+    // Send structure back to Frontend
+    res.json({
+        reply: parsedResponse.chat, // The conversational part
+        restaurants: finalRecommendations // The array for your UI Cards
+    });
 
   } catch (err) {
     console.error("Mistral Error:", err.response?.data || err.message);
-
     res.json({
-      reply: "I could not reach Dyne AI right now. Please try again."
+      reply: "I'm having trouble connecting to the brain. Try again in a moment.",
+      restaurants: []
     });
   }
 });
-// Surprise recommendation – used by "Surprise Me" button in Ask Dyne
+
+// Surprise recommendation
 router.get("/assistant/surprise", async (req, res) => {
   try {
-    // Pick from the top-rated restaurants, then choose one at random
     const [rows] = await db.query(
-      `SELECT *
-       FROM restaurants
-       WHERE rating IS NOT NULL
-       ORDER BY rating DESC
-       LIMIT 15`
+      `SELECT * FROM restaurants WHERE rating IS NOT NULL ORDER BY rating DESC LIMIT 15`
     );
 
     if (!rows || rows.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No restaurants available for surprise." });
+      return res.status(404).json({ error: "No restaurants available." });
     }
 
     const random = rows[Math.floor(Math.random() * rows.length)];
@@ -142,9 +147,7 @@ router.get("/assistant/surprise", async (req, res) => {
       area: random.area,
       rating: random.rating !== null ? Number(random.rating) : null,
       cuisine: random.cuisine,
-      reason: `${random.name} in ${random.area} is a great surprise pick with rating ${
-        random.rating ?? "N/A"
-      }.`,
+      reason: `Surprise! ${random.name} in ${random.area} is a top pick.`,
     };
 
     return res.json({ suggestion });

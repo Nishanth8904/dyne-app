@@ -1,5 +1,5 @@
 // src/App.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   Sun,
   Moon,
@@ -28,10 +28,11 @@ import WishFab from "./components/WishFab/WishFab";
 
 const API_BASE = 'http://localhost:3000';
 
-
 function App() {
   const [restaurants, setRestaurants] = useState([]);
+  // NOTE: hotelName has been added to filters (merged from new file)
   const [filters, setFilters] = useState({
+    hotelName: '',
     area: '',
     cuisine: '',
     minRating: '',
@@ -51,10 +52,11 @@ function App() {
 
   function buildQueryString(activeFilters) {
     const params = new URLSearchParams();
+    // hotelName included so backend can filter server-side if supported
+    if (activeFilters.hotelName) params.append('hotelName', activeFilters.hotelName);
     if (activeFilters.area) params.append('area', activeFilters.area);
     if (activeFilters.cuisine) params.append('cuisine', activeFilters.cuisine);
-    if (activeFilters.minRating)
-      params.append('minRating', activeFilters.minRating);
+    if (activeFilters.minRating) params.append('minRating', activeFilters.minRating);
     const qs = params.toString();
     return qs ? `?${qs}` : '';
   }
@@ -73,7 +75,6 @@ function App() {
 
       const rawData = await res.json();
 
-      // Robust mapping: support both camelCase and snake_case fields coming from backend
       const mappedData = rawData.map(r => ({
         ...r,
         avgCostForTwo: Number(r.avgCostForTwo ?? r.avg_cost_for_two ?? 0),
@@ -95,7 +96,6 @@ function App() {
               : [])
           : [],
         isPureVeg: Boolean(r.is_pure_veg ?? r.isPureVeg),
-        // keep both forms so all components can read either
         opensAt: r.opensAt ?? r.opens_at ?? null,
         closesAt: r.closesAt ?? r.closes_at ?? null,
         opens_at: r.opensAt ?? r.opens_at ?? null,
@@ -105,55 +105,53 @@ function App() {
       setRestaurants(mappedData);
     } catch (err) {
       console.error('Failed to load restaurants', err);
-      try {
-        const MOCK = [
-          {
-            id: 1,
-            name: "Sharma's Dhaba",
-            area: 'Gandhipuram',
-            cuisine: 'North Indian',
-            rating: 4.5,
-            avgCostForTwo: 300,
-            isPureVeg: false,
-            tags: ['Thali'],
-            opensAt: '10:00:00',
-            closesAt: '23:00:00',
-            latitude: 11.016844,
-            longitude: 76.955833,
-          },
-          {
-            id: 2,
-            name: 'Krishna Veg',
-            area: 'Peelamedu',
-            cuisine: 'South Indian',
-            rating: 4.2,
-            avgCostForTwo: 200,
-            isPureVeg: true,
-            tags: ['Breakfast'],
-            opensAt: '07:00:00',
-            closesAt: '22:00:00',
-            latitude: 11.029258,
-            longitude: 77.002699,
-          },
-          {
-            id: 3,
-            name: 'Spice Route',
-            area: 'RS Puram',
-            cuisine: 'Biryani',
-            rating: 4.0,
-            avgCostForTwo: 500,
-            isPureVeg: false,
-            tags: ['Biryani'],
-            opensAt: '11:00:00',
-            closesAt: '01:00:00',
-            latitude: 11.031689,
-            longitude: 77.01734,
-          },
-        ];
-        setRestaurants(MOCK);
-      } catch (e) {
-        setLoadError('Failed to load restaurants from the server.');
-      }
+      // fallback/mock data so UI stays functional (you already had this)
+      const MOCK = [
+        {
+          id: 1,
+          name: "Sharma's Dhaba",
+          area: 'Gandhipuram',
+          cuisine: 'North Indian',
+          rating: 4.5,
+          avgCostForTwo: 300,
+          isPureVeg: false,
+          tags: ['Thali'],
+          opensAt: '10:00:00',
+          closesAt: '23:00:00',
+          latitude: 11.016844,
+          longitude: 76.955833,
+        },
+        {
+          id: 2,
+          name: 'Krishna Veg',
+          area: 'Peelamedu',
+          cuisine: 'South Indian',
+          rating: 4.2,
+          avgCostForTwo: 200,
+          isPureVeg: true,
+          tags: ['Breakfast'],
+          opensAt: '07:00:00',
+          closesAt: '22:00:00',
+          latitude: 11.029258,
+          longitude: 77.002699,
+        },
+        {
+          id: 3,
+          name: 'Spice Route',
+          area: 'RS Puram',
+          cuisine: 'Biryani',
+          rating: 4.0,
+          avgCostForTwo: 500,
+          isPureVeg: false,
+          tags: ['Biryani'],
+          opensAt: '11:00:00',
+          closesAt: '01:00:00',
+          latitude: 11.031689,
+          longitude: 77.01734,
+        },
+      ];
+      setRestaurants(MOCK);
+      setLoadError('Could not fetch from server — showing local results.');
     } finally {
       setLoading(false);
     }
@@ -164,17 +162,46 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // NEW: client-side filtered list (instant UI). This runs even if backend ignores hotelName param.
+  const filteredRestaurants = useMemo(() => {
+    if (!restaurants || restaurants.length === 0) return [];
+    const name = (filters.hotelName || '').toString().trim().toLowerCase();
+    const area = (filters.area || '').toString().trim().toLowerCase();
+    const cuisine = (filters.cuisine || '').toString().trim().toLowerCase();
+    const minR = Number(filters.minRating || 0);
+
+    return restaurants.filter(r => {
+      if (name) {
+        const rn = (r.name || '').toString().toLowerCase();
+        if (!rn.includes(name)) return false;
+      }
+      if (area) {
+        const ra = (r.area || '').toString().toLowerCase();
+        if (!ra.includes(area)) return false;
+      }
+      if (cuisine) {
+        const rc = (r.cuisine || '').toString().toLowerCase();
+        if (!rc.includes(cuisine)) return false;
+      }
+      if (minR && r.rating !== null && r.rating !== undefined) {
+        if (Number(r.rating) < minR) return false;
+      }
+      return true;
+    });
+  }, [restaurants, filters]);
+
   function handleChangeFilters(key, value) {
-    const nextFilters = { ...filters, [key]: value };
-    setFilters(nextFilters);
+    setFilters(prev => ({ ...prev, [key]: value }));
   }
 
   function applyFilters() {
+    // Call server (keeps server-side support if available)
     loadRestaurants(filters);
+    // UI also updates instantly via filteredRestaurants
   }
 
   function resetFilters() {
-    const reset = { area: '', cuisine: '', minRating: '' };
+    const reset = { hotelName: '', area: '', cuisine: '', minRating: '' };
     setFilters(reset);
     loadRestaurants(reset);
   }
@@ -286,10 +313,8 @@ function App() {
 
       {/* MAIN CONTENT – everything scrollable / linked from footer */}
       <main id="nearby" className={styles.mainLayout}>
-        {/* AI recommendations based on logged-in user's age */}
         <AiRecommendations currentUser={currentUser} />
 
-        {/* Nearby header */}
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Nearby spots</h1>
           <p className={styles.pageSubtitle}>
@@ -297,7 +322,6 @@ function App() {
           </p>
         </div>
 
-        {/* Tabs + filters + results */}
         <div className={styles.zapierLayout}>
           {/* SIDEBAR */}
           <aside className={styles.sidebar}>
@@ -328,6 +352,14 @@ function App() {
                 <span>Filters</span>
               </div>
               <div className={styles.filterInputs}>
+                {/* HOTEL NAME filter added */}
+                <input
+                  type="text"
+                  placeholder="Hotel name..."
+                  value={filters.hotelName}
+                  onChange={e => handleChangeFilters('hotelName', e.target.value)}
+                  className={styles.filterInput}
+                />
                 <input
                   type="text"
                   placeholder="Area..."
@@ -375,11 +407,12 @@ function App() {
                 {activeTab === 'hotels' && (
                   <div className={styles.resultsContainer}>
                     <div className={styles.resultsHeader}>
-                      <h2>Found {restaurants.length} hotels</h2>
+                      <h2>Found {filteredRestaurants.length} hotels</h2>
                       <p>Scroll down to see each spot one by one.</p>
                     </div>
 
-                    <ScrollingRestaurants restaurants={restaurants} />
+                    {/* Use the filtered list (client-side) for instant UX */}
+                    <ScrollingRestaurants restaurants={filteredRestaurants} />
                   </div>
                 )}
 
@@ -505,7 +538,9 @@ function App() {
             </video>
           </div>
         </section>
+
         <FoodGame/>
+
         <section id="voice" className={styles.brandBand}>
           <div className={styles.brandBandInner}>
             <div className={styles.brandBandText}>
@@ -556,7 +591,7 @@ function App() {
           </div>
         </section>
 
-        {/* BIG ORANGE CTA STRIP */}
+        {/* CTA & FOOTER */}
         <section className={styles.brandCta}>
           <div className={styles.brandCtaInner}>
             <h2 className={styles.brandCtaTitle}>
@@ -571,7 +606,6 @@ function App() {
           </div>
         </section>
 
-        {/* CONTACT STRIP FOR FOOTER LINK */}
         <section id="contact" className={styles.contactSection}>
           <div className={styles.contactInner}>
             <h2>Contact</h2>
@@ -601,7 +635,7 @@ function App() {
             </div>
 
             <div className={styles.chatBody}>
-              <AIAssistant />
+              <AIAssistant restaurants={restaurants} />
             </div>
           </div>
         )}
@@ -641,7 +675,7 @@ function App() {
         <AuthPanel
           isDark={isDark}
           onUserLogin={user => {
-            console.log('LOGIN USER FROM BACKEND:', user);  // 🔍 debug
+            console.log('LOGIN USER FROM BACKEND:', user);
             setCurrentUser(user);
             setCurrentAdmin(null);
             setShowAuth(false);

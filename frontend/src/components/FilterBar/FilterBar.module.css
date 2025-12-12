@@ -1,59 +1,86 @@
+/* frontend/src/components/FilterBar/FilterBar.module.css */
 .filterBarRoot {
-  margin-bottom: 16px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-  background-color: #020617;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:12px;
 }
 
 .filterRow {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 8px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
 }
 
 .filterInput {
-  padding: 8px 10px;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid #1f2937;
-  background-color: #020617;
-  color: #e5e7eb;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  min-width: 180px;
+  outline: none;
 }
 
-.filterInput::placeholder {
-  color: #6b7280;
+.searchWrap {
+  position: relative;
+  display:flex;
+  align-items:center;
 }
+
+.filterSearch {
+  padding-right: 44px;
+  min-width: 240px;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 6px;
+  height: 32px;
+  width: 36px;
+  border-radius: 8px;
+  border: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  transition: background .15s, transform .08s;
+}
+.searchBtn:hover { background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+.searchBtn svg { display:block; }
 
 .buttonRow {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display:flex;
+  gap:8px;
+  justify-content:flex-start;
 }
 
 .applyButton {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: none;
-  font-size: 0.9rem;
-  background: #4ade80;
-  color: #052e16;
-  cursor: pointer;
+  background-color:#10b981;
+  color:#fff;
+  border:0;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
 }
 
 .resetButton {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid #374151;
-  font-size: 0.9rem;
-  background: transparent;
-  color: #e5e7eb;
-  cursor: pointer;
+  background:transparent;
+  color:#94a3b8;
+  border:0;
+  padding:8px 12px;
+  cursor:pointer;
+  font-weight:600;
 }
 
-@media (min-width: 640px) {
-  .filterRow {
-    flex-direction: row;
-  }
+@media (max-width:820px) {
+  .filterRow { flex-direction:column; align-items:stretch; }
+  .filterInput { width:100%; min-width:0; }
+  .filterSearch { min-width:0; padding-right:36px; }
+  .searchWrap { width:100%; }
+  .searchBtn { right: 8px; }
 }

@@ -222,7 +222,7 @@ export default function WishFab() {
                 <button className={styles.dropBtn} onClick={handleDrop} disabled={!wishText.trim() || isAnimating}>
                   {isAnimating ? "Dropping..." : "Drop into bottle"}
                 </button>
-                <p className={styles.helper}>Click the bottle to drop a random star. Enter a wish above.</p>
+                <p className={styles.helper}>Enter a wish above.</p>
               </div>
             </div>
 
