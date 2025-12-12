@@ -1,129 +1,267 @@
-/* WishFab.module.css - tuned star visuals & float */
-.wishFab{
+/* --- FAB Button --- */
+.wishFab {
   position: fixed;
   right: 24px;
   bottom: 100px;
-  width:56px;
-  height:56px;
-  border-radius:999px;
-  background: linear-gradient(135deg,#ffd36b,#f97316);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#082028;
-  box-shadow: 0 12px 36px rgba(2,6,23,0.45);
-  z-index:3200;
-  border:none;
-  cursor:pointer;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd36b, #f97316);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #082028;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  z-index: 3200;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* overlay and modal card */
+.wishFab:hover {
+  transform: scale(1.1);
+}
+
+/* --- Overlay --- */
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.6));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:4000;
-  padding: 28px;
+  background: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+  padding: 20px;
 }
+
+/* --- Main Card --- */
 .card {
-  width: min(920px, 96vw);
-  background: linear-gradient(180deg,#eaf9fb,#eaf9fb);
-  border-radius: 12px;
-  box-shadow: 0 30px 90px rgba(2,10,20,0.6);
-  overflow:hidden;
-  color:#05282d;
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* header */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --- Header --- */
 .header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 18px;
-  background: linear-gradient(90deg,#67d0f3,#77e28b);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #ecfdf5; 
+  border-bottom: 1px solid #d1fae5;
 }
-.header h3 { margin:0; color:#04282a; font-size:1.05rem; }
-.closeBtn { background:transparent; border:0; cursor:pointer; color:#023; }
 
-/* two-column layout */
+.header h3 {
+  margin: 0;
+  color: #064e3b;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #064e3b;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Content Grid --- */
 .content {
-  display:grid;
-  grid-template-columns: 1fr 420px;
-  gap:14px;
-  padding: 16px;
-  align-items:start;
+  display: grid;
+  grid-template-columns: 1fr 280px; /* Inputs Left, Jar Right */
+  gap: 24px;
+  padding: 32px;
+  align-items: flex-start;
 }
-.left { display:flex; flex-direction:column; gap:10px; padding-right:6px; }
-.label { color:#234b52; font-size:0.95rem; display:flex; flex-direction:column; gap:8px; }
-.input { border-radius:8px; padding:10px 12px; border:1px solid rgba(2,30,35,0.06); background:#fff; color:#022; outline:none; }
 
-/* jar area */
-.right { display:flex; align-items:center; justify-content:center; }
-.jarArea { display:flex; gap:14px; align-items:center; }
-.jarInner {
-  width: 220px;
-  height: 260px;
+/* --- Input Section --- */
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldGroup label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.fieldGroup input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 1rem;
+  color: #1f2937;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.fieldGroup input:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+  background: #ffffff;
+}
+
+/* FIX: Text visibility when disabled */
+.fieldGroup input:disabled {
+  background: #f3f4f6;
+  color: #1f2937;
+  opacity: 1; /* Essential for iOS/Safari */
+  -webkit-text-fill-color: #1f2937;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* --- Jar Section --- */
+.jarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.jarWrapper {
+  width: 180px;
+  height: 240px;
   position: relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
-  box-shadow: inset 0 8px 20px rgba(2,20,30,0.02);
-}
-.jarSvg { width:140px; height:200px; display:block; }
-
-/* star layer sits on top of jarInner */
-.starLayer { position:absolute; inset:0; pointer-events:none; z-index:10; }
-
-/* temporary flying star (created in JS) */
-.tempStar {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  transform-origin:center;
-  will-change: transform,left,top,opacity;
-  filter: drop-shadow(0 10px 18px rgba(255,200,90,0.28));
 }
 
-/* small in-jar star left after drop */
-.inJarStar {
-  position:absolute;
-  width:18px;
-  height:18px;
-  transform: translate(-50%,-50%);
-  left:50%;
-  top:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:12;
-  filter: drop-shadow(0 8px 18px rgba(255,200,90,0.35));
+.svgJar {
+  width: 100%;
+  height: 100%;
+  overflow: visible; 
+  display: block;
 }
 
-/* right controls */
-.controls { width: 160px; display:flex; flex-direction:column; gap:10px; align-items:center; }
-.dropBtn { padding:10px 12px; border-radius:999px; background: linear-gradient(90deg,#d9b77a,#b57b4b); color:#062421; border:none; font-weight:700; cursor:pointer; width:100%; }
-.dropBtn:disabled { opacity:0.55; cursor:not-allowed; }
-.helper { color:#194a4a; font-size:0.9rem; text-align:center; }
+.dropBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 99px;
+  background: #d1d5db; 
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-/* separator */
-.sep { border:0; height:1px; background: rgba(2,30,35,0.06); margin: 8px 0; }
+.dropBtn:not(:disabled) {
+  background: #eab308; 
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.4);
+}
 
-/* wishlist list */
-.listWrap { padding:12px 18px 22px; max-height:160px; overflow:auto; }
-.empty { text-align:center; color:#164b4a; padding:12px; }
-.wishList { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
-.wishItem { display:flex; align-items:center; justify-content:space-between; background:#ffffffcc; padding:10px; border-radius:8px; border:1px solid rgba(2,30,35,0.04); }
-.wishText { font-weight:700; color:#04282a; }
-.wishSub { color:#2b6b6a; margin-top:4px; font-size:0.85rem; }
-.deleteBtn { background:transparent; border:0; color:#b63b3b; cursor:pointer; }
+.dropBtn:not(:disabled):hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
 
-/* responsive */
-@media (max-width:900px) {
-  .content { grid-template-columns: 1fr; }
-  .right { order:2; }
+.helper {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- List Section --- */
+.sep {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 0 24px;
+}
+
+.listWrap {
+  background: #f9fafb;
+  padding: 16px 32px 32px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  padding: 20px 0;
+}
+
+.wishList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wishItem {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wishText {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.wishSub {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.deleteBtn:hover {
+  opacity: 1;
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .jarSection {
+    flex-direction: column;
+    order: 2; 
+  }
 }
