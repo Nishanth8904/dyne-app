@@ -1,1814 +1,274 @@
-/* --- GLOBAL APP SHELL --- */
-.appRoot {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  background-color: #0f172a; /* Slate 900 */
-  color: #f1f5f9;            /* Slate 100 */
-  font-family: 'Inter', system-ui, sans-serif;
-  overflow-x: hidden;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* --- NAVBAR --- */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #1e293b;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.navContainer {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brandGroup {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logoBox {
-  width: 40px;
-  height: 40px;
-  background-color: #ea580c; /* Orange 600 */
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: white;
-  transform: rotate(-3deg);
-  transition: transform 0.3s;
-}
-
-.logoBox:hover {
-  transform: rotate(0);
-}
-
-.brandText {
-  display: flex;
-  flex-direction: column;
-}
-
-.brandTitle {
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.brandSubtitle {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #94a3b8;
-  font-weight: 600;
-}
-
-.navActions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.statusText {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .statusText {
-    display: block;
-  }
-}
-
-.themeToggle {
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-
-.themeToggle:hover {
-  background-color: #1e293b;
-  color: #fbbf24;
-}
-
-.loginButton {
-  background-color: #0ea5e9; /* Sky 500 */
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 9999px;
-  font-weight: 500;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
-}
-
-.loginButton:hover {
-  background-color: #0284c7;
-}
-
-/* --- HERO VIDEO --- */
-.heroSection {
-  position: relative;
-  width: 100%;
-  height: 90vh;        /* ⬅ HERO NOW TALLER */
-  min-height: 650px;  /* ⬅ PREVENTS SMALL SCREENS */
-  overflow: hidden;
-  border-bottom: 1px solid #020617;
-  flex-shrink: 0;
-}
-/* video stays same */
-.heroVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-/* darker at the bottom so orange never bleeds into the next section */
-.videoOverlay {
-  display: none;
-}
-/* hard “cut” into the page background */
-.heroSection::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 40px;
-  background: linear-gradient(to bottom, #020617, #0f172a);
-  z-index: 11;
-}
-
-.heroWelcome {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(248, 250, 252, 0.75);
-  margin-bottom: 8px;
-}
-
-.heroHeadline {
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: #f9fafb;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
-}
-
-.mainLayout {
-  flex: 1;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 32px 16px 96px;   /* you can tweak 32px if you want less gap */
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-
-  /* 🔐 important: make Nearby section cover the hero and be fully dark */
-  position: relative;
-  z-index: 20;
-  background-color: #0f172a;
-}
-
-.pageHeader {
-  margin-bottom: 32px;
-  background-color: #0f172a;   /* ensures the “Nearby spots” block is pure dark */
-}
-
-.pageTitle {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.pageSubtitle {
-  font-size: 1.125rem;
-  color: #94a3b8;
-}
-
-/* Two-column layout (sidebar + content) */
-.zapierLayout {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  flex: 1;
-  min-height: 0; /* important for internal scroll */
-}
-
-@media (min-width: 1024px) {
-  .zapierLayout {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-/* --- SIDEBAR --- */
-.sidebar {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-@media (min-width: 1024px) {
-  .sidebar {
-    width: 260px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 100px;
-  }
-}
-
-.sideNav {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  gap: 4px;
-  padding: 4px;
-  background-color: rgba(30, 41, 59, 0.5);
-  border: 1px solid #334155;
-  border-radius: 12px;
-}
-
-@media (min-width: 1024px) {
-  .sideNav {
-    flex-direction: column;
-    overflow-x: visible;
-  }
-}
-
-.sideNavLink {
-  flex: 1;
-  text-align: left;
-  padding: 12px 16px;
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-
-.sideNavLink:hover {
-  background-color: #334155;
-  color: white;
-}
-
-.sideNavActive {
-  background-color: #0ea5e9;
-  color: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.sideNavActive:hover {
-  background-color: #0284c7;
-}
-
-/* FILTER WIDGET */
-.filterWidget {
-  background-color: rgba(30, 41, 59, 0.3);
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 20px;
-}
-
-.filterHeader {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #cbd5e1;
-  font-weight: 600;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.filterInputs {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.filterInput {
-  background-color: #0f172a;
-  border: 1px solid #334155;
-  color: white;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 0.875rem;
-}
-
-.filterInput:focus {
-  outline: 2px solid #0ea5e9;
-  border-color: transparent;
-}
-
-.filterActions {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.applyBtn {
-  flex: 1;
-  background-color: #10b981;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.resetBtn {
-  padding: 8px 12px;
-  background: transparent;
-  color: #94a3b8;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.resetBtn:hover {
-  color: #0ea5e9;
-}
-
-/* --- CONTENT AREA (SCROLLABLE) --- */
-.contentArea {
-  flex: 1;
-  width: 100%;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;        /* ✅ internal scroll */
-  padding-right: 4px;
-}
-
-@media (min-width: 1024px) {
-  .contentArea {
-    max-height: calc(100vh - 64px - 56px); 
-    /* 64px navbar, ~56px for padding/header – adjust if needed */
-  }
-}
-
-.resultsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.resultsHeader h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.cardGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-@media (min-width: 768px) {
-  .cardGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1280px) {
-  .cardGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.loadingText,
-.errorText {
-  padding: 24px;
-  text-align: center;
-  background: rgba(30, 41, 59, 0.5);
-  border-radius: 12px;
-  color: #94a3b8;
-  margin-top: 20px;
-}
-
-/* Store locator map wrapper */
-.mapContainer {
-  flex: 1;
-  min-height: 600px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #334155;
-}
-
-/* --- FLOATING CHAT FAB --- */
-.fabContainer {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 3000;      /* ⬆️ above Leaflet popup/tile panes */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 16px;
-}
-
-.fabButton {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #0ea5e9, #2563eb);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
-  cursor: pointer;
-  transition: transform 0.2s;
-  position: relative;
-  z-index: 3100;      /* just to be extra safe */
-}
-
-.chatPopup {
-  width: 340px;
-  max-height: 500px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease-out;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 3100;      /* chat box sits above map too */
-}
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.chatHeader {
-  background: linear-gradient(90deg, #ea580c, #f97316);
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-}
-
-.chatHeader h3 {
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-}
-
-.closeChatBtn {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-.chatBody {
-  padding: 16px;
-  overflow-y: auto;
-  max-height: 400px;
-}
-
-/* --- LIGHT THEME OVERRIDES --- */
-.lightTheme {
-  background-color: #f8fafc;
-  color: #1e293b;
-}
-
-.lightTheme .navbar {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-bottom-color: #e2e8f0;
-}
-
-.lightTheme .brandTitle {
-  color: #0f172a;
-}
-
-.lightTheme .sideNav {
-  background-color: white;
-  border-color: #e2e8f0;
-}
-
-.lightTheme .sideNavLink {
-  color: #64748b;
-}
-
-.lightTheme .sideNavLink:hover {
-  background-color: #f1f5f9;
-  color: #0f172a;
-}
-
-.lightTheme .filterWidget {
-  background-color: white;
-  border-color: #e2e8f0;
-}
-
-.lightTheme .filterHeader {
-  color: #475569;
-}
-
-.lightTheme .filterInput {
-  background-color: #f8fafc;
-  border-color: #e2e8f0;
-  color: #1e293b;
-}
-
-.lightTheme .themeToggle:hover {
-  background-color: #f1f5f9;
-  color: #ea580c;
-}
-
-.lightTheme .chatPopup {
-  background-color: white;
-  border-color: #e2e8f0;
-}
-/* ==== LIGHT THEME OVERRIDES FOR NEARBY SECTION ==== */
-
-/* Background of the whole block under the hero */
-.lightTheme .mainLayout,
-.lightTheme .pageHeader,
-.lightTheme .zapierLayout,
-.lightTheme .contentArea {
-  background-color: #f8fafc; /* light slate */
-  color: #0f172a;
-}
-
-/* Title + subtitle color */
-.lightTheme .pageTitle {
-  color: #0f172a;
-}
-
-.lightTheme .pageSubtitle {
-  color: #64748b;
-}
-/* Restaurant cards in light theme */
-.lightTheme .restaurantCard {
-  background-color: #ffffff;
-  border-color: #e2e8f0;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-}
-
-.lightTheme .cardHeader {
-  border-bottom-color: #e5e7eb;
-}
-
-.lightTheme .cardName {
-  color: #111827;
-}
-
-.lightTheme .cardBody,
-.lightTheme .cardLocation,
-.lightTheme .costText {
-  color: #1f2937;
-}
-
-/* Near Me + Dish browser containers */
-.lightTheme .nearMeContainer,
-.lightTheme .dishBrowser {
-  background-color: #ffffff;
-  border-color: #e2e8f0;
-}
-
-/* --- COMPONENT PREVIEW STYLES (DishBrowser / NearMe / Card / Admin) --- */
-/* Dish Browser */
-.dishBrowser {
-  text-align: center;
-  background-color: rgba(30, 41, 59, 0.5);
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid #334155;
-}
-
-.sectionTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.sectionSubtitle {
-  color: #94a3b8;
-  font-size: 0.9rem;
-  margin-bottom: 24px;
-}
-
-.dishGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-.dishCard {
-  background-color: #1e293b;
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid #334155;
-  text-align: left;
-  transition: 0.2s;
-}
-
-.dishCard:hover {
-  border-color: #0ea5e9;
-}
-
-.dishName {
-  font-weight: 600;
-  font-size: 1rem;
-  color: white;
-}
-
-.dishMeta {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-top: 4px;
-}
-
-.dishPrice {
-  font-weight: 700;
-  color: #10b981;
-  margin-top: 8px;
-}
-
-/* Near Me */
-.nearMeContainer {
-  background-color: rgba(30, 41, 59, 0.3);
-  border-radius: 16px;
-  border: 1px solid #334155;
-  padding: 24px;
-}
-
-.nearMeHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
-
-.locateBtn {
-  background-color: #0ea5e9;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-
-.nearMeResults {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.emptyState {
-  text-align: center;
-  color: #94a3b8;
-  padding: 32px;
-  font-style: italic;
-}
-
-.nearMeItem {
-  background-color: #1e293b;
-  padding: 16px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #334155;
-}
-
-.nearMeName {
-  font-weight: 600;
-}
-
-.nearMeDist {
-  font-family: monospace;
-  background: rgba(14, 165, 233, 0.1);
-  color: #0ea5e9;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-/* Restaurant Card */
-.restaurantCard {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: 0.2s;
-  height: 100%;
-}
-
-.restaurantCard:hover {
-  border-color: #0ea5e9;
-  transform: translateY(-2px);
-}
-
-
-.cardHeader {
-  padding: 16px;
-  border-bottom: 1px solid #334155;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.cardName {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: white;
-}
-
-.ratingBadge {
-  background-color: #0f172a;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #fbbf24;
-  border: 1px solid #334155;
-}
-
-.cardBody {
-  padding: 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.cardLocation {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.8rem;
-  color: #94a3b8;
-}
-
-.cardTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tagVeg {
-  font-size: 0.7rem;
-  color: #22c55e;
-  background: rgba(34, 197, 94, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid rgba(34, 197, 94, 0.2);
-}
-
-.tagNonVeg {
-  font-size: 0.7rem;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-.tagCuisine {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  background: #0f172a;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.cardFooter {
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid #334155;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.costText {
-  font-size: 0.8rem;
-  color: #cbd5e1;
-  font-weight: 500;
-}
-
-.btnDetails {
-  background: transparent;
-  color: #0ea5e9;
-  border: 1px solid #0ea5e9;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btnDetails:hover {
-  background: #0ea5e9;
-  color: white;
-}
-
-/* Admin panel strip */
-.adminPanel {
-  background: rgba(234, 88, 12, 0.1);
-  border-bottom: 1px solid rgba(234, 88, 12, 0.3);
-  padding: 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-}
-
-.adminInfo {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.adminLabel {
-  font-weight: 800;
-  color: #ea580c;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.adminEmail {
-  color: #fed7aa;
-}
-
-.adminActions {
-  display: flex;
-  gap: 16px;
-}
-
-.adminBtn {
-  background: transparent;
-  border: none;
-  color: #fdba74;
-  cursor: pointer;
-  text-decoration: underline;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.adminBtn:hover {
-  color: white;
-}
-
-/* Simple modal (for any extra admin stuff) */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-
-.modalContent {
-  width: 100%;
-  max-width: 400px;
-  padding: 32px;
-  border-radius: 24px;
-  position: relative;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-}
-
-.darkModal {
-  background: #1e293b;
-  border: 1px solid #334155;
-  color: white;
-}
-
-.lightModal {
-  background: white;
-  border: 1px solid #e2e8f0;
-  color: #0f172a;
-}
-
-.closeBtn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: transparent;
-  border: none;
-  color: #64748b;
-  cursor: pointer;
-}
-
-.modalTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 24px;
-}
-
-.modalActions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.btnPrimary {
-  background: #0ea5e9;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btnSecondary {
-  background: #ea580c;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-/* ============================= */
-/*  SECOND HERO / MISSION BLOCK  */
-/* ============================= */
-.storyInner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 72px 24px;         /* spacing instead of a box */
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 48px;
-
-  /* ❌ REMOVE box appearance */
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-@media (min-width: 1024px) {
-  .storyInner {
-    flex-direction: row;
-    align-items: center;
-    gap: 56px;
-  }
-}
-
-.storyVideoWrapper {
-  flex: 1;
-  border-radius: 28px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 25px 80px rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  background: radial-gradient(circle at top, #1f2937, #020617);
-}
-
-.storyVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.9;
-}
-
-.storyContent {
-  flex: 1;
-  max-width: 560px;
-}
-
-.storyEyebrow {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #f97316;
-  margin-bottom: 10px;
-}
-
-.storyTitle {
-  font-size: 1.9rem;
-  line-height: 1.25;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.storyText {
-  font-size: 0.96rem;
-  color: #cbd5e1;
-  margin-bottom: 18px;
-  max-width: 42rem;
-}
-
-.storyList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 0.93rem;
-  color: #e5e7eb;
-}
-
-.storyList li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.storyBulletDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #0ea5e9, #22c55e);
-  margin-top: 6px;
-}
-/* Light theme tweaks */
-/* Light theme version of WHY DYNE */
-
-.lightTheme .storySection {
-  background-color: #f9fafb;        /* light panel instead of dark bar */
-  border-top-color: #e5e7eb;
-}
-
-.lightTheme .storyEyebrow {
-  color: #ea580c;
-}
-
-.lightTheme .storyTitle {
-  color: #111827;
-  font-size: 1.8rem;                /* a bit smaller in light mode */
-}
-
-.lightTheme .storyText {
-  color: #4b5563;
-}
-
-.lightTheme .storyList {
-  color: #111827;
-}
-
-.lightTheme .storyVideoWrapper {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 18px 40px rgba(148, 163, 184, 0.35);
-}
-/* === SPLIT HERO SECTION (below Nearby spots) === */
-/* === SPLIT HERO SECTION (below Nearby spots) === */
-.splitHero {
-  width: 100%;
-  max-width: 1280px;
-  margin: 32px auto 64px;
-  padding: 0 16px;           /* no inner tinted box */
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  background: transparent;   /* ❌ no gradient/tint */
-}
-
-.splitText {
-  flex: 1.1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Headline + body keep their fonts, no background here */
-.bungeeEyebrow {
-  font-family: "Bungee Spice", cursive;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.bungeeTitle {
-  font-family: "Bungee Spice", cursive;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-  font-size: clamp(2rem, 3.4vw, 3rem); /* a bit smaller */
-}
-
-.bungeeBody {
-  font-family: "Inter", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-  max-width: 32rem;
-}
-
-/* badges unchanged */
-.splitBadges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.splitBadge {
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: #020617;   /* small chip background only */
-  font-size: 0.8rem;
-  color: #e5e7eb;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.splitBadgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #22c55e;
-}
-
-.splitTitle {
-  font-family: "Nabla", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "EDPT" 100, "EHLT" 12;
-  font-size: 2.8rem;
-  line-height: 1.05;
-}
-
-/* Video side (right) – NO tint */
-.splitMedia {
-  flex: 1;
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid #1f2937;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
-  background: transparent;   /* ❌ remove radial gradient */
-}
-
-/* Kill the overlay completely */
-.splitMedia::after {
-  content: none !important;
-}
-
-.splitVideo {
-  width: 100%;
-  height: 100%;
-  max-height: 340px;
-  display: block;
-  object-fit: cover;
-  opacity: 1;
-  filter: none;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .splitHero {
-    flex-direction: column-reverse;
-    margin: 32px auto 48px;
-  }
-
-  .splitVideo {
-    max-height: 260px;
-  }
-}
-  .splitTitle {
-    font-size: 2.2rem;
-  }
-
-
-.splitMedia::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(255, 115, 0, 0.25), transparent);
-  pointer-events: none;
-}
-.nablaTitle {
-  font-family: "Nabla", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "EDPT" 102,
-    "EHLT" 12;
-
-  font-size: clamp(2.6rem, 6vw, 4.3rem);
-  line-height: 1.05;
-  letter-spacing: 0.5px;
-}
-
-/* Make the highlight pop independently */
-
-.nabla-dyne {
-  font-family: "Nabla", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "EDPT" 102,
-    "EHLT" 12;
-
-  text-shadow:
-    0 0 6px rgba(255, 140, 0, 0.4),
-    0 0 14px rgba(255, 120, 0, 0.25),
-    0 0 22px rgba(255, 80, 0, 0.2);
-}
-.nablaTitle {
-  font-family: "Nabla", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "EDPT" 102,
-    "EHLT" 12;
-
-  /* Extra vibrance */
-  letter-spacing: 0.03em;
-  text-shadow:
-    0 0 6px rgba(255, 184, 108, 0.65),
-    0 0 14px rgba(239, 137, 60, 0.55),
-    0 0 28px rgba(215, 93, 40, 0.45);
-}
-.nablaTitleHighlight {
-  color: #ffd36b;
-}
-.bungeeTitle {
-  font-family: "Bungee Spice", cursive;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-}
-
-.bungeeEyebrow {
-  font-family: "Bungee Spice", cursive;
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
-}
-
-.bungeeBody {
-  font-family: "Inter", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #cbd5e1;
-  max-width: 32rem;
-}
-/* ========================================================
-   FINAL FIX PACK – HERO LEAK, SPACING & TEXT SIZE CONTROL
-   ======================================================== */
-
-
-/* ---------- 1. STOP ORANGE COLOR LEAK INTO "NEARBY SPOTS" ---------- */
-
-/* Force hero bottom to match page background exactly */
-.heroSection {
-  height: 60vh;
-  min-height: 400px;
-  background-color: #0f172a;
-  border-bottom: none;
-}
-
-/* Darken bottom fade completely */
-.videoOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.0) 0%,
-    rgba(15, 23, 42, 0.6) 40%,
-    #0f172a 75%,
-    #0f172a 100%
-  );
-  z-index: 10;
-}
-
-/* Remove any leftover blend element */
-.heroSection::after {
-  content: none;
-}
-
-
-/* ---------- 2. REMOVE COLOR TINT FROM NEARBY SPOTS SECTION ---------- */
-
-.pageHeader {
-  background: #0f172a;
-  margin-top: 0;
-  padding-top: 24px;
-}
-
-/* Make sure "Nearby spots" never inherits overlay colors */
-.pageTitle,
-.pageSubtitle {
-  background: none;
-  color: #f1f5f9;
-}
-
-
-/* ---------- 3. REDUCE GAP BETWEEN TWO HERO SECTIONS ---------- */
-
-.storySection {
-  margin-top: 20px !important;
-  padding-top: 24px !important;
-  padding-bottom: 28px !important;
-}
-
-.splitHero {
-  margin-top: 20px !important;
-  padding-top: 12px !important;
-  padding-bottom: 24px !important;
-}
-
-.mainLayout {
-  padding-top: 32px !important;
-}
-
-
-/* ---------- 4. MAKE "WHY DYNE" TITLE SMALLER ---------- */
-
-.storyTitle {
-  font-size: clamp(1.7rem, 3vw, 2.2rem) !important;
-  line-height: 1.15;
-  margin-bottom: 12px;
-}
-
-.storyText {
-  font-size: 0.9rem !important;
-  line-height: 1.6;
-}
-
-
-/* ---------- 5. APPLY NABLA CLEANLY ---------- */
-
-.nabla-dyne {
-  font-family: "Nabla", system-ui;
-  font-weight: 400;
-  font-variation-settings: "EDPT" 102, "EHLT" 12;
-  text-shadow:
-    0 0 6px rgba(255, 140, 0, 0.3),
-    0 0 12px rgba(255, 110, 40, 0.25);
-}
-
-
-/* ---------- 6. BUNGEE SPICE STYLING (ONLY TYPOGRAPHY — NO COLOR LEAK) ---------- */
-
-.bungeeEyebrow {
-  font-family: "Bungee Spice", cursive;
-  font-size: 0.85rem;
-  letter-spacing: 0.16em;
-  background: none;
-}
-
-.bungeeTitle {
-  font-family: "Bungee Spice", cursive;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  background: none;
-}
-
-.bungeeBody {
-  font-family: "Inter", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #cbd5e1;
-  max-width: 32rem;
-}
-
-
-
-
-/* =========================== */
-/*   ZAPIER-STYLE INFO BAND    */
-/* =========================== */
-
-.brandBand {
-  width: 100%;
-  background: #e0f3ef;              /* soft mint */
-  padding: 80px 0;
-}
-
-.brandBandInner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
-  gap: 40px;
-}
-
-@media (max-width: 900px) {
-  .brandBandInner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-.brandBandText {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.brandBandEyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.8rem;
-  color: #f97316;
-  font-weight: 600;
-}
-
-.brandBandTitle {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: #111827;
-}
-
-.brandBandBody {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #4b5563;
-  max-width: 32rem;
-}
-
-.brandBandGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-@media (max-width: 900px) {
-  .brandBandGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ====== FANCY HOVER CARDS ====== */
-
-.brandCard {
-  position: relative;
-  overflow: hidden;
-  border-radius: 26px;
-  padding: 24px 22px 28px;
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,0.65), transparent 55%),
-    linear-gradient(135deg, #111827, #020617);
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(15, 23, 42, 0.4);
-  transform: translateY(0) scale(1);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    background-position 0.35s ease;
-  cursor: pointer;
-}
-
-/* image layer */
-.brandCardImage {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1.08);
-  filter: saturate(1.2) contrast(1.05);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-/* per-card images */
-.brandCardData .brandCardImage {
-  background-image: url('/student-data.jpg');      /* put your file in public/ */
-}
-
-.brandCardGroups .brandCardImage {
-  background-image: url('/groups.jpg');
-}
-
-.brandCardWallet .brandCardImage {
-  background-image: url('/wallet-friendly.jpg');
-}
-
-/* content sits on top */
-.brandCardContent {
-  position: relative;
-  z-index: 2;
-  color: #f9fafb;
-}
-
-.brandCardContent h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.brandCardContent p {
-  font-size: 0.93rem;
-  line-height: 1.6;
-  color: #e5e7eb;
-}
-
-/* hover effect – glow + reveal image */
-.brandCard:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.75);
-  border-color: rgba(249, 115, 22, 0.8);
-  background-position: 0 20%;
-}
-
-.brandCard:hover .brandCardImage {
-  opacity: 0.9;
-  transform: scale(1.02);
-}
-
-/* make text slightly stronger over the image */
-.brandCard:hover .brandCardContent p {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
-}
-
-/* light theme tweak */
-.lightTheme .brandBand {
-  background: #e5f4f1;
-}
-
-/* =========================== */
-/*   BIG ORANGE CTA STRIP      */
-/* =========================== */
-
-.brandCta {
-  position: relative;
-  left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
-
-  background: #f97316;
-
-  /* ⬇️ MAKES THE ORANGE BOX TALLER */
-  padding: 120px 0 130px;
-
-  margin-top: 0;
-}
-.brandCtaInner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  text-align: center;
-}
-.brandCtaTitle {
-  font-size: clamp(2.4rem, 4vw, 3.3rem);
-  font-weight: 900;
-  color: #ffffff;
-}
-
-.brandCtaButton {
-  border: none;
-  cursor: pointer;
-  padding: 18px 52px;
-  border-radius: 999px;
-  background: #020617;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.brandCtaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.55);
-  background: #000000;
-}
-/* =========================== */
-/*          FOOTER             */
-/* =========================== */
-
-.footer {
-  width: 100%;
-  background: #020617;             /* almost black, like Zapier footer */
-  color: #e5e7eb;
-  padding: 24px 0;
-}
-
-.footerInner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.footerBrand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footerLogoBox {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #f97316;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #ffffff;
-}
-
-.footerLogoText {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footerNav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.footerNav a {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footerNav a:hover {
-  color: #f9fafb;
-}
-
-.footerMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: #6b7280;
-}
-
-.footerMetaDivider {
-  opacity: 0.6;
-}
-/* ======================================================= */
-/*  HARD LIGHT-THEME OVERRIDES FOR NEARBY SPOTS SECTION    */
-/*  (Put this RIGHT AT THE END of App.module.css)          */
-/* ======================================================= */
-
-/* Entire nearby section background (inside the white rails) */
-.lightTheme .mainLayout {
-  background-color: #f9fafb !important;  /* light gray */
-}
-
-/* The header row "Nearby spots" + subtitle */
-.lightTheme .pageHeader {
-  background-color: #f9fafb !important;
-  color: #0f172a !important;
-}
-
-/* Text colors in header */
-.lightTheme .pageTitle {
-  color: #0f172a !important;
-}
-
-.lightTheme .pageSubtitle {
-  color: #64748b !important;
-}
-
-/* The 2-column layout strip (sidebar + content) */
-.lightTheme .zapierLayout,
-.lightTheme .contentArea,
-.lightTheme .resultsContainer {
-  background-color: #f9fafb !important;
-}
-
-/* Restaurant cards */
-.lightTheme .restaurantCard {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
-}
-
-.lightTheme .cardHeader {
-  border-bottom-color: #e5e7eb !important;
-}
-
-.lightTheme .cardName {
-  color: #111827 !important;
-}
-
-.lightTheme .cardBody,
-.lightTheme .cardLocation,
-.lightTheme .costText {
-  color: #1f2937 !important;
-}
-
-/* Near Me + Dish browser panels */
-.lightTheme .nearMeContainer,
-.lightTheme .dishBrowser {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-}
-
-/* Filter widget background to match light theme */
-.lightTheme .filterWidget {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-}
-
-/* Sidebar nav in light theme already looks good, but we enforce: */
-.lightTheme .sideNav {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-}/* in App.module.css */
-.recommendationWrapper {
-  display: flex;
-  justify-content: center;
-
-  margin-top: -14px;     /* moves it UP */
-  margin-bottom: 22px;   /* tighter bottom spacing */
-
-  padding: 0 20px;
-}
-
-.recommendationWrapper > section {
-  width: 100%;
-  max-width: 520px;     /* smaller card width */
-}
-.card {
-  margin-bottom: 32px;
-}
-.card {
-  margin-top: 20px;
-}
-.gameSection {
-  padding: 40px 24px 56px;
-}
+.appRoot{display:flex;flex-direction:column;min-height:100vh;width:100%;background-color:#0f172a;color:#f1f5f9;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;transition:background-color .3s,color .3s}
+.navbar{position:sticky;top:0;z-index:50;background-color:rgba(15,23,42,.9);backdrop-filter:blur(10px);border-bottom:1px solid #1e293b;height:64px;display:flex;align-items:center;flex-shrink:0}
+.navContainer{width:100%;max-width:1280px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center}
+.brandGroup{display:flex;align-items:center;gap:12px}
+.logoBox{width:40px;height:40px;background-color:#ea580c;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;color:#fff;transform:rotate(-3deg);transition:transform .3s}
+.logoBox:hover{transform:rotate(0)}
+.brandText{display:flex;flex-direction:column}
+.brandTitle{font-size:1.25rem;font-weight:800;line-height:1}
+.brandSubtitle{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;font-weight:600}
+.navActions{display:flex;align-items:center;gap:12px}
+.statusText{font-size:.8rem;color:#94a3b8;display:none}
+@media(min-width:640px){.statusText{display:block}}
+.themeToggle{background:transparent;border:0;color:#94a3b8;cursor:pointer;padding:8px;border-radius:50%;transition:.2s}
+.themeToggle:hover{background-color:#1e293b;color:#fbbf24}
+.loginButton{background-color:#0ea5e9;color:#fff;border:0;padding:8px 20px;border-radius:9999px;font-weight:500;font-size:.875rem;cursor:pointer;transition:background-color .2s;box-shadow:0 4px 12px rgba(14,165,233,.2)}
+.loginButton:hover{background-color:#0284c7}
+
+/* HERO */
+.heroSection{position:relative;width:100%;height:90vh;min-height:650px;overflow:hidden;border-bottom:1px solid #020617;flex-shrink:0}
+.heroVideo{width:100%;height:100%;object-fit:cover;opacity:.9}
+.videoOverlay{display:none}
+.heroSection::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:linear-gradient(to bottom,#020617,#0f172a);z-index:11}
+.heroWelcome{font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(248,250,252,.75);margin-bottom:8px}
+.heroHeadline{font-size:2.75rem;font-weight:800;color:#f9fafb;text-shadow:0 8px 24px rgba(0,0,0,.65)}
+
+/* LAYOUT */
+.mainLayout{flex:1;width:100%;max-width:1280px;margin:0 auto;padding:32px 16px 96px;display:flex;flex-direction:column;min-height:0;position:relative;z-index:20;background-color:#0f172a}
+.pageHeader{margin-bottom:32px;background-color:#0f172a}
+.pageTitle{font-size:3rem;font-weight:800;margin-bottom:8px}
+.pageSubtitle{font-size:1.125rem;color:#94a3b8}
+.zapierLayout{display:flex;flex-direction:column;gap:32px;flex:1;min-height:0}
+@media(min-width:1024px){.zapierLayout{flex-direction:row;align-items:flex-start}}
+
+/* SIDEBAR */
+.sidebar{width:100%;display:flex;flex-direction:column;gap:24px}
+@media(min-width:1024px){.sidebar{width:260px;flex-shrink:0;position:sticky;top:100px}}
+.sideNav{display:flex;flex-direction:row;overflow-x:auto;gap:4px;padding:4px;background-color:rgba(30,41,59,.5);border:1px solid #334155;border-radius:12px}
+@media(min-width:1024px){.sideNav{flex-direction:column;overflow-x:visible}}
+.sideNavLink{flex:1;text-align:left;padding:12px 16px;background:transparent;border:0;color:#94a3b8;font-size:.875rem;font-weight:500;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;white-space:nowrap;transition:all .2s}
+.sideNavLink:hover{background-color:#334155;color:#fff}
+.sideNavActive{background-color:#0ea5e9;color:#fff;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+.sideNavActive:hover{background-color:#0284c7}
+
+/* FILTER */
+.filterWidget{background-color:rgba(30,41,59,.3);border:1px solid #334155;border-radius:12px;padding:20px}
+.filterHeader{display:flex;align-items:center;gap:8px;color:#cbd5e1;font-weight:600;font-size:.875rem;text-transform:uppercase;margin-bottom:16px}
+.filterInputs{display:flex;flex-direction:column;gap:12px}
+.filterInput{background-color:#0f172a;border:1px solid #334155;color:#fff;padding:10px 12px;border-radius:8px;font-size:.875rem}
+.filterInput:focus{outline:2px solid #0ea5e9;border-color:transparent}
+.filterActions{display:flex;gap:8px;margin-top:16px}
+.applyBtn{flex:1;background-color:#10b981;color:#fff;border:0;padding:8px;border-radius:8px;font-weight:500;cursor:pointer}
+.resetBtn{padding:8px 12px;background:transparent;color:#94a3b8;border:0;cursor:pointer;font-weight:500}
+.resetBtn:hover{color:#0ea5e9}
+
+/* CONTENT */
+.contentArea{flex:1;width:100%;min-height:0;display:flex;flex-direction:column;overflow-y:auto;padding-right:4px}
+@media(min-width:1024px){.contentArea{max-height:calc(100vh - 64px - 56px)}}
+.resultsContainer{display:flex;flex-direction:column;gap:24px}
+.resultsHeader h2{font-size:1.25rem;font-weight:600;margin-bottom:8px}
+.cardGrid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.cardGrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1280px){.cardGrid{grid-template-columns:repeat(3,1fr)}}
+.loadingText,.errorText{padding:24px;text-align:center;background:rgba(30,41,59,.5);border-radius:12px;color:#94a3b8;margin-top:20px}
+.mapContainer{flex:1;min-height:600px;border-radius:16px;overflow:hidden;border:1px solid #334155}
+
+/* FAB & Chat */
+.fabContainer{position:fixed;bottom:24px;right:24px;z-index:3000;display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+.fabButton{width:56px;height:56px;border-radius:50%;border:0;background:linear-gradient(135deg,#0ea5e9,#2563eb);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(14,165,233,.4);cursor:pointer;transition:transform .2s;position:relative;z-index:3100}
+.chatPopup{width:340px;max-height:500px;background-color:#1e293b;border:1px solid #334155;border-radius:16px;overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,.3);animation:slideUp .3s ease-out;display:flex;flex-direction:column;position:relative;z-index:3100}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.chatHeader{background:linear-gradient(90deg,#ea580c,#f97316);padding:16px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.chatHeader h3{font-weight:700;display:flex;align-items:center;gap:8px;margin:0}
+.closeChatBtn{background:transparent;border:0;color:rgba(255,255,255,.8);cursor:pointer}
+.chatBody{padding:16px;overflow-y:auto;max-height:400px}
+
+/* LIGHT THEME */
+.lightTheme{background-color:#f8fafc;color:#1e293b}
+.lightTheme .navbar{background-color:rgba(255,255,255,.9);border-bottom-color:#e2e8f0}
+.lightTheme .brandTitle{color:#0f172a}
+.lightTheme .sideNav{background-color:#fff;border-color:#e2e8f0}
+.lightTheme .sideNavLink{color:#64748b}
+.lightTheme .sideNavLink:hover{background-color:#f1f5f9;color:#0f172a}
+.lightTheme .filterWidget{background-color:#fff;border-color:#e2e8f0}
+.lightTheme .filterHeader{color:#475569}
+.lightTheme .filterInput{background-color:#f8fafc;border-color:#e2e8f0;color:#1e293b}
+.lightTheme .themeToggle:hover{background-color:#f1f5f9;color:#ea580c}
+.lightTheme .chatPopup{background-color:#fff;border-color:#e2e8f0}
+.lightTheme .mainLayout,.lightTheme .pageHeader,.lightTheme .zapierLayout,.lightTheme .contentArea{background-color:#f8fafc;color:#0f172a}
+.lightTheme .pageTitle{color:#0f172a}
+.lightTheme .pageSubtitle{color:#64748b}
+.lightTheme .restaurantCard{background-color:#fff;border-color:#e2e8f0;box-shadow:0 10px 30px rgba(15,23,42,.08)}
+.lightTheme .cardHeader{border-bottom-color:#e5e7eb}
+.lightTheme .cardName{color:#111827}
+.lightTheme .cardBody,.lightTheme .cardLocation,.lightTheme .costText{color:#1f2937}
+.lightTheme .nearMeContainer,.lightTheme .dishBrowser{background-color:#fff;border-color:#e2e8f0}
+
+/* DISH BROWSER */
+.dishBrowser{text-align:center;background-color:rgba(30,41,59,.5);padding:24px;border-radius:12px;border:1px solid #334155}
+.sectionTitle{font-size:1.25rem;font-weight:700;margin-bottom:8px}
+.sectionSubtitle{color:#94a3b8;font-size:.9rem;margin-bottom:24px}
+.dishGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.dishCard{background-color:#1e293b;padding:16px;border-radius:12px;border:1px solid #334155;text-align:left;transition:.2s}
+.dishCard:hover{border-color:#0ea5e9}
+.dishName{font-weight:600;font-size:1rem;color:#fff}
+.dishMeta{font-size:.8rem;color:#94a3b8;margin-top:4px}
+.dishPrice{font-weight:700;color:#10b981;margin-top:8px}
+
+/* NEAR ME */
+.nearMeContainer{background-color:rgba(30,41,59,.3);border-radius:16px;border:1px solid #334155;padding:24px}
+.nearMeHeader{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+.locateBtn{background-color:#0ea5e9;color:#fff;border:0;padding:8px 16px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px;font-weight:500;font-size:.875rem}
+.nearMeResults{display:flex;flex-direction:column;gap:8px}
+.emptyState{text-align:center;color:#94a3b8;padding:32px;font-style:italic}
+.nearMeItem{background-color:#1e293b;padding:16px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #334155}
+.nearMeName{font-weight:600}
+.nearMeDist{font-family:monospace;background:rgba(14,165,233,.1);color:#0ea5e9;padding:4px 8px;border-radius:4px;font-size:.8rem}
+
+/* RESTAURANT CARD */
+.restaurantCard{background-color:#1e293b;border:1px solid #334155;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s;height:100%}
+.restaurantCard:hover{border-color:#0ea5e9;transform:translateY(-2px)}
+.cardHeader{padding:16px;border-bottom:1px solid #334155;display:flex;justify-content:space-between;align-items:flex-start}
+.cardName{font-weight:700;font-size:1.1rem;color:#fff}
+.ratingBadge{background-color:#0f172a;padding:4px 8px;border-radius:6px;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:4px;color:#fbbf24;border:1px solid #334155}
+.cardBody{padding:16px;flex:1;display:flex;flex-direction:column;gap:12px}
+.cardLocation{display:flex;align-items:center;gap:4px;font-size:.8rem;color:#94a3b8}
+.cardTags{display:flex;flex-wrap:wrap;gap:8px}
+.tagVeg{font-size:.7rem;color:#22c55e;background:rgba(34,197,94,.1);padding:2px 6px;border-radius:4px;border:1px solid rgba(34,197,94,.2)}
+.tagNonVeg{font-size:.7rem;color:#ef4444;background:rgba(239,68,68,.1);padding:2px 6px;border-radius:4px;border:1px solid rgba(239,68,68,.2)}
+.tagCuisine{font-size:.75rem;color:#94a3b8;background:#0f172a;padding:2px 8px;border-radius:4px}
+.cardFooter{margin-top:auto;padding-top:16px;border-top:1px solid #334155;display:flex;justify-content:space-between;align-items:center}
+.costText{font-size:.8rem;color:#cbd5e1;font-weight:500}
+.btnDetails{background:transparent;color:#0ea5e9;border:1px solid #0ea5e9;padding:6px 12px;border-radius:6px;font-size:.75rem;font-weight:600;cursor:pointer;transition:.2s}
+.btnDetails:hover{background:#0ea5e9;color:#fff}
+
+/* ADMIN */
+.adminPanel{background:rgba(234,88,12,.1);border-bottom:1px solid rgba(234,88,12,.3);padding:8px 16px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.adminInfo{display:flex;gap:12px;align-items:center}
+.adminLabel{font-weight:800;color:#ea580c;text-transform:uppercase;letter-spacing:.05em}
+.adminEmail{color:#fed7aa}
+.adminActions{display:flex;gap:16px}
+.adminBtn{background:transparent;border:0;color:#fdba74;cursor:pointer;text-decoration:underline;display:flex;align-items:center;gap:4px}
+.adminBtn:hover{color:#fff}
+
+/* MODAL */
+.modalOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+.modalContent{width:100%;max-width:400px;padding:32px;border-radius:24px;position:relative;box-shadow:0 20px 25px -5px rgba(0,0,0,.5)}
+.darkModal{background:#1e293b;border:1px solid #334155;color:#fff}
+.lightModal{background:#fff;border:1px solid #e2e8f0;color:#0f172a}
+.closeBtn{position:absolute;top:16px;right:16px;background:transparent;border:0;color:#64748b;cursor:pointer}
+.modalTitle{font-size:1.5rem;font-weight:800;margin-bottom:24px}
+.modalActions{display:flex;flex-direction:column;gap:12px}
+.btnPrimary{background:#0ea5e9;color:#fff;padding:12px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+.btnSecondary{background:#ea580c;color:#fff;padding:12px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+
+/* SECOND HERO / MISSION */
+.storyInner{max-width:1280px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;background:transparent;border:0;border-radius:0;box-shadow:none}
+@media(min-width:1024px){.storyInner{flex-direction:row;align-items:center;gap:56px}}
+.storyVideoWrapper{flex:1;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 25px 80px rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.3);background:radial-gradient(circle at top,#1f2937,#020617)}
+.storyVideo{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
+.storyContent{flex:1;max-width:560px}
+.storyEyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:.16em;color:#f97316;margin-bottom:10px}
+.storyTitle{font-size:1.9rem;line-height:1.25;font-weight:800;margin-bottom:14px}
+.storyText{font-size:.96rem;color:#cbd5e1;margin-bottom:18px;max-width:42rem}
+.storyList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:.93rem;color:#e5e7eb}
+.storyList li{display:flex;align-items:flex-start;gap:8px}
+.storyBulletDot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,#0ea5e9,#22c55e);margin-top:6px}
+.lightTheme .storySection{background-color:#f9fafb;border-top-color:#e5e7eb}
+.lightTheme .storyEyebrow{color:#ea580c}
+.lightTheme .storyTitle{color:#111827;font-size:1.8rem}
+.lightTheme .storyText{color:#4b5563}
+.lightTheme .storyList{color:#111827}
+.lightTheme .storyVideoWrapper{background:#fff;border-color:#e5e7eb;box-shadow:0 18px 40px rgba(148,163,184,.35)}
+
+/* SPLIT HERO */
+.splitHero{width:100%;max-width:1280px;margin:32px auto 64px;padding:0 16px;display:flex;gap:32px;align-items:center;background:transparent}
+.splitText{flex:1.1;display:flex;flex-direction:column;gap:12px}
+.bungeeEyebrow{font-family:"Bungee Spice",cursive;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+.bungeeTitle{font-family:"Bungee Spice",cursive;font-weight:400;letter-spacing:.04em;line-height:1.1;font-size:clamp(2rem,3.4vw,3rem)}
+.bungeeBody{font-family:"Inter",system-ui,sans-serif;font-weight:500;font-size:.95rem;line-height:1.6;color:#cbd5e1;max-width:32rem}
+.splitBadges{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.splitBadge{padding:6px 12px;border-radius:999px;border:1px solid rgba(148,163,184,.5);background:#020617;font-size:.8rem;color:#e5e7eb;display:inline-flex;align-items:center;gap:6px}
+.splitBadgeDot{width:6px;height:6px;border-radius:999px;background:#22c55e}
+.splitTitle{font-family:"Nabla",system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:"EDPT" 100,"EHLT" 12;font-size:2.8rem;line-height:1.05}
+.splitMedia{flex:1;position:relative;border-radius:24px;overflow:hidden;border:1px solid #1f2937;box-shadow:0 18px 40px rgba(15,23,42,.6);background:transparent}
+.splitMedia::after{content:none!important}
+.splitVideo{width:100%;height:100%;max-height:340px;display:block;object-fit:cover;opacity:1;filter:none}
+@media(max-width:900px){.splitHero{flex-direction:column-reverse;margin:32px auto 48px}.splitVideo{max-height:260px}}
+.splitTitle{font-size:2.2rem}
+.splitMedia::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(255,115,0,.25),transparent);pointer-events:none}
+.nablaTitle{font-family:"Nabla",system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:"EDPT" 102,"EHLT" 12;font-size:clamp(2.6rem,6vw,4.3rem);line-height:1.05;letter-spacing:.5px}
+.nabla-dyne{font-family:"Nabla",system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:"EDPT" 102,"EHLT" 12;text-shadow:0 0 6px rgba(255,140,0,.4),0 0 14px rgba(255,120,0,.25),0 0 22px rgba(255,80,0,.2)}
+.nablaTitle{font-family:"Nabla",system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:"EDPT" 102,"EHLT" 12;letter-spacing:.03em;text-shadow:0 0 6px rgba(255,184,108,.65),0 0 14px rgba(239,137,60,.55),0 0 28px rgba(215,93,40,.45)}
+.nablaTitleHighlight{color:#ffd36b}
+.bungeeTitle{font-family:"Bungee Spice",cursive;font-weight:400;letter-spacing:.04em;line-height:1.1}
+.bungeeEyebrow{font-family:"Bungee Spice",cursive;font-size:.85rem;letter-spacing:.18em}
+.bungeeBody{font-family:"Inter",system-ui,sans-serif;font-weight:500;font-size:1rem;color:#cbd5e1;max-width:32rem}
+
+/* FINAL FIX PACK */
+.heroSection{height:60vh;min-height:400px;background-color:#0f172a;border-bottom:none}
+.videoOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,23,42,0) 0%,rgba(15,23,42,.6) 40%,#0f172a 75%,#0f172a 100%);z-index:10}
+.heroSection::after{content:none}
+.pageHeader{background:#0f172a;margin-top:0;padding-top:24px}
+.pageTitle,.pageSubtitle{background:none;color:#f1f5f9}
+.storySection{margin-top:20px!important;padding-top:24px!important;padding-bottom:28px!important}
+.splitHero{margin-top:20px!important;padding-top:12px!important;padding-bottom:24px!important}
+.mainLayout{padding-top:32px!important}
+.storyTitle{font-size:clamp(1.7rem,3vw,2.2rem)!important;line-height:1.15;margin-bottom:12px}
+.storyText{font-size:.9rem!important;line-height:1.6}
+.nabla-dyne{font-family:"Nabla",system-ui;font-weight:400;font-variation-settings:"EDPT" 102,"EHLT" 12;text-shadow:0 0 6px rgba(255,140,0,.3),0 0 12px rgba(255,110,40,.25)}
+.bungeeEyebrow{font-family:"Bungee Spice",cursive;font-size:.85rem;letter-spacing:.16em;background:none}
+.bungeeTitle{font-family:"Bungee Spice",cursive;font-size:clamp(2.2rem,4vw,3rem);line-height:1.1;letter-spacing:.04em;background:none}
+.bungeeBody{font-family:"Inter",system-ui,sans-serif;font-weight:500;font-size:1rem;color:#cbd5e1;max-width:32rem}
+
+/* BRAND BAND */
+.brandBand{width:100%;background:#e0f3ef;padding:80px 0}
+.brandBandInner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr);gap:40px}
+@media(max-width:900px){.brandBandInner{grid-template-columns:1fr;gap:32px}}
+.brandBandText{display:flex;flex-direction:column;gap:16px}
+.brandBandEyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;color:#f97316;font-weight:600}
+.brandBandTitle{font-size:clamp(2rem,3vw,2.8rem);font-weight:800;line-height:1.1;color:#111827}
+.brandBandBody{font-size:.98rem;line-height:1.7;color:#4b5563;max-width:32rem}
+.brandBandGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media(max-width:900px){.brandBandGrid{grid-template-columns:1fr}}
+
+/* BRAND CARD */
+.brandCard{position:relative;overflow:hidden;border-radius:26px;padding:24px 22px 28px;background:radial-gradient(circle at 0 0,rgba(255,255,255,.65),transparent 55%),linear-gradient(135deg,#111827,#020617);box-shadow:0 22px 55px rgba(15,23,42,.4);border:1px solid rgba(15,23,42,.4);transform:translateY(0) scale(1);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease,background-position .35s ease;cursor:pointer}
+.brandCardImage{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);filter:saturate(1.2) contrast(1.05);transition:opacity .4s ease,transform .4s ease}
+.brandCardData .brandCardImage{background-image:url('/student-data.jpg')}
+.brandCardGroups .brandCardImage{background-image:url('/groups.jpg')}
+.brandCardWallet .brandCardImage{background-image:url('/wallet-friendly.jpg')}
+.brandCardContent{position:relative;z-index:2;color:#f9fafb}
+.brandCardContent h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.brandCardContent p{font-size:.93rem;line-height:1.6;color:#e5e7eb}
+.brandCard:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 32px 80px rgba(15,23,42,.75);border-color:rgba(249,115,22,.8);background-position:0 20%}
+.brandCard:hover .brandCardImage{opacity:.9;transform:scale(1.02)}
+.brandCard:hover .brandCardContent p{text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.lightTheme .brandBand{background:#e5f4f1}
+
+/* CTA & FOOTER */
+.brandCta{position:relative;left:50%;width:100vw;margin-left:-50vw;background:#f97316;padding:120px 0 130px;margin-top:0}
+.brandCtaInner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center}
+.brandCtaTitle{font-size:clamp(2.4rem,4vw,3.3rem);font-weight:900;color:#fff}
+.brandCtaButton{border:0;cursor:pointer;padding:18px 52px;border-radius:999px;background:#020617;color:#fff;font-size:1rem;font-weight:600;box-shadow:0 22px 50px rgba(0,0,0,.45);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.brandCtaButton:hover{transform:translateY(-3px);box-shadow:0 28px 65px rgba(0,0,0,.55);background:#000}
+.footer{width:100%;background:#020617;color:#e5e7eb;padding:24px 0}
+.footerInner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footerBrand{display:flex;align-items:center;gap:10px}
+.footerLogoBox{width:32px;height:32px;border-radius:8px;background:#f97316;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:#fff}
+.footerLogoText{font-weight:700;font-size:1rem}
+.footerNav{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.footerNav a{font-size:.85rem;color:#9ca3af;text-decoration:none;font-weight:500}
+.footerNav a:hover{color:#f9fafb}
+.footerMeta{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;color:#6b7280}
+.footerMetaDivider{opacity:.6}
+
+/* HARD LIGHT THEME OVERRIDES (end) */
+.lightTheme .mainLayout{background-color:#f9fafb!important}
+.lightTheme .pageHeader{background-color:#f9fafb!important;color:#0f172a!important}
+.lightTheme .pageTitle{color:#0f172a!important}
+.lightTheme .pageSubtitle{color:#64748b!important}
+.lightTheme .zapierLayout,.lightTheme .contentArea,.lightTheme .resultsContainer{background-color:#f9fafb!important}
+.lightTheme .restaurantCard{background-color:#fff!important;border-color:#e2e8f0!important;box-shadow:0 10px 30px rgba(15,23,42,.08)!important}
+.lightTheme .cardHeader{border-bottom-color:#e5e7eb!important}
+.lightTheme .cardName{color:#111827!important}
+.lightTheme .cardBody,.lightTheme .cardLocation,.lightTheme .costText{color:#1f2937!important}
+.lightTheme .nearMeContainer,.lightTheme .dishBrowser{background-color:#fff!important;border-color:#e2e8f0!important}
+.lightTheme .filterWidget{background-color:#fff!important;border-color:#e2e8f0!important}
+.lightTheme .sideNav{background-color:#fff!important;border-color:#e2e8f0!important}
+
+/* extra wrappers */
+.recommendationWrapper{display:flex;justify-content:center;margin-top:-14px;margin-bottom:22px;padding:0 20px}
+.recommendationWrapper>section{width:100%;max-width:520px}
+.card{margin-top:20px;margin-bottom:32px}
+.gameSection{padding:40px 24px 56px}

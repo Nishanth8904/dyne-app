@@ -18,7 +18,7 @@ const DISH_CONFIG = [
     id: "shawarma",
     label: "Shawarma & Rolls",
     image: "/dishes/shawarma.png",
-    matchTags: ["shawarma", "roll"],
+    matchTags: ["shawarma", "roll",],
     matchCuisine: ["arabic", "lebanese"],
   },
   {

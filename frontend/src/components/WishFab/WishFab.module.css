@@ -1,0 +1,129 @@
+/* WishFab.module.css - tuned star visuals & float */
+.wishFab{
+  position: fixed;
+  right: 24px;
+  bottom: 100px;
+  width:56px;
+  height:56px;
+  border-radius:999px;
+  background: linear-gradient(135deg,#ffd36b,#f97316);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#082028;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.45);
+  z-index:3200;
+  border:none;
+  cursor:pointer;
+}
+
+/* overlay and modal card */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.6));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:4000;
+  padding: 28px;
+}
+.card {
+  width: min(920px, 96vw);
+  background: linear-gradient(180deg,#eaf9fb,#eaf9fb);
+  border-radius: 12px;
+  box-shadow: 0 30px 90px rgba(2,10,20,0.6);
+  overflow:hidden;
+  color:#05282d;
+}
+
+/* header */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 18px;
+  background: linear-gradient(90deg,#67d0f3,#77e28b);
+}
+.header h3 { margin:0; color:#04282a; font-size:1.05rem; }
+.closeBtn { background:transparent; border:0; cursor:pointer; color:#023; }
+
+/* two-column layout */
+.content {
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:14px;
+  padding: 16px;
+  align-items:start;
+}
+.left { display:flex; flex-direction:column; gap:10px; padding-right:6px; }
+.label { color:#234b52; font-size:0.95rem; display:flex; flex-direction:column; gap:8px; }
+.input { border-radius:8px; padding:10px 12px; border:1px solid rgba(2,30,35,0.06); background:#fff; color:#022; outline:none; }
+
+/* jar area */
+.right { display:flex; align-items:center; justify-content:center; }
+.jarArea { display:flex; gap:14px; align-items:center; }
+.jarInner {
+  width: 220px;
+  height: 260px;
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+  box-shadow: inset 0 8px 20px rgba(2,20,30,0.02);
+}
+.jarSvg { width:140px; height:200px; display:block; }
+
+/* star layer sits on top of jarInner */
+.starLayer { position:absolute; inset:0; pointer-events:none; z-index:10; }
+
+/* temporary flying star (created in JS) */
+.tempStar {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  transform-origin:center;
+  will-change: transform,left,top,opacity;
+  filter: drop-shadow(0 10px 18px rgba(255,200,90,0.28));
+}
+
+/* small in-jar star left after drop */
+.inJarStar {
+  position:absolute;
+  width:18px;
+  height:18px;
+  transform: translate(-50%,-50%);
+  left:50%;
+  top:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:12;
+  filter: drop-shadow(0 8px 18px rgba(255,200,90,0.35));
+}
+
+/* right controls */
+.controls { width: 160px; display:flex; flex-direction:column; gap:10px; align-items:center; }
+.dropBtn { padding:10px 12px; border-radius:999px; background: linear-gradient(90deg,#d9b77a,#b57b4b); color:#062421; border:none; font-weight:700; cursor:pointer; width:100%; }
+.dropBtn:disabled { opacity:0.55; cursor:not-allowed; }
+.helper { color:#194a4a; font-size:0.9rem; text-align:center; }
+
+/* separator */
+.sep { border:0; height:1px; background: rgba(2,30,35,0.06); margin: 8px 0; }
+
+/* wishlist list */
+.listWrap { padding:12px 18px 22px; max-height:160px; overflow:auto; }
+.empty { text-align:center; color:#164b4a; padding:12px; }
+.wishList { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.wishItem { display:flex; align-items:center; justify-content:space-between; background:#ffffffcc; padding:10px; border-radius:8px; border:1px solid rgba(2,30,35,0.04); }
+.wishText { font-weight:700; color:#04282a; }
+.wishSub { color:#2b6b6a; margin-top:4px; font-size:0.85rem; }
+.deleteBtn { background:transparent; border:0; color:#b63b3b; cursor:pointer; }
+
+/* responsive */
+@media (max-width:900px) {
+  .content { grid-template-columns: 1fr; }
+  .right { order:2; }
+}

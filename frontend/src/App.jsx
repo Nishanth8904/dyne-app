@@ -24,6 +24,7 @@ import PriceCalculator from './components/PriceCalculator/PriceCalculator';
 import AdminAnalytics from './components/AdminAnalytics/AdminAnalytics';
 import FoodGame from './components/FoodGame/FoodGame';
 import './Modal.css';
+import WishFab from "./components/WishFab/WishFab";
 
 const API_BASE = 'http://localhost:3000';
 
@@ -583,6 +584,7 @@ function App() {
 
       {/* FLOATING Ask Dyne */}
       <div className={styles.fabContainer}>
+        <WishFab />
         {isChatOpen && (
           <div className={styles.chatPopup}>
             <div className={styles.chatHeader}>
