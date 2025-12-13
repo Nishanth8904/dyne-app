@@ -1,236 +1,175 @@
+/* ================= DYNE DARK THEME ================= */
 
-.card {
-  position: relative;
-  background: rgba(8, 15, 30, 0.9);
+.card,
+.previewCard {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(2, 6, 23, 0.98)
+  );
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+}
+
+/* ================= PREVIEW ================= */
+
+.previewTitle {
+  font-size: 28px;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.previewText {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cbd5f5;
+  margin-bottom: 18px;
+}
+
+.previewList {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+
+.previewList li {
+  padding: 10px 0;
+  font-weight: 600;
+  color: #e2e8f0;
+  display: flex;
+  gap: 10px;
+}
+
+.previewList li::before {
+  content: "⚡";
+  color: #f97316;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.previewHighlight {
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.15),
+    rgba(139, 92, 246, 0.12)
+  );
+  border-left: 4px solid #f97316;
   padding: 16px 18px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+  font-weight: 800;
+  color: #fde68a;
+  margin-bottom: 16px;
 }
 
-.titleRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 10px;
+/* ================= FOOTER ================= */
+
+.previewFooter {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: #a5b4fc;
+  margin-top: 8px;
 }
+
+/* ================= LOGGED-IN AI ================= */
 
 .title {
-  font-size: 15px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-bottom: 16px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.filters select {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-weight: 600;
 }
 
-.subtitle {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.ageBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  background: radial-gradient(circle at 0 0, #3b82f6, #0f172a);
-  border: 1px solid rgba(148, 163, 184, 0.6);
-}
-
-/* 🔹 Top pick pill under subtitle */
-.topPickPill {
-  margin-top: 6px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  background: radial-gradient(circle at 0 0, #22c55e33, #020617);
-  border: 1px solid rgba(34, 197, 94, 0.4);
-}
-
-.topPickDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #22c55e;
-}
-
-/* 🔄 Refresh button + animated icon */
-.refreshButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  font-size: 11px;
-  background: transparent;
-  color: #e5e7eb;
-  cursor: pointer;
-}
-
-.refreshButtonLoading {
-  opacity: 0.8;
-}
-
-.refreshIcon {
-  transition: transform 0.25s ease;
-}
-
-.refreshButtonLoading .refreshIcon {
-  animation: spin 0.7s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* 🔹 Pill-style selects */
-
-.controlsRow {
-  display: flex;
-  flex-wrap: wrap;          /* 👈 allow 3 items to wrap on small screens */
-  gap: 12px;
-  margin: 8px 0 10px;
-}
-
-.controlGroup {
-  flex: 1 1 0;
-  min-width: 120px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.65;
-}
-
-.pillSelectWrapper {
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  padding: 2px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.5);
-}
-
-.pillSelect {
-  background: transparent;
-  border: none;
+.filters select:focus {
   outline: none;
-  color: #e5e7eb;
-  font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
+  border-color: #6366f1;
 }
 
-/* List & rating bars */
+/* ================= RESULTS ================= */
 
-.list {
-  margin-top: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
 }
 
-.listItem {
-  padding: 6px 8px 8px;
-  border-radius: 10px;
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(31, 41, 55, 0.9);
+.cardItem {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.topPickItem {
-  position: relative;
-  background: radial-gradient(circle at 0 0, #22c55e22, #020617);
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3),
-    0 0 28px rgba(34, 197, 94, 0.25);
+.cardItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.listItemHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 4px;
+.cardItem h4 {
+  color: #f8fafc;
+  font-weight: 800;
+  margin-bottom: 6px;
 }
 
-.dishName {
+.meta,
+.price,
+.rating,
+.dishes,
+.address,
+.hours,
+.contact {
   font-size: 13px;
-  font-weight: 500;
-}
-
-.ratingText {
-  font-size: 11px;
-  opacity: 0.8;
-}
-
-.topBadge {
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 999px;
-  margin-right: auto;
-  margin-left: 6px;
-  background: rgba(34, 197, 94, 0.18);
-  border: 1px solid rgba(34, 197, 94, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-/* progress bar */
-
-.ratingBar {
-  position: relative;
-  width: 100%;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 1);
-  overflow: hidden;
-}
-
-.ratingBarFill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #22c55e, #a3e635, #facc15);
-  transition: width 0.25s ease;
-}
-
-/* misc */
-
-.emptyText {
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.loginText {
-  font-size: 12px;
-  opacity: 0.8;
+  color: #c7d2fe;
   margin-top: 6px;
 }
 
-/* small screens */
-@media (max-width: 640px) {
-  .controlsRow {
-    gap: 8px;
-  }
+/* ================= STATES ================= */
 
-  .controlGroup {
-    flex: 1 1 100%;
+.loading {
+  color: #a5b4fc;
+  font-weight: 700;
+}
+
+.error {
+  color: #f87171;
+  font-weight: 800;
+}
+
+.empty {
+  color: #94a3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .filters {
+    grid-template-columns: 1fr;
   }
 }

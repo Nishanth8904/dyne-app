@@ -1,77 +1,100 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.pipeline import Pipeline
-import numpy as np
+import joblib
 
-app = FastAPI()
+# =====================
+# APP INIT
+# =====================
+app = FastAPI(title="SmartDine AI")
 
-
+# ✅ CORS FIX (THIS IS THE IMPORTANT PART)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",  # Vite / React
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# =====================
+# LOAD DATA & MODEL
+# =====================
+df = pd.read_csv("coimbatore_restaurants_comprehensive_dataset.csv")
+model = joblib.load("model.pkl")
+encoder = joblib.load("encoder.pkl")
 
-df = pd.read_csv("food_dataset.csv")
+print("✅ SmartDine AI ready")
 
-X = df[["Age", "Food_Type", "Dish", "Spice_Level", "Time"]]
-y = df["Rating"]
+# =====================
+# HELPERS
+# =====================
+def score_row(row, age):
+    base = row["overall_rating"]
 
-preprocess = ColumnTransformer(
-    transformers=[
-        ("num", "passthrough", ["Age"]),
-        ("cat", OneHotEncoder(handle_unknown="ignore"), ["Food_Type", "Dish", "Spice_Level", "Time"]),
-    ]
-)
+    # age preference logic (simple personalization)
+    if age < 25 and row["price_range"] == "$":
+        base += 0.3
+    if age > 30 and row["ambience_type"] in ["Family-style", "Luxury"]:
+        base += 0.3
 
-model = RandomForestRegressor(n_estimators=200, random_state=42)
+    return round(min(base, 5.0), 2)
 
-pipe = Pipeline(
-    steps=[
-        ("preprocess", preprocess),
-        ("model", model),
-    ]
-)
-
-pipe.fit(X, y)
-
-unique_dishes = df["Dish"].unique()
-
-
-def recommend_for_user(age, food_type, spice_level, time):
-    candidates = pd.DataFrame({
-        "Age": [age] * len(unique_dishes),
-        "Food_Type": [food_type] * len(unique_dishes),
-        "Dish": unique_dishes,
-        "Spice_Level": [spice_level] * len(unique_dishes),
-        "Time": [time] * len(unique_dishes)
-    })
-
-    preds = pipe.predict(candidates)
-    candidates["Predicted_Rating"] = preds
-
-    return (
-        candidates.sort_values("Predicted_Rating", ascending=False)
-        .head(5)
-        .to_dict(orient="records")
-    )
-
-
+# =====================
+# RECOMMENDATION API
+# =====================
 @app.get("/recommendations")
 def get_recommendations(
-    age: int,
-    food_type: str = "Biryani",
-    spice_level: str = "Spicy",
-    time: str = "Afternoon"
+    age: int = Query(...),
+    location: str = "",
+    cuisine: str = "",
+    price: str = "",
+    ambience: str = "",
 ):
-    if age <= 0:
-        raise HTTPException(400, "Invalid age")
+    data = df.copy()
 
-    recs = recommend_for_user(age, food_type, spice_level, time)
-    return {"recommendations": recs}
+    # ---- FILTERS ----
+    if location:
+        data = data[data["location_area"] == location]
+
+    if cuisine:
+        data = data[data["cuisine_type"] == cuisine]
+
+    if price:
+        data = data[data["price_range"] == price]
+
+    if ambience:
+        data = data[data["ambience_type"] == ambience]
+
+    # ---- SCORING (AI-ish logic) ----
+    data["ai_score"] = data.apply(lambda r: score_row(r, age), axis=1)
+
+    top = data.sort_values("ai_score", ascending=False).head(10)
+
+    results = []
+    for _, r in top.iterrows():
+        results.append({
+            "restaurant": r["restaurant_name"],
+            "location": r["location_area"],
+            "cuisine": r["cuisine_type"],
+            "price_range": r["price_range"],
+            "avg_cost_for_two": int(r["avg_cost_for_two"]),
+            "rating": r["overall_rating"],
+            "ai_score": r["ai_score"],
+            "popular_dishes": r["popular_dishes"],
+            "address": r["address"],
+            "opening_hours": r["opening_hours"],
+            "contact": r["contact_number"],
+        })
+
+    return {"recommendations": results}
+
+
+# =====================
+# HEALTH CHECK
+# =====================
+@app.get("/")
+def root():
+    return {"status": "SmartDine AI running"}

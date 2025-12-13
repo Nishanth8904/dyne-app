@@ -44,6 +44,12 @@ function App() {
   const [currentAdmin, setCurrentAdmin] = useState(null);
   const [isDark, setIsDark] = useState(true);
 
+  // QUICK FILTER state: '', 'trending', 'popular', 'short'
+  const [quickFilter, setQuickFilter] = useState('');
+
+  // user GPS location { lat, lng } or null
+  const [userLocation, setUserLocation] = useState(null);
+
   // Floating Chat State
   const [isChatOpen, setIsChatOpen] = useState(false);
 
@@ -189,6 +195,80 @@ function App() {
       return true;
     });
   }, [restaurants, filters]);
+
+  // request user's location (wrapped promise)
+  function requestUserLocation(timeoutMs = 10000) {
+    return new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        return reject(new Error('Geolocation not supported'));
+      }
+      const resolved = pos => {
+        const { latitude, longitude } = pos.coords;
+        resolve({ lat: latitude, lng: longitude });
+      };
+      const errored = err => reject(err);
+      navigator.geolocation.getCurrentPosition(resolved, errored, {
+        enableHighAccuracy: true,
+        timeout: timeoutMs,
+      });
+    });
+  }
+
+  // displayedRestaurants: applies quickFilter sorting on top of filteredRestaurants
+  const displayedRestaurants = useMemo(() => {
+    if (!filteredRestaurants) return [];
+
+    // Haversine helper - uses userLocation if available, otherwise campusCenter
+    const campusCenter = { lat: 11.016844, lng: 76.955833 }; // fallback campus coords
+    const toRad = deg => (deg * Math.PI) / 180;
+    const distKmFrom = (loc) => (r) => {
+      if (r.latitude == null || r.longitude == null) return Number.POSITIVE_INFINITY;
+      const R = 6371; // km
+      const dLat = toRad(r.latitude - loc.lat);
+      const dLon = toRad(r.longitude - loc.lng);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(loc.lat)) *
+          Math.cos(toRad(r.latitude)) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    };
+
+    if (quickFilter === 'trending') {
+      return [...filteredRestaurants].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    }
+
+    if (quickFilter === 'popular') {
+      return [...filteredRestaurants].sort((a, b) => (b.tags?.length || 0) - (a.tags?.length || 0));
+    }
+
+    if (quickFilter === 'short') {
+      const loc = userLocation ?? campusCenter;
+      const distFn = distKmFrom(loc);
+      return [...filteredRestaurants].sort((a, b) => distFn(a) - distFn(b));
+    }
+
+    return filteredRestaurants;
+  }, [filteredRestaurants, quickFilter, userLocation]);
+
+  // When user clicks "Short distance" we try to request geolocation; this handler centralizes that
+  async function activateQuickFilter(filterKey) {
+    if (filterKey === 'short') {
+      // try to get permission / location; but do not block UI if it fails
+      try {
+        const loc = await requestUserLocation();
+        setUserLocation(loc);
+      } catch (err) {
+        console.warn('Could not fetch user location, falling back to campus center:', err);
+        setUserLocation(null);
+      }
+      setQuickFilter('short');
+    } else {
+      setQuickFilter(filterKey);
+    }
+  }
 
   function handleChangeFilters(key, value) {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -409,10 +489,45 @@ function App() {
                     <div className={styles.resultsHeader}>
                       <h2>Found {filteredRestaurants.length} hotels</h2>
                       <p>Scroll down to see each spot one by one.</p>
+
+                      {/* QUICK FILTERS ROW */}
+                      <div className={styles.quickFilterRow}>
+                        <button
+                          className={`${styles.quickFilterBtn} ${quickFilter === 'trending' ? styles.activeQuick : ''}`}
+                          onClick={() => activateQuickFilter('trending')}
+                        >
+                          Trending
+                        </button>
+
+                        <button
+                          className={`${styles.quickFilterBtn} ${quickFilter === 'popular' ? styles.activeQuick : ''}`}
+                          onClick={() => activateQuickFilter('popular')}
+                        >
+                          Popular
+                        </button>
+
+                        <button
+                          className={`${styles.quickFilterBtn} ${quickFilter === 'short' ? styles.activeQuick : ''}`}
+                          onClick={() => activateQuickFilter('short')}
+                        >
+                          Short distance
+                        </button>
+
+                        <button
+                          className={styles.quickFilterClear}
+                          onClick={() => {
+                            setQuickFilter('');
+                            setUserLocation(null);
+                          }}
+                          title="Clear quick filter"
+                        >
+                          Clear
+                        </button>
+                      </div>
                     </div>
 
-                    {/* Use the filtered list (client-side) for instant UX */}
-                    <ScrollingRestaurants restaurants={filteredRestaurants} />
+                    {/* Use the displayedRestaurants (sorted/filtered) */}
+                    <ScrollingRestaurants restaurants={displayedRestaurants} />
                   </div>
                 )}
 

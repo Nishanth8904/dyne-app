@@ -460,3 +460,52 @@
   .madeCampusTitle { font-size: 1.6rem; }
   .madeCampusPrimary { width:100%; text-align:center; padding:12px; }
 }
+/* QUICK FILTERS (Trending / Popular / Short distance / Clear) */
+.quickFilterRow{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:12px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+
+/* pill buttons */
+.quickFilterBtn{
+  background:transparent;
+  border:1px solid rgba(148,163,184,.18);
+  color:#94a3b8;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .16s ease;
+  font-size:.9rem;
+}
+.quickFilterBtn:hover{
+  background:rgba(52,64,84,.45);
+  color:#fff;
+  border-color:rgba(52,64,84,.55);
+}
+
+/* active state */
+.activeQuick{
+  background:linear-gradient(135deg,#0ea5e9,#2563eb);
+  color:#fff !important;
+  border-color:transparent;
+  box-shadow:0 8px 24px rgba(14,165,233,.18);
+}
+
+/* small clear link/button */
+.quickFilterClear{
+  background:transparent;
+  border:0;
+  color:#94a3b8;
+  padding:8px;
+  cursor:pointer;
+  text-decoration:underline;
+  font-size:.85rem;
+}
+.quickFilterClear:hover{
+  color:#fff;
+}

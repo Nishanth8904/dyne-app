@@ -1,0 +1,1201 @@
+user_id,age,occupation,food_preference,budget_range,location_area,time_of_day,mood_craving,occasion,health_preference,cuisine_type,dish_name,spice_level,price_category,ambience,restaurant_rating,user_rating
+1000,31,business,non-vegetarian,premium,Kovaipudur,afternoon,comfort,casual,high-protein,North Indian,Butter Chicken,Low,$$$$,Cozy,4.2,4.5
+1001,26,other,vegetarian,budget-friendly,Singanallur,evening,healthy,family,balanced,South Indian,Idli Sambar,High,$$,Family-style,3.9,3.7
+1002,39,student,non-vegetarian,budget-friendly,Saravanampatti,morning,romantic,family,balanced,South Indian,Masala Dosa,Low,$$$,Casual,4.2,3.7
+1003,25,professional,non-vegetarian,budget-friendly,Kovaipudur,evening,romantic,casual,regular,South Indian,Uttapam,Medium,$,Casual,4.4,4.2
+1004,18,other,non-vegetarian,premium,Vadavalli,morning,quick,casual,balanced,North Indian,Butter Chicken,Medium,$$$,Casual,3.9,4.1
+1005,36,student,non-vegetarian,budget-friendly,RS Puram,night,healthy,casual,regular,Street Food,Pani Puri,High,$$,Family-style,4.7,4.9
+1006,21,service,non-vegetarian,mid-range,Vadavalli,morning,comfort,casual,low-carb,Italian,Pasta,Medium,$$$,Cozy,4.2,3.9
+1007,27,business,vegan,mid-range,Kovaipudur,afternoon,romantic,casual,balanced,Bakery,Cookies,Medium,$,Modern,3.7,4.1
+1008,35,student,non-vegetarian,mid-range,Peelamedu,afternoon,quick,casual,balanced,South Indian,Uttapam,Medium,$$,Romantic,4.3,4.3
+1009,25,professional,vegetarian,mid-range,Gandhipuram,night,study,casual,balanced,North Indian,Paneer Butter Masala,High,$$,Cozy,3.8,3.7
+1010,29,professional,non-vegetarian,mid-range,Saibaba Colony,afternoon,adventurous,casual,balanced,Chinese,Chilli Chicken,Medium,$,Traditional,3.8,3.6
+1011,21,professional,non-vegetarian,budget-friendly,Peelamedu,midnight,study,casual,regular,North Indian,Naan,Low,$,Casual,4.9,5.0
+1012,18,professional,non-vegetarian,budget-friendly,RS Puram,afternoon,quick,casual,regular,Chinese,Hakka Noodles,High,$,Romantic,4.9,5.0
+1013,32,student,non-vegetarian,mid-range,Ukkadam,night,celebration,casual,balanced,Bakery,Puff,High,$$,Luxury,3.9,4.3
+1014,20,other,vegetarian,budget-friendly,Gandhipuram,morning,romantic,solo,regular,South Indian,Vada,Medium,$$$,Family-style,4.9,4.2
+1015,28,other,eggitarian,budget-friendly,RS Puram,night,quick,family,balanced,North Indian,Butter Chicken,High,$$,Casual,4.5,4.8
+1016,29,student,vegetarian,mid-range,Thudiyalur,morning,adventurous,casual,high-protein,Bakery,Cookies,Low,$$,Luxury,4.6,4.6
+1017,34,student,non-vegetarian,mid-range,Ukkadam,night,celebration,family,high-protein,South Indian,Idli Sambar,High,$$,Family-style,4.4,4.9
+1018,35,professional,non-vegetarian,mid-range,Sitra,evening,comfort,friends,balanced,Chinese,Hakka Noodles,Medium,$$$,Cozy,4.3,3.9
+1019,26,service,non-vegetarian,budget-friendly,Peelamedu,night,study,date-night,regular,Andhra,Pulihora,High,$,Romantic,4.1,4.5
+1020,29,other,non-vegetarian,mid-range,RS Puram,morning,study,family,regular,South Indian,Idli Sambar,High,$$,Family-style,3.8,4.3
+1021,42,student,non-vegetarian,budget-friendly,RS Puram,evening,quick,casual,balanced,Italian,Garlic Bread,Low,$,Modern,4.1,4.1
+1022,18,professional,vegetarian,mid-range,Kovaipudur,midnight,study,friends,regular,South Indian,Pongal,Medium,$$$,Traditional,5.0,4.8
+1023,25,professional,vegan,mid-range,Ukkadam,evening,adventurous,casual,balanced,Chinese,Manchurian,Medium,$$,Cozy,3.5,3.7
+1024,22,professional,vegetarian,budget-friendly,Singanallur,midnight,romantic,friends,low-carb,North Indian,Butter Chicken,Low,$,Family-style,4.6,4.8
+1025,18,business,non-vegetarian,budget-friendly,Kovaipudur,evening,healthy,family,low-carb,North Indian,Chole Bhature,High,$,Traditional,4.0,3.9
+1026,25,other,vegetarian,mid-range,Sitra,evening,healthy,friends,balanced,Chinese,Manchurian,Medium,$,Modern,4.1,4.1
+1027,34,professional,non-vegetarian,mid-range,Saibaba Colony,night,adventurous,solo,regular,Italian,Pasta,Medium,$$,Cozy,4.4,4.5
+1028,31,service,non-vegetarian,premium,Ukkadam,morning,study,casual,balanced,South Indian,Filter Coffee,High,$$$,Luxury,4.8,5.0
+1029,18,professional,non-vegetarian,mid-range,Gandhipuram,afternoon,healthy,date-night,low-carb,North Indian,Butter Chicken,High,$,Romantic,4.3,4.6
+1030,41,professional,non-vegetarian,budget-friendly,Ukkadam,afternoon,quick,family,regular,Chinese,Chilli Chicken,Medium,$$,Traditional,3.6,3.4
+1031,18,professional,non-vegetarian,mid-range,RS Puram,afternoon,healthy,casual,balanced,Andhra,Pulihora,High,$$,Traditional,4.3,4.6
+1032,18,student,vegetarian,mid-range,Kovaipudur,evening,quick,casual,regular,Street Food,Egg Puffs,High,$,Cozy,3.0,2.8
+1033,27,professional,non-vegetarian,premium,Avinashi Road,afternoon,healthy,casual,balanced,Street Food,Bhel Puri,Low,$$,Traditional,4.4,4.3
+1034,24,student,eggitarian,budget-friendly,Peelamedu,afternoon,romantic,friends,regular,Cafe,Tea,Medium,$$,Family-style,4.4,3.9
+1035,25,business,vegetarian,premium,Singanallur,morning,romantic,date-night,balanced,Chinese,Spring Rolls,Low,$$,Romantic,4.8,5.0
+1036,31,professional,vegetarian,premium,Saibaba Colony,afternoon,celebration,birthday,balanced,Andhra,Royyala Iguru,Low,$$$$,Romantic,4.3,4.8
+1037,28,student,non-vegetarian,premium,Peelamedu,evening,healthy,family,low-carb,Chinese,Spring Rolls,Medium,$$$,Casual,5.0,5.0
+1038,21,professional,non-vegetarian,mid-range,Avinashi Road,morning,comfort,birthday,regular,Bakery,Chocolate Cake,Low,$$,Luxury,4.1,4.7
+1039,18,student,vegetarian,budget-friendly,RS Puram,night,healthy,date-night,high-protein,Kerala,Puttu Kadala,Medium,$$,Luxury,4.8,4.7
+1040,18,other,vegan,budget-friendly,Kovaipudur,morning,quick,casual,balanced,South Indian,Uttapam,High,$$,Casual,4.8,4.8
+1041,28,business,eggitarian,mid-range,Saibaba Colony,afternoon,quick,casual,balanced,South Indian,Uttapam,Low,$$,Modern,4.6,4.5
+1042,18,student,non-vegetarian,budget-friendly,Thudiyalur,evening,adventurous,family,regular,Chinese,Spring Rolls,Medium,$$,Family-style,4.8,5.0
+1043,38,business,vegetarian,mid-range,Gandhipuram,evening,romantic,anniversary,high-protein,Italian,Pizza,High,$$,Cozy,4.2,4.7
+1044,40,professional,non-vegetarian,premium,Thudiyalur,night,study,casual,regular,Chinese,Chilli Chicken,Medium,$$$,Luxury,4.3,4.6
+1045,31,student,non-vegetarian,budget-friendly,Kovaipudur,morning,adventurous,casual,balanced,South Indian,Masala Dosa,Medium,$$,Romantic,4.5,4.3
+1046,35,professional,eggitarian,mid-range,Saibaba Colony,afternoon,healthy,friends,balanced,North Indian,Biryani,Low,$$,Casual,4.2,3.9
+1047,32,service,vegetarian,mid-range,Sitra,evening,romantic,casual,low-carb,Italian,Garlic Bread,High,$$,Family-style,4.1,4.1
+1048,29,other,non-vegetarian,mid-range,Saravanampatti,afternoon,celebration,friends,high-protein,Bakery,Chocolate Cake,Medium,$,Luxury,4.0,4.3
+1049,20,service,non-vegetarian,premium,Kovaipudur,morning,adventurous,friends,balanced,North Indian,Chole Bhature,Low,$$$$,Family-style,4.4,4.4
+1050,18,student,non-vegetarian,budget-friendly,Peelamedu,evening,healthy,date-night,high-protein,Street Food,Bhel Puri,High,$$,Romantic,4.4,4.5
+1051,22,professional,non-vegetarian,mid-range,Saravanampatti,afternoon,celebration,anniversary,high-protein,South Indian,Filter Coffee,Medium,$$,Family-style,4.2,3.9
+1052,34,student,eggitarian,budget-friendly,Gandhipuram,evening,celebration,friends,low-carb,Chinese,Chilli Chicken,Medium,$$,Modern,4.4,4.3
+1053,33,business,non-vegetarian,budget-friendly,Gandhipuram,evening,comfort,casual,high-protein,South Indian,Pongal,Low,$,Luxury,4.2,4.1
+1054,23,professional,vegan,mid-range,Singanallur,evening,healthy,date-night,balanced,Kerala,Appam Stew,Medium,$$$,Romantic,4.6,4.7
+1055,18,other,non-vegetarian,budget-friendly,Peelamedu,morning,celebration,friends,balanced,South Indian,Masala Dosa,Low,$,Casual,4.6,4.4
+1056,25,professional,non-vegetarian,mid-range,Sitra,evening,quick,friends,high-protein,Chinese,Hakka Noodles,Medium,$$,Luxury,4.5,4.4
+1057,18,professional,vegetarian,mid-range,Thudiyalur,evening,study,date-night,balanced,Street Food,Pani Puri,Medium,$$,Luxury,4.6,5.0
+1058,29,student,vegetarian,budget-friendly,Saravanampatti,evening,romantic,casual,high-protein,Street Food,Egg Puffs,High,$$,Family-style,4.4,4.5
+1059,20,professional,non-vegetarian,mid-range,Saravanampatti,evening,adventurous,family,high-protein,North Indian,Chole Bhature,High,$,Traditional,5.0,5.0
+1060,37,other,vegetarian,mid-range,Vadavalli,afternoon,quick,date-night,regular,South Indian,Idli Sambar,Low,$$,Romantic,4.4,5.0
+1061,20,professional,vegetarian,premium,Thudiyalur,evening,study,casual,low-carb,Street Food,Pani Puri,High,$$$,Cozy,4.9,5.0
+1062,20,other,vegan,mid-range,Singanallur,night,quick,casual,balanced,South Indian,Rava Dosa,High,$$,Cozy,4.2,4.4
+1063,24,service,vegetarian,budget-friendly,Ukkadam,morning,quick,date-night,regular,Kerala,Beef Fry,High,$,Luxury,3.7,3.6
+1064,18,student,non-vegetarian,budget-friendly,RS Puram,night,healthy,casual,high-protein,Italian,Pasta,Medium,$$,Casual,4.2,4.1
+1065,19,student,eggitarian,budget-friendly,Ukkadam,evening,comfort,casual,low-carb,South Indian,Uttapam,High,$,Family-style,5.0,4.9
+1066,36,professional,vegetarian,premium,Peelamedu,evening,celebration,family,high-protein,Chinese,Manchurian,High,$$,Family-style,4.1,4.4
+1067,26,student,eggitarian,budget-friendly,Gandhipuram,night,comfort,birthday,regular,Chettinad,Chicken Chettinad,High,$,Traditional,4.0,3.8
+1068,48,student,non-vegetarian,mid-range,RS Puram,evening,comfort,business,regular,Cafe,Burger,Medium,$$$,Luxury,4.4,4.1
+1069,32,student,eggitarian,budget-friendly,RS Puram,morning,celebration,casual,balanced,South Indian,Idli Sambar,Low,$,Romantic,3.8,3.7
+1070,38,student,non-vegetarian,budget-friendly,Kovaipudur,evening,quick,date-night,balanced,Andhra,Gongura Mutton,High,$,Luxury,3.6,3.8
+1071,27,business,non-vegetarian,premium,Thudiyalur,evening,healthy,business,low-carb,North Indian,Chole Bhature,Medium,$$$,Modern,4.7,5.0
+1072,28,service,non-vegetarian,mid-range,Vadavalli,evening,quick,family,regular,South Indian,Idli Sambar,Medium,$$,Family-style,4.8,5.0
+1073,20,student,non-vegetarian,budget-friendly,Avinashi Road,evening,study,friends,high-protein,Street Food,Egg Puffs,Medium,$,Traditional,4.5,4.3
+1074,29,student,non-vegetarian,budget-friendly,RS Puram,afternoon,comfort,business,balanced,Chinese,Schezwan Fried Rice,Medium,$$,Casual,4.0,3.8
+1075,33,student,vegetarian,budget-friendly,Ukkadam,morning,quick,date-night,high-protein,North Indian,Biryani,High,$,Romantic,4.3,4.9
+1076,22,student,vegan,mid-range,Avinashi Road,evening,study,casual,high-protein,North Indian,Butter Chicken,Low,$$$,Cozy,5.0,4.7
+1077,26,professional,eggitarian,premium,Kovaipudur,night,romantic,family,low-carb,Chettinad,Chicken Chettinad,Medium,$$$,Family-style,4.6,5.0
+1078,31,other,eggitarian,mid-range,Gandhipuram,evening,quick,casual,high-protein,Chinese,Chilli Chicken,Medium,$$,Luxury,4.2,4.6
+1079,18,professional,eggitarian,mid-range,RS Puram,afternoon,healthy,date-night,high-protein,Chettinad,Pepper Chicken,High,$$,Luxury,3.2,3.6
+1080,26,professional,eggitarian,budget-friendly,Peelamedu,morning,celebration,casual,regular,South Indian,Vada,Medium,$,Traditional,4.7,4.7
+1081,39,professional,non-vegetarian,premium,Saibaba Colony,midnight,healthy,friends,high-protein,North Indian,Naan,High,$$$,Modern,4.2,4.3
+1082,19,student,vegetarian,budget-friendly,Peelamedu,midnight,study,date-night,balanced,Italian,Pizza,High,$$,Luxury,3.9,3.9
+1083,21,service,eggitarian,premium,Avinashi Road,night,study,anniversary,low-carb,South Indian,Filter Coffee,Low,$$$,Luxury,4.4,5.0
+1084,22,student,vegetarian,mid-range,Thudiyalur,afternoon,comfort,casual,regular,Kerala,Appam Stew,High,$$,Cozy,4.1,3.9
+1085,29,professional,non-vegetarian,premium,Thudiyalur,night,study,date-night,high-protein,Street Food,Kothu Parotta,Low,$$$,Romantic,4.1,4.5
+1086,30,professional,non-vegetarian,budget-friendly,RS Puram,afternoon,study,casual,balanced,Bakery,Cream Bun,Medium,$,Traditional,4.4,4.6
+1087,28,professional,non-vegetarian,mid-range,Saibaba Colony,night,quick,business,high-protein,Chettinad,Fish Fry,Medium,$$,Luxury,3.8,3.8
+1088,20,service,eggitarian,budget-friendly,Peelamedu,morning,study,friends,balanced,North Indian,Biryani,High,$,Casual,4.5,4.6
+1089,31,professional,vegetarian,mid-range,Saravanampatti,evening,quick,anniversary,high-protein,South Indian,Masala Dosa,Low,$$$,Modern,4.4,4.3
+1090,32,student,non-vegetarian,mid-range,Singanallur,morning,study,solo,low-carb,South Indian,Filter Coffee,High,$$,Modern,4.3,4.7
+1091,35,professional,vegetarian,budget-friendly,Singanallur,night,quick,anniversary,low-carb,North Indian,Chole Bhature,Medium,$,Cozy,4.0,4.0
+1092,24,service,vegetarian,premium,Sitra,afternoon,quick,casual,regular,North Indian,Paneer Butter Masala,Medium,$$$,Traditional,4.8,5.0
+1093,35,student,vegetarian,mid-range,Singanallur,evening,healthy,casual,regular,South Indian,Masala Dosa,Low,$$$,Family-style,5.0,4.7
+1094,18,other,non-vegetarian,mid-range,Sitra,afternoon,celebration,casual,balanced,Italian,Pizza,Medium,$$$,Cozy,4.0,4.2
+1095,27,student,eggitarian,mid-range,Ukkadam,evening,comfort,friends,low-carb,Italian,Pizza,Low,$$$,Family-style,5.0,5.0
+1096,30,student,vegetarian,mid-range,Avinashi Road,afternoon,celebration,family,high-protein,Cafe,Tea,Low,$,Family-style,3.7,3.8
+1097,18,professional,vegetarian,premium,Saravanampatti,night,comfort,friends,balanced,Chinese,Spring Rolls,Low,$$$,Casual,5.0,5.0
+1098,32,student,vegetarian,budget-friendly,Saravanampatti,morning,comfort,casual,balanced,South Indian,Uttapam,Medium,$,Casual,5.0,5.0
+1099,32,student,non-vegetarian,premium,Kovaipudur,morning,study,friends,high-protein,Italian,Pasta,High,$$$,Modern,4.6,5.0
+1100,35,student,vegan,budget-friendly,RS Puram,night,celebration,family,regular,Chinese,Manchurian,Medium,$,Traditional,4.6,4.5
+1101,24,service,vegetarian,premium,Vadavalli,evening,celebration,business,regular,North Indian,Butter Chicken,Low,$$$,Luxury,3.8,4.5
+1102,24,student,non-vegetarian,budget-friendly,Vadavalli,afternoon,comfort,casual,regular,South Indian,Vada,Low,$$,Cozy,5.0,4.9
+1103,40,student,non-vegetarian,premium,Vadavalli,morning,celebration,friends,high-protein,North Indian,Chole Bhature,High,$$$,Romantic,3.6,3.9
+1104,34,student,non-vegetarian,mid-range,Singanallur,evening,healthy,casual,low-carb,Kerala,Malabar Parotta,High,$$,Traditional,4.4,4.7
+1105,18,professional,vegetarian,mid-range,Singanallur,morning,quick,date-night,high-protein,Chinese,Manchurian,Medium,$,Luxury,4.0,3.6
+1106,41,professional,vegetarian,mid-range,Kovaipudur,night,romantic,date-night,balanced,North Indian,Naan,Medium,$$,Romantic,4.9,5.0
+1107,28,student,non-vegetarian,budget-friendly,Avinashi Road,evening,adventurous,casual,high-protein,Street Food,Kothu Parotta,High,$$,Casual,4.2,4.2
+1108,27,professional,eggitarian,budget-friendly,Avinashi Road,morning,celebration,date-night,regular,North Indian,Chole Bhature,Medium,$,Romantic,4.3,4.8
+1109,30,professional,non-vegetarian,mid-range,RS Puram,evening,comfort,casual,balanced,North Indian,Chole Bhature,High,$$,Traditional,4.4,4.4
+1110,36,student,non-vegetarian,mid-range,Thudiyalur,night,adventurous,family,high-protein,Italian,Pasta,High,$$,Family-style,4.2,4.6
+1111,31,professional,vegetarian,premium,Ukkadam,afternoon,comfort,family,balanced,Italian,Pasta,Medium,$$$,Family-style,4.2,4.7
+1112,23,professional,vegan,premium,Ukkadam,afternoon,adventurous,solo,regular,North Indian,Paneer Butter Masala,High,$$$,Modern,4.2,4.7
+1113,18,student,non-vegetarian,mid-range,Thudiyalur,evening,romantic,casual,high-protein,Chinese,Chilli Chicken,Medium,$$,Family-style,4.3,4.5
+1114,31,business,non-vegetarian,budget-friendly,Kovaipudur,night,celebration,family,high-protein,South Indian,Masala Dosa,Medium,$,Family-style,3.9,3.7
+1115,29,professional,non-vegetarian,mid-range,Kovaipudur,evening,study,business,high-protein,Chettinad,Karaikudi Mutton,High,$$$,Luxury,4.4,4.5
+1116,18,professional,vegetarian,mid-range,Kovaipudur,evening,comfort,family,low-carb,Kerala,Puttu Kadala,High,$$,Family-style,4.1,4.3
+1117,40,other,vegan,mid-range,Singanallur,morning,comfort,family,balanced,Chinese,Hakka Noodles,High,$$,Traditional,4.9,5.0
+1118,23,professional,eggitarian,mid-range,Sitra,night,celebration,friends,balanced,South Indian,Idli Sambar,Medium,$$,Romantic,4.3,4.8
+1119,25,business,non-vegetarian,premium,Singanallur,evening,celebration,casual,regular,North Indian,Paneer Butter Masala,Medium,$$,Cozy,4.0,4.6
+1120,18,business,eggitarian,premium,Ukkadam,evening,healthy,casual,balanced,South Indian,Rava Dosa,High,$$$,Cozy,4.4,4.6
+1121,18,professional,non-vegetarian,premium,Singanallur,morning,celebration,family,high-protein,North Indian,Biryani,High,$$$$,Casual,4.5,5.0
+1122,24,student,eggitarian,budget-friendly,Singanallur,afternoon,study,casual,balanced,South Indian,Masala Dosa,Low,$$,Casual,4.2,4.1
+1123,29,professional,vegetarian,mid-range,Kovaipudur,evening,quick,casual,high-protein,South Indian,Filter Coffee,Medium,$$$$,Romantic,4.6,5.0
+1124,25,student,non-vegetarian,premium,Gandhipuram,morning,comfort,family,balanced,Chinese,Chilli Chicken,Low,$$$,Traditional,5.0,5.0
+1125,18,business,eggitarian,budget-friendly,Saravanampatti,morning,romantic,birthday,balanced,Street Food,Bhel Puri,Low,$$,Traditional,5.0,5.0
+1126,29,student,vegan,mid-range,Sitra,evening,quick,casual,balanced,South Indian,Uttapam,Medium,$$,Cozy,4.2,4.1
+1127,22,professional,vegan,mid-range,Saibaba Colony,night,celebration,friends,balanced,Street Food,Kothu Parotta,High,$$$$,Casual,4.1,4.3
+1128,24,service,eggitarian,mid-range,RS Puram,morning,romantic,casual,regular,North Indian,Paneer Butter Masala,Low,$$,Family-style,4.8,5.0
+1129,28,professional,non-vegetarian,mid-range,Gandhipuram,evening,study,casual,regular,Chettinad,Karaikudi Mutton,Medium,$$$$,Family-style,4.5,4.7
+1130,27,professional,vegetarian,budget-friendly,Thudiyalur,evening,healthy,casual,high-protein,Andhra,Royyala Iguru,High,$,Traditional,3.9,3.9
+1131,26,professional,non-vegetarian,mid-range,Gandhipuram,morning,adventurous,casual,high-protein,Street Food,Bhel Puri,High,$$,Luxury,4.1,4.2
+1132,24,professional,eggitarian,premium,Gandhipuram,evening,adventurous,casual,high-protein,Chinese,Manchurian,Medium,$$,Cozy,4.4,4.4
+1133,35,student,non-vegetarian,budget-friendly,Peelamedu,night,romantic,business,low-carb,South Indian,Masala Dosa,Medium,$,Modern,4.5,4.9
+1134,20,professional,vegetarian,premium,Ukkadam,evening,study,casual,balanced,South Indian,Uttapam,Low,$$,Luxury,4.5,4.0
+1135,44,service,vegetarian,mid-range,Saibaba Colony,morning,celebration,friends,balanced,Italian,Pasta,High,$$,Traditional,4.0,3.7
+1136,30,other,vegan,budget-friendly,Saravanampatti,night,study,friends,balanced,South Indian,Filter Coffee,Medium,$,Traditional,4.4,4.4
+1137,35,professional,non-vegetarian,premium,Saibaba Colony,evening,comfort,family,balanced,Chinese,Manchurian,Low,$$$$,Traditional,4.2,4.5
+1138,29,student,vegetarian,budget-friendly,Sitra,midnight,adventurous,business,balanced,South Indian,Filter Coffee,High,$$$,Casual,4.1,3.5
+1139,37,professional,non-vegetarian,premium,Saibaba Colony,morning,study,date-night,balanced,Chinese,Manchurian,High,$$$$,Romantic,4.2,4.7
+1140,27,service,vegetarian,premium,Singanallur,midnight,healthy,family,high-protein,Street Food,Kothu Parotta,Medium,$$,Family-style,4.5,4.4
+1141,18,professional,non-vegetarian,premium,Saibaba Colony,afternoon,study,casual,balanced,Kerala,Appam Stew,Low,$$$,Luxury,4.4,4.8
+1142,34,professional,vegan,premium,Avinashi Road,evening,healthy,family,balanced,Chinese,Manchurian,High,$$$$,Family-style,4.0,4.4
+1143,27,business,vegan,premium,Avinashi Road,evening,adventurous,casual,balanced,North Indian,Naan,High,$$$$,Luxury,4.0,4.4
+1144,36,professional,vegetarian,mid-range,Peelamedu,night,healthy,business,regular,South Indian,Masala Dosa,High,$$,Casual,4.4,4.7
+1145,18,business,non-vegetarian,premium,Kovaipudur,evening,healthy,casual,high-protein,Chinese,Schezwan Fried Rice,High,$$$$,Romantic,4.6,5.0
+1146,37,service,non-vegetarian,premium,Singanallur,midnight,study,casual,high-protein,Bakery,Chocolate Cake,Medium,$$$,Luxury,4.6,4.5
+1147,18,professional,vegetarian,mid-range,Singanallur,afternoon,adventurous,friends,balanced,Chinese,Spring Rolls,Medium,$$,Modern,4.4,4.4
+1148,42,professional,non-vegetarian,premium,Kovaipudur,afternoon,study,friends,high-protein,South Indian,Uttapam,Medium,$$$$,Romantic,5.0,5.0
+1149,24,professional,non-vegetarian,budget-friendly,Gandhipuram,evening,comfort,casual,balanced,South Indian,Pongal,High,$$,Traditional,3.9,4.2
+1150,31,professional,vegetarian,premium,Vadavalli,midnight,adventurous,business,low-carb,Andhra,Andhra Chicken Curry,Medium,$$$,Casual,3.9,4.3
+1151,21,professional,non-vegetarian,premium,RS Puram,night,celebration,friends,balanced,Chettinad,Fish Fry,Medium,$$$,Romantic,3.7,3.4
+1152,33,business,non-vegetarian,mid-range,Sitra,evening,study,date-night,high-protein,Bakery,Puff,Medium,$,Romantic,4.3,4.4
+1153,20,other,non-vegetarian,budget-friendly,Saibaba Colony,morning,celebration,casual,balanced,South Indian,Uttapam,High,$,Casual,3.9,3.5
+1154,24,student,eggitarian,budget-friendly,Saibaba Colony,evening,celebration,family,balanced,North Indian,Paneer Butter Masala,High,$,Family-style,4.6,4.9
+1155,41,student,eggitarian,budget-friendly,Singanallur,night,comfort,friends,high-protein,Chinese,Schezwan Fried Rice,High,$,Casual,4.0,4.2
+1156,18,other,eggitarian,budget-friendly,Thudiyalur,morning,study,casual,balanced,South Indian,Uttapam,High,$$,Cozy,3.9,4.0
+1157,28,student,non-vegetarian,budget-friendly,Sitra,evening,romantic,family,high-protein,South Indian,Rava Dosa,Medium,$,Family-style,4.1,4.9
+1158,42,professional,vegetarian,mid-range,Kovaipudur,night,healthy,date-night,balanced,Street Food,Bhel Puri,High,$$$,Romantic,3.9,4.3
+1159,34,student,vegetarian,mid-range,Saibaba Colony,morning,comfort,casual,regular,Chinese,Chilli Chicken,High,$$,Family-style,3.9,4.1
+1160,18,professional,vegan,mid-range,Ukkadam,evening,romantic,casual,balanced,North Indian,Butter Chicken,Low,$$,Cozy,3.9,4.1
+1161,22,business,vegetarian,premium,Singanallur,evening,celebration,casual,regular,Chinese,Chilli Chicken,Medium,$$$,Cozy,4.5,4.6
+1162,34,student,non-vegetarian,budget-friendly,Saibaba Colony,morning,adventurous,casual,low-carb,Chettinad,Fish Fry,Medium,$$,Cozy,4.2,4.3
+1163,23,student,eggitarian,budget-friendly,Singanallur,morning,celebration,business,balanced,Cafe,Sandwich,Medium,$,Luxury,4.3,4.3
+1164,42,service,vegetarian,budget-friendly,Peelamedu,midnight,quick,casual,balanced,Kerala,Beef Fry,Medium,$$,Cozy,4.4,4.3
+1165,18,service,non-vegetarian,budget-friendly,Sitra,afternoon,healthy,friends,regular,Chinese,Spring Rolls,Medium,$,Family-style,4.4,4.3
+1166,34,business,vegetarian,premium,Singanallur,evening,quick,family,balanced,Chettinad,Chicken Chettinad,High,$$$$,Traditional,4.2,4.6
+1167,21,student,non-vegetarian,budget-friendly,Singanallur,morning,adventurous,friends,balanced,Chettinad,Pepper Chicken,Medium,$$,Modern,4.4,4.9
+1168,19,student,vegetarian,mid-range,Vadavalli,night,celebration,friends,low-carb,Street Food,Bhel Puri,Low,$$$,Modern,4.0,4.3
+1169,30,student,vegetarian,budget-friendly,Avinashi Road,afternoon,quick,casual,balanced,South Indian,Rava Dosa,High,$$$,Traditional,4.2,3.6
+1170,26,service,vegetarian,premium,Thudiyalur,night,quick,family,regular,Cafe,Sandwich,Medium,$$$$,Family-style,4.5,4.8
+1171,34,service,vegetarian,mid-range,Kovaipudur,morning,comfort,casual,balanced,South Indian,Pongal,Low,$$,Family-style,4.6,4.4
+1172,19,business,vegetarian,mid-range,Kovaipudur,evening,romantic,family,regular,South Indian,Uttapam,High,$$,Casual,3.9,4.1
+1173,18,student,vegan,budget-friendly,Ukkadam,evening,comfort,casual,balanced,Chinese,Manchurian,High,$,Cozy,3.9,3.9
+1174,20,student,eggitarian,budget-friendly,Singanallur,evening,healthy,family,low-carb,South Indian,Filter Coffee,Medium,$$,Casual,4.1,3.9
+1175,20,professional,eggitarian,mid-range,Peelamedu,afternoon,healthy,friends,balanced,South Indian,Masala Dosa,Medium,$,Casual,4.1,3.9
+1176,18,professional,vegetarian,mid-range,Peelamedu,evening,quick,casual,balanced,South Indian,Uttapam,High,$$$,Luxury,4.3,4.2
+1177,18,professional,vegetarian,mid-range,RS Puram,morning,quick,casual,regular,South Indian,Vada,Low,$$,Cozy,4.3,4.0
+1178,27,business,eggitarian,budget-friendly,Vadavalli,night,healthy,casual,balanced,Bakery,Pastry,Low,$$,Modern,4.7,4.3
+1179,35,service,eggitarian,mid-range,Saibaba Colony,evening,healthy,friends,balanced,Bakery,Cream Bun,High,$,Cozy,4.9,5.0
+1180,25,professional,non-vegetarian,budget-friendly,Sitra,afternoon,comfort,friends,balanced,South Indian,Filter Coffee,High,$$,Luxury,3.9,4.3
+1181,19,professional,eggitarian,mid-range,RS Puram,evening,study,casual,balanced,South Indian,Vada,High,$$$,Traditional,4.3,4.1
+1182,18,professional,non-vegetarian,budget-friendly,Saravanampatti,morning,study,family,balanced,Bakery,Cookies,Low,$,Family-style,4.0,4.1
+1183,36,student,non-vegetarian,mid-range,Avinashi Road,evening,comfort,casual,balanced,Chinese,Spring Rolls,Medium,$$$,Traditional,4.3,4.2
+1184,39,student,non-vegetarian,budget-friendly,RS Puram,evening,quick,solo,balanced,Chinese,Manchurian,Medium,$,Luxury,5.0,5.0
+1185,24,professional,vegetarian,premium,Avinashi Road,evening,romantic,friends,high-protein,Chinese,Spring Rolls,Low,$$$,Family-style,4.3,4.8
+1186,18,student,vegetarian,budget-friendly,Vadavalli,morning,adventurous,friends,balanced,North Indian,Biryani,Medium,$,Family-style,3.7,3.7
+1187,29,student,non-vegetarian,budget-friendly,Sitra,morning,celebration,birthday,low-carb,Cafe,Cold Coffee,Low,$,Luxury,4.9,5.0
+1188,26,student,vegetarian,budget-friendly,Thudiyalur,morning,quick,casual,balanced,Andhra,Gongura Mutton,High,$,Cozy,4.8,4.5
+1189,29,professional,non-vegetarian,mid-range,Avinashi Road,afternoon,quick,anniversary,regular,Italian,Garlic Bread,Low,$$$,Luxury,5.0,4.9
+1190,28,business,eggitarian,premium,Peelamedu,midnight,study,solo,low-carb,Chinese,Chilli Chicken,High,$$,Luxury,4.3,4.2
+1191,30,business,vegetarian,mid-range,Thudiyalur,morning,quick,birthday,regular,Chinese,Manchurian,Low,$$$,Romantic,3.5,3.5
+1192,54,professional,non-vegetarian,mid-range,Avinashi Road,night,comfort,casual,low-carb,Kerala,Malabar Parotta,High,$$,Traditional,3.8,4.1
+1193,33,professional,eggitarian,mid-range,Singanallur,morning,adventurous,friends,high-protein,Chettinad,Karaikudi Mutton,High,$,Family-style,4.2,4.5
+1194,46,other,vegetarian,mid-range,RS Puram,evening,healthy,business,low-carb,South Indian,Idli Sambar,Medium,$$,Casual,4.4,4.9
+1195,21,professional,vegan,premium,Peelamedu,afternoon,quick,anniversary,balanced,South Indian,Rava Dosa,High,$$$$,Traditional,4.5,5.0
+1196,31,business,non-vegetarian,premium,Sitra,night,healthy,business,balanced,North Indian,Butter Chicken,High,$$$,Modern,4.1,4.9
+1197,34,professional,non-vegetarian,budget-friendly,Saibaba Colony,morning,quick,friends,low-carb,South Indian,Pongal,Medium,$$,Family-style,4.2,4.2
+1198,26,student,vegetarian,budget-friendly,Avinashi Road,night,quick,solo,high-protein,Kerala,Appam Stew,Low,$,Traditional,4.0,4.0
+1199,37,student,vegetarian,budget-friendly,Saibaba Colony,afternoon,quick,friends,balanced,Bakery,Cookies,Medium,$,Cozy,4.4,4.7
+1200,31,professional,vegetarian,mid-range,Gandhipuram,afternoon,study,family,balanced,Kerala,Beef Fry,Medium,$$,Family-style,5.0,5.0
+1201,35,professional,vegetarian,mid-range,Avinashi Road,evening,comfort,business,high-protein,Kerala,Malabar Parotta,Medium,$$,Luxury,4.4,4.3
+1202,29,other,eggitarian,premium,Singanallur,night,study,casual,regular,South Indian,Vada,Medium,$$,Luxury,4.7,4.9
+1203,28,service,non-vegetarian,premium,Saibaba Colony,morning,celebration,business,low-carb,Andhra,Gongura Mutton,High,$$$$,Modern,4.1,4.4
+1204,32,student,non-vegetarian,premium,Avinashi Road,evening,healthy,date-night,high-protein,South Indian,Pongal,Medium,$$$$,Romantic,4.8,5.0
+1205,30,professional,non-vegetarian,premium,Saibaba Colony,afternoon,quick,friends,low-carb,Italian,Pizza,Low,$$$$,Modern,4.3,4.5
+1206,29,professional,non-vegetarian,budget-friendly,Ukkadam,morning,romantic,family,regular,Street Food,Egg Puffs,Low,$,Casual,4.2,4.2
+1207,20,professional,non-vegetarian,mid-range,Sitra,evening,healthy,casual,high-protein,Andhra,Royyala Iguru,High,$$,Traditional,4.7,4.7
+1208,28,other,vegetarian,budget-friendly,Vadavalli,morning,celebration,casual,balanced,South Indian,Masala Dosa,High,$,Modern,4.9,5.0
+1209,22,professional,vegetarian,mid-range,Vadavalli,morning,celebration,casual,high-protein,Cafe,Filter Coffee,High,$$,Casual,4.8,5.0
+1210,18,student,vegetarian,mid-range,Kovaipudur,evening,quick,solo,high-protein,Chinese,Manchurian,Low,$$,Luxury,4.6,4.8
+1211,28,student,non-vegetarian,mid-range,Avinashi Road,evening,healthy,family,low-carb,South Indian,Masala Dosa,Medium,$$,Family-style,4.8,5.0
+1212,19,service,non-vegetarian,premium,Singanallur,morning,quick,family,regular,Andhra,Pulihora,Medium,$$$$,Traditional,4.4,4.7
+1213,24,professional,eggitarian,mid-range,Peelamedu,afternoon,quick,casual,high-protein,North Indian,Naan,High,$$,Romantic,4.6,4.8
+1214,30,student,non-vegetarian,budget-friendly,Saibaba Colony,night,adventurous,date-night,regular,Italian,Lasagna,Low,$$$,Luxury,4.9,4.4
+1215,32,other,vegetarian,premium,Singanallur,evening,study,date-night,regular,Chinese,Hakka Noodles,Medium,$$$,Modern,4.1,4.3
+1216,32,professional,non-vegetarian,mid-range,Avinashi Road,midnight,comfort,birthday,balanced,Chettinad,Chicken Chettinad,High,$$,Romantic,4.6,4.7
+1217,18,business,eggitarian,mid-range,Peelamedu,evening,romantic,date-night,balanced,South Indian,Masala Dosa,Low,$$,Romantic,4.1,4.7
+1218,39,student,vegetarian,budget-friendly,Kovaipudur,night,comfort,casual,regular,South Indian,Filter Coffee,High,$$,Casual,4.3,4.1
+1219,38,professional,vegan,premium,Peelamedu,midnight,healthy,family,balanced,Street Food,Kothu Parotta,Low,$$$,Family-style,3.8,4.4
+1220,28,student,vegetarian,budget-friendly,Vadavalli,morning,healthy,friends,balanced,Andhra,Gongura Mutton,High,$,Traditional,3.9,4.0
+1221,49,business,vegetarian,premium,Avinashi Road,night,romantic,solo,regular,North Indian,Butter Chicken,High,$$$,Family-style,3.7,4.1
+1222,18,student,eggitarian,budget-friendly,Peelamedu,morning,quick,casual,regular,Chinese,Chilli Chicken,Medium,$$,Luxury,4.4,4.3
+1223,35,professional,vegan,premium,Ukkadam,morning,healthy,friends,high-protein,South Indian,Uttapam,High,$$$$,Family-style,4.7,4.4
+1224,47,student,non-vegetarian,mid-range,Sitra,afternoon,romantic,casual,balanced,North Indian,Butter Chicken,High,$,Luxury,4.6,4.6
+1225,20,business,non-vegetarian,budget-friendly,Saravanampatti,night,adventurous,date-night,balanced,North Indian,Butter Chicken,High,$$,Romantic,4.6,4.7
+1226,23,professional,non-vegetarian,budget-friendly,Vadavalli,evening,comfort,business,balanced,Street Food,Bhel Puri,Low,$,Modern,4.9,4.3
+1227,25,other,non-vegetarian,premium,Vadavalli,evening,romantic,casual,high-protein,Chinese,Schezwan Fried Rice,Medium,$$$$,Modern,4.5,5.0
+1228,25,other,non-vegetarian,premium,Sitra,night,healthy,casual,balanced,South Indian,Masala Dosa,Low,$$$,Family-style,5.0,5.0
+1229,34,business,non-vegetarian,premium,Sitra,evening,study,casual,high-protein,Chinese,Manchurian,Medium,$$$$,Casual,4.4,4.6
+1230,36,student,non-vegetarian,budget-friendly,Sitra,evening,study,family,high-protein,North Indian,Naan,Medium,$,Family-style,4.4,4.6
+1231,29,professional,non-vegetarian,mid-range,Kovaipudur,night,celebration,family,balanced,North Indian,Butter Chicken,High,$$$,Casual,3.8,4.1
+1232,24,student,non-vegetarian,budget-friendly,Vadavalli,afternoon,study,solo,high-protein,Chettinad,Chicken Chettinad,High,$,Romantic,4.1,3.9
+1233,26,student,non-vegetarian,budget-friendly,Thudiyalur,afternoon,quick,casual,regular,Street Food,Bhel Puri,High,$$,Casual,4.2,3.9
+1234,24,student,vegetarian,budget-friendly,Thudiyalur,midnight,romantic,casual,high-protein,South Indian,Pongal,Medium,$,Casual,4.4,4.5
+1235,31,student,non-vegetarian,budget-friendly,Saibaba Colony,evening,study,casual,high-protein,Chinese,Schezwan Fried Rice,High,$$,Casual,5.0,5.0
+1236,30,student,eggitarian,budget-friendly,Saibaba Colony,afternoon,adventurous,family,high-protein,South Indian,Rava Dosa,Medium,$,Family-style,3.9,4.3
+1237,36,professional,vegetarian,mid-range,Avinashi Road,evening,romantic,friends,regular,South Indian,Idli Sambar,Medium,$$,Modern,3.7,4.4
+1238,29,professional,eggitarian,mid-range,Saravanampatti,night,romantic,casual,low-carb,Italian,Garlic Bread,Medium,$$$$,Family-style,4.1,4.0
+1239,26,business,eggitarian,premium,Thudiyalur,afternoon,study,date-night,low-carb,South Indian,Vada,Low,$$$,Luxury,3.9,4.4
+1240,36,student,eggitarian,budget-friendly,Avinashi Road,afternoon,quick,casual,balanced,Kerala,Malabar Parotta,High,$,Romantic,4.5,4.7
+1241,39,professional,vegetarian,premium,Peelamedu,night,study,friends,regular,Andhra,Andhra Chicken Curry,High,$$$,Romantic,4.9,5.0
+1242,29,student,non-vegetarian,mid-range,Avinashi Road,evening,healthy,family,balanced,North Indian,Biryani,High,$$,Traditional,5.0,5.0
+1243,21,student,non-vegetarian,budget-friendly,Vadavalli,afternoon,celebration,family,regular,South Indian,Rava Dosa,Medium,$,Traditional,3.8,4.0
+1244,18,professional,vegetarian,mid-range,Saibaba Colony,afternoon,adventurous,business,balanced,North Indian,Butter Chicken,High,$$,Modern,5.0,5.0
+1245,35,service,non-vegetarian,budget-friendly,Avinashi Road,morning,study,solo,high-protein,Chinese,Chilli Chicken,Medium,$$,Traditional,4.1,4.2
+1246,32,professional,non-vegetarian,mid-range,Avinashi Road,afternoon,healthy,casual,regular,South Indian,Pongal,Low,$$,Luxury,4.5,4.8
+1247,25,professional,vegan,premium,Singanallur,evening,adventurous,date-night,high-protein,South Indian,Pongal,Low,$$$,Luxury,4.2,3.9
+1248,40,service,non-vegetarian,mid-range,Vadavalli,afternoon,romantic,family,balanced,North Indian,Naan,High,$$$,Family-style,4.1,4.6
+1249,42,student,vegetarian,budget-friendly,Thudiyalur,morning,comfort,casual,balanced,North Indian,Chole Bhature,High,$,Traditional,4.3,4.4
+1250,32,professional,non-vegetarian,premium,RS Puram,afternoon,healthy,casual,high-protein,Chinese,Schezwan Fried Rice,Low,$$$$,Modern,4.4,4.7
+1251,43,other,non-vegetarian,mid-range,Thudiyalur,evening,study,casual,low-carb,Italian,Pasta,Medium,$$,Cozy,4.2,4.4
+1252,48,professional,non-vegetarian,mid-range,Avinashi Road,morning,romantic,business,high-protein,Chettinad,Fish Fry,High,$$$,Modern,3.9,4.3
+1253,22,professional,vegetarian,premium,Avinashi Road,night,study,date-night,balanced,North Indian,Butter Chicken,High,$$$$,Romantic,4.6,4.5
+1254,23,professional,vegan,mid-range,RS Puram,midnight,adventurous,family,balanced,South Indian,Idli Sambar,Medium,$$$,Traditional,4.4,4.2
+1255,39,professional,vegetarian,mid-range,Saibaba Colony,night,romantic,casual,regular,Chettinad,Pepper Chicken,Medium,$$,Romantic,4.3,4.5
+1256,39,professional,non-vegetarian,premium,Kovaipudur,evening,celebration,casual,balanced,Bakery,Puff,High,$$$,Modern,3.4,3.8
+1257,27,business,eggitarian,premium,Thudiyalur,evening,celebration,date-night,low-carb,Chettinad,Karaikudi Mutton,High,$$$$,Romantic,5.0,5.0
+1258,38,student,non-vegetarian,mid-range,Saibaba Colony,night,romantic,business,low-carb,Chinese,Spring Rolls,Medium,$$,Modern,3.6,4.0
+1259,27,professional,non-vegetarian,mid-range,Ukkadam,evening,adventurous,business,balanced,Chinese,Schezwan Fried Rice,High,$$,Luxury,4.7,5.0
+1260,26,other,vegan,mid-range,Singanallur,evening,adventurous,casual,high-protein,South Indian,Pongal,High,$$,Traditional,4.8,5.0
+1261,26,service,non-vegetarian,mid-range,RS Puram,evening,romantic,casual,regular,Kerala,Puttu Kadala,High,$$$,Romantic,4.1,4.4
+1262,22,student,eggitarian,budget-friendly,RS Puram,evening,romantic,friends,regular,Cafe,Tea,High,$,Luxury,4.4,4.2
+1263,18,other,eggitarian,budget-friendly,Sitra,evening,healthy,family,balanced,Italian,Pasta,High,$,Family-style,4.4,4.7
+1264,21,professional,vegetarian,premium,Peelamedu,afternoon,romantic,date-night,balanced,South Indian,Vada,Low,$$$$,Romantic,4.1,4.5
+1265,40,student,non-vegetarian,mid-range,Singanallur,night,romantic,casual,high-protein,South Indian,Uttapam,High,$$,Luxury,4.8,5.0
+1266,33,professional,eggitarian,premium,Thudiyalur,afternoon,celebration,friends,balanced,Kerala,Malabar Parotta,Low,$$,Casual,4.3,4.4
+1267,28,student,non-vegetarian,mid-range,Peelamedu,night,adventurous,date-night,balanced,South Indian,Idli Sambar,Medium,$$,Luxury,4.5,5.0
+1268,34,service,eggitarian,premium,Ukkadam,evening,healthy,birthday,regular,Chinese,Chilli Chicken,High,$$$,Casual,4.5,4.8
+1269,25,student,non-vegetarian,mid-range,Sitra,morning,celebration,casual,regular,Italian,Pasta,High,$$$,Romantic,3.8,4.1
+1270,33,student,vegan,premium,Gandhipuram,morning,comfort,friends,high-protein,Cafe,Tea,High,$$$$,Romantic,4.0,4.3
+1271,24,student,eggitarian,mid-range,Sitra,night,healthy,solo,balanced,North Indian,Biryani,Low,$$,Casual,4.2,4.0
+1272,24,student,vegetarian,premium,Gandhipuram,evening,celebration,birthday,high-protein,South Indian,Pongal,High,$$$,Modern,4.2,4.3
+1273,21,student,vegetarian,budget-friendly,Avinashi Road,evening,quick,casual,balanced,Chettinad,Karaikudi Mutton,Medium,$,Traditional,4.3,4.1
+1274,32,service,vegetarian,mid-range,Gandhipuram,evening,adventurous,casual,balanced,South Indian,Filter Coffee,Medium,$$$,Modern,3.6,3.7
+1275,27,professional,non-vegetarian,mid-range,RS Puram,afternoon,study,casual,balanced,Chinese,Hakka Noodles,High,$$,Modern,4.4,4.3
+1276,28,professional,non-vegetarian,mid-range,Avinashi Road,evening,comfort,family,balanced,Street Food,Sundal,High,$$,Family-style,4.2,4.8
+1277,28,service,vegan,mid-range,Kovaipudur,evening,romantic,family,high-protein,Italian,Pizza,High,$$$,Traditional,4.0,4.0
+1278,26,service,non-vegetarian,mid-range,Saravanampatti,night,healthy,casual,regular,Andhra,Pulihora,High,$$,Casual,4.4,4.9
+1279,23,professional,vegetarian,mid-range,Peelamedu,night,comfort,friends,balanced,Italian,Lasagna,Low,$$,Family-style,5.0,5.0
+1280,39,professional,non-vegetarian,budget-friendly,Vadavalli,afternoon,study,casual,balanced,Chinese,Spring Rolls,Low,$,Traditional,4.5,4.5
+1281,32,other,vegan,budget-friendly,Thudiyalur,evening,quick,date-night,low-carb,South Indian,Vada,Medium,$$,Romantic,4.4,4.6
+1282,39,professional,non-vegetarian,premium,Avinashi Road,morning,adventurous,family,balanced,Italian,Lasagna,Medium,$$$$,Family-style,4.0,4.1
+1283,34,service,eggitarian,premium,Singanallur,morning,celebration,casual,high-protein,South Indian,Uttapam,High,$$$,Casual,4.4,4.8
+1284,35,student,vegetarian,budget-friendly,Vadavalli,evening,romantic,casual,high-protein,Chettinad,Chicken Chettinad,High,$$,Luxury,4.9,4.6
+1285,19,business,non-vegetarian,budget-friendly,Peelamedu,afternoon,romantic,date-night,balanced,North Indian,Paneer Butter Masala,Medium,$,Luxury,5.0,5.0
+1286,23,professional,non-vegetarian,mid-range,Singanallur,afternoon,romantic,solo,balanced,Chinese,Hakka Noodles,Medium,$$,Traditional,3.9,4.0
+1287,18,business,vegetarian,mid-range,Peelamedu,morning,healthy,date-night,balanced,North Indian,Chole Bhature,High,$$$,Romantic,4.6,4.8
+1288,30,student,eggitarian,budget-friendly,RS Puram,evening,healthy,casual,high-protein,Italian,Pizza,Medium,$$,Modern,3.8,3.6
+1289,23,student,vegetarian,mid-range,Avinashi Road,evening,romantic,date-night,regular,South Indian,Uttapam,High,$$,Luxury,4.8,4.8
+1290,21,student,vegetarian,budget-friendly,Avinashi Road,night,adventurous,casual,low-carb,Chinese,Hakka Noodles,Medium,$,Traditional,4.1,4.3
+1291,18,professional,vegetarian,budget-friendly,Singanallur,evening,romantic,solo,balanced,Street Food,Bhel Puri,High,$$,Cozy,4.4,4.8
+1292,33,professional,vegetarian,budget-friendly,Avinashi Road,night,comfort,friends,balanced,Chinese,Manchurian,Medium,$,Romantic,4.4,4.4
+1293,22,business,vegetarian,mid-range,Kovaipudur,night,celebration,casual,regular,Street Food,Pani Puri,High,$$,Modern,4.1,4.0
+1294,22,student,vegetarian,budget-friendly,RS Puram,evening,celebration,casual,regular,Chinese,Manchurian,Low,$$,Cozy,4.6,4.8
+1295,31,student,eggitarian,mid-range,Saravanampatti,morning,adventurous,casual,high-protein,South Indian,Filter Coffee,Medium,$$,Traditional,4.8,5.0
+1296,23,service,vegan,premium,RS Puram,evening,comfort,casual,balanced,South Indian,Idli Sambar,Low,$$$$,Luxury,3.8,4.2
+1297,43,student,non-vegetarian,budget-friendly,Singanallur,morning,celebration,family,regular,Chinese,Spring Rolls,High,$,Family-style,4.4,4.4
+1298,29,student,non-vegetarian,budget-friendly,Singanallur,afternoon,quick,friends,regular,Italian,Pizza,Low,$$,Modern,4.5,4.5
+1299,32,business,non-vegetarian,mid-range,Sitra,afternoon,adventurous,casual,balanced,Chinese,Schezwan Fried Rice,Low,$$$,Romantic,4.1,4.0
+1300,42,student,vegetarian,premium,Thudiyalur,afternoon,celebration,casual,regular,South Indian,Vada,High,$$$,Modern,4.4,4.5
+1301,20,student,vegetarian,budget-friendly,RS Puram,evening,celebration,casual,high-protein,Kerala,Appam Stew,High,$$,Modern,4.8,4.9
+1302,18,other,vegetarian,mid-range,Sitra,afternoon,adventurous,family,balanced,Kerala,Malabar Parotta,Medium,$$,Family-style,3.9,4.6
+1303,22,student,non-vegetarian,mid-range,Gandhipuram,night,comfort,date-night,low-carb,South Indian,Idli Sambar,High,$$$,Modern,4.2,3.9
+1304,18,student,vegetarian,mid-range,Kovaipudur,afternoon,study,date-night,regular,Street Food,Sundal,Medium,$$,Romantic,4.1,4.6
+1305,30,student,non-vegetarian,budget-friendly,Vadavalli,morning,comfort,family,high-protein,South Indian,Filter Coffee,High,$,Casual,4.3,4.4
+1306,20,student,vegetarian,mid-range,Kovaipudur,afternoon,study,date-night,balanced,Chettinad,Karaikudi Mutton,High,$$$,Luxury,3.9,3.6
+1307,21,professional,non-vegetarian,mid-range,Vadavalli,morning,comfort,casual,high-protein,Chinese,Manchurian,High,$$,Modern,3.7,3.9
+1308,26,student,vegetarian,budget-friendly,Thudiyalur,afternoon,romantic,casual,balanced,South Indian,Vada,Medium,$,Romantic,4.0,4.3
+1309,21,student,non-vegetarian,budget-friendly,Saravanampatti,afternoon,celebration,casual,high-protein,South Indian,Vada,Medium,$,Cozy,4.5,4.5
+1310,41,student,non-vegetarian,budget-friendly,Avinashi Road,morning,comfort,friends,high-protein,North Indian,Biryani,High,$,Romantic,4.4,4.1
+1311,19,student,vegetarian,mid-range,Saibaba Colony,night,adventurous,friends,balanced,Chinese,Chilli Chicken,Low,$,Cozy,4.5,5.0
+1312,29,student,vegetarian,budget-friendly,RS Puram,evening,study,family,high-protein,Cafe,Sandwich,Medium,$,Family-style,3.1,3.6
+1313,36,professional,non-vegetarian,budget-friendly,Ukkadam,afternoon,quick,casual,balanced,South Indian,Rava Dosa,High,$,Modern,3.9,3.7
+1314,21,service,vegetarian,mid-range,Singanallur,afternoon,romantic,casual,regular,South Indian,Vada,High,$$,Luxury,4.6,5.0
+1315,40,professional,non-vegetarian,mid-range,Thudiyalur,afternoon,comfort,friends,balanced,Bakery,Pastry,Low,$$,Casual,4.0,4.4
+1316,36,student,non-vegetarian,budget-friendly,Ukkadam,evening,adventurous,solo,balanced,Chinese,Chilli Chicken,Low,$,Casual,4.4,4.1
+1317,43,professional,vegetarian,mid-range,Saibaba Colony,evening,study,birthday,balanced,Kerala,Appam Stew,Low,$,Cozy,4.6,4.1
+1318,31,student,eggitarian,premium,Thudiyalur,evening,quick,friends,regular,Italian,Lasagna,Low,$$$$,Casual,4.4,5.0
+1319,42,student,vegan,budget-friendly,Peelamedu,night,celebration,casual,balanced,North Indian,Naan,Low,$$,Family-style,4.3,3.6
+1320,33,professional,vegetarian,mid-range,Avinashi Road,night,romantic,casual,balanced,Chinese,Schezwan Fried Rice,Low,$,Luxury,4.2,4.6
+1321,29,professional,non-vegetarian,premium,Gandhipuram,afternoon,healthy,casual,high-protein,South Indian,Pongal,High,$$$$,Family-style,4.3,4.7
+1322,27,student,non-vegetarian,budget-friendly,Saravanampatti,evening,adventurous,friends,high-protein,Bakery,Pastry,Low,$$,Cozy,4.7,4.8
+1323,19,professional,non-vegetarian,premium,Avinashi Road,night,comfort,date-night,low-carb,Italian,Pizza,Low,$$$$,Luxury,4.3,4.1
+1324,22,student,non-vegetarian,budget-friendly,Kovaipudur,afternoon,celebration,casual,balanced,Street Food,Pani Puri,High,$$,Cozy,4.6,4.7
+1325,31,student,vegetarian,budget-friendly,Saravanampatti,night,adventurous,family,balanced,North Indian,Chole Bhature,Medium,$$,Family-style,4.3,4.6
+1326,22,other,non-vegetarian,budget-friendly,Gandhipuram,afternoon,celebration,casual,low-carb,Bakery,Pastry,Low,$$$,Casual,4.8,4.7
+1327,29,professional,vegetarian,mid-range,Peelamedu,evening,study,friends,balanced,Chinese,Hakka Noodles,Medium,$$$,Modern,4.0,4.0
+1328,20,student,eggitarian,mid-range,RS Puram,evening,romantic,anniversary,balanced,Italian,Pasta,Low,$$,Modern,4.3,4.5
+1329,29,service,eggitarian,mid-range,Sitra,morning,adventurous,casual,balanced,South Indian,Uttapam,Low,$$,Cozy,4.1,4.5
+1330,31,student,non-vegetarian,mid-range,Singanallur,afternoon,quick,casual,balanced,South Indian,Filter Coffee,Low,$$,Modern,3.9,4.2
+1331,18,professional,non-vegetarian,budget-friendly,Avinashi Road,morning,healthy,friends,high-protein,Chettinad,Fish Fry,Medium,$$,Family-style,3.5,3.6
+1332,30,student,vegetarian,mid-range,Saravanampatti,night,quick,casual,balanced,South Indian,Idli Sambar,Low,$$,Family-style,3.0,3.3
+1333,21,student,non-vegetarian,budget-friendly,Thudiyalur,evening,romantic,solo,low-carb,Chinese,Manchurian,High,$$$,Luxury,4.0,3.6
+1334,43,professional,vegetarian,mid-range,RS Puram,night,adventurous,casual,balanced,North Indian,Biryani,Low,$$$,Romantic,4.0,4.1
+1335,37,professional,vegan,mid-range,Thudiyalur,night,adventurous,family,low-carb,Chinese,Hakka Noodles,Medium,$$$$,Traditional,3.8,3.9
+1336,36,student,vegetarian,mid-range,Singanallur,evening,romantic,family,balanced,Italian,Garlic Bread,High,$$,Family-style,5.0,5.0
+1337,22,student,non-vegetarian,budget-friendly,Vadavalli,night,celebration,birthday,regular,South Indian,Rava Dosa,Medium,$,Modern,4.0,4.1
+1338,29,professional,eggitarian,mid-range,Saravanampatti,midnight,quick,casual,balanced,South Indian,Uttapam,Low,$$$,Modern,4.0,3.3
+1339,38,student,non-vegetarian,budget-friendly,Ukkadam,evening,adventurous,solo,regular,Street Food,Sundal,Medium,$,Luxury,4.0,3.7
+1340,35,student,vegetarian,mid-range,Thudiyalur,evening,quick,date-night,high-protein,North Indian,Biryani,Low,$$,Romantic,3.5,4.3
+1341,33,student,non-vegetarian,budget-friendly,Ukkadam,morning,study,casual,low-carb,Italian,Pasta,High,$,Cozy,4.7,4.5
+1342,44,professional,vegan,mid-range,Peelamedu,evening,celebration,birthday,low-carb,Chinese,Schezwan Fried Rice,Medium,$$$,Traditional,3.9,4.0
+1343,28,student,vegan,budget-friendly,Saibaba Colony,evening,comfort,casual,high-protein,South Indian,Pongal,Medium,$,Cozy,4.0,4.1
+1344,38,professional,non-vegetarian,premium,Avinashi Road,morning,romantic,family,balanced,South Indian,Filter Coffee,High,$$$$,Casual,3.4,3.7
+1345,18,professional,non-vegetarian,mid-range,Saibaba Colony,afternoon,quick,family,high-protein,South Indian,Rava Dosa,Low,$$,Family-style,4.1,4.6
+1346,23,professional,vegetarian,premium,Kovaipudur,afternoon,healthy,casual,high-protein,South Indian,Vada,Low,$$,Casual,4.3,4.2
+1347,18,professional,non-vegetarian,mid-range,Saravanampatti,morning,celebration,date-night,balanced,Street Food,Sundal,Low,$$,Romantic,4.4,4.6
+1348,20,student,vegetarian,mid-range,Ukkadam,afternoon,study,date-night,balanced,Chinese,Hakka Noodles,Medium,$$,Luxury,4.9,4.7
+1349,34,student,vegetarian,budget-friendly,Avinashi Road,morning,comfort,friends,balanced,North Indian,Chole Bhature,Medium,$,Modern,4.5,4.3
+1350,33,professional,vegetarian,mid-range,Gandhipuram,evening,romantic,casual,regular,North Indian,Paneer Butter Masala,Medium,$$,Modern,4.7,5.0
+1351,18,business,non-vegetarian,premium,Kovaipudur,evening,healthy,family,regular,Cafe,Filter Coffee,Medium,$$$,Family-style,3.7,4.4
+1352,18,other,vegetarian,premium,Avinashi Road,afternoon,study,date-night,balanced,Cafe,Burger,High,$$,Romantic,3.9,4.3
+1353,25,student,vegetarian,budget-friendly,Ukkadam,morning,celebration,casual,regular,North Indian,Biryani,Medium,$$,Cozy,3.9,3.9
+1354,22,professional,non-vegetarian,budget-friendly,RS Puram,evening,study,solo,regular,Chettinad,Karaikudi Mutton,High,$,Luxury,3.9,3.8
+1355,31,professional,non-vegetarian,budget-friendly,Kovaipudur,evening,study,solo,balanced,Chettinad,Fish Fry,Low,$,Romantic,5.0,4.8
+1356,22,other,vegetarian,mid-range,Kovaipudur,evening,romantic,casual,high-protein,Italian,Lasagna,Medium,$$,Luxury,4.7,4.9
+1357,26,student,vegetarian,budget-friendly,Thudiyalur,morning,comfort,family,balanced,Andhra,Andhra Chicken Curry,High,$,Traditional,4.0,4.0
+1358,38,professional,vegetarian,premium,Peelamedu,midnight,romantic,casual,balanced,South Indian,Rava Dosa,High,$$$$,Romantic,4.9,5.0
+1359,29,business,non-vegetarian,premium,Peelamedu,evening,romantic,friends,regular,Andhra,Andhra Chicken Curry,High,$$$,Modern,5.0,5.0
+1360,21,professional,vegetarian,mid-range,RS Puram,morning,study,casual,regular,South Indian,Rava Dosa,High,$$,Cozy,4.1,4.3
+1361,30,business,non-vegetarian,mid-range,RS Puram,night,quick,casual,balanced,South Indian,Idli Sambar,Medium,$$,Cozy,3.2,3.6
+1362,28,professional,vegetarian,premium,Singanallur,afternoon,comfort,casual,low-carb,Chinese,Hakka Noodles,Medium,$$$,Romantic,4.7,4.8
+1363,32,service,non-vegetarian,budget-friendly,Gandhipuram,morning,adventurous,casual,balanced,Andhra,Pulihora,High,$$,Romantic,4.6,4.5
+1364,36,professional,eggitarian,budget-friendly,Saibaba Colony,evening,healthy,family,balanced,Chettinad,Pepper Chicken,High,$$,Casual,3.5,3.3
+1365,34,business,vegetarian,budget-friendly,Thudiyalur,afternoon,quick,casual,high-protein,Bakery,Cookies,Low,$$,Cozy,4.6,4.4
+1366,34,student,non-vegetarian,mid-range,Saravanampatti,evening,healthy,friends,regular,Street Food,Pani Puri,Medium,$,Casual,3.7,3.6
+1367,40,other,non-vegetarian,mid-range,Vadavalli,evening,study,casual,low-carb,Kerala,Beef Fry,Low,$$$,Family-style,4.4,4.3
+1368,18,service,vegetarian,premium,Kovaipudur,morning,healthy,casual,balanced,South Indian,Vada,High,$$$,Family-style,4.1,4.2
+1369,27,student,non-vegetarian,budget-friendly,Saravanampatti,midnight,healthy,friends,low-carb,Chinese,Schezwan Fried Rice,High,$,Cozy,4.8,4.5
+1370,20,student,vegetarian,mid-range,Singanallur,morning,quick,friends,balanced,South Indian,Pongal,Low,$$,Cozy,4.7,4.8
+1371,29,service,vegetarian,budget-friendly,Gandhipuram,night,study,family,balanced,Chettinad,Fish Fry,High,$$,Traditional,4.2,4.6
+1372,41,student,non-vegetarian,mid-range,Singanallur,evening,romantic,date-night,low-carb,South Indian,Uttapam,Medium,$,Romantic,4.6,4.8
+1373,27,student,eggitarian,premium,Saravanampatti,afternoon,comfort,casual,balanced,North Indian,Biryani,High,$$,Romantic,4.1,4.2
+1374,27,business,vegetarian,premium,Vadavalli,evening,adventurous,family,high-protein,Chinese,Schezwan Fried Rice,High,$$$$,Traditional,4.4,5.0
+1375,33,other,non-vegetarian,mid-range,Sitra,evening,adventurous,friends,balanced,South Indian,Vada,Medium,$$$$,Luxury,4.6,5.0
+1376,29,professional,vegan,premium,Singanallur,morning,healthy,date-night,high-protein,North Indian,Biryani,Medium,$$$,Romantic,4.6,4.9
+1377,26,professional,eggitarian,premium,Avinashi Road,afternoon,comfort,casual,balanced,Chinese,Manchurian,Medium,$$$,Modern,4.5,4.7
+1378,18,service,vegetarian,budget-friendly,Vadavalli,morning,adventurous,birthday,balanced,Street Food,Sundal,Low,$,Romantic,4.1,4.0
+1379,26,service,non-vegetarian,budget-friendly,Sitra,evening,adventurous,casual,regular,South Indian,Masala Dosa,Medium,$,Luxury,5.0,5.0
+1380,26,professional,vegetarian,premium,Kovaipudur,morning,quick,date-night,low-carb,South Indian,Pongal,Low,$$$,Romantic,4.2,4.9
+1381,25,professional,vegan,premium,Gandhipuram,afternoon,celebration,date-night,regular,North Indian,Butter Chicken,High,$$$$,Luxury,4.6,5.0
+1382,25,student,non-vegetarian,mid-range,Vadavalli,evening,romantic,business,balanced,Italian,Lasagna,High,$$$,Modern,4.7,4.6
+1383,20,business,non-vegetarian,premium,Singanallur,morning,study,family,balanced,Italian,Pasta,Medium,$$$,Casual,5.0,5.0
+1384,37,professional,non-vegetarian,budget-friendly,Vadavalli,morning,study,casual,balanced,North Indian,Naan,Low,$$,Traditional,4.8,5.0
+1385,27,service,non-vegetarian,premium,Kovaipudur,afternoon,healthy,family,balanced,Kerala,Malabar Parotta,Medium,$$,Casual,3.7,4.0
+1386,29,professional,vegetarian,premium,Kovaipudur,morning,study,casual,low-carb,South Indian,Rava Dosa,High,$$$,Luxury,3.8,4.2
+1387,42,professional,vegetarian,mid-range,Kovaipudur,morning,romantic,casual,high-protein,Chettinad,Pepper Chicken,High,$$,Cozy,4.3,4.8
+1388,23,student,non-vegetarian,budget-friendly,RS Puram,evening,romantic,casual,balanced,Italian,Pizza,Medium,$$,Romantic,4.4,4.5
+1389,28,professional,vegetarian,premium,Avinashi Road,evening,comfort,family,high-protein,Chinese,Spring Rolls,Medium,$$$,Family-style,4.1,4.7
+1390,26,professional,non-vegetarian,mid-range,Ukkadam,evening,romantic,casual,regular,Kerala,Puttu Kadala,High,$$,Casual,4.0,4.5
+1391,32,service,vegetarian,mid-range,Singanallur,night,adventurous,casual,high-protein,Street Food,Egg Puffs,High,$,Traditional,4.3,4.4
+1392,18,professional,non-vegetarian,budget-friendly,Peelamedu,morning,healthy,friends,balanced,South Indian,Filter Coffee,Medium,$$,Family-style,4.5,4.5
+1393,27,professional,vegan,mid-range,Ukkadam,afternoon,celebration,casual,low-carb,Chinese,Spring Rolls,High,$$,Romantic,4.2,4.3
+1394,36,student,non-vegetarian,budget-friendly,Saravanampatti,evening,adventurous,friends,balanced,North Indian,Biryani,High,$$,Luxury,4.4,4.6
+1395,49,student,non-vegetarian,mid-range,Singanallur,evening,romantic,casual,balanced,South Indian,Filter Coffee,Low,$,Romantic,3.9,4.0
+1396,29,student,vegetarian,budget-friendly,RS Puram,afternoon,quick,family,balanced,Street Food,Kothu Parotta,Medium,$,Casual,3.8,4.1
+1397,18,student,non-vegetarian,mid-range,Saravanampatti,evening,study,casual,high-protein,Street Food,Pani Puri,High,$$$,Luxury,4.6,4.7
+1398,20,student,vegetarian,mid-range,Kovaipudur,evening,romantic,family,balanced,South Indian,Rava Dosa,Low,$$,Family-style,4.4,4.9
+1399,29,other,non-vegetarian,budget-friendly,Saibaba Colony,morning,study,anniversary,balanced,South Indian,Filter Coffee,Medium,$$,Family-style,5.0,4.5
+1400,38,service,vegetarian,budget-friendly,Ukkadam,night,comfort,casual,regular,South Indian,Filter Coffee,Medium,$,Modern,4.2,4.0
+1401,18,service,vegetarian,mid-range,Gandhipuram,afternoon,adventurous,casual,low-carb,Street Food,Sundal,High,$$,Casual,4.6,5.0
+1402,26,student,vegetarian,premium,Avinashi Road,evening,adventurous,business,regular,North Indian,Naan,High,$$$,Casual,4.1,4.2
+1403,19,business,non-vegetarian,budget-friendly,Vadavalli,morning,quick,casual,balanced,Kerala,Malabar Parotta,Low,$,Casual,4.9,4.6
+1404,29,professional,vegetarian,mid-range,Kovaipudur,evening,healthy,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$$$,Casual,4.7,4.8
+1405,25,professional,vegan,mid-range,Vadavalli,evening,celebration,friends,high-protein,North Indian,Naan,Medium,$$$,Family-style,4.6,4.7
+1406,26,business,non-vegetarian,mid-range,Peelamedu,night,romantic,date-night,balanced,Chinese,Hakka Noodles,Medium,$$$,Romantic,3.6,4.0
+1407,38,student,eggitarian,budget-friendly,Kovaipudur,afternoon,study,date-night,regular,North Indian,Biryani,Low,$,Romantic,4.2,4.8
+1408,23,student,eggitarian,budget-friendly,Sitra,midnight,adventurous,date-night,balanced,Kerala,Beef Fry,Medium,$,Romantic,4.1,4.3
+1409,42,student,eggitarian,mid-range,RS Puram,evening,healthy,casual,balanced,South Indian,Masala Dosa,Medium,$$,Casual,3.8,4.5
+1410,26,professional,non-vegetarian,mid-range,Singanallur,night,quick,friends,balanced,Italian,Pizza,High,$,Casual,4.7,4.9
+1411,28,student,non-vegetarian,budget-friendly,Peelamedu,midnight,celebration,friends,low-carb,Chinese,Manchurian,High,$,Modern,5.0,5.0
+1412,23,student,vegetarian,mid-range,Avinashi Road,evening,adventurous,business,balanced,South Indian,Rava Dosa,Low,$$$,Luxury,4.2,4.2
+1413,32,student,vegetarian,budget-friendly,Sitra,evening,romantic,business,regular,South Indian,Uttapam,High,$,Casual,4.1,4.1
+1414,23,professional,vegetarian,premium,Saibaba Colony,night,celebration,casual,regular,South Indian,Rava Dosa,Low,$$$$,Cozy,4.2,5.0
+1415,27,professional,vegetarian,premium,Saravanampatti,afternoon,quick,casual,high-protein,South Indian,Rava Dosa,High,$$$,Casual,4.3,4.3
+1416,35,service,vegetarian,mid-range,Avinashi Road,night,celebration,family,balanced,South Indian,Vada,High,$$,Casual,4.8,5.0
+1417,25,other,non-vegetarian,mid-range,Singanallur,evening,comfort,family,balanced,Street Food,Bhel Puri,Medium,$$,Casual,4.5,4.5
+1418,28,business,non-vegetarian,mid-range,Peelamedu,evening,quick,date-night,balanced,Chettinad,Fish Fry,Medium,$$,Romantic,4.9,5.0
+1419,27,student,non-vegetarian,mid-range,Peelamedu,night,study,date-night,balanced,Andhra,Pulihora,High,$$,Romantic,3.7,4.1
+1420,32,student,non-vegetarian,budget-friendly,RS Puram,evening,romantic,business,balanced,Chinese,Chilli Chicken,Low,$$,Casual,4.2,3.9
+1421,18,student,non-vegetarian,budget-friendly,Thudiyalur,afternoon,romantic,date-night,balanced,Street Food,Bhel Puri,Low,$,Luxury,4.1,4.2
+1422,18,professional,vegan,mid-range,Gandhipuram,night,quick,casual,high-protein,Bakery,Puff,High,$$$$,Traditional,3.9,4.1
+1423,18,professional,eggitarian,mid-range,RS Puram,evening,study,family,balanced,Chinese,Schezwan Fried Rice,Medium,$$,Casual,5.0,5.0
+1424,22,student,non-vegetarian,budget-friendly,RS Puram,morning,romantic,family,balanced,South Indian,Idli Sambar,Low,$,Family-style,4.3,4.2
+1425,26,student,non-vegetarian,budget-friendly,Kovaipudur,night,romantic,family,high-protein,South Indian,Uttapam,Low,$$,Family-style,4.1,4.5
+1426,27,student,vegetarian,budget-friendly,Gandhipuram,midnight,comfort,casual,balanced,Chinese,Chilli Chicken,Medium,$,Traditional,4.7,4.4
+1427,34,other,non-vegetarian,premium,Saravanampatti,night,study,family,balanced,South Indian,Uttapam,High,$$$,Family-style,4.8,5.0
+1428,27,professional,non-vegetarian,premium,Peelamedu,night,comfort,casual,high-protein,Chinese,Spring Rolls,High,$$$,Traditional,4.5,4.4
+1429,19,student,vegetarian,mid-range,Vadavalli,night,healthy,family,high-protein,South Indian,Filter Coffee,Low,$$$,Family-style,4.3,4.4
+1430,32,professional,vegetarian,mid-range,Peelamedu,evening,adventurous,solo,high-protein,North Indian,Paneer Butter Masala,Medium,$,Luxury,4.7,4.7
+1431,29,professional,non-vegetarian,premium,Vadavalli,evening,comfort,business,balanced,North Indian,Naan,Low,$$$$,Luxury,4.7,5.0
+1432,26,professional,vegetarian,premium,Saravanampatti,night,healthy,casual,high-protein,Chettinad,Karaikudi Mutton,High,$$$,Luxury,4.7,4.7
+1433,29,student,eggitarian,mid-range,Saravanampatti,evening,comfort,casual,regular,North Indian,Butter Chicken,Medium,$$,Traditional,4.4,4.5
+1434,18,student,vegetarian,budget-friendly,Gandhipuram,evening,adventurous,friends,balanced,South Indian,Filter Coffee,Medium,$,Luxury,4.4,4.4
+1435,31,student,vegan,mid-range,Peelamedu,evening,celebration,friends,low-carb,South Indian,Pongal,Medium,$$,Casual,4.6,5.0
+1436,28,student,vegetarian,mid-range,Saravanampatti,evening,adventurous,family,low-carb,Bakery,Chocolate Cake,High,$$$,Traditional,4.5,4.7
+1437,27,student,vegetarian,budget-friendly,Saravanampatti,morning,romantic,birthday,balanced,Street Food,Egg Puffs,High,$,Family-style,4.3,4.0
+1438,31,professional,eggitarian,budget-friendly,RS Puram,evening,romantic,casual,balanced,Bakery,Chocolate Cake,High,$$,Modern,4.1,4.4
+1439,27,other,vegetarian,premium,Avinashi Road,afternoon,study,casual,balanced,Chinese,Chilli Chicken,Medium,$$$$,Family-style,4.5,4.7
+1440,30,other,vegetarian,mid-range,Vadavalli,evening,comfort,casual,high-protein,Chinese,Schezwan Fried Rice,Low,$$$,Family-style,4.0,4.2
+1441,18,professional,non-vegetarian,budget-friendly,Peelamedu,afternoon,celebration,date-night,low-carb,Chettinad,Chicken Chettinad,High,$,Romantic,3.8,3.9
+1442,25,professional,vegetarian,mid-range,Sitra,afternoon,study,casual,balanced,Chinese,Spring Rolls,Medium,$$,Romantic,3.8,3.8
+1443,22,service,vegan,budget-friendly,Avinashi Road,afternoon,romantic,date-night,balanced,Street Food,Kothu Parotta,Medium,$,Modern,4.1,4.8
+1444,25,student,vegetarian,budget-friendly,Gandhipuram,afternoon,quick,friends,low-carb,South Indian,Filter Coffee,Medium,$,Modern,4.5,4.4
+1445,33,professional,non-vegetarian,mid-range,Saibaba Colony,morning,romantic,casual,regular,South Indian,Masala Dosa,Medium,$,Modern,5.0,4.9
+1446,26,business,non-vegetarian,budget-friendly,Sitra,midnight,quick,birthday,balanced,South Indian,Masala Dosa,Medium,$,Casual,4.2,4.0
+1447,32,student,vegetarian,budget-friendly,Ukkadam,afternoon,celebration,family,low-carb,Kerala,Puttu Kadala,High,$$,Family-style,4.4,4.4
+1448,27,service,non-vegetarian,mid-range,RS Puram,evening,healthy,casual,balanced,Italian,Garlic Bread,High,$$,Family-style,4.6,4.4
+1449,33,student,non-vegetarian,mid-range,Kovaipudur,afternoon,celebration,casual,regular,Chettinad,Karaikudi Mutton,High,$$,Modern,4.2,4.5
+1450,18,professional,vegetarian,mid-range,Vadavalli,evening,celebration,friends,regular,South Indian,Pongal,Low,$$,Modern,4.6,5.0
+1451,29,professional,non-vegetarian,mid-range,Thudiyalur,morning,celebration,friends,low-carb,South Indian,Vada,Low,$$$,Casual,4.6,4.6
+1452,18,student,non-vegetarian,mid-range,Sitra,afternoon,comfort,casual,regular,Italian,Pasta,High,$,Modern,4.5,4.4
+1453,29,other,non-vegetarian,budget-friendly,Avinashi Road,evening,healthy,date-night,high-protein,Kerala,Beef Fry,Medium,$$,Romantic,4.9,5.0
+1454,22,student,vegetarian,mid-range,Ukkadam,evening,study,date-night,regular,Italian,Lasagna,High,$$,Romantic,4.4,4.9
+1455,21,professional,vegan,mid-range,Saibaba Colony,morning,quick,date-night,regular,Bakery,Chocolate Cake,Medium,$$,Romantic,4.8,4.8
+1456,23,student,eggitarian,premium,Ukkadam,afternoon,quick,date-night,regular,South Indian,Pongal,Low,$$$$,Romantic,5.0,5.0
+1457,21,other,non-vegetarian,premium,Kovaipudur,evening,adventurous,casual,balanced,South Indian,Pongal,High,$$$,Traditional,4.3,4.7
+1458,35,student,vegetarian,mid-range,Kovaipudur,evening,quick,casual,high-protein,North Indian,Butter Chicken,Medium,$$$,Casual,4.5,4.4
+1459,37,other,non-vegetarian,budget-friendly,RS Puram,evening,comfort,family,balanced,South Indian,Vada,High,$$,Family-style,4.5,4.7
+1460,28,student,vegetarian,budget-friendly,RS Puram,evening,romantic,family,balanced,Andhra,Pulihora,Low,$,Family-style,4.3,4.7
+1461,28,professional,vegan,budget-friendly,Saravanampatti,evening,celebration,date-night,high-protein,South Indian,Masala Dosa,Medium,$,Luxury,4.0,3.8
+1462,29,service,vegetarian,budget-friendly,Vadavalli,morning,celebration,family,low-carb,Chinese,Spring Rolls,Medium,$,Family-style,4.8,5.0
+1463,29,student,non-vegetarian,mid-range,Ukkadam,evening,romantic,family,regular,South Indian,Masala Dosa,Low,$$$,Casual,4.5,4.5
+1464,31,student,non-vegetarian,budget-friendly,Saibaba Colony,evening,adventurous,casual,high-protein,South Indian,Filter Coffee,Low,$$,Cozy,4.0,3.9
+1465,37,professional,vegetarian,mid-range,Saibaba Colony,evening,study,casual,high-protein,Chettinad,Chicken Chettinad,High,$,Romantic,4.3,4.0
+1466,18,professional,non-vegetarian,premium,Vadavalli,afternoon,adventurous,friends,balanced,South Indian,Pongal,Medium,$$$,Casual,3.8,4.1
+1467,30,other,eggitarian,budget-friendly,Vadavalli,evening,celebration,family,regular,Street Food,Pani Puri,High,$,Family-style,3.5,3.7
+1468,27,professional,non-vegetarian,mid-range,Saravanampatti,afternoon,romantic,birthday,balanced,South Indian,Vada,Low,$$,Traditional,4.2,4.7
+1469,20,student,non-vegetarian,budget-friendly,RS Puram,evening,adventurous,casual,low-carb,Andhra,Pulihora,High,$,Casual,4.8,4.8
+1470,20,service,non-vegetarian,premium,Singanallur,night,celebration,casual,balanced,Chinese,Manchurian,Low,$$$,Luxury,4.5,5.0
+1471,26,professional,vegetarian,premium,Saibaba Colony,evening,study,anniversary,balanced,Italian,Pizza,High,$$$,Family-style,4.2,4.3
+1472,28,professional,non-vegetarian,budget-friendly,Kovaipudur,evening,study,family,balanced,Kerala,Malabar Parotta,High,$,Family-style,4.3,4.4
+1473,20,other,non-vegetarian,mid-range,Gandhipuram,evening,healthy,date-night,regular,Street Food,Bhel Puri,High,$$$,Romantic,3.3,4.1
+1474,32,professional,non-vegetarian,budget-friendly,Sitra,morning,study,casual,balanced,Street Food,Bhel Puri,High,$$$,Romantic,4.4,4.0
+1475,44,other,vegetarian,premium,Ukkadam,afternoon,comfort,casual,high-protein,North Indian,Paneer Butter Masala,High,$$,Luxury,4.1,4.1
+1476,28,professional,non-vegetarian,mid-range,Saravanampatti,morning,celebration,casual,high-protein,South Indian,Rava Dosa,High,$$,Modern,4.8,4.8
+1477,23,student,non-vegetarian,budget-friendly,RS Puram,afternoon,healthy,casual,balanced,South Indian,Rava Dosa,High,$,Cozy,3.9,4.0
+1478,28,student,eggitarian,budget-friendly,Gandhipuram,afternoon,comfort,friends,regular,Chinese,Spring Rolls,Medium,$$,Traditional,4.5,4.7
+1479,30,professional,vegetarian,premium,Saibaba Colony,morning,quick,casual,high-protein,Chinese,Schezwan Fried Rice,Low,$$$$,Romantic,3.8,3.7
+1480,24,student,vegetarian,premium,Saravanampatti,morning,adventurous,casual,high-protein,Chinese,Chilli Chicken,Low,$$$,Cozy,4.8,5.0
+1481,27,student,non-vegetarian,budget-friendly,Ukkadam,afternoon,study,family,balanced,South Indian,Uttapam,High,$$,Traditional,3.8,3.9
+1482,33,student,non-vegetarian,budget-friendly,Vadavalli,afternoon,comfort,casual,high-protein,Chinese,Hakka Noodles,Medium,$$,Traditional,4.7,4.6
+1483,32,student,eggitarian,budget-friendly,Saravanampatti,midnight,study,friends,high-protein,Cafe,Tea,High,$,Casual,4.8,5.0
+1484,37,other,vegan,mid-range,Kovaipudur,afternoon,comfort,friends,balanced,Chettinad,Karaikudi Mutton,High,$$$,Modern,4.2,4.0
+1485,33,professional,eggitarian,mid-range,Kovaipudur,midnight,quick,date-night,balanced,North Indian,Biryani,High,$$,Luxury,4.2,4.6
+1486,29,student,vegan,budget-friendly,Vadavalli,evening,quick,friends,balanced,North Indian,Biryani,Medium,$,Romantic,4.1,4.4
+1487,28,professional,non-vegetarian,premium,Peelamedu,afternoon,study,casual,regular,Bakery,Cookies,Low,$$$,Casual,4.4,4.6
+1488,20,student,non-vegetarian,budget-friendly,Ukkadam,evening,quick,casual,low-carb,Chettinad,Chicken Chettinad,Medium,$$$,Romantic,4.9,4.1
+1489,22,professional,vegetarian,budget-friendly,Kovaipudur,afternoon,romantic,friends,regular,Italian,Lasagna,High,$$,Family-style,4.7,4.9
+1490,22,student,eggitarian,budget-friendly,Kovaipudur,evening,adventurous,casual,high-protein,South Indian,Masala Dosa,High,$$,Traditional,4.2,3.7
+1491,18,other,eggitarian,budget-friendly,Saibaba Colony,evening,celebration,casual,high-protein,South Indian,Masala Dosa,Low,$$,Casual,4.6,4.5
+1492,28,student,eggitarian,mid-range,Peelamedu,morning,adventurous,family,low-carb,Chinese,Manchurian,High,$$,Casual,5.0,5.0
+1493,20,professional,eggitarian,premium,Saravanampatti,evening,study,anniversary,balanced,Chettinad,Karaikudi Mutton,High,$$$,Romantic,4.6,5.0
+1494,26,professional,vegan,mid-range,Ukkadam,night,comfort,date-night,high-protein,Street Food,Kothu Parotta,Medium,$$$,Romantic,3.9,4.0
+1495,33,student,non-vegetarian,mid-range,Avinashi Road,morning,romantic,casual,regular,North Indian,Biryani,Low,$$,Traditional,4.6,4.8
+1496,28,other,non-vegetarian,premium,Saravanampatti,afternoon,quick,family,balanced,Street Food,Sundal,Low,$$$,Traditional,4.9,5.0
+1497,28,service,non-vegetarian,mid-range,Sitra,evening,healthy,family,balanced,South Indian,Uttapam,Medium,$$,Family-style,4.7,5.0
+1498,27,student,non-vegetarian,mid-range,Thudiyalur,midnight,study,date-night,balanced,Kerala,Malabar Parotta,High,$,Luxury,4.5,4.7
+1499,19,other,non-vegetarian,mid-range,RS Puram,night,quick,casual,regular,South Indian,Filter Coffee,High,$,Cozy,4.7,4.8
+1500,29,business,eggitarian,budget-friendly,Gandhipuram,evening,quick,family,low-carb,Bakery,Chocolate Cake,High,$,Traditional,4.3,4.5
+1501,27,professional,non-vegetarian,premium,Avinashi Road,evening,comfort,casual,high-protein,South Indian,Filter Coffee,Low,$$,Romantic,4.2,4.2
+1502,33,student,vegetarian,budget-friendly,Vadavalli,morning,quick,casual,regular,Street Food,Sundal,Low,$,Modern,4.0,4.2
+1503,26,student,eggitarian,budget-friendly,Sitra,morning,romantic,friends,high-protein,Street Food,Egg Puffs,High,$$$,Romantic,4.1,3.7
+1504,33,student,vegetarian,premium,RS Puram,morning,quick,friends,balanced,Chettinad,Chicken Chettinad,High,$$$$,Romantic,4.1,4.4
+1505,26,professional,eggitarian,mid-range,Saravanampatti,evening,study,casual,regular,Andhra,Royyala Iguru,Medium,$$,Luxury,4.3,4.3
+1506,18,professional,vegetarian,mid-range,Sitra,evening,adventurous,casual,low-carb,Bakery,Chocolate Cake,High,$$,Modern,4.3,4.6
+1507,35,professional,non-vegetarian,premium,RS Puram,morning,healthy,friends,balanced,Italian,Lasagna,High,$$$,Family-style,4.3,4.6
+1508,29,other,vegetarian,premium,Saibaba Colony,night,celebration,solo,low-carb,South Indian,Masala Dosa,Medium,$$$,Modern,4.1,4.8
+1509,20,student,vegetarian,budget-friendly,Singanallur,morning,romantic,family,high-protein,Chinese,Chilli Chicken,Medium,$$,Family-style,4.4,4.7
+1510,43,other,vegetarian,budget-friendly,Peelamedu,evening,adventurous,casual,balanced,Chinese,Manchurian,High,$,Casual,3.5,3.6
+1511,32,student,vegetarian,budget-friendly,Thudiyalur,evening,romantic,casual,balanced,Chinese,Hakka Noodles,High,$,Family-style,4.1,3.6
+1512,38,student,vegan,mid-range,Thudiyalur,evening,healthy,family,high-protein,South Indian,Filter Coffee,Low,$$$,Casual,4.4,4.4
+1513,21,professional,vegetarian,mid-range,Ukkadam,evening,adventurous,casual,high-protein,Bakery,Cream Bun,High,$$,Traditional,4.7,4.7
+1514,18,professional,non-vegetarian,mid-range,RS Puram,evening,healthy,family,balanced,South Indian,Pongal,Low,$$,Traditional,4.2,3.9
+1515,22,business,eggitarian,premium,Peelamedu,night,healthy,casual,low-carb,South Indian,Uttapam,Medium,$$$$,Traditional,5.0,5.0
+1516,36,student,vegetarian,mid-range,Kovaipudur,evening,comfort,casual,high-protein,Chinese,Manchurian,Medium,$$,Luxury,4.3,4.2
+1517,33,business,vegan,premium,Kovaipudur,afternoon,quick,casual,high-protein,Bakery,Pastry,Low,$$$,Luxury,4.1,4.6
+1518,40,professional,vegetarian,mid-range,Vadavalli,night,study,solo,high-protein,Italian,Lasagna,Low,$,Cozy,4.5,4.7
+1519,20,service,eggitarian,budget-friendly,Vadavalli,morning,romantic,business,balanced,Chinese,Spring Rolls,Medium,$$,Casual,4.9,5.0
+1520,28,service,non-vegetarian,mid-range,Ukkadam,morning,study,date-night,balanced,Italian,Garlic Bread,Low,$$$,Romantic,4.2,4.7
+1521,29,professional,eggitarian,premium,Saravanampatti,morning,quick,anniversary,high-protein,South Indian,Masala Dosa,Medium,$$$,Modern,3.8,4.2
+1522,22,professional,non-vegetarian,budget-friendly,Avinashi Road,midnight,romantic,family,high-protein,Chinese,Chilli Chicken,Medium,$,Family-style,4.3,4.9
+1523,28,student,non-vegetarian,mid-range,Singanallur,morning,celebration,casual,balanced,Chinese,Hakka Noodles,Low,$$,Romantic,5.0,5.0
+1524,22,business,eggitarian,mid-range,Thudiyalur,night,comfort,family,regular,North Indian,Naan,Medium,$$,Family-style,3.7,3.9
+1525,25,professional,vegetarian,budget-friendly,Avinashi Road,afternoon,quick,date-night,high-protein,Street Food,Kothu Parotta,High,$$$,Luxury,3.8,3.5
+1526,36,professional,vegetarian,mid-range,Gandhipuram,night,adventurous,family,regular,Chettinad,Karaikudi Mutton,High,$$$,Traditional,4.5,4.2
+1527,28,other,vegetarian,mid-range,RS Puram,morning,romantic,family,regular,Kerala,Appam Stew,Medium,$$,Family-style,3.8,4.5
+1528,41,business,non-vegetarian,mid-range,Vadavalli,night,celebration,casual,high-protein,North Indian,Chole Bhature,Medium,$,Modern,4.9,5.0
+1529,29,student,vegetarian,mid-range,Avinashi Road,afternoon,celebration,solo,high-protein,South Indian,Uttapam,Medium,$$$,Luxury,4.1,4.4
+1530,33,student,vegetarian,budget-friendly,Sitra,afternoon,comfort,date-night,low-carb,North Indian,Biryani,Medium,$,Romantic,3.9,4.1
+1531,18,business,vegetarian,budget-friendly,Vadavalli,afternoon,romantic,casual,high-protein,Andhra,Gongura Mutton,High,$,Romantic,3.9,3.9
+1532,18,other,eggitarian,premium,Vadavalli,evening,quick,date-night,balanced,South Indian,Uttapam,Medium,$$$,Romantic,4.6,4.9
+1533,23,student,non-vegetarian,budget-friendly,Saravanampatti,morning,comfort,casual,regular,Chettinad,Fish Fry,High,$,Casual,4.0,3.8
+1534,24,other,non-vegetarian,premium,Ukkadam,night,romantic,friends,balanced,Chettinad,Chicken Chettinad,High,$$$,Family-style,3.8,3.9
+1535,40,student,non-vegetarian,mid-range,Kovaipudur,evening,healthy,family,balanced,South Indian,Masala Dosa,Low,$$,Family-style,4.3,5.0
+1536,35,service,non-vegetarian,premium,Peelamedu,evening,romantic,friends,balanced,South Indian,Vada,High,$$$$,Modern,4.1,4.3
+1537,34,other,vegetarian,budget-friendly,Thudiyalur,night,celebration,casual,high-protein,Italian,Pasta,High,$,Romantic,3.5,3.6
+1538,26,professional,eggitarian,premium,Ukkadam,afternoon,adventurous,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$$$$,Modern,4.7,4.8
+1539,23,professional,non-vegetarian,budget-friendly,Ukkadam,evening,romantic,family,low-carb,North Indian,Chole Bhature,Medium,$,Casual,4.7,4.7
+1540,23,professional,vegetarian,premium,Gandhipuram,afternoon,study,date-night,low-carb,Chettinad,Karaikudi Mutton,Medium,$$$$,Romantic,4.7,5.0
+1541,20,professional,vegetarian,premium,RS Puram,morning,adventurous,family,balanced,South Indian,Masala Dosa,Low,$$$,Family-style,4.7,5.0
+1542,26,professional,non-vegetarian,mid-range,Thudiyalur,night,romantic,birthday,low-carb,Italian,Lasagna,Low,$,Romantic,4.3,4.6
+1543,39,student,vegetarian,mid-range,Singanallur,afternoon,romantic,family,high-protein,Chettinad,Pepper Chicken,High,$$$$,Family-style,4.1,4.5
+1544,29,student,eggitarian,budget-friendly,Ukkadam,evening,comfort,friends,low-carb,South Indian,Uttapam,High,$$,Cozy,5.0,5.0
+1545,28,professional,non-vegetarian,budget-friendly,Saravanampatti,night,adventurous,casual,regular,Kerala,Malabar Parotta,High,$,Cozy,4.7,4.9
+1546,30,student,non-vegetarian,budget-friendly,Sitra,morning,romantic,casual,high-protein,Italian,Lasagna,High,$,Traditional,3.9,4.0
+1547,28,student,non-vegetarian,budget-friendly,Vadavalli,afternoon,romantic,casual,high-protein,Chinese,Hakka Noodles,Medium,$,Romantic,4.3,4.5
+1548,25,student,vegetarian,budget-friendly,Thudiyalur,night,quick,family,balanced,Andhra,Pulihora,Medium,$$$,Casual,4.9,4.4
+1549,20,professional,non-vegetarian,mid-range,Saravanampatti,midnight,romantic,business,balanced,South Indian,Rava Dosa,High,$$,Modern,4.4,4.6
+1550,34,student,non-vegetarian,mid-range,Sitra,afternoon,romantic,date-night,balanced,South Indian,Uttapam,Medium,$$,Luxury,4.4,4.7
+1551,34,professional,vegan,budget-friendly,RS Puram,night,romantic,casual,regular,Street Food,Egg Puffs,Medium,$$,Family-style,4.4,4.4
+1552,29,business,vegan,mid-range,Ukkadam,evening,comfort,casual,balanced,Italian,Garlic Bread,High,$$,Romantic,4.3,4.6
+1553,37,professional,vegetarian,premium,Saravanampatti,afternoon,healthy,business,balanced,Chettinad,Karaikudi Mutton,High,$$$,Modern,3.9,4.3
+1554,21,other,vegan,premium,Avinashi Road,afternoon,healthy,business,balanced,Chinese,Manchurian,High,$$$$,Luxury,4.7,4.6
+1555,28,professional,vegan,premium,Saravanampatti,afternoon,healthy,solo,high-protein,North Indian,Butter Chicken,Medium,$$$,Romantic,4.0,5.0
+1556,18,service,non-vegetarian,budget-friendly,RS Puram,afternoon,celebration,date-night,balanced,Street Food,Sundal,High,$,Romantic,4.3,4.5
+1557,22,professional,non-vegetarian,premium,Sitra,evening,celebration,casual,balanced,Chinese,Hakka Noodles,Low,$$$,Cozy,5.0,5.0
+1558,24,service,eggitarian,budget-friendly,Ukkadam,evening,study,family,balanced,Chinese,Spring Rolls,Low,$$,Family-style,4.0,4.1
+1559,34,student,non-vegetarian,budget-friendly,Saravanampatti,evening,celebration,birthday,low-carb,South Indian,Vada,Medium,$$,Traditional,5.0,4.7
+1560,23,professional,vegan,premium,Saravanampatti,evening,healthy,casual,balanced,Cafe,Tea,Medium,$$$$,Luxury,3.9,3.8
+1561,25,student,non-vegetarian,budget-friendly,Saravanampatti,night,romantic,casual,balanced,North Indian,Biryani,Medium,$,Casual,4.4,4.5
+1562,26,professional,eggitarian,mid-range,Saibaba Colony,morning,adventurous,friends,high-protein,Chinese,Manchurian,Low,$$,Modern,4.3,4.2
+1563,32,professional,non-vegetarian,mid-range,Vadavalli,night,adventurous,friends,low-carb,South Indian,Filter Coffee,Low,$,Cozy,4.7,5.0
+1564,30,student,eggitarian,mid-range,Avinashi Road,evening,healthy,casual,balanced,Italian,Pasta,Medium,$$$,Romantic,4.6,4.8
+1565,22,student,eggitarian,budget-friendly,Avinashi Road,afternoon,study,casual,balanced,Cafe,Sandwich,Medium,$$,Romantic,4.2,4.0
+1566,25,professional,non-vegetarian,mid-range,Kovaipudur,night,celebration,business,low-carb,South Indian,Vada,Medium,$$,Modern,4.5,4.8
+1567,18,service,vegetarian,budget-friendly,Avinashi Road,evening,study,casual,high-protein,Chinese,Chilli Chicken,High,$$,Luxury,4.2,4.2
+1568,52,student,vegan,premium,Saibaba Colony,night,celebration,casual,regular,Bakery,Cookies,Low,$$$$,Modern,4.2,4.3
+1569,24,business,vegetarian,budget-friendly,Saravanampatti,evening,study,casual,regular,Italian,Pasta,High,$,Luxury,3.9,3.7
+1570,24,student,non-vegetarian,mid-range,Vadavalli,evening,healthy,friends,regular,Chinese,Chilli Chicken,Medium,$$,Casual,3.9,4.4
+1571,20,student,vegetarian,budget-friendly,Kovaipudur,evening,quick,business,regular,South Indian,Filter Coffee,Medium,$$,Luxury,4.4,4.3
+1572,18,professional,vegetarian,premium,Ukkadam,midnight,celebration,casual,high-protein,North Indian,Butter Chicken,Medium,$$$,Cozy,4.9,5.0
+1573,38,professional,vegetarian,mid-range,Thudiyalur,morning,study,business,balanced,Bakery,Chocolate Cake,Medium,$$,Luxury,4.8,5.0
+1574,30,student,vegetarian,budget-friendly,Singanallur,night,comfort,friends,high-protein,Chettinad,Pepper Chicken,Low,$,Romantic,4.6,4.6
+1575,29,professional,vegan,premium,Avinashi Road,evening,celebration,friends,low-carb,South Indian,Idli Sambar,Low,$$,Luxury,3.3,3.7
+1576,33,service,eggitarian,premium,Saibaba Colony,afternoon,comfort,casual,balanced,Chinese,Manchurian,Medium,$$$$,Luxury,3.7,3.7
+1577,18,professional,vegan,premium,Avinashi Road,evening,adventurous,casual,regular,South Indian,Masala Dosa,High,$$$,Modern,4.3,4.0
+1578,26,student,vegetarian,budget-friendly,Gandhipuram,evening,quick,date-night,low-carb,North Indian,Chole Bhature,High,$,Luxury,4.7,4.6
+1579,20,student,non-vegetarian,mid-range,Ukkadam,morning,healthy,casual,regular,South Indian,Vada,High,$$,Casual,4.4,4.3
+1580,27,student,non-vegetarian,mid-range,Ukkadam,night,healthy,anniversary,balanced,South Indian,Masala Dosa,High,$$,Romantic,4.5,4.9
+1581,18,business,vegan,premium,RS Puram,evening,study,family,regular,Andhra,Pulihora,High,$$$$,Family-style,4.2,4.9
+1582,22,service,vegetarian,budget-friendly,Saravanampatti,night,healthy,business,low-carb,North Indian,Butter Chicken,Medium,$,Luxury,3.7,3.7
+1583,22,other,vegetarian,mid-range,Singanallur,evening,study,casual,regular,Italian,Lasagna,High,$$$,Cozy,5.0,4.8
+1584,45,professional,vegetarian,mid-range,Saravanampatti,evening,study,friends,low-carb,Italian,Lasagna,High,$$$,Modern,4.1,4.3
+1585,28,other,vegetarian,mid-range,Vadavalli,evening,comfort,casual,regular,Italian,Pizza,Low,$$$,Casual,5.0,5.0
+1586,29,professional,non-vegetarian,budget-friendly,Singanallur,morning,healthy,family,low-carb,North Indian,Paneer Butter Masala,High,$,Family-style,4.5,4.8
+1587,24,business,eggitarian,mid-range,Thudiyalur,night,romantic,friends,balanced,South Indian,Uttapam,Medium,$$,Family-style,3.9,4.3
+1588,34,student,non-vegetarian,budget-friendly,Saibaba Colony,evening,comfort,casual,balanced,North Indian,Naan,Low,$$,Traditional,4.4,4.0
+1589,23,professional,vegetarian,premium,Singanallur,midnight,comfort,date-night,regular,Chinese,Hakka Noodles,Low,$$$$,Romantic,4.6,5.0
+1590,35,business,non-vegetarian,budget-friendly,Peelamedu,evening,quick,friends,regular,Kerala,Beef Fry,High,$,Casual,4.2,4.1
+1591,29,student,non-vegetarian,budget-friendly,RS Puram,afternoon,study,casual,balanced,Bakery,Pastry,High,$,Family-style,5.0,5.0
+1592,29,service,vegan,budget-friendly,Thudiyalur,evening,comfort,date-night,high-protein,South Indian,Rava Dosa,High,$$,Romantic,4.7,4.6
+1593,21,professional,non-vegetarian,premium,Thudiyalur,afternoon,celebration,friends,high-protein,Kerala,Puttu Kadala,High,$$$$,Cozy,4.6,5.0
+1594,18,student,eggitarian,budget-friendly,Saravanampatti,evening,adventurous,family,low-carb,Chinese,Schezwan Fried Rice,Medium,$,Traditional,4.4,4.5
+1595,41,business,vegetarian,premium,Gandhipuram,evening,celebration,solo,low-carb,North Indian,Naan,Medium,$$$,Traditional,4.6,5.0
+1596,24,student,non-vegetarian,mid-range,Vadavalli,evening,quick,friends,balanced,North Indian,Paneer Butter Masala,Medium,$$,Cozy,4.2,4.5
+1597,27,professional,eggitarian,budget-friendly,Kovaipudur,evening,comfort,solo,balanced,South Indian,Uttapam,High,$$,Romantic,4.9,4.9
+1598,18,service,non-vegetarian,mid-range,RS Puram,afternoon,celebration,family,balanced,Italian,Pizza,Low,$$,Casual,3.8,4.0
+1599,27,student,eggitarian,budget-friendly,Saibaba Colony,afternoon,study,friends,regular,Chinese,Schezwan Fried Rice,Medium,$$,Casual,4.3,4.4
+1600,25,student,non-vegetarian,mid-range,Kovaipudur,night,quick,anniversary,high-protein,Street Food,Bhel Puri,High,$$,Romantic,4.3,4.5
+1601,42,business,vegetarian,budget-friendly,Sitra,afternoon,comfort,casual,balanced,Chettinad,Karaikudi Mutton,High,$,Luxury,4.1,4.1
+1602,27,student,eggitarian,budget-friendly,RS Puram,evening,adventurous,family,balanced,North Indian,Paneer Butter Masala,Medium,$$,Family-style,4.6,4.6
+1603,21,student,vegetarian,premium,Sitra,afternoon,romantic,casual,balanced,Bakery,Chocolate Cake,Medium,$$$,Luxury,4.1,4.7
+1604,42,professional,non-vegetarian,mid-range,Vadavalli,evening,romantic,family,low-carb,South Indian,Filter Coffee,High,$$,Family-style,3.8,4.6
+1605,23,professional,eggitarian,premium,Ukkadam,afternoon,healthy,family,balanced,South Indian,Masala Dosa,Medium,$$$$,Family-style,5.0,5.0
+1606,27,professional,vegetarian,premium,Ukkadam,morning,celebration,family,regular,South Indian,Pongal,Medium,$$$,Family-style,4.8,5.0
+1607,33,student,non-vegetarian,budget-friendly,Kovaipudur,afternoon,healthy,casual,balanced,South Indian,Filter Coffee,Medium,$,Luxury,4.3,4.2
+1608,18,student,non-vegetarian,premium,Kovaipudur,afternoon,quick,family,low-carb,Street Food,Egg Puffs,High,$$$,Casual,3.8,4.1
+1609,25,student,non-vegetarian,budget-friendly,Kovaipudur,evening,healthy,casual,high-protein,Chinese,Manchurian,Medium,$$,Casual,4.5,4.5
+1610,49,service,vegetarian,premium,Sitra,afternoon,study,date-night,regular,Bakery,Pastry,Low,$$$,Romantic,4.0,4.1
+1611,20,business,vegan,premium,Gandhipuram,morning,adventurous,anniversary,balanced,Street Food,Pani Puri,High,$$,Casual,4.5,4.8
+1612,24,professional,non-vegetarian,premium,Peelamedu,afternoon,comfort,date-night,high-protein,South Indian,Pongal,High,$$$$,Romantic,5.0,5.0
+1613,24,service,vegan,budget-friendly,Singanallur,morning,celebration,business,balanced,Cafe,Cold Coffee,High,$,Luxury,5.0,5.0
+1614,24,professional,non-vegetarian,premium,Thudiyalur,morning,quick,casual,balanced,Italian,Garlic Bread,Medium,$$$$,Casual,3.4,3.4
+1615,38,student,vegetarian,mid-range,Kovaipudur,evening,healthy,friends,regular,Chettinad,Karaikudi Mutton,High,$$,Romantic,4.5,5.0
+1616,33,student,vegetarian,budget-friendly,Gandhipuram,morning,study,casual,regular,North Indian,Naan,Medium,$,Romantic,4.4,4.6
+1617,22,professional,vegan,mid-range,RS Puram,afternoon,study,date-night,balanced,Chettinad,Karaikudi Mutton,Medium,$$,Romantic,4.5,5.0
+1618,37,other,non-vegetarian,premium,Saibaba Colony,evening,quick,solo,balanced,Bakery,Pastry,Medium,$$$,Modern,5.0,5.0
+1619,26,service,vegetarian,premium,Ukkadam,morning,healthy,friends,high-protein,Italian,Lasagna,High,$$$,Cozy,3.7,3.8
+1620,22,business,vegetarian,premium,Avinashi Road,night,adventurous,friends,high-protein,South Indian,Filter Coffee,Medium,$$$,Family-style,4.6,4.5
+1621,39,business,eggitarian,budget-friendly,Singanallur,morning,study,casual,regular,North Indian,Butter Chicken,High,$$$,Cozy,4.1,4.2
+1622,30,student,eggitarian,budget-friendly,Saibaba Colony,morning,comfort,casual,regular,Bakery,Pastry,Low,$$,Family-style,4.1,3.8
+1623,24,professional,vegetarian,premium,Saravanampatti,morning,celebration,date-night,balanced,Andhra,Pulihora,Medium,$$,Romantic,4.1,4.5
+1624,23,business,vegetarian,premium,Ukkadam,night,comfort,casual,high-protein,Chinese,Hakka Noodles,Medium,$$$,Romantic,4.2,4.3
+1625,24,student,vegetarian,mid-range,Kovaipudur,evening,adventurous,birthday,low-carb,South Indian,Pongal,Medium,$$$,Modern,5.0,4.7
+1626,28,other,vegetarian,budget-friendly,Vadavalli,evening,romantic,casual,balanced,Chettinad,Fish Fry,High,$,Traditional,4.5,4.6
+1627,32,student,non-vegetarian,mid-range,Sitra,morning,quick,friends,balanced,Chinese,Chilli Chicken,Medium,$$$,Modern,4.7,4.6
+1628,38,other,non-vegetarian,premium,Gandhipuram,evening,romantic,casual,balanced,South Indian,Filter Coffee,Medium,$$$$,Romantic,4.5,4.9
+1629,23,professional,non-vegetarian,mid-range,Vadavalli,evening,quick,casual,balanced,Italian,Garlic Bread,Low,$$,Cozy,4.0,4.1
+1630,35,professional,eggitarian,budget-friendly,Gandhipuram,afternoon,comfort,solo,balanced,South Indian,Rava Dosa,High,$$,Cozy,4.8,4.8
+1631,27,student,non-vegetarian,budget-friendly,Saibaba Colony,night,adventurous,casual,low-carb,Chinese,Spring Rolls,Medium,$,Luxury,4.4,4.4
+1632,27,other,non-vegetarian,mid-range,Sitra,morning,romantic,casual,low-carb,Kerala,Puttu Kadala,Low,$$,Casual,4.3,4.5
+1633,23,other,non-vegetarian,mid-range,Saravanampatti,morning,study,casual,low-carb,South Indian,Uttapam,Medium,$$,Cozy,4.8,4.7
+1634,32,student,vegetarian,budget-friendly,Avinashi Road,night,comfort,casual,low-carb,South Indian,Idli Sambar,Low,$,Casual,3.6,3.4
+1635,24,student,vegan,budget-friendly,Peelamedu,evening,study,casual,high-protein,Chinese,Chilli Chicken,Medium,$,Romantic,4.5,4.6
+1636,25,professional,non-vegetarian,budget-friendly,Saibaba Colony,evening,celebration,family,balanced,Chinese,Hakka Noodles,High,$,Family-style,4.6,5.0
+1637,31,business,non-vegetarian,mid-range,Vadavalli,morning,healthy,casual,low-carb,Street Food,Egg Puffs,Medium,$$,Romantic,3.9,4.3
+1638,34,business,eggitarian,mid-range,Ukkadam,morning,quick,family,high-protein,Chettinad,Chicken Chettinad,Medium,$$$$,Traditional,4.4,4.5
+1639,22,student,vegan,budget-friendly,Vadavalli,evening,healthy,casual,high-protein,Bakery,Cookies,Medium,$$,Romantic,3.9,3.9
+1640,30,student,vegetarian,budget-friendly,Saibaba Colony,evening,adventurous,casual,balanced,South Indian,Rava Dosa,High,$,Romantic,4.6,4.9
+1641,30,professional,vegetarian,budget-friendly,Peelamedu,evening,comfort,birthday,low-carb,South Indian,Masala Dosa,Low,$,Cozy,4.4,4.5
+1642,28,student,vegetarian,budget-friendly,Saravanampatti,evening,quick,casual,balanced,Chinese,Spring Rolls,High,$$$,Modern,4.4,4.2
+1643,33,professional,eggitarian,mid-range,Thudiyalur,night,comfort,solo,regular,North Indian,Naan,Low,$$,Luxury,4.1,4.0
+1644,42,student,non-vegetarian,mid-range,Singanallur,evening,romantic,solo,balanced,South Indian,Vada,Low,$$$,Traditional,4.4,4.9
+1645,25,professional,eggitarian,mid-range,Vadavalli,evening,adventurous,friends,regular,Chinese,Schezwan Fried Rice,Low,$$,Traditional,5.0,5.0
+1646,29,student,vegetarian,budget-friendly,RS Puram,evening,healthy,casual,balanced,Chettinad,Chicken Chettinad,Medium,$,Modern,4.8,5.0
+1647,18,business,non-vegetarian,budget-friendly,Saravanampatti,evening,romantic,casual,balanced,North Indian,Biryani,Medium,$$,Casual,3.6,4.0
+1648,23,professional,non-vegetarian,mid-range,Kovaipudur,morning,study,family,regular,South Indian,Pongal,Medium,$$$$,Family-style,4.1,4.0
+1649,29,professional,vegetarian,premium,Kovaipudur,evening,adventurous,friends,low-carb,Chinese,Hakka Noodles,Medium,$$$$,Family-style,4.3,4.8
+1650,29,professional,non-vegetarian,mid-range,Thudiyalur,morning,adventurous,casual,high-protein,North Indian,Naan,Medium,$$$$,Luxury,4.6,4.4
+1651,18,student,vegetarian,mid-range,Saravanampatti,evening,romantic,friends,balanced,Chinese,Manchurian,Medium,$$,Luxury,4.0,4.2
+1652,25,professional,vegetarian,premium,Ukkadam,midnight,celebration,casual,high-protein,South Indian,Idli Sambar,High,$$$$,Casual,4.2,4.6
+1653,26,student,non-vegetarian,budget-friendly,Peelamedu,evening,study,casual,regular,North Indian,Paneer Butter Masala,Medium,$,Traditional,4.4,4.6
+1654,31,other,non-vegetarian,mid-range,Avinashi Road,afternoon,comfort,birthday,balanced,Andhra,Pulihora,High,$$,Family-style,4.4,4.5
+1655,18,professional,vegetarian,budget-friendly,Vadavalli,afternoon,adventurous,casual,high-protein,South Indian,Vada,High,$$,Luxury,4.4,4.2
+1656,30,student,vegetarian,mid-range,Thudiyalur,night,healthy,business,low-carb,South Indian,Uttapam,Low,$,Casual,4.3,4.2
+1657,33,student,non-vegetarian,budget-friendly,RS Puram,morning,comfort,friends,high-protein,Italian,Garlic Bread,Medium,$$,Modern,4.7,4.9
+1658,25,other,eggitarian,premium,Sitra,evening,romantic,business,low-carb,North Indian,Biryani,Medium,$$$$,Casual,4.0,4.7
+1659,26,professional,non-vegetarian,mid-range,Thudiyalur,afternoon,quick,family,balanced,North Indian,Biryani,High,$$,Traditional,4.9,5.0
+1660,18,student,eggitarian,budget-friendly,Vadavalli,night,comfort,family,low-carb,Chettinad,Pepper Chicken,High,$,Traditional,4.5,4.4
+1661,37,professional,vegetarian,premium,Ukkadam,morning,romantic,family,high-protein,North Indian,Butter Chicken,Medium,$$,Traditional,4.5,4.7
+1662,34,professional,non-vegetarian,premium,Avinashi Road,night,quick,date-night,balanced,North Indian,Chole Bhature,Medium,$$$,Romantic,4.4,4.7
+1663,32,student,vegetarian,budget-friendly,Ukkadam,evening,healthy,friends,balanced,Chinese,Spring Rolls,Medium,$$,Cozy,4.3,4.7
+1664,35,student,non-vegetarian,mid-range,Vadavalli,evening,healthy,family,high-protein,North Indian,Paneer Butter Masala,Medium,$$,Family-style,4.5,5.0
+1665,31,student,non-vegetarian,budget-friendly,Saibaba Colony,evening,celebration,casual,high-protein,Chettinad,Chicken Chettinad,High,$$,Luxury,4.8,4.9
+1666,28,student,eggitarian,budget-friendly,RS Puram,evening,celebration,family,balanced,South Indian,Idli Sambar,Low,$,Casual,4.2,4.2
+1667,39,professional,non-vegetarian,premium,Singanallur,afternoon,healthy,casual,balanced,Chinese,Manchurian,Medium,$$$,Romantic,4.4,4.6
+1668,23,professional,vegetarian,mid-range,Sitra,afternoon,healthy,date-night,high-protein,South Indian,Pongal,Medium,$$$,Romantic,4.1,4.2
+1669,27,professional,non-vegetarian,mid-range,Thudiyalur,evening,adventurous,casual,balanced,Chettinad,Chicken Chettinad,High,$$,Romantic,3.7,3.9
+1670,26,student,non-vegetarian,budget-friendly,Peelamedu,morning,romantic,casual,regular,South Indian,Uttapam,High,$,Romantic,4.1,4.0
+1671,41,professional,vegetarian,mid-range,Saravanampatti,evening,romantic,casual,low-carb,South Indian,Pongal,Medium,$,Family-style,4.1,4.2
+1672,26,professional,vegetarian,mid-range,Thudiyalur,evening,comfort,family,low-carb,Kerala,Puttu Kadala,High,$$,Family-style,4.6,5.0
+1673,46,business,vegan,premium,Vadavalli,night,celebration,friends,high-protein,Bakery,Cream Bun,Low,$$$$,Traditional,4.5,5.0
+1674,36,other,vegan,premium,Kovaipudur,afternoon,celebration,casual,balanced,South Indian,Rava Dosa,Low,$$$,Family-style,4.7,5.0
+1675,39,other,vegetarian,mid-range,Ukkadam,afternoon,study,casual,balanced,Chinese,Spring Rolls,Medium,$$,Casual,4.0,4.2
+1676,36,student,vegetarian,budget-friendly,Gandhipuram,morning,comfort,family,balanced,South Indian,Masala Dosa,Medium,$$,Family-style,5.0,5.0
+1677,18,business,non-vegetarian,premium,Kovaipudur,morning,study,family,high-protein,Kerala,Malabar Parotta,Medium,$$$,Family-style,4.7,5.0
+1678,27,student,non-vegetarian,mid-range,Kovaipudur,afternoon,healthy,casual,balanced,Street Food,Sundal,High,$$,Modern,4.8,4.9
+1679,34,professional,non-vegetarian,mid-range,Vadavalli,evening,romantic,business,balanced,Italian,Pizza,Low,$$$$,Modern,3.7,4.1
+1680,18,student,vegan,budget-friendly,Avinashi Road,afternoon,romantic,casual,high-protein,Street Food,Sundal,Medium,$,Romantic,4.3,4.1
+1681,28,professional,non-vegetarian,budget-friendly,Kovaipudur,morning,adventurous,family,balanced,South Indian,Vada,High,$,Traditional,4.0,3.9
+1682,36,student,non-vegetarian,budget-friendly,Peelamedu,afternoon,study,date-night,low-carb,Chinese,Schezwan Fried Rice,High,$,Romantic,3.8,4.2
+1683,29,student,non-vegetarian,mid-range,Singanallur,afternoon,quick,friends,balanced,Street Food,Kothu Parotta,High,$$,Cozy,4.3,4.3
+1684,18,other,non-vegetarian,premium,Gandhipuram,afternoon,healthy,family,balanced,Chinese,Schezwan Fried Rice,Medium,$$$$,Traditional,4.3,4.7
+1685,34,service,vegetarian,budget-friendly,Saibaba Colony,evening,quick,family,low-carb,South Indian,Vada,Medium,$,Casual,3.8,3.4
+1686,31,professional,vegetarian,mid-range,Peelamedu,night,adventurous,family,low-carb,Bakery,Cookies,High,$$,Family-style,3.7,3.8
+1687,24,service,vegetarian,budget-friendly,Saravanampatti,evening,adventurous,casual,regular,Chinese,Chilli Chicken,Medium,$,Cozy,4.5,4.0
+1688,31,student,vegetarian,budget-friendly,Ukkadam,morning,quick,casual,regular,South Indian,Idli Sambar,Medium,$,Luxury,4.6,4.9
+1689,28,professional,non-vegetarian,mid-range,Ukkadam,morning,celebration,family,regular,South Indian,Uttapam,Low,$,Traditional,4.1,4.4
+1690,26,business,vegetarian,mid-range,RS Puram,evening,adventurous,family,balanced,Kerala,Puttu Kadala,Low,$$,Family-style,3.9,4.5
+1691,25,other,vegetarian,premium,Avinashi Road,afternoon,comfort,friends,regular,Chinese,Chilli Chicken,Medium,$$$,Modern,4.5,4.6
+1692,31,student,non-vegetarian,budget-friendly,Peelamedu,afternoon,healthy,friends,balanced,Italian,Pizza,High,$,Casual,4.4,4.9
+1693,33,professional,non-vegetarian,mid-range,Singanallur,morning,quick,casual,high-protein,South Indian,Filter Coffee,Medium,$$,Family-style,4.5,4.5
+1694,38,professional,vegetarian,premium,Saibaba Colony,evening,healthy,date-night,high-protein,North Indian,Paneer Butter Masala,High,$$$$,Luxury,4.7,4.3
+1695,35,professional,non-vegetarian,mid-range,Ukkadam,evening,celebration,casual,regular,Street Food,Bhel Puri,Low,$$,Traditional,4.6,4.6
+1696,29,professional,non-vegetarian,mid-range,Saravanampatti,morning,quick,friends,regular,Chinese,Spring Rolls,Medium,$$$,Modern,4.8,4.8
+1697,26,professional,non-vegetarian,mid-range,Avinashi Road,evening,adventurous,friends,balanced,Chinese,Schezwan Fried Rice,Low,$$$,Casual,4.9,4.9
+1698,20,student,vegetarian,budget-friendly,RS Puram,evening,quick,casual,high-protein,North Indian,Chole Bhature,Medium,$$,Modern,4.2,4.1
+1699,19,professional,non-vegetarian,premium,Peelamedu,evening,healthy,family,high-protein,Cafe,Tea,Medium,$$$,Family-style,3.9,4.0
+1700,29,student,non-vegetarian,mid-range,Ukkadam,night,comfort,business,low-carb,South Indian,Masala Dosa,Medium,$$,Modern,4.4,4.7
+1701,31,professional,non-vegetarian,mid-range,Singanallur,evening,quick,friends,low-carb,Bakery,Cookies,Low,$$$,Luxury,4.6,4.8
+1702,24,business,non-vegetarian,mid-range,Kovaipudur,midnight,romantic,casual,high-protein,North Indian,Biryani,Low,$$,Romantic,4.9,5.0
+1703,43,service,vegetarian,premium,Thudiyalur,night,comfort,family,low-carb,Chinese,Hakka Noodles,Low,$$,Family-style,4.5,4.6
+1704,25,professional,vegetarian,premium,Saibaba Colony,night,healthy,casual,balanced,Italian,Garlic Bread,Medium,$$$,Cozy,4.8,5.0
+1705,44,student,non-vegetarian,budget-friendly,Ukkadam,night,study,birthday,regular,Bakery,Pastry,High,$$,Romantic,5.0,5.0
+1706,18,professional,vegan,mid-range,Gandhipuram,evening,quick,casual,regular,Chinese,Hakka Noodles,Medium,$,Family-style,4.6,4.7
+1707,19,professional,non-vegetarian,budget-friendly,Thudiyalur,night,healthy,friends,balanced,Italian,Garlic Bread,Low,$$,Family-style,4.7,4.4
+1708,22,student,non-vegetarian,budget-friendly,Singanallur,night,comfort,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$,Family-style,3.9,3.7
+1709,25,student,non-vegetarian,budget-friendly,Avinashi Road,evening,study,family,high-protein,Chinese,Spring Rolls,Medium,$$,Family-style,4.1,4.1
+1710,24,other,vegetarian,budget-friendly,Singanallur,midnight,study,friends,regular,South Indian,Uttapam,Medium,$$,Cozy,5.0,5.0
+1711,42,other,non-vegetarian,mid-range,Vadavalli,night,comfort,family,high-protein,South Indian,Idli Sambar,High,$$,Traditional,4.6,4.8
+1712,25,student,non-vegetarian,mid-range,RS Puram,night,quick,casual,balanced,Chinese,Chilli Chicken,Medium,$$,Luxury,4.3,4.7
+1713,26,professional,non-vegetarian,mid-range,Ukkadam,morning,celebration,solo,high-protein,Street Food,Bhel Puri,High,$$,Luxury,3.7,4.3
+1714,26,student,vegan,budget-friendly,Saravanampatti,morning,healthy,casual,high-protein,South Indian,Uttapam,Low,$,Family-style,3.9,3.9
+1715,27,professional,vegetarian,mid-range,Saibaba Colony,evening,celebration,casual,balanced,South Indian,Masala Dosa,Low,$$,Casual,4.6,4.7
+1716,18,student,vegan,mid-range,Gandhipuram,evening,healthy,birthday,balanced,South Indian,Rava Dosa,Low,$$$,Romantic,4.0,3.7
+1717,34,other,eggitarian,mid-range,Avinashi Road,night,celebration,friends,regular,Chettinad,Fish Fry,High,$$,Traditional,5.0,5.0
+1718,47,professional,non-vegetarian,mid-range,Vadavalli,morning,celebration,family,balanced,South Indian,Idli Sambar,Low,$$,Casual,3.9,4.6
+1719,28,student,vegetarian,mid-range,Ukkadam,morning,celebration,casual,balanced,North Indian,Naan,High,$$,Traditional,3.9,4.2
+1720,23,professional,non-vegetarian,mid-range,Saibaba Colony,night,celebration,family,high-protein,South Indian,Rava Dosa,Low,$$$$,Casual,4.8,4.6
+1721,18,other,non-vegetarian,budget-friendly,Singanallur,afternoon,celebration,business,balanced,Chinese,Chilli Chicken,Medium,$,Modern,4.3,4.7
+1722,18,professional,eggitarian,mid-range,Thudiyalur,afternoon,study,date-night,high-protein,South Indian,Uttapam,High,$$,Romantic,4.0,4.5
+1723,31,student,eggitarian,mid-range,Thudiyalur,evening,quick,friends,high-protein,South Indian,Rava Dosa,High,$$$,Family-style,4.1,4.3
+1724,19,professional,eggitarian,budget-friendly,Singanallur,evening,quick,date-night,high-protein,Italian,Pizza,High,$$,Romantic,5.0,4.7
+1725,37,professional,eggitarian,premium,Ukkadam,afternoon,adventurous,date-night,high-protein,Andhra,Andhra Chicken Curry,High,$$$,Luxury,4.3,4.5
+1726,24,professional,vegetarian,mid-range,Saibaba Colony,afternoon,celebration,casual,high-protein,South Indian,Pongal,Low,$,Luxury,4.3,4.2
+1727,29,business,vegetarian,budget-friendly,Sitra,morning,study,date-night,balanced,Chinese,Hakka Noodles,Medium,$,Romantic,4.3,4.7
+1728,18,other,vegan,premium,Vadavalli,evening,quick,family,balanced,South Indian,Pongal,High,$$$,Traditional,4.9,5.0
+1729,33,student,vegetarian,budget-friendly,Kovaipudur,afternoon,study,business,balanced,Cafe,Tea,Low,$,Casual,3.9,4.2
+1730,23,professional,vegetarian,mid-range,Vadavalli,night,healthy,casual,balanced,Chettinad,Chicken Chettinad,High,$$,Family-style,3.5,3.7
+1731,41,service,eggitarian,premium,Avinashi Road,evening,healthy,casual,regular,North Indian,Chole Bhature,High,$$,Cozy,4.1,3.9
+1732,41,professional,vegetarian,mid-range,Sitra,evening,celebration,family,balanced,South Indian,Filter Coffee,High,$$,Family-style,4.7,5.0
+1733,28,student,non-vegetarian,budget-friendly,Saibaba Colony,night,healthy,family,high-protein,South Indian,Filter Coffee,High,$$$,Family-style,5.0,4.8
+1734,34,professional,non-vegetarian,budget-friendly,Kovaipudur,evening,healthy,casual,balanced,Chinese,Hakka Noodles,Medium,$,Family-style,4.3,4.5
+1735,39,student,non-vegetarian,mid-range,Sitra,evening,comfort,casual,balanced,Italian,Pasta,High,$$$,Casual,3.9,3.6
+1736,31,student,non-vegetarian,mid-range,Avinashi Road,midnight,adventurous,casual,balanced,South Indian,Vada,Low,$$,Traditional,4.3,4.8
+1737,32,student,non-vegetarian,budget-friendly,Saibaba Colony,afternoon,romantic,casual,high-protein,North Indian,Paneer Butter Masala,Low,$,Modern,4.3,4.3
+1738,39,service,vegetarian,mid-range,Thudiyalur,evening,study,friends,regular,Chettinad,Fish Fry,High,$$,Luxury,4.8,5.0
+1739,35,student,non-vegetarian,mid-range,Sitra,evening,romantic,casual,regular,South Indian,Masala Dosa,Low,$,Cozy,3.7,3.5
+1740,35,student,vegetarian,budget-friendly,Saravanampatti,evening,celebration,casual,balanced,Andhra,Gongura Mutton,High,$,Family-style,4.6,4.3
+1741,19,business,non-vegetarian,mid-range,Ukkadam,evening,romantic,casual,balanced,North Indian,Biryani,Medium,$$,Family-style,4.1,4.0
+1742,37,service,non-vegetarian,mid-range,Saibaba Colony,morning,adventurous,friends,high-protein,North Indian,Paneer Butter Masala,Medium,$$$$,Modern,4.6,4.7
+1743,34,student,vegetarian,mid-range,Thudiyalur,afternoon,adventurous,casual,high-protein,Kerala,Malabar Parotta,Low,$$,Cozy,4.7,4.5
+1744,19,professional,vegetarian,premium,Sitra,afternoon,romantic,casual,regular,South Indian,Rava Dosa,High,$$$$,Luxury,4.2,4.5
+1745,32,professional,vegetarian,mid-range,Sitra,morning,adventurous,date-night,regular,Cafe,Tea,Low,$$,Romantic,4.1,4.3
+1746,28,professional,eggitarian,mid-range,Avinashi Road,evening,healthy,friends,high-protein,South Indian,Idli Sambar,High,$$,Romantic,3.7,3.7
+1747,29,student,non-vegetarian,budget-friendly,Thudiyalur,afternoon,adventurous,family,high-protein,Bakery,Cream Bun,High,$,Family-style,4.5,4.7
+1748,28,student,non-vegetarian,budget-friendly,Singanallur,afternoon,study,friends,high-protein,Chinese,Chilli Chicken,Medium,$,Cozy,4.0,4.3
+1749,24,other,non-vegetarian,budget-friendly,Peelamedu,afternoon,romantic,friends,balanced,Kerala,Beef Fry,High,$,Romantic,4.5,4.8
+1750,33,service,vegetarian,mid-range,Avinashi Road,midnight,adventurous,solo,regular,Chinese,Spring Rolls,Low,$$,Luxury,3.9,3.9
+1751,42,student,non-vegetarian,budget-friendly,Sitra,evening,adventurous,casual,high-protein,Street Food,Bhel Puri,Low,$,Casual,4.7,4.9
+1752,24,student,vegetarian,budget-friendly,Vadavalli,evening,romantic,date-night,low-carb,Street Food,Sundal,Medium,$$,Romantic,4.5,4.5
+1753,40,business,non-vegetarian,premium,Saibaba Colony,evening,quick,casual,low-carb,Street Food,Bhel Puri,High,$$$,Luxury,3.8,4.4
+1754,31,other,vegetarian,mid-range,Saravanampatti,midnight,adventurous,casual,high-protein,Kerala,Appam Stew,High,$$$,Romantic,4.9,5.0
+1755,34,professional,vegan,budget-friendly,Sitra,evening,comfort,casual,high-protein,Chettinad,Karaikudi Mutton,Medium,$,Modern,4.4,4.9
+1756,18,student,non-vegetarian,budget-friendly,Kovaipudur,night,adventurous,casual,high-protein,South Indian,Rava Dosa,Medium,$$,Modern,4.3,4.2
+1757,28,student,non-vegetarian,budget-friendly,Peelamedu,afternoon,healthy,family,high-protein,Kerala,Malabar Parotta,Low,$,Family-style,4.6,4.6
+1758,27,student,non-vegetarian,budget-friendly,Thudiyalur,afternoon,romantic,family,balanced,South Indian,Pongal,Medium,$,Family-style,4.5,4.9
+1759,25,business,vegetarian,mid-range,Saravanampatti,afternoon,comfort,casual,high-protein,Street Food,Sundal,Medium,$$,Cozy,4.4,4.8
+1760,18,student,vegetarian,mid-range,Vadavalli,evening,healthy,solo,balanced,South Indian,Idli Sambar,High,$$,Casual,3.8,3.9
+1761,38,service,non-vegetarian,budget-friendly,Kovaipudur,night,celebration,casual,high-protein,South Indian,Idli Sambar,High,$$,Cozy,5.0,5.0
+1762,27,student,vegetarian,budget-friendly,Peelamedu,afternoon,comfort,family,low-carb,Cafe,Filter Coffee,High,$,Family-style,4.7,4.7
+1763,21,professional,vegetarian,mid-range,Saibaba Colony,evening,adventurous,casual,balanced,North Indian,Biryani,High,$$,Casual,5.0,4.7
+1764,32,student,non-vegetarian,mid-range,Kovaipudur,night,study,casual,balanced,Bakery,Cream Bun,Medium,$$$$,Casual,4.2,4.4
+1765,34,business,eggitarian,budget-friendly,Thudiyalur,evening,healthy,friends,balanced,South Indian,Vada,High,$,Cozy,4.6,4.6
+1766,30,other,non-vegetarian,mid-range,Avinashi Road,morning,quick,casual,regular,South Indian,Rava Dosa,High,$$,Traditional,4.3,4.4
+1767,22,other,non-vegetarian,premium,Singanallur,afternoon,adventurous,casual,regular,Italian,Garlic Bread,Low,$$$,Cozy,4.5,4.4
+1768,38,business,vegetarian,budget-friendly,Gandhipuram,morning,study,casual,balanced,North Indian,Butter Chicken,Low,$,Cozy,4.7,4.9
+1769,30,business,eggitarian,budget-friendly,Vadavalli,morning,healthy,friends,balanced,South Indian,Uttapam,Low,$,Cozy,4.3,4.5
+1770,33,professional,non-vegetarian,premium,Sitra,afternoon,study,casual,low-carb,Chettinad,Chicken Chettinad,High,$$$$,Traditional,4.3,4.8
+1771,33,service,vegetarian,budget-friendly,Saibaba Colony,evening,study,casual,low-carb,South Indian,Idli Sambar,High,$,Casual,4.6,4.7
+1772,18,professional,non-vegetarian,budget-friendly,Saibaba Colony,evening,study,family,high-protein,Andhra,Royyala Iguru,High,$,Family-style,4.0,3.9
+1773,37,student,non-vegetarian,mid-range,Saravanampatti,evening,romantic,solo,regular,South Indian,Filter Coffee,Low,$$$,Romantic,3.8,3.8
+1774,18,student,non-vegetarian,budget-friendly,Gandhipuram,night,comfort,casual,high-protein,Street Food,Bhel Puri,Low,$$,Family-style,3.8,3.9
+1775,29,student,non-vegetarian,budget-friendly,Vadavalli,morning,comfort,casual,balanced,South Indian,Pongal,Medium,$$,Romantic,4.4,4.6
+1776,19,professional,vegetarian,mid-range,Avinashi Road,evening,romantic,birthday,high-protein,Andhra,Royyala Iguru,High,$$,Traditional,4.7,5.0
+1777,22,service,non-vegetarian,budget-friendly,Thudiyalur,morning,quick,casual,high-protein,Street Food,Bhel Puri,High,$,Traditional,4.2,4.2
+1778,34,service,non-vegetarian,premium,RS Puram,afternoon,adventurous,family,high-protein,North Indian,Paneer Butter Masala,High,$$$,Family-style,4.4,4.5
+1779,31,student,non-vegetarian,mid-range,Sitra,evening,quick,family,regular,Andhra,Pulihora,High,$$,Family-style,4.2,4.2
+1780,38,professional,non-vegetarian,budget-friendly,Sitra,evening,healthy,business,high-protein,Street Food,Kothu Parotta,Low,$$,Luxury,5.0,5.0
+1781,18,other,eggitarian,premium,Sitra,evening,adventurous,business,balanced,South Indian,Filter Coffee,High,$$$,Casual,4.8,4.8
+1782,22,professional,vegetarian,mid-range,Singanallur,afternoon,celebration,casual,low-carb,Chinese,Manchurian,Low,$$,Traditional,4.0,4.4
+1783,21,student,vegan,budget-friendly,Vadavalli,afternoon,study,friends,low-carb,South Indian,Rava Dosa,Low,$,Modern,4.0,4.5
+1784,26,professional,vegetarian,mid-range,Saibaba Colony,evening,celebration,friends,low-carb,South Indian,Pongal,High,$,Casual,4.2,4.5
+1785,27,professional,non-vegetarian,premium,Saibaba Colony,evening,romantic,family,regular,North Indian,Butter Chicken,High,$$$,Family-style,3.7,4.1
+1786,30,service,non-vegetarian,premium,Saravanampatti,night,healthy,date-night,high-protein,South Indian,Vada,Low,$$$,Romantic,4.2,3.9
+1787,26,professional,vegetarian,mid-range,Ukkadam,afternoon,healthy,casual,balanced,Street Food,Kothu Parotta,Medium,$$,Romantic,3.6,3.3
+1788,36,student,eggitarian,budget-friendly,Saibaba Colony,morning,healthy,casual,balanced,North Indian,Biryani,Low,$,Luxury,3.4,3.9
+1789,29,student,non-vegetarian,mid-range,Singanallur,midnight,adventurous,family,balanced,Bakery,Puff,High,$$,Family-style,3.9,4.1
+1790,32,student,vegetarian,mid-range,Vadavalli,midnight,romantic,casual,balanced,Chinese,Spring Rolls,High,$$$,Casual,4.0,3.7
+1791,35,professional,vegetarian,premium,Singanallur,evening,romantic,birthday,balanced,South Indian,Pongal,Low,$$$,Cozy,4.7,5.0
+1792,18,professional,non-vegetarian,mid-range,Peelamedu,evening,comfort,birthday,balanced,North Indian,Butter Chicken,Medium,$,Modern,3.8,3.5
+1793,21,professional,vegetarian,premium,Singanallur,evening,healthy,casual,low-carb,South Indian,Vada,Low,$$,Cozy,3.9,4.1
+1794,27,other,vegetarian,mid-range,Thudiyalur,evening,romantic,friends,balanced,Bakery,Puff,High,$$,Cozy,4.1,4.5
+1795,29,student,eggitarian,mid-range,RS Puram,morning,romantic,casual,regular,Italian,Garlic Bread,High,$$$$,Romantic,5.0,5.0
+1796,24,professional,non-vegetarian,mid-range,Vadavalli,night,healthy,friends,balanced,South Indian,Idli Sambar,Low,$$,Traditional,4.7,4.9
+1797,30,student,non-vegetarian,mid-range,Avinashi Road,evening,healthy,casual,regular,Street Food,Egg Puffs,Low,$$,Cozy,4.7,4.7
+1798,26,other,vegetarian,mid-range,Vadavalli,afternoon,adventurous,birthday,balanced,Bakery,Pastry,High,$$,Cozy,4.4,4.4
+1799,28,business,non-vegetarian,budget-friendly,Thudiyalur,afternoon,quick,birthday,balanced,South Indian,Filter Coffee,High,$,Family-style,4.1,4.3
+1800,18,professional,non-vegetarian,mid-range,Kovaipudur,morning,study,casual,regular,Cafe,Sandwich,High,$$$,Luxury,4.5,4.5
+1801,19,student,non-vegetarian,mid-range,Peelamedu,afternoon,romantic,date-night,regular,Chinese,Spring Rolls,Medium,$$,Luxury,4.0,4.3
+1802,23,student,non-vegetarian,mid-range,RS Puram,night,celebration,birthday,regular,South Indian,Vada,Medium,$$,Family-style,4.8,4.8
+1803,18,service,vegetarian,premium,Sitra,night,adventurous,family,high-protein,Cafe,Filter Coffee,High,$$$,Family-style,4.6,4.9
+1804,21,student,vegetarian,mid-range,Vadavalli,morning,comfort,casual,high-protein,South Indian,Masala Dosa,High,$$,Luxury,5.0,5.0
+1805,44,student,non-vegetarian,budget-friendly,Thudiyalur,evening,celebration,family,high-protein,South Indian,Idli Sambar,Low,$,Family-style,4.5,4.4
+1806,19,business,vegan,budget-friendly,Vadavalli,morning,celebration,casual,balanced,Chinese,Manchurian,Medium,$,Traditional,4.4,4.6
+1807,45,student,non-vegetarian,mid-range,Ukkadam,afternoon,study,casual,balanced,Street Food,Sundal,High,$$,Modern,4.2,4.5
+1808,29,professional,eggitarian,mid-range,RS Puram,afternoon,romantic,family,high-protein,North Indian,Paneer Butter Masala,Medium,$$$,Casual,4.0,3.9
+1809,40,professional,non-vegetarian,premium,Sitra,evening,celebration,birthday,regular,Kerala,Beef Fry,Medium,$$$,Casual,4.0,4.3
+1810,18,professional,non-vegetarian,budget-friendly,Thudiyalur,morning,quick,family,low-carb,Andhra,Andhra Chicken Curry,Medium,$,Family-style,4.4,5.0
+1811,19,service,non-vegetarian,mid-range,Avinashi Road,evening,healthy,date-night,balanced,South Indian,Uttapam,High,$$$$,Luxury,4.0,4.2
+1812,21,professional,vegetarian,premium,Saibaba Colony,night,quick,family,balanced,South Indian,Uttapam,Low,$$$,Family-style,4.2,4.4
+1813,31,professional,non-vegetarian,mid-range,Gandhipuram,morning,celebration,casual,balanced,Street Food,Egg Puffs,High,$,Cozy,4.6,4.9
+1814,30,student,vegetarian,mid-range,Singanallur,morning,romantic,family,low-carb,North Indian,Butter Chicken,Medium,$$,Casual,4.6,5.0
+1815,29,professional,non-vegetarian,premium,Saibaba Colony,morning,adventurous,family,regular,North Indian,Butter Chicken,Medium,$$$$,Family-style,4.8,5.0
+1816,23,student,non-vegetarian,mid-range,Sitra,evening,healthy,casual,balanced,Chinese,Spring Rolls,Medium,$$,Casual,3.9,4.0
+1817,29,professional,non-vegetarian,budget-friendly,Gandhipuram,evening,quick,casual,balanced,South Indian,Pongal,High,$,Cozy,4.3,4.3
+1818,26,other,non-vegetarian,mid-range,RS Puram,afternoon,celebration,date-night,balanced,South Indian,Masala Dosa,Medium,$$,Luxury,4.8,5.0
+1819,33,student,non-vegetarian,mid-range,RS Puram,morning,quick,family,high-protein,South Indian,Masala Dosa,Low,$$$,Casual,4.5,4.4
+1820,18,student,eggitarian,mid-range,Singanallur,evening,quick,family,balanced,Chinese,Manchurian,Low,$$,Traditional,5.0,5.0
+1821,34,student,non-vegetarian,mid-range,Saravanampatti,evening,study,friends,high-protein,Street Food,Egg Puffs,High,$$$,Romantic,4.8,4.9
+1822,18,other,eggitarian,premium,Saibaba Colony,afternoon,quick,casual,high-protein,Kerala,Beef Fry,High,$$$,Modern,4.1,4.7
+1823,20,student,non-vegetarian,budget-friendly,RS Puram,evening,romantic,date-night,balanced,Bakery,Cookies,Low,$,Luxury,4.0,4.3
+1824,35,professional,eggitarian,mid-range,Saravanampatti,morning,romantic,friends,regular,Cafe,Burger,Low,$$,Casual,4.4,4.3
+1825,19,service,non-vegetarian,premium,Saravanampatti,night,celebration,date-night,high-protein,North Indian,Biryani,Medium,$$$,Romantic,4.2,5.0
+1826,19,student,vegetarian,mid-range,Thudiyalur,morning,healthy,solo,balanced,South Indian,Rava Dosa,High,$,Traditional,4.4,4.5
+1827,30,professional,vegetarian,mid-range,Gandhipuram,evening,study,birthday,balanced,Street Food,Kothu Parotta,Low,$$,Romantic,3.8,3.9
+1828,24,other,vegetarian,mid-range,Avinashi Road,midnight,romantic,casual,regular,Chettinad,Fish Fry,High,$$,Family-style,4.6,4.7
+1829,39,student,non-vegetarian,budget-friendly,Saibaba Colony,midnight,study,casual,high-protein,Italian,Pasta,Medium,$$,Traditional,4.4,4.2
+1830,36,student,eggitarian,budget-friendly,Avinashi Road,afternoon,adventurous,birthday,high-protein,North Indian,Paneer Butter Masala,High,$,Romantic,4.0,4.2
+1831,24,student,non-vegetarian,budget-friendly,Peelamedu,midnight,romantic,family,balanced,Italian,Pizza,High,$$,Family-style,4.6,4.7
+1832,18,student,vegetarian,mid-range,Gandhipuram,afternoon,study,family,high-protein,Chinese,Schezwan Fried Rice,High,$$$,Family-style,4.3,4.4
+1833,25,professional,non-vegetarian,premium,Vadavalli,morning,study,family,balanced,Street Food,Kothu Parotta,Low,$$,Family-style,3.9,4.3
+1834,34,student,eggitarian,budget-friendly,Peelamedu,midnight,healthy,date-night,low-carb,South Indian,Masala Dosa,High,$,Romantic,3.8,4.3
+1835,21,business,vegetarian,premium,RS Puram,afternoon,celebration,date-night,balanced,North Indian,Butter Chicken,Medium,$$$,Romantic,3.2,3.9
+1836,39,professional,vegetarian,premium,Avinashi Road,afternoon,celebration,casual,low-carb,Italian,Pizza,Low,$$$$,Traditional,4.0,4.2
+1837,18,business,non-vegetarian,budget-friendly,Sitra,afternoon,comfort,casual,balanced,South Indian,Vada,High,$,Modern,4.4,4.6
+1838,25,professional,vegetarian,premium,Peelamedu,morning,celebration,family,high-protein,South Indian,Idli Sambar,High,$$$,Family-style,3.8,4.7
+1839,29,student,non-vegetarian,budget-friendly,Gandhipuram,evening,healthy,casual,high-protein,Street Food,Sundal,Low,$,Romantic,4.7,4.8
+1840,18,professional,vegan,mid-range,Peelamedu,evening,study,business,balanced,Chettinad,Karaikudi Mutton,High,$$$,Luxury,4.3,4.3
+1841,20,student,eggitarian,budget-friendly,Vadavalli,evening,celebration,family,balanced,South Indian,Filter Coffee,High,$,Family-style,4.2,4.6
+1842,42,student,eggitarian,budget-friendly,Kovaipudur,morning,study,casual,high-protein,Chinese,Chilli Chicken,Medium,$,Traditional,3.4,3.6
+1843,23,student,eggitarian,budget-friendly,Singanallur,night,healthy,casual,high-protein,South Indian,Rava Dosa,Low,$,Family-style,4.5,4.8
+1844,39,professional,vegetarian,mid-range,Peelamedu,evening,quick,solo,balanced,South Indian,Pongal,Low,$$,Romantic,4.4,4.7
+1845,26,service,vegetarian,mid-range,Gandhipuram,morning,celebration,casual,high-protein,Chinese,Spring Rolls,High,$$,Cozy,4.3,4.5
+1846,20,other,vegan,premium,Saravanampatti,night,romantic,friends,balanced,South Indian,Rava Dosa,High,$$$,Modern,4.2,4.9
+1847,30,professional,vegetarian,mid-range,Thudiyalur,afternoon,quick,birthday,regular,Andhra,Andhra Chicken Curry,High,$$,Romantic,3.8,3.8
+1848,18,student,eggitarian,mid-range,Kovaipudur,morning,romantic,date-night,regular,Italian,Lasagna,Low,$$,Romantic,4.4,5.0
+1849,25,student,vegetarian,budget-friendly,Thudiyalur,evening,adventurous,casual,balanced,Andhra,Royyala Iguru,Medium,$$,Modern,4.2,4.6
+1850,28,professional,non-vegetarian,premium,Saravanampatti,evening,adventurous,friends,balanced,South Indian,Vada,High,$$,Traditional,4.4,4.5
+1851,34,professional,non-vegetarian,premium,Thudiyalur,evening,quick,friends,balanced,Kerala,Puttu Kadala,High,$$$,Luxury,4.4,4.9
+1852,28,professional,vegetarian,mid-range,Peelamedu,morning,adventurous,friends,low-carb,Cafe,Sandwich,High,$$,Luxury,4.6,4.9
+1853,28,student,eggitarian,mid-range,Avinashi Road,evening,comfort,solo,balanced,Andhra,Royyala Iguru,High,$,Modern,4.3,4.5
+1854,46,student,non-vegetarian,mid-range,Thudiyalur,morning,celebration,casual,balanced,North Indian,Paneer Butter Masala,High,$$$,Modern,3.7,3.8
+1855,32,student,eggitarian,mid-range,Peelamedu,evening,adventurous,family,regular,Bakery,Cream Bun,Medium,$$,Family-style,4.9,5.0
+1856,32,business,non-vegetarian,budget-friendly,Ukkadam,night,romantic,anniversary,balanced,Chinese,Hakka Noodles,High,$,Modern,4.1,4.4
+1857,34,student,eggitarian,mid-range,Ukkadam,morning,comfort,casual,balanced,North Indian,Chole Bhature,Medium,$$,Cozy,4.5,4.6
+1858,24,student,non-vegetarian,budget-friendly,Peelamedu,afternoon,comfort,casual,regular,Cafe,Burger,Low,$,Modern,4.2,3.6
+1859,29,professional,non-vegetarian,premium,Kovaipudur,morning,celebration,friends,low-carb,Street Food,Sundal,Low,$$$,Casual,4.4,4.4
+1860,28,student,vegetarian,premium,RS Puram,morning,healthy,casual,balanced,Andhra,Gongura Mutton,Medium,$$$,Modern,4.5,4.7
+1861,28,service,non-vegetarian,premium,Peelamedu,afternoon,study,casual,high-protein,Chinese,Chilli Chicken,High,$$$$,Romantic,5.0,5.0
+1862,40,student,non-vegetarian,mid-range,Gandhipuram,morning,healthy,business,regular,North Indian,Paneer Butter Masala,Medium,$$$,Modern,4.1,3.9
+1863,18,professional,non-vegetarian,mid-range,Sitra,afternoon,comfort,friends,low-carb,Cafe,Cold Coffee,Medium,$$,Traditional,4.2,4.3
+1864,29,student,vegetarian,budget-friendly,Sitra,evening,celebration,friends,balanced,Street Food,Pani Puri,High,$,Modern,4.0,4.0
+1865,35,other,vegetarian,budget-friendly,Peelamedu,midnight,celebration,casual,high-protein,Kerala,Malabar Parotta,High,$$,Luxury,4.5,4.1
+1866,21,service,non-vegetarian,premium,Singanallur,afternoon,quick,family,high-protein,North Indian,Biryani,Medium,$$$,Family-style,4.3,4.5
+1867,23,professional,non-vegetarian,mid-range,Thudiyalur,afternoon,romantic,casual,high-protein,Kerala,Malabar Parotta,High,$$,Romantic,3.9,4.3
+1868,32,student,vegetarian,mid-range,Singanallur,afternoon,adventurous,date-night,regular,South Indian,Uttapam,Low,$$$,Luxury,3.8,3.4
+1869,24,student,eggitarian,premium,Avinashi Road,morning,quick,casual,balanced,Chettinad,Chicken Chettinad,Medium,$$,Luxury,4.3,4.1
+1870,26,professional,vegetarian,mid-range,Sitra,evening,quick,casual,balanced,Chettinad,Karaikudi Mutton,Low,$$,Traditional,4.4,4.2
+1871,21,professional,vegan,mid-range,Ukkadam,morning,adventurous,date-night,high-protein,Chinese,Schezwan Fried Rice,Medium,$,Romantic,3.6,4.0
+1872,18,student,eggitarian,budget-friendly,Gandhipuram,afternoon,celebration,family,regular,Cafe,Sandwich,Low,$$,Family-style,4.6,5.0
+1873,25,student,vegetarian,budget-friendly,Sitra,evening,healthy,date-night,low-carb,Kerala,Appam Stew,High,$,Luxury,4.3,4.6
+1874,34,professional,vegetarian,premium,Singanallur,afternoon,celebration,casual,balanced,Street Food,Sundal,Medium,$$$,Family-style,4.6,4.8
+1875,18,business,non-vegetarian,budget-friendly,Sitra,evening,quick,casual,regular,South Indian,Pongal,High,$,Traditional,4.5,4.3
+1876,25,student,non-vegetarian,budget-friendly,Peelamedu,morning,adventurous,casual,regular,South Indian,Idli Sambar,High,$,Modern,3.7,3.9
+1877,34,student,vegetarian,budget-friendly,Vadavalli,night,study,business,low-carb,South Indian,Idli Sambar,High,$$,Modern,3.7,3.8
+1878,23,student,vegan,budget-friendly,Avinashi Road,night,celebration,casual,regular,Bakery,Puff,Low,$,Romantic,3.6,3.4
+1879,26,professional,non-vegetarian,premium,Avinashi Road,night,romantic,family,low-carb,Chettinad,Fish Fry,High,$$,Family-style,4.4,4.9
+1880,21,other,non-vegetarian,premium,Avinashi Road,evening,healthy,casual,balanced,Kerala,Malabar Parotta,High,$$$,Traditional,4.5,4.8
+1881,25,student,vegetarian,mid-range,Saravanampatti,night,romantic,casual,high-protein,South Indian,Uttapam,Low,$$$,Modern,4.2,4.6
+1882,27,business,non-vegetarian,mid-range,Saravanampatti,morning,celebration,date-night,low-carb,Italian,Pizza,High,$$$,Romantic,4.6,5.0
+1883,18,professional,eggitarian,mid-range,Thudiyalur,evening,comfort,casual,regular,North Indian,Butter Chicken,Medium,$$,Luxury,3.9,4.3
+1884,36,other,non-vegetarian,budget-friendly,Kovaipudur,afternoon,comfort,friends,high-protein,South Indian,Filter Coffee,Medium,$$,Casual,4.2,4.1
+1885,34,business,vegetarian,mid-range,Saibaba Colony,morning,healthy,date-night,balanced,Kerala,Puttu Kadala,High,$$,Romantic,4.7,4.9
+1886,25,professional,vegetarian,mid-range,RS Puram,evening,romantic,family,balanced,North Indian,Paneer Butter Masala,Medium,$$$,Family-style,3.6,3.9
+1887,30,service,non-vegetarian,mid-range,Gandhipuram,evening,healthy,casual,high-protein,South Indian,Uttapam,High,$$,Modern,5.0,5.0
+1888,39,professional,vegan,mid-range,Ukkadam,afternoon,comfort,family,high-protein,Italian,Lasagna,Medium,$$,Traditional,4.1,4.3
+1889,19,student,non-vegetarian,budget-friendly,Kovaipudur,night,quick,family,balanced,Italian,Pizza,Medium,$$,Family-style,5.0,5.0
+1890,31,business,vegetarian,budget-friendly,Gandhipuram,evening,celebration,casual,high-protein,Chinese,Spring Rolls,Low,$,Modern,3.8,3.6
+1891,18,business,non-vegetarian,budget-friendly,Gandhipuram,evening,comfort,birthday,low-carb,South Indian,Uttapam,Low,$,Cozy,4.2,4.1
+1892,33,professional,vegetarian,mid-range,Singanallur,night,celebration,friends,balanced,North Indian,Naan,Medium,$,Casual,4.2,4.6
+1893,30,professional,non-vegetarian,mid-range,Thudiyalur,afternoon,study,casual,low-carb,Chettinad,Fish Fry,High,$,Luxury,4.9,5.0
+1894,42,other,vegetarian,budget-friendly,Saravanampatti,morning,comfort,casual,regular,Kerala,Appam Stew,Medium,$,Family-style,4.5,4.3
+1895,37,professional,vegetarian,budget-friendly,Saravanampatti,evening,healthy,casual,high-protein,South Indian,Idli Sambar,Medium,$$,Family-style,5.0,5.0
+1896,26,business,non-vegetarian,budget-friendly,Thudiyalur,night,adventurous,friends,balanced,Chettinad,Karaikudi Mutton,High,$,Romantic,4.8,4.8
+1897,36,service,vegetarian,premium,Saibaba Colony,evening,comfort,casual,regular,Chettinad,Karaikudi Mutton,High,$$$$,Modern,4.2,4.5
+1898,28,student,non-vegetarian,budget-friendly,Avinashi Road,morning,celebration,casual,low-carb,Chinese,Manchurian,Medium,$,Cozy,4.5,4.6
+1899,36,professional,eggitarian,mid-range,Peelamedu,evening,adventurous,friends,low-carb,South Indian,Rava Dosa,Medium,$$,Luxury,4.6,4.5
+1900,36,other,vegan,budget-friendly,RS Puram,night,romantic,family,regular,South Indian,Filter Coffee,Medium,$,Casual,4.1,4.0
+1901,22,other,vegetarian,premium,Kovaipudur,afternoon,study,casual,regular,South Indian,Masala Dosa,Low,$$$,Casual,4.3,5.0
+1902,20,other,eggitarian,premium,Saibaba Colony,morning,quick,family,balanced,Chettinad,Fish Fry,High,$$$$,Casual,3.6,3.9
+1903,26,professional,eggitarian,premium,Thudiyalur,morning,quick,casual,high-protein,Italian,Pizza,Medium,$$$$,Cozy,4.7,4.5
+1904,29,other,eggitarian,budget-friendly,Gandhipuram,night,romantic,casual,high-protein,Kerala,Puttu Kadala,Medium,$$,Casual,4.7,4.6
+1905,37,professional,vegan,premium,Avinashi Road,morning,study,casual,balanced,South Indian,Vada,Low,$$$,Cozy,3.8,4.0
+1906,29,professional,vegetarian,premium,Ukkadam,morning,celebration,business,balanced,Chettinad,Chicken Chettinad,Medium,$$$$,Luxury,3.9,4.7
+1907,24,student,vegetarian,mid-range,Thudiyalur,night,comfort,casual,balanced,South Indian,Idli Sambar,High,$$$,Traditional,3.9,3.9
+1908,20,professional,eggitarian,premium,Sitra,afternoon,celebration,family,regular,South Indian,Vada,Medium,$$$,Family-style,4.1,4.9
+1909,18,student,non-vegetarian,mid-range,Singanallur,morning,comfort,friends,low-carb,South Indian,Masala Dosa,Medium,$$$$,Cozy,4.5,4.4
+1910,18,student,non-vegetarian,budget-friendly,Singanallur,evening,celebration,solo,regular,South Indian,Uttapam,Low,$$,Cozy,4.5,4.6
+1911,34,business,non-vegetarian,mid-range,Gandhipuram,midnight,healthy,friends,balanced,South Indian,Filter Coffee,Medium,$,Romantic,4.4,4.6
+1912,27,business,non-vegetarian,budget-friendly,Gandhipuram,evening,healthy,friends,regular,Kerala,Puttu Kadala,Low,$,Luxury,4.1,4.2
+1913,35,professional,non-vegetarian,premium,Sitra,night,study,birthday,high-protein,Street Food,Egg Puffs,Medium,$$$,Casual,4.0,4.2
+1914,37,professional,vegetarian,mid-range,Singanallur,evening,healthy,business,low-carb,Chettinad,Pepper Chicken,High,$$,Modern,4.4,4.9
+1915,31,student,eggitarian,budget-friendly,Vadavalli,evening,study,friends,balanced,Chinese,Schezwan Fried Rice,Low,$,Cozy,4.1,3.8
+1916,24,student,non-vegetarian,budget-friendly,Thudiyalur,afternoon,adventurous,friends,balanced,Kerala,Beef Fry,Medium,$,Luxury,4.1,4.0
+1917,30,student,vegetarian,mid-range,Sitra,morning,healthy,friends,high-protein,Cafe,Filter Coffee,Medium,$$,Family-style,4.4,4.4
+1918,26,student,vegetarian,budget-friendly,Sitra,night,adventurous,family,regular,South Indian,Masala Dosa,High,$$,Family-style,4.4,4.6
+1919,40,student,non-vegetarian,budget-friendly,RS Puram,evening,quick,friends,regular,South Indian,Idli Sambar,Medium,$,Luxury,4.4,4.4
+1920,38,business,non-vegetarian,mid-range,RS Puram,midnight,adventurous,casual,balanced,Italian,Lasagna,Low,$$,Luxury,4.5,4.5
+1921,24,student,non-vegetarian,budget-friendly,Ukkadam,evening,comfort,casual,regular,Andhra,Pulihora,High,$,Luxury,4.8,5.0
+1922,22,student,vegan,budget-friendly,Avinashi Road,evening,quick,date-night,high-protein,Chettinad,Pepper Chicken,High,$$,Romantic,3.5,3.6
+1923,21,other,eggitarian,mid-range,Ukkadam,afternoon,celebration,casual,high-protein,Chettinad,Fish Fry,High,$$$,Modern,3.9,4.1
+1924,18,business,non-vegetarian,budget-friendly,Saravanampatti,morning,romantic,birthday,balanced,Chettinad,Fish Fry,Low,$,Casual,4.5,4.2
+1925,26,professional,non-vegetarian,budget-friendly,Vadavalli,morning,adventurous,casual,balanced,Street Food,Pani Puri,Medium,$$,Cozy,4.0,3.9
+1926,35,professional,vegetarian,budget-friendly,RS Puram,afternoon,comfort,casual,balanced,Bakery,Puff,High,$,Traditional,4.0,4.2
+1927,32,service,non-vegetarian,budget-friendly,Saibaba Colony,evening,romantic,solo,regular,Chettinad,Pepper Chicken,Medium,$,Cozy,3.5,4.1
+1928,34,student,vegetarian,budget-friendly,Saibaba Colony,evening,adventurous,casual,regular,North Indian,Naan,High,$,Casual,4.0,3.8
+1929,24,student,non-vegetarian,budget-friendly,RS Puram,afternoon,comfort,family,balanced,South Indian,Pongal,High,$,Family-style,4.7,5.0
+1930,22,student,eggitarian,premium,Avinashi Road,evening,adventurous,casual,high-protein,Kerala,Malabar Parotta,High,$$$,Casual,4.9,5.0
+1931,40,other,non-vegetarian,mid-range,Saravanampatti,evening,comfort,friends,balanced,Kerala,Puttu Kadala,Medium,$$$,Modern,4.1,4.2
+1932,22,service,vegetarian,mid-range,Avinashi Road,afternoon,celebration,business,low-carb,Chettinad,Fish Fry,Medium,$$,Modern,4.4,4.7
+1933,25,professional,vegetarian,premium,RS Puram,morning,comfort,birthday,balanced,South Indian,Masala Dosa,High,$$$,Romantic,4.4,5.0
+1934,32,professional,vegan,mid-range,Thudiyalur,evening,comfort,casual,balanced,Cafe,Tea,Low,$$,Family-style,3.8,4.1
+1935,21,professional,eggitarian,premium,Ukkadam,evening,study,date-night,high-protein,South Indian,Vada,High,$$$,Modern,4.4,5.0
+1936,32,professional,vegetarian,premium,Gandhipuram,night,adventurous,casual,high-protein,North Indian,Biryani,Low,$$$$,Modern,4.4,4.9
+1937,26,student,non-vegetarian,budget-friendly,RS Puram,evening,romantic,family,high-protein,South Indian,Uttapam,Medium,$,Casual,3.7,3.7
+1938,33,business,vegetarian,premium,Peelamedu,evening,celebration,casual,balanced,Chettinad,Pepper Chicken,High,$$$$,Cozy,4.8,4.8
+1939,23,other,vegan,premium,Saibaba Colony,evening,healthy,casual,regular,North Indian,Paneer Butter Masala,High,$$$$,Romantic,4.5,4.9
+1940,22,business,non-vegetarian,mid-range,Singanallur,evening,adventurous,casual,high-protein,Chinese,Schezwan Fried Rice,High,$$,Traditional,3.8,4.0
+1941,30,other,non-vegetarian,mid-range,RS Puram,evening,healthy,casual,balanced,South Indian,Vada,High,$$$,Romantic,4.5,4.8
+1942,29,professional,vegan,mid-range,Saibaba Colony,evening,adventurous,casual,regular,Street Food,Egg Puffs,Low,$$,Luxury,3.9,4.0
+1943,18,student,non-vegetarian,budget-friendly,RS Puram,afternoon,adventurous,casual,balanced,North Indian,Naan,Low,$,Traditional,4.6,5.0
+1944,22,professional,eggitarian,premium,Sitra,evening,romantic,casual,balanced,Chettinad,Fish Fry,Low,$$$$,Family-style,3.8,4.5
+1945,37,student,non-vegetarian,budget-friendly,Vadavalli,morning,healthy,casual,regular,Chinese,Schezwan Fried Rice,Medium,$,Casual,4.7,5.0
+1946,29,professional,non-vegetarian,mid-range,Saravanampatti,night,adventurous,family,balanced,North Indian,Butter Chicken,High,$$,Family-style,5.0,5.0
+1947,37,business,vegetarian,budget-friendly,Saibaba Colony,morning,adventurous,casual,regular,Chinese,Spring Rolls,Medium,$,Modern,4.4,5.0
+1948,21,professional,non-vegetarian,budget-friendly,Ukkadam,afternoon,quick,casual,balanced,South Indian,Pongal,Medium,$,Modern,5.0,4.8
+1949,18,professional,vegetarian,premium,Kovaipudur,afternoon,celebration,casual,balanced,North Indian,Paneer Butter Masala,Low,$$,Romantic,4.9,5.0
+1950,40,student,eggitarian,budget-friendly,Ukkadam,evening,celebration,casual,regular,Chinese,Manchurian,Low,$$,Modern,4.4,4.2
+1951,32,professional,vegetarian,premium,Ukkadam,afternoon,healthy,family,regular,South Indian,Vada,Low,$$$$,Family-style,4.2,4.7
+1952,23,student,non-vegetarian,mid-range,Ukkadam,morning,adventurous,solo,balanced,Andhra,Royyala Iguru,High,$$,Family-style,4.8,5.0
+1953,22,professional,non-vegetarian,mid-range,Peelamedu,evening,adventurous,anniversary,balanced,North Indian,Biryani,Medium,$$$,Romantic,4.0,4.2
+1954,18,other,non-vegetarian,premium,Saibaba Colony,midnight,adventurous,business,high-protein,North Indian,Butter Chicken,High,$$$,Luxury,3.7,3.7
+1955,19,professional,eggitarian,premium,Vadavalli,afternoon,healthy,date-night,low-carb,South Indian,Uttapam,Medium,$$$$,Romantic,4.8,5.0
+1956,24,student,vegetarian,premium,Thudiyalur,afternoon,healthy,birthday,balanced,Chinese,Spring Rolls,Medium,$$$$,Casual,3.7,3.9
+1957,29,other,vegetarian,premium,Sitra,morning,quick,casual,balanced,South Indian,Rava Dosa,High,$$,Traditional,4.3,4.0
+1958,24,professional,vegetarian,mid-range,Avinashi Road,evening,study,date-night,regular,South Indian,Pongal,Low,$,Romantic,4.5,4.9
+1959,31,student,vegetarian,budget-friendly,Sitra,afternoon,comfort,friends,low-carb,South Indian,Filter Coffee,Medium,$$,Luxury,4.8,4.4
+1960,29,student,vegan,budget-friendly,Saibaba Colony,afternoon,romantic,friends,balanced,North Indian,Biryani,Medium,$,Traditional,4.1,4.2
+1961,30,student,non-vegetarian,budget-friendly,Kovaipudur,night,adventurous,casual,high-protein,Chinese,Manchurian,Medium,$,Romantic,4.6,4.4
+1962,32,student,non-vegetarian,mid-range,Kovaipudur,evening,healthy,friends,regular,North Indian,Biryani,Medium,$$,Luxury,4.3,4.1
+1963,29,business,non-vegetarian,budget-friendly,Saibaba Colony,afternoon,comfort,family,balanced,South Indian,Vada,Medium,$,Casual,4.2,4.3
+1964,39,professional,eggitarian,mid-range,Vadavalli,morning,quick,date-night,low-carb,Chettinad,Fish Fry,High,$$,Romantic,4.4,4.4
+1965,31,other,non-vegetarian,mid-range,Thudiyalur,afternoon,celebration,casual,balanced,Chinese,Schezwan Fried Rice,Low,$$,Family-style,4.4,4.4
+1966,18,business,non-vegetarian,budget-friendly,Gandhipuram,evening,study,family,balanced,South Indian,Pongal,Medium,$,Family-style,3.4,3.7
+1967,22,other,vegan,mid-range,Sitra,afternoon,study,family,balanced,North Indian,Chole Bhature,High,$$,Family-style,4.5,4.8
+1968,32,professional,non-vegetarian,budget-friendly,Vadavalli,evening,romantic,friends,balanced,North Indian,Butter Chicken,Low,$,Casual,5.0,5.0
+1969,24,professional,vegan,mid-range,Peelamedu,afternoon,romantic,family,low-carb,South Indian,Rava Dosa,High,$$$,Family-style,4.8,5.0
+1970,42,student,vegetarian,mid-range,Ukkadam,evening,healthy,solo,balanced,Chinese,Spring Rolls,Medium,$,Casual,4.3,3.9
+1971,18,student,vegetarian,budget-friendly,Vadavalli,midnight,romantic,friends,balanced,Chettinad,Fish Fry,High,$$,Luxury,4.1,3.7
+1972,25,other,vegan,premium,Ukkadam,morning,study,family,balanced,South Indian,Vada,Low,$$$,Traditional,4.5,4.4
+1973,18,student,non-vegetarian,mid-range,RS Puram,morning,comfort,friends,low-carb,Italian,Pizza,Medium,$$,Romantic,4.4,4.4
+1974,36,service,non-vegetarian,budget-friendly,Peelamedu,evening,celebration,casual,regular,North Indian,Chole Bhature,Medium,$,Family-style,4.9,4.8
+1975,35,business,non-vegetarian,premium,Vadavalli,evening,romantic,solo,balanced,Street Food,Sundal,Medium,$$$,Traditional,4.5,5.0
+1976,18,professional,vegetarian,mid-range,Avinashi Road,morning,adventurous,family,balanced,South Indian,Vada,Low,$$,Casual,4.3,4.9
+1977,36,professional,non-vegetarian,mid-range,Avinashi Road,evening,study,casual,balanced,Italian,Pasta,Medium,$,Romantic,4.1,4.6
+1978,44,student,non-vegetarian,budget-friendly,Gandhipuram,afternoon,quick,friends,high-protein,Italian,Pizza,Low,$$,Romantic,5.0,4.9
+1979,31,student,vegetarian,mid-range,Saibaba Colony,evening,comfort,anniversary,high-protein,Chettinad,Chicken Chettinad,High,$$$,Luxury,4.6,4.9
+1980,41,professional,vegetarian,budget-friendly,Sitra,evening,healthy,family,balanced,South Indian,Pongal,Medium,$,Family-style,4.5,5.0
+1981,30,student,non-vegetarian,mid-range,Singanallur,afternoon,adventurous,business,high-protein,Italian,Lasagna,Low,$,Luxury,4.1,4.2
+1982,32,professional,vegetarian,budget-friendly,Peelamedu,morning,celebration,solo,regular,Chettinad,Fish Fry,High,$,Romantic,4.1,4.1
+1983,18,business,eggitarian,budget-friendly,Avinashi Road,evening,comfort,date-night,balanced,Chettinad,Fish Fry,High,$,Romantic,4.1,4.3
+1984,37,student,vegan,mid-range,Sitra,afternoon,romantic,business,low-carb,North Indian,Biryani,Medium,$$,Casual,4.0,4.0
+1985,31,professional,non-vegetarian,mid-range,Ukkadam,evening,comfort,family,regular,Bakery,Puff,Low,$$,Family-style,3.7,3.9
+1986,23,business,vegetarian,mid-range,Gandhipuram,morning,study,friends,balanced,Street Food,Kothu Parotta,High,$$,Casual,4.4,4.2
+1987,21,professional,non-vegetarian,budget-friendly,Ukkadam,night,romantic,friends,balanced,Chinese,Hakka Noodles,Low,$$,Cozy,3.8,4.0
+1988,41,student,vegetarian,budget-friendly,Saravanampatti,afternoon,romantic,casual,high-protein,Bakery,Cream Bun,Low,$,Family-style,4.3,4.0
+1989,26,professional,eggitarian,premium,Saravanampatti,evening,celebration,family,high-protein,South Indian,Idli Sambar,Low,$$$,Traditional,4.2,4.4
+1990,31,service,non-vegetarian,budget-friendly,Ukkadam,evening,celebration,family,low-carb,Chinese,Schezwan Fried Rice,Medium,$$,Family-style,4.5,4.2
+1991,39,student,eggitarian,budget-friendly,Avinashi Road,afternoon,healthy,casual,regular,Chinese,Schezwan Fried Rice,Medium,$$,Cozy,3.9,3.8
+1992,33,professional,vegetarian,budget-friendly,Saravanampatti,morning,healthy,family,balanced,South Indian,Rava Dosa,Low,$$,Family-style,4.0,4.1
+1993,30,professional,vegetarian,mid-range,Kovaipudur,evening,quick,birthday,high-protein,Andhra,Royyala Iguru,High,$$,Casual,4.0,4.7
+1994,22,professional,vegetarian,premium,Sitra,night,celebration,casual,balanced,Chinese,Manchurian,Medium,$$$,Modern,4.3,4.3
+1995,33,student,vegetarian,budget-friendly,Vadavalli,evening,quick,birthday,high-protein,Chinese,Schezwan Fried Rice,Low,$,Casual,4.4,4.1
+1996,21,professional,vegetarian,mid-range,Sitra,afternoon,healthy,casual,low-carb,Kerala,Puttu Kadala,Medium,$$$$,Romantic,4.2,4.6
+1997,18,student,eggitarian,premium,Sitra,evening,study,family,regular,South Indian,Filter Coffee,High,$$,Traditional,4.1,3.7
+1998,28,student,vegetarian,mid-range,RS Puram,evening,celebration,date-night,balanced,North Indian,Butter Chicken,High,$$,Romantic,4.7,5.0
+1999,28,student,vegetarian,budget-friendly,Thudiyalur,evening,healthy,business,regular,North Indian,Naan,Low,$$$,Modern,4.9,4.8
+2000,18,business,vegan,budget-friendly,Ukkadam,evening,healthy,birthday,balanced,South Indian,Vada,Low,$,Casual,4.4,4.5
+2001,44,student,eggitarian,budget-friendly,Singanallur,morning,romantic,date-night,regular,Kerala,Beef Fry,Medium,$,Romantic,4.2,4.6
+2002,29,professional,non-vegetarian,mid-range,Thudiyalur,evening,romantic,casual,high-protein,Street Food,Bhel Puri,Medium,$$,Family-style,4.4,5.0
+2003,18,student,non-vegetarian,mid-range,Saibaba Colony,afternoon,celebration,date-night,regular,North Indian,Biryani,Medium,$$,Romantic,4.8,5.0
+2004,38,professional,vegetarian,premium,Vadavalli,evening,comfort,family,balanced,South Indian,Pongal,Low,$$$$,Traditional,4.2,4.7
+2005,36,student,vegetarian,mid-range,Ukkadam,evening,study,family,balanced,Italian,Lasagna,Medium,$$$,Traditional,4.0,3.6
+2006,25,other,vegetarian,budget-friendly,Vadavalli,morning,healthy,casual,balanced,North Indian,Naan,High,$$,Family-style,4.6,4.6
+2007,18,other,vegan,budget-friendly,Vadavalli,midnight,comfort,business,balanced,South Indian,Rava Dosa,High,$,Casual,4.8,4.8
+2008,26,service,vegetarian,premium,Saravanampatti,night,adventurous,family,balanced,South Indian,Masala Dosa,Low,$$$$,Traditional,4.0,4.2
+2009,35,student,eggitarian,budget-friendly,Peelamedu,night,adventurous,casual,balanced,Bakery,Chocolate Cake,High,$$$,Traditional,4.2,3.7
+2010,43,business,vegetarian,budget-friendly,Ukkadam,afternoon,romantic,friends,regular,South Indian,Idli Sambar,Low,$,Family-style,4.7,4.9
+2011,43,student,vegetarian,budget-friendly,Saibaba Colony,morning,quick,casual,balanced,North Indian,Chole Bhature,Medium,$,Traditional,4.3,4.2
+2012,18,professional,vegan,mid-range,Vadavalli,evening,quick,birthday,regular,North Indian,Biryani,Medium,$$,Traditional,4.9,5.0
+2013,28,professional,eggitarian,mid-range,Avinashi Road,midnight,romantic,family,balanced,Chinese,Spring Rolls,Medium,$,Casual,4.6,4.5
+2014,20,other,non-vegetarian,mid-range,Sitra,evening,romantic,casual,balanced,Chinese,Manchurian,Medium,$$,Family-style,4.1,4.3
+2015,23,other,vegetarian,premium,Saravanampatti,night,quick,solo,balanced,South Indian,Pongal,Medium,$$$$,Traditional,4.4,4.7
+2016,21,student,non-vegetarian,budget-friendly,Saravanampatti,morning,adventurous,solo,regular,South Indian,Filter Coffee,Low,$,Modern,4.9,4.7
+2017,20,student,vegan,mid-range,Vadavalli,evening,comfort,casual,regular,Andhra,Pulihora,Medium,$$,Casual,3.9,4.1
+2018,43,professional,vegetarian,mid-range,Avinashi Road,midnight,healthy,casual,low-carb,South Indian,Idli Sambar,Medium,$$$,Luxury,3.7,3.1
+2019,28,student,eggitarian,budget-friendly,Saibaba Colony,night,celebration,friends,balanced,Chinese,Spring Rolls,Low,$,Cozy,4.7,5.0
+2020,36,student,non-vegetarian,budget-friendly,Avinashi Road,afternoon,quick,birthday,low-carb,Chinese,Schezwan Fried Rice,Medium,$,Modern,4.1,4.5
+2021,19,other,vegan,budget-friendly,Sitra,afternoon,study,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$,Modern,4.8,5.0
+2022,36,student,non-vegetarian,mid-range,Saravanampatti,evening,comfort,solo,balanced,Chinese,Spring Rolls,Medium,$$,Casual,4.0,4.3
+2023,34,business,vegetarian,mid-range,Peelamedu,evening,adventurous,date-night,balanced,Chinese,Hakka Noodles,Low,$,Romantic,4.3,4.2
+2024,24,other,eggitarian,premium,Singanallur,afternoon,healthy,casual,balanced,North Indian,Chole Bhature,High,$$,Romantic,4.5,4.6
+2025,22,professional,non-vegetarian,budget-friendly,Saravanampatti,afternoon,study,family,balanced,Chinese,Schezwan Fried Rice,Medium,$$,Casual,4.5,4.8
+2026,27,student,vegetarian,mid-range,Vadavalli,evening,romantic,family,balanced,South Indian,Filter Coffee,Medium,$$$,Family-style,4.0,4.1
+2027,18,business,vegetarian,premium,Avinashi Road,night,celebration,family,balanced,Bakery,Cookies,High,$$$$,Casual,4.6,4.7
+2028,25,student,non-vegetarian,mid-range,RS Puram,evening,celebration,casual,balanced,Chinese,Hakka Noodles,Medium,$$$,Romantic,4.2,3.8
+2029,22,student,vegetarian,budget-friendly,Thudiyalur,morning,study,casual,balanced,South Indian,Pongal,Medium,$,Family-style,4.8,5.0
+2030,32,student,non-vegetarian,premium,Gandhipuram,night,study,casual,balanced,South Indian,Rava Dosa,High,$$$$,Modern,4.3,4.7
+2031,18,professional,non-vegetarian,premium,Thudiyalur,evening,healthy,casual,high-protein,South Indian,Vada,Medium,$$$$,Casual,4.9,5.0
+2032,33,service,non-vegetarian,mid-range,Sitra,afternoon,study,casual,regular,Bakery,Cream Bun,Medium,$,Romantic,4.3,3.9
+2033,28,professional,vegan,mid-range,Gandhipuram,evening,quick,family,regular,Andhra,Pulihora,High,$$,Family-style,4.5,4.6
+2034,20,student,non-vegetarian,mid-range,Ukkadam,evening,study,family,balanced,Chinese,Hakka Noodles,Medium,$$,Family-style,4.3,4.2
+2035,27,student,eggitarian,budget-friendly,Avinashi Road,afternoon,study,family,regular,North Indian,Butter Chicken,High,$$,Family-style,3.7,3.5
+2036,36,professional,non-vegetarian,mid-range,Peelamedu,morning,healthy,date-night,high-protein,Kerala,Malabar Parotta,Low,$$$,Luxury,3.8,3.5
+2037,33,business,non-vegetarian,mid-range,Sitra,afternoon,celebration,casual,balanced,North Indian,Biryani,Medium,$$,Traditional,4.4,4.6
+2038,27,service,vegetarian,premium,Vadavalli,evening,healthy,friends,balanced,Chettinad,Pepper Chicken,Medium,$$$$,Luxury,4.8,5.0
+2039,31,professional,non-vegetarian,budget-friendly,Peelamedu,evening,study,casual,regular,Chettinad,Chicken Chettinad,High,$$,Family-style,4.0,4.3
+2040,37,other,non-vegetarian,budget-friendly,Ukkadam,evening,celebration,date-night,balanced,South Indian,Pongal,High,$,Luxury,3.4,3.4
+2041,43,professional,non-vegetarian,premium,Vadavalli,night,celebration,casual,regular,Italian,Pasta,Low,$$$$,Romantic,4.3,5.0
+2042,26,student,vegetarian,mid-range,Sitra,afternoon,adventurous,business,balanced,Street Food,Bhel Puri,Medium,$$,Modern,5.0,4.9
+2043,30,other,vegetarian,budget-friendly,Vadavalli,afternoon,adventurous,birthday,balanced,Street Food,Sundal,Medium,$$,Cozy,4.9,4.7
+2044,23,student,vegan,mid-range,RS Puram,night,healthy,date-night,low-carb,Italian,Lasagna,High,$$,Luxury,3.8,3.9
+2045,18,service,vegetarian,budget-friendly,Gandhipuram,afternoon,adventurous,birthday,balanced,North Indian,Paneer Butter Masala,High,$$,Cozy,4.7,5.0
+2046,24,professional,vegetarian,mid-range,Saravanampatti,afternoon,healthy,casual,high-protein,South Indian,Idli Sambar,Low,$$$,Cozy,4.5,4.2
+2047,30,business,vegetarian,premium,Ukkadam,evening,study,casual,low-carb,Cafe,Sandwich,High,$$$,Luxury,4.3,4.2
+2048,27,professional,non-vegetarian,premium,Kovaipudur,morning,quick,date-night,low-carb,Chettinad,Fish Fry,High,$$$$,Romantic,4.6,5.0
+2049,28,professional,non-vegetarian,premium,Saravanampatti,night,celebration,family,balanced,South Indian,Rava Dosa,High,$$$,Family-style,4.3,4.5
+2050,37,student,eggitarian,budget-friendly,Singanallur,afternoon,romantic,anniversary,high-protein,South Indian,Vada,High,$,Modern,4.7,4.4
+2051,25,professional,vegan,premium,Avinashi Road,afternoon,comfort,date-night,regular,South Indian,Rava Dosa,Low,$$$$,Luxury,4.0,4.4
+2052,21,business,non-vegetarian,mid-range,RS Puram,night,quick,casual,balanced,Street Food,Sundal,Medium,$,Cozy,4.2,4.5
+2053,18,professional,non-vegetarian,mid-range,Singanallur,afternoon,romantic,date-night,regular,Chettinad,Karaikudi Mutton,Medium,$,Modern,5.0,5.0
+2054,22,professional,eggitarian,premium,Avinashi Road,morning,quick,casual,balanced,Street Food,Bhel Puri,Medium,$$$,Family-style,4.7,5.0
+2055,26,student,vegetarian,mid-range,Gandhipuram,night,study,birthday,balanced,South Indian,Filter Coffee,Medium,$$,Luxury,3.6,4.1
+2056,29,professional,vegetarian,premium,Sitra,morning,comfort,business,regular,Chinese,Schezwan Fried Rice,Medium,$$$,Casual,4.1,4.7
+2057,21,other,eggitarian,budget-friendly,Kovaipudur,evening,romantic,casual,high-protein,South Indian,Rava Dosa,Medium,$,Romantic,4.7,4.9
+2058,33,professional,vegetarian,premium,RS Puram,afternoon,study,family,balanced,Andhra,Royyala Iguru,High,$$$,Traditional,4.7,4.7
+2059,35,student,non-vegetarian,budget-friendly,Peelamedu,evening,quick,date-night,balanced,South Indian,Filter Coffee,Medium,$$,Luxury,5.0,5.0
+2060,18,student,non-vegetarian,budget-friendly,Peelamedu,midnight,quick,casual,balanced,South Indian,Pongal,High,$$,Romantic,4.2,4.0
+2061,23,student,vegetarian,budget-friendly,Singanallur,evening,adventurous,casual,balanced,Street Food,Sundal,Low,$,Family-style,3.5,3.7
+2062,27,student,eggitarian,mid-range,Saravanampatti,night,celebration,family,low-carb,South Indian,Filter Coffee,Low,$$,Family-style,4.7,5.0
+2063,36,professional,eggitarian,mid-range,Avinashi Road,evening,study,date-night,regular,North Indian,Naan,Medium,$$$,Romantic,4.2,4.7
+2064,39,student,eggitarian,premium,Kovaipudur,evening,study,solo,balanced,Kerala,Appam Stew,Medium,$$,Casual,4.5,4.4
+2065,23,professional,vegan,mid-range,RS Puram,morning,romantic,date-night,low-carb,South Indian,Filter Coffee,Medium,$$,Romantic,3.7,4.1
+2066,34,student,eggitarian,budget-friendly,Avinashi Road,afternoon,comfort,casual,balanced,North Indian,Butter Chicken,Low,$,Luxury,4.9,5.0
+2067,20,business,non-vegetarian,budget-friendly,Saravanampatti,evening,quick,casual,balanced,Cafe,Cold Coffee,Low,$$,Casual,3.9,3.7
+2068,22,professional,vegetarian,premium,Saibaba Colony,morning,healthy,date-night,balanced,Chinese,Manchurian,Low,$$$$,Luxury,4.1,4.2
+2069,27,professional,vegan,mid-range,Kovaipudur,evening,adventurous,friends,low-carb,Chettinad,Pepper Chicken,High,$$$,Luxury,4.9,4.4
+2070,33,other,vegetarian,mid-range,Singanallur,afternoon,comfort,friends,high-protein,Chettinad,Karaikudi Mutton,High,$$$,Romantic,4.7,4.4
+2071,31,student,non-vegetarian,premium,RS Puram,evening,adventurous,friends,balanced,South Indian,Rava Dosa,Medium,$$$,Cozy,4.2,4.7
+2072,36,student,eggitarian,budget-friendly,Saravanampatti,afternoon,comfort,friends,balanced,Chettinad,Fish Fry,Medium,$,Cozy,3.3,3.7
+2073,18,other,vegetarian,premium,Singanallur,afternoon,romantic,date-night,balanced,South Indian,Rava Dosa,High,$$,Luxury,5.0,5.0
+2074,22,student,vegetarian,mid-range,Peelamedu,afternoon,quick,casual,regular,Cafe,Filter Coffee,Medium,$$,Cozy,5.0,4.9
+2075,26,professional,non-vegetarian,mid-range,RS Puram,morning,comfort,casual,high-protein,Cafe,Sandwich,Low,$$,Modern,4.1,4.2
+2076,28,professional,vegan,premium,RS Puram,night,healthy,friends,balanced,North Indian,Chole Bhature,Medium,$$,Traditional,3.6,3.8
+2077,18,professional,non-vegetarian,mid-range,Thudiyalur,afternoon,romantic,casual,regular,South Indian,Vada,Medium,$$,Casual,4.3,4.3
+2078,36,business,vegetarian,budget-friendly,Gandhipuram,morning,romantic,casual,low-carb,Street Food,Bhel Puri,Low,$$,Luxury,4.6,4.8
+2079,30,business,vegetarian,premium,RS Puram,morning,study,birthday,balanced,South Indian,Vada,High,$$$,Cozy,4.7,5.0
+2080,37,professional,non-vegetarian,budget-friendly,Saravanampatti,evening,quick,family,balanced,South Indian,Masala Dosa,Low,$,Traditional,3.2,3.4
+2081,34,other,non-vegetarian,mid-range,Peelamedu,morning,quick,casual,balanced,Chinese,Hakka Noodles,Low,$,Cozy,3.6,3.9
+2082,28,student,non-vegetarian,mid-range,RS Puram,afternoon,comfort,friends,balanced,South Indian,Pongal,High,$$,Romantic,4.4,4.9
+2083,34,student,eggitarian,budget-friendly,Singanallur,morning,healthy,friends,low-carb,South Indian,Vada,Low,$$,Luxury,4.2,4.0
+2084,18,student,non-vegetarian,mid-range,Saravanampatti,morning,romantic,friends,low-carb,Andhra,Gongura Mutton,High,$$$,Casual,4.8,4.5
+2085,28,professional,vegan,premium,Thudiyalur,evening,celebration,casual,high-protein,North Indian,Butter Chicken,Low,$$$,Family-style,3.9,4.1
+2086,27,student,vegetarian,budget-friendly,Kovaipudur,morning,healthy,casual,high-protein,South Indian,Vada,Low,$$,Romantic,4.5,4.7
+2087,26,professional,non-vegetarian,premium,Sitra,morning,healthy,casual,low-carb,Chinese,Manchurian,High,$$$$,Modern,4.9,4.8
+2088,31,service,eggitarian,budget-friendly,Vadavalli,evening,romantic,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$$$,Luxury,4.3,4.5
+2089,23,professional,vegetarian,mid-range,Peelamedu,evening,comfort,date-night,high-protein,South Indian,Masala Dosa,Medium,$,Romantic,4.8,4.9
+2090,25,professional,vegan,mid-range,Saravanampatti,afternoon,study,family,balanced,South Indian,Masala Dosa,Low,$$,Casual,4.5,5.0
+2091,36,professional,vegetarian,mid-range,Vadavalli,evening,romantic,casual,balanced,Chinese,Schezwan Fried Rice,Medium,$$,Romantic,4.4,4.7
+2092,43,service,vegetarian,premium,Saibaba Colony,afternoon,adventurous,friends,balanced,Chinese,Manchurian,Low,$$$,Traditional,3.5,4.1
+2093,41,student,vegetarian,budget-friendly,Singanallur,morning,romantic,friends,regular,South Indian,Masala Dosa,Medium,$,Traditional,4.5,5.0
+2094,18,student,non-vegetarian,budget-friendly,Thudiyalur,evening,celebration,birthday,high-protein,North Indian,Chole Bhature,Medium,$$,Cozy,4.5,4.5
+2095,20,business,vegetarian,mid-range,Vadavalli,afternoon,adventurous,friends,balanced,Chettinad,Chicken Chettinad,High,$$,Luxury,3.6,3.9
+2096,18,student,eggitarian,budget-friendly,Kovaipudur,evening,adventurous,casual,high-protein,North Indian,Paneer Butter Masala,Medium,$$,Family-style,3.8,3.6
+2097,30,professional,vegetarian,budget-friendly,Vadavalli,afternoon,celebration,date-night,high-protein,Bakery,Cream Bun,Medium,$,Romantic,4.0,4.2
+2098,30,professional,vegetarian,mid-range,Sitra,evening,quick,family,balanced,Cafe,Burger,Low,$$$,Family-style,4.5,4.5
+2099,25,business,vegetarian,budget-friendly,Kovaipudur,night,comfort,family,regular,South Indian,Filter Coffee,High,$$,Family-style,4.6,4.8
+2100,31,student,vegetarian,budget-friendly,Peelamedu,morning,quick,friends,regular,Street Food,Egg Puffs,Low,$$,Casual,4.2,4.1
+2101,34,professional,vegetarian,mid-range,Peelamedu,morning,quick,casual,regular,North Indian,Chole Bhature,Medium,$$,Casual,4.5,4.7
+2102,35,professional,vegetarian,mid-range,Thudiyalur,night,comfort,casual,balanced,South Indian,Pongal,Medium,$$,Romantic,3.7,3.5
+2103,29,student,non-vegetarian,premium,Saravanampatti,afternoon,quick,casual,balanced,South Indian,Filter Coffee,High,$$$$,Luxury,4.2,4.7
+2104,24,professional,non-vegetarian,premium,Vadavalli,afternoon,quick,family,high-protein,Chinese,Chilli Chicken,Medium,$$,Family-style,4.0,3.9
+2105,33,service,eggitarian,premium,Thudiyalur,evening,romantic,casual,regular,Kerala,Puttu Kadala,High,$$$$,Luxury,4.9,5.0
+2106,24,other,vegetarian,premium,Avinashi Road,afternoon,study,family,regular,South Indian,Masala Dosa,Medium,$$$$,Family-style,4.9,5.0
+2107,21,service,non-vegetarian,budget-friendly,Gandhipuram,evening,celebration,casual,regular,South Indian,Masala Dosa,High,$,Casual,4.3,4.3
+2108,33,professional,non-vegetarian,mid-range,Singanallur,evening,healthy,business,balanced,South Indian,Masala Dosa,High,$,Luxury,4.5,4.9
+2109,31,professional,non-vegetarian,premium,Gandhipuram,evening,study,friends,balanced,South Indian,Vada,High,$$,Family-style,4.6,4.8
+2110,43,student,non-vegetarian,budget-friendly,Singanallur,morning,romantic,date-night,low-carb,South Indian,Rava Dosa,Medium,$,Romantic,4.3,4.5
+2111,18,professional,non-vegetarian,premium,Thudiyalur,evening,study,casual,balanced,Chettinad,Fish Fry,Low,$$,Modern,4.3,4.3
+2112,29,service,non-vegetarian,mid-range,Sitra,evening,quick,family,low-carb,Street Food,Kothu Parotta,High,$$,Family-style,4.3,4.7
+2113,32,other,non-vegetarian,mid-range,Kovaipudur,night,celebration,casual,regular,Chettinad,Pepper Chicken,High,$$,Romantic,4.9,5.0
+2114,37,professional,vegan,premium,RS Puram,morning,adventurous,casual,regular,South Indian,Masala Dosa,Medium,$$$,Family-style,4.2,4.7
+2115,31,student,non-vegetarian,premium,Peelamedu,evening,study,birthday,low-carb,Chettinad,Pepper Chicken,High,$$$$,Family-style,4.6,4.9
+2116,30,professional,vegetarian,budget-friendly,Ukkadam,night,quick,family,balanced,South Indian,Uttapam,Low,$$,Casual,4.4,4.7
+2117,20,business,vegan,premium,Kovaipudur,morning,study,friends,balanced,South Indian,Filter Coffee,Low,$$$$,Cozy,4.6,4.6
+2118,32,professional,vegetarian,mid-range,Kovaipudur,afternoon,romantic,casual,balanced,Bakery,Chocolate Cake,High,$$,Romantic,4.2,4.6
+2119,38,student,non-vegetarian,mid-range,Sitra,evening,quick,family,regular,South Indian,Rava Dosa,Low,$$,Family-style,5.0,5.0
+2120,26,student,non-vegetarian,budget-friendly,Peelamedu,evening,comfort,casual,high-protein,South Indian,Idli Sambar,High,$$,Casual,3.4,3.9
+2121,22,student,vegetarian,budget-friendly,Saibaba Colony,morning,comfort,friends,balanced,North Indian,Biryani,High,$,Family-style,4.5,4.5
+2122,31,professional,non-vegetarian,mid-range,Vadavalli,morning,comfort,business,low-carb,Andhra,Pulihora,High,$$,Luxury,4.3,4.7
+2123,25,professional,vegetarian,premium,Kovaipudur,midnight,romantic,casual,regular,North Indian,Paneer Butter Masala,Medium,$$$$,Casual,4.2,4.6
+2124,22,professional,vegetarian,premium,Gandhipuram,afternoon,romantic,casual,regular,Street Food,Pani Puri,Medium,$$,Cozy,4.2,4.1
+2125,40,business,non-vegetarian,premium,Gandhipuram,afternoon,healthy,casual,balanced,South Indian,Vada,Low,$$$,Romantic,4.2,4.7
+2126,29,other,vegan,budget-friendly,Thudiyalur,morning,celebration,casual,regular,South Indian,Filter Coffee,High,$,Luxury,4.5,4.6
+2127,32,business,eggitarian,premium,Sitra,afternoon,adventurous,date-night,high-protein,Chinese,Manchurian,Medium,$$$,Luxury,4.1,4.8
+2128,31,business,non-vegetarian,budget-friendly,Ukkadam,evening,healthy,casual,regular,North Indian,Naan,Medium,$,Cozy,3.9,3.8
+2129,21,professional,non-vegetarian,mid-range,RS Puram,evening,study,family,low-carb,North Indian,Butter Chicken,Low,$$$,Casual,4.1,3.7
+2130,54,professional,vegetarian,premium,Ukkadam,morning,study,date-night,regular,Chinese,Schezwan Fried Rice,Low,$$$$,Luxury,4.2,4.4
+2131,39,student,eggitarian,budget-friendly,Singanallur,night,celebration,casual,balanced,Cafe,Filter Coffee,Low,$,Romantic,4.3,4.0
+2132,27,professional,vegan,mid-range,Sitra,midnight,celebration,casual,high-protein,South Indian,Rava Dosa,High,$$$$,Casual,4.1,4.3
+2133,38,professional,vegan,premium,Avinashi Road,midnight,quick,casual,regular,South Indian,Uttapam,Low,$$,Romantic,4.7,4.5
+2134,31,professional,non-vegetarian,premium,Gandhipuram,afternoon,quick,friends,low-carb,Bakery,Cookies,Low,$$,Traditional,4.5,4.4
+2135,33,professional,non-vegetarian,budget-friendly,Ukkadam,afternoon,healthy,casual,balanced,Chettinad,Karaikudi Mutton,Low,$$,Luxury,3.9,3.8
+2136,34,student,non-vegetarian,budget-friendly,RS Puram,night,celebration,casual,balanced,Street Food,Kothu Parotta,Low,$$,Traditional,5.0,5.0
+2137,38,business,vegetarian,budget-friendly,Sitra,evening,celebration,family,high-protein,South Indian,Masala Dosa,High,$,Family-style,4.4,4.8
+2138,18,professional,vegetarian,premium,Gandhipuram,afternoon,study,date-night,high-protein,South Indian,Filter Coffee,Low,$$$,Luxury,5.0,5.0
+2139,18,service,vegetarian,budget-friendly,Gandhipuram,morning,healthy,friends,balanced,Chinese,Hakka Noodles,High,$,Modern,4.1,4.1
+2140,18,professional,eggitarian,mid-range,Ukkadam,morning,quick,family,low-carb,Andhra,Gongura Mutton,Medium,$$,Casual,4.7,5.0
+2141,37,student,vegetarian,budget-friendly,Saravanampatti,night,study,casual,high-protein,Chinese,Hakka Noodles,Medium,$,Family-style,3.9,4.3
+2142,23,service,eggitarian,premium,Sitra,morning,romantic,family,balanced,Chinese,Schezwan Fried Rice,Low,$$$$,Casual,3.7,4.0
+2143,19,professional,vegetarian,mid-range,Peelamedu,afternoon,adventurous,solo,regular,Chinese,Manchurian,Medium,$$$,Modern,4.5,5.0
+2144,34,professional,vegan,mid-range,Sitra,morning,adventurous,date-night,high-protein,Chinese,Chilli Chicken,Low,$$$$,Romantic,4.2,4.4
+2145,18,professional,non-vegetarian,premium,RS Puram,evening,celebration,family,low-carb,South Indian,Pongal,High,$$$$,Family-style,3.5,4.4
+2146,28,professional,non-vegetarian,mid-range,RS Puram,afternoon,celebration,family,regular,North Indian,Butter Chicken,Medium,$$$$,Casual,4.5,4.9
+2147,34,other,eggitarian,premium,Saravanampatti,midnight,healthy,friends,high-protein,North Indian,Chole Bhature,High,$$$$,Casual,4.0,4.3
+2148,27,professional,non-vegetarian,premium,Saibaba Colony,afternoon,comfort,friends,balanced,South Indian,Vada,High,$$$$,Luxury,4.6,4.7
+2149,23,professional,vegan,mid-range,Singanallur,afternoon,study,casual,high-protein,South Indian,Filter Coffee,Medium,$$$$,Romantic,4.3,3.9
+2150,18,professional,non-vegetarian,mid-range,Ukkadam,afternoon,comfort,casual,high-protein,North Indian,Chole Bhature,Low,$$,Modern,4.3,4.3
+2151,18,student,non-vegetarian,mid-range,Gandhipuram,evening,adventurous,friends,high-protein,Chinese,Manchurian,High,$$,Romantic,4.1,4.7
+2152,39,student,vegetarian,budget-friendly,Vadavalli,afternoon,study,casual,high-protein,Street Food,Bhel Puri,Medium,$$,Cozy,4.1,3.8
+2153,22,professional,vegetarian,premium,Vadavalli,evening,healthy,casual,regular,Chinese,Schezwan Fried Rice,Medium,$$$,Romantic,4.7,4.9
+2154,24,student,vegetarian,budget-friendly,Vadavalli,afternoon,quick,solo,low-carb,North Indian,Paneer Butter Masala,High,$,Cozy,3.8,3.4
+2155,29,student,eggitarian,budget-friendly,Thudiyalur,night,study,date-night,balanced,Street Food,Pani Puri,Low,$$,Romantic,3.9,4.7
+2156,35,professional,vegetarian,premium,Saravanampatti,night,comfort,family,high-protein,South Indian,Vada,Low,$$$$,Family-style,4.2,4.4
+2157,18,professional,eggitarian,mid-range,Gandhipuram,morning,healthy,casual,balanced,Italian,Garlic Bread,Medium,$$,Cozy,3.6,3.9
+2158,20,other,vegetarian,mid-range,Sitra,evening,comfort,casual,balanced,Street Food,Bhel Puri,Low,$$,Casual,4.4,4.8
+2159,41,professional,vegetarian,mid-range,Kovaipudur,evening,quick,casual,balanced,South Indian,Filter Coffee,High,$$,Cozy,5.0,5.0
+2160,23,other,vegan,budget-friendly,Sitra,evening,adventurous,casual,balanced,South Indian,Masala Dosa,Low,$$$,Traditional,4.2,3.9
+2161,30,other,non-vegetarian,budget-friendly,Thudiyalur,evening,healthy,casual,high-protein,South Indian,Vada,High,$$,Modern,4.7,4.6
+2162,21,service,non-vegetarian,mid-range,Gandhipuram,evening,healthy,friends,regular,South Indian,Rava Dosa,Low,$$,Romantic,4.1,4.6
+2163,28,professional,vegan,mid-range,RS Puram,night,comfort,friends,low-carb,North Indian,Paneer Butter Masala,High,$$,Luxury,4.1,4.5
+2164,24,professional,non-vegetarian,mid-range,Thudiyalur,evening,quick,friends,balanced,North Indian,Naan,High,$$,Modern,3.9,3.9
+2165,48,professional,vegetarian,mid-range,Sitra,midnight,comfort,family,balanced,Street Food,Sundal,Medium,$$,Family-style,4.5,5.0
+2166,22,professional,non-vegetarian,mid-range,RS Puram,morning,celebration,casual,regular,Chinese,Manchurian,High,$$$,Cozy,4.0,4.6
+2167,28,student,non-vegetarian,budget-friendly,Saibaba Colony,night,comfort,casual,low-carb,South Indian,Uttapam,Low,$,Family-style,4.2,4.7
+2168,39,other,vegetarian,mid-range,Gandhipuram,evening,quick,friends,balanced,Chinese,Manchurian,High,$$,Traditional,3.8,3.9
+2169,28,student,non-vegetarian,mid-range,Singanallur,evening,adventurous,casual,high-protein,North Indian,Naan,Medium,$$$,Luxury,4.3,4.3
+2170,27,business,vegetarian,premium,Saibaba Colony,night,romantic,casual,balanced,South Indian,Filter Coffee,High,$$,Cozy,4.7,4.7
+2171,26,professional,vegetarian,mid-range,Ukkadam,morning,adventurous,solo,regular,South Indian,Vada,Medium,$$$,Romantic,4.1,4.1
+2172,23,professional,non-vegetarian,mid-range,Peelamedu,afternoon,comfort,casual,balanced,South Indian,Idli Sambar,Medium,$$,Traditional,4.2,4.9
+2173,38,professional,vegetarian,premium,Vadavalli,evening,comfort,casual,regular,Andhra,Gongura Mutton,High,$$$$,Casual,3.8,4.0
+2174,23,professional,vegetarian,mid-range,Saravanampatti,evening,quick,date-night,balanced,Chinese,Schezwan Fried Rice,Medium,$$,Modern,4.6,5.0
+2175,26,student,vegetarian,budget-friendly,Ukkadam,afternoon,quick,casual,high-protein,North Indian,Butter Chicken,Medium,$$,Family-style,4.7,4.9
+2176,35,other,non-vegetarian,premium,Ukkadam,morning,study,casual,balanced,South Indian,Idli Sambar,High,$$$$,Modern,4.3,4.3
+2177,33,student,vegetarian,budget-friendly,Singanallur,morning,quick,family,high-protein,North Indian,Naan,High,$,Family-style,3.7,3.4
+2178,37,student,vegetarian,budget-friendly,RS Puram,evening,comfort,casual,regular,North Indian,Paneer Butter Masala,Medium,$$$,Luxury,3.9,3.9
+2179,27,service,eggitarian,mid-range,Kovaipudur,afternoon,adventurous,casual,high-protein,South Indian,Filter Coffee,Low,$$,Cozy,4.3,4.9
+2180,31,student,non-vegetarian,premium,Sitra,morning,celebration,casual,balanced,South Indian,Masala Dosa,Low,$$$$,Traditional,3.2,3.1
+2181,34,professional,vegetarian,budget-friendly,Ukkadam,morning,healthy,date-night,balanced,South Indian,Masala Dosa,Low,$$,Luxury,4.3,4.5
+2182,48,service,vegetarian,mid-range,Sitra,afternoon,healthy,friends,regular,Cafe,Burger,High,$$,Modern,5.0,4.6
+2183,38,professional,non-vegetarian,mid-range,Thudiyalur,midnight,comfort,birthday,regular,Cafe,Burger,Medium,$$,Romantic,3.7,4.5
+2184,32,student,vegan,budget-friendly,Saravanampatti,morning,comfort,family,balanced,Street Food,Egg Puffs,Low,$$$,Traditional,4.1,3.8
+2185,26,professional,vegetarian,mid-range,Avinashi Road,evening,celebration,friends,regular,North Indian,Chole Bhature,Low,$,Traditional,4.6,4.9
+2186,18,other,eggitarian,mid-range,RS Puram,afternoon,quick,date-night,high-protein,Italian,Pizza,High,$$,Romantic,3.7,3.7
+2187,39,professional,non-vegetarian,budget-friendly,Saravanampatti,evening,comfort,date-night,high-protein,Cafe,Filter Coffee,Low,$$,Romantic,4.6,4.5
+2188,36,student,non-vegetarian,premium,Gandhipuram,night,study,casual,high-protein,North Indian,Paneer Butter Masala,Medium,$$$,Traditional,4.1,4.5
+2189,18,student,non-vegetarian,budget-friendly,Peelamedu,afternoon,study,business,balanced,North Indian,Biryani,Medium,$,Modern,3.8,3.7
+2190,28,student,vegetarian,budget-friendly,Ukkadam,evening,romantic,casual,regular,Chinese,Hakka Noodles,Medium,$$,Family-style,4.1,4.2
+2191,25,professional,vegetarian,mid-range,Vadavalli,morning,adventurous,casual,balanced,Cafe,Filter Coffee,High,$$,Casual,3.7,4.0
+2192,45,other,non-vegetarian,mid-range,RS Puram,evening,healthy,casual,high-protein,Chinese,Schezwan Fried Rice,Medium,$$,Luxury,4.2,4.6
+2193,42,other,vegan,budget-friendly,Saravanampatti,night,comfort,date-night,balanced,North Indian,Naan,Low,$$,Luxury,4.1,4.1
+2194,35,business,vegan,premium,RS Puram,night,comfort,casual,balanced,Chettinad,Fish Fry,High,$$$$,Casual,4.5,4.6
+2195,21,professional,eggitarian,budget-friendly,Saravanampatti,night,celebration,casual,regular,Kerala,Beef Fry,Low,$,Luxury,4.8,4.8
+2196,18,student,non-vegetarian,mid-range,Sitra,evening,quick,casual,high-protein,Chettinad,Fish Fry,Medium,$$,Casual,4.3,4.3
+2197,25,student,non-vegetarian,budget-friendly,Saibaba Colony,morning,romantic,casual,balanced,North Indian,Biryani,Low,$,Traditional,4.5,4.9
+2198,21,professional,vegetarian,budget-friendly,Ukkadam,evening,healthy,solo,high-protein,South Indian,Idli Sambar,Medium,$,Romantic,4.3,4.2
+2199,41,student,vegan,budget-friendly,Singanallur,evening,quick,casual,regular,South Indian,Idli Sambar,Medium,$,Casual,3.5,3.4
