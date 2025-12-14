@@ -101,12 +101,13 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  transition: transform 0.2s;
+  gap: 8px;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .restaurantCard:hover {
-  border-color: #6b7280;
+  border-color: #f97316;
+  transform: translateY(-2px);
 }
 
 .cardHeader {
@@ -141,7 +142,47 @@
   color: #9ca3af;
 }
 
-/* --- NEW BUTTONS (View Details & Navigate) --- */
+/* --- NEW: FAMOUS DISHES SECTION --- */
+.famousDishes {
+  font-size: 0.85em;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin: 4px 0;
+  line-height: 1.4;
+  border-left: 3px solid #fbbf24;
+}
+
+.famousDishes strong {
+  color: #fcd34d;
+}
+
+/* --- NEW: AI REASON SECTION --- */
+.reason {
+  font-size: 0.85em;
+  color: #cbd5e1;
+  background: rgba(100, 116, 139, 0.1);
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin: 4px 0;
+  line-height: 1.4;
+  border-left: 3px solid #64748b;
+}
+
+/* --- NEW: PRICE SECTION --- */
+.price {
+  font-size: 0.85em;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin: 4px 0;
+  border-left: 3px solid #34d399;
+}
+
+/* --- BUTTONS --- */
 .actionButtons {
   display: flex;
   gap: 8px;
@@ -161,7 +202,7 @@
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
   color: white;
-  text-decoration: none; /* Just in case it's an anchor tag */
+  text-decoration: none;
 }
 
 .viewButton {
@@ -343,5 +384,3 @@
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* src/App.module.css */
-

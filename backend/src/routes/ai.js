@@ -1,159 +1,300 @@
 const express = require("express");
-const axios = require("axios");
 const db = require("../db");
 
 const router = express.Router();
 
-// Load database into AI-readable summary
-async function buildDatabaseSummary() {
-  const [rows] = await db.query(`
-    SELECT 
-      r.id, r.name, r.area, r.cuisine, r.rating,
-      GROUP_CONCAT(DISTINCT d.name SEPARATOR ', ') AS dishes
-    FROM restaurants r
-    LEFT JOIN restaurant_dishes rd ON rd.restaurant_id = r.id
-    LEFT JOIN dishes d ON d.id = rd.dish_id
-    GROUP BY r.id
-  `);
-
-  // We keep the ID in the mapping now so the AI can return it
-  const summary = rows.map(r =>
-    `ID: ${r.id} | Name: ${r.name} | Area: ${r.area || "Coimbatore"} | Cuisine: ${r.cuisine || "N/A"} | Rating: ${r.rating || "N/A"} | Dishes: ${r.dishes || "Not listed"}`
-  ).join("\n");
-
-  return { rows, summary };
-}
-
-// MAIN ENDPOINT
-router.post("/assistant", async (req, res) => {
-  let { message } = req.body || {};
+/* ------------------ GEMINI AI FUNCTION ------------------ */
+async function callGemini(userQuery, databaseInfo) {
+  const apiKey = process.env.GEMINI_API_KEY;
   
-  // Basic validation
-  if (!message || !message.trim()) {
-    return res.json({
-      reply: "Tell me what you feel like eating! For example: 'cheesy food near Gandhipuram' or 'cheap biryani'.",
-      restaurants: []
-    });
+  if (!apiKey) {
+    console.log("⚠️ No Gemini API key found");
+    return null;
   }
 
   try {
-    const { rows, summary } = await buildDatabaseSummary();
+    const fetch = (await import('node-fetch')).default;
+    
+    const prompt = `You are Dyne, a restaurant AI assistant.
 
-    if (!rows.length) {
-      return res.json({ reply: "No restaurants found in Dyne yet.", restaurants: [] });
-    }
+DATABASE:
+${databaseInfo}
 
-    // ✅ Mistral API call with JSON Schema Enforcement
-    const response = await axios.post(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        model: "mistralai/mistral-7b-instruct",
-        messages: [
-          {
-            role: "system",
-            content:
-`You are Dyne AI, a smart restaurant assistant.
-DATA:
-${summary}
+USER: "${userQuery}"
 
-INSTRUCTIONS:
-1. Analyze the USER QUERY.
-2. Pick the best matching restaurants from DATA.
-3. You MUST return valid JSON only. Do not speak in plain text outside the JSON.
-4. Output format:
+Recommend 2-3 restaurants. Reply ONLY with valid JSON:
 {
-  "chat": "A short, friendly sentence introducing the choices (in English).",
+  "chat": "Try [Dish] at [Restaurant]! Here are X spots:",
   "recommendations": [
-    { "name": "Exact Name", "id": 123, "reason": "Why this matches" }
+    {"id": 7, "reason": "Famous for: Seeraga Samba Biryani. Perfect for budget biryani!"}
   ]
 }
-5.analyse user sentiment and if negative, suggest highly rated places.
-`
-          },
-          {
-            role: "user",
-            content: message
-          }
-        ],
-        temperature: 0.2, // Low temp for consistent JSON
-        response_format: { type: "json_object" } // Hints to model to use JSON
-      },
+
+Rules: Start "reason" with "Famous for: [dishes]". Use exact IDs from database.`;
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
       {
-        headers: {
-          "Authorization": `Bearer ${process.env.MISTRAL_API_KEY}`,
-          "Content-Type": "application/json",
-          "HTTP-Referer": "http://localhost:5173",
-          "X-Title": "SmartDine"
-        }
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.4, maxOutputTokens: 800 }
+        })
       }
     );
 
-    let rawContent = response.data.choices[0].message.content || "";
-
-    // CLEANUP: Sometimes AI wraps JSON in markdown blocks like \`\`\`json ... \`\`\`
-    // We remove them to ensure parsing works.
-    rawContent = rawContent.replace(/```json/g, "").replace(/```/g, "").trim();
-
-    let parsedResponse;
-    try {
-        parsedResponse = JSON.parse(rawContent);
-    } catch (e) {
-        console.error("AI JSON Parse Failed, falling back to raw text", rawContent);
-        // Fallback if AI fails to give JSON
-        parsedResponse = {
-            chat: "Here are some places I found:",
-            recommendations: []
-        };
+    if (!response.ok) {
+      console.error("❌ Gemini API error:", response.status);
+      return null;
     }
 
-    // Extract detailed object from DB based on AI's ID suggestions
-    // This ensures the frontend gets clean DB data (image urls, ratings, coords) 
-    // rather than AI-hallucinated details.
-    const finalRecommendations = parsedResponse.recommendations.map(rec => {
-        const dbMatch = rows.find(r => r.id == rec.id || r.name === rec.name);
-        return dbMatch ? { ...dbMatch, reason: rec.reason } : null;
-    }).filter(item => item !== null); // Remove nulls
+    const data = await response.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    
+    if (!text) return null;
 
-    // Send structure back to Frontend
-    res.json({
-        reply: parsedResponse.chat, // The conversational part
-        restaurants: finalRecommendations // The array for your UI Cards
+    console.log("🤖 AI raw response:", text.substring(0, 200));
+
+    // Clean and parse
+    const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    return JSON.parse(cleaned);
+
+  } catch (err) {
+    console.error("❌ Gemini error:", err.message);
+    return null;
+  }
+}
+
+/* ------------------ SMART MATCHING (FALLBACK) ------------------ */
+function smartMatch(rows, query) {
+  const q = query.toLowerCase();
+  let matches = [];
+  let chatMsg = "";
+
+  console.log(`🔍 Matching: "${query}"`);
+
+  // Biryani
+  if (q.includes('biryani')) {
+    matches = rows.filter(r => {
+      const txt = `${r.name} ${r.cuisine} ${r.famous_dishes || ''}`.toLowerCase();
+      return txt.includes('biryani');
+    });
+    
+    if (q.includes('gandhipuram')) {
+      matches = matches.filter(r => r.area?.toLowerCase().includes('gandhipuram'));
+    }
+    if (q.includes('cheap') || q.includes('budget')) {
+      matches = matches.filter(r => r.price_level <= 2);
+    }
+    
+    chatMsg = "Here are great biryani spots! 🍛";
+  }
+  // Cheap
+  else if (q.includes('cheap') || q.includes('budget')) {
+    matches = rows.filter(r => r.price_level <= 2);
+    chatMsg = "Budget-friendly options! 💰";
+  }
+  // Veg
+  else if (q.includes('veg')) {
+    matches = rows.filter(r => {
+      const txt = `${r.cuisine} ${r.tags || ''}`.toLowerCase();
+      return txt.includes('veg');
+    });
+    chatMsg = "Vegetarian spots! 🥗";
+  }
+  // Dessert
+  else if (q.includes('dessert') || q.includes('sweet')) {
+    matches = rows.filter(r => {
+      const txt = `${r.cuisine} ${r.tags || ''} ${r.famous_dishes || ''}`.toLowerCase();
+      return txt.includes('dessert') || txt.includes('sweet') || txt.includes('ice');
+    });
+    chatMsg = "Sweet treats! 🍰";
+  }
+  // General
+  else {
+    matches = rows.filter(r => {
+      const txt = `${r.name} ${r.cuisine} ${r.area} ${r.famous_dishes || ''}`.toLowerCase();
+      return q.split(/\s+/).some(word => word.length > 2 && txt.includes(word));
+    });
+    chatMsg = "Here are some options! ✨";
+  }
+
+  // No matches = top rated
+  if (matches.length === 0) {
+    matches = rows.filter(r => r.rating).sort((a, b) => b.rating - a.rating);
+    chatMsg = "Top-rated places! 🌟";
+  } else {
+    matches.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+  }
+
+  const top3 = matches.slice(0, 3);
+  
+  // Better chat message
+  if (top3[0]?.famous_dishes) {
+    const dish = top3[0].famous_dishes.split(',')[0].trim();
+    chatMsg = `Try ${dish} at ${top3[0].name}! Here are ${top3.length} spots:`;
+  }
+
+  console.log(`✅ Found ${top3.length} matches`);
+
+  return {
+    chat: chatMsg,
+    recommendations: top3.map(r => ({
+      id: r.id,
+      reason: r.famous_dishes 
+        ? `Famous for: ${r.famous_dishes}. ${r.description || 'Great choice in ' + r.area}`
+        : `Popular ${r.cuisine} in ${r.area}`
+    }))
+  };
+}
+
+/* ------------------ MAIN ENDPOINT ------------------ */
+router.post("/assistant", async (req, res) => {
+  try {
+    console.log("\n🔥 NEW QUERY");
+    
+    const { message } = req.body || {};
+    console.log("📝 Message:", message);
+
+    if (!message?.trim()) {
+      return res.json({
+        reply: "Tell me what you're craving! 🍽️",
+        restaurants: []
+      });
+    }
+
+    // Get database
+    let rows = [];
+    try {
+      const [result] = await db.query(`
+        SELECT id, name, area, cuisine, rating, price_level,
+               famous_dishes, tags, description, avg_cost_for_two,
+               latitude, longitude
+        FROM restaurants
+        WHERE area IS NOT NULL
+        LIMIT 50
+      `);
+      rows = result;
+      console.log(`📊 Got ${rows.length} restaurants`);
+    } catch (dbErr) {
+      console.error("❌ Database error:", dbErr.message);
+      return res.status(500).json({
+        reply: "Database error 😅",
+        restaurants: []
+      });
+    }
+
+    if (rows.length === 0) {
+      return res.json({
+        reply: "No restaurants in database",
+        restaurants: []
+      });
+    }
+
+    // Build database summary
+    const summary = rows.map(r =>
+      `ID:${r.id}|${r.name}|${r.area}|${r.cuisine}|Rating:${r.rating || 'N/A'}|Famous:${r.famous_dishes || 'N/A'}|Price:₹${r.avg_cost_for_two || 300}`
+    ).join("\n");
+
+    // Try AI first
+    let aiResult = null;
+    if (process.env.GEMINI_API_KEY) {
+      console.log("🤖 Calling Gemini AI...");
+      aiResult = await callGemini(message, summary);
+      
+      if (aiResult) {
+        console.log("✅ AI success");
+      } else {
+        console.log("⚠️ AI failed, using fallback");
+      }
+    } else {
+      console.log("⚠️ No API key, using fallback");
+    }
+
+    // Use AI or fallback
+    const result = aiResult || smartMatch(rows, message);
+
+    // Map to full restaurant objects
+    const restaurants = (result.recommendations || [])
+      .map(rec => {
+        const match = rows.find(r => r.id === rec.id);
+        if (!match) {
+          console.warn(`⚠️ Restaurant ID ${rec.id} not found`);
+          return null;
+        }
+
+        return {
+          id: match.id,
+          name: match.name,
+          area: match.area,
+          cuisine: match.cuisine,
+          rating: match.rating,
+          famous_dishes: match.famous_dishes,
+          avg_cost_for_two: match.avg_cost_for_two,
+          latitude: match.latitude,
+          longitude: match.longitude,
+          reason: rec.reason || `Popular ${match.cuisine} in ${match.area}`
+        };
+      })
+      .filter(Boolean);
+
+    console.log(`📤 Returning ${restaurants.length} restaurants`);
+
+    return res.json({
+      reply: result.chat || "Here are some options!",
+      restaurants: restaurants
     });
 
   } catch (err) {
-    console.error("Mistral Error:", err.response?.data || err.message);
-    res.json({
-      reply: "I'm having trouble connecting to the brain. Try again in a moment.",
+    console.error("❌ ERROR:", err);
+    return res.status(500).json({
+      reply: "Error: " + err.message,
       restaurants: []
     });
   }
 });
 
-// Surprise recommendation
+/* ------------------ SURPRISE ------------------ */
 router.get("/assistant/surprise", async (req, res) => {
   try {
     const [rows] = await db.query(
-      `SELECT * FROM restaurants WHERE rating IS NOT NULL ORDER BY rating DESC LIMIT 15`
+      `SELECT * FROM restaurants 
+       WHERE rating IS NOT NULL 
+       ORDER BY rating DESC LIMIT 15`
     );
 
-    if (!rows || rows.length === 0) {
-      return res.status(404).json({ error: "No restaurants available." });
+    if (!rows?.length) {
+      return res.json({ 
+        suggestion: null,
+        error: "No restaurants" 
+      });
     }
 
-    const random = rows[Math.floor(Math.random() * rows.length)];
+    const r = rows[Math.floor(Math.random() * rows.length)];
 
-    const suggestion = {
-      name: random.name,
-      area: random.area,
-      rating: random.rating !== null ? Number(random.rating) : null,
-      cuisine: random.cuisine,
-      reason: `Surprise! ${random.name} in ${random.area} is a top pick.`,
-    };
-
-    return res.json({ suggestion });
+    return res.json({
+      suggestion: {
+        id: r.id,
+        name: r.name,
+        area: r.area,
+        rating: r.rating,
+        cuisine: r.cuisine,
+        famous_dishes: r.famous_dishes,
+        avg_cost_for_two: r.avg_cost_for_two,
+        latitude: r.latitude,
+        longitude: r.longitude,
+        reason: r.famous_dishes
+          ? `🎁 Try ${r.famous_dishes.split(',')[0].trim()} at ${r.name}!`
+          : `🎁 ${r.name} is a great pick!`
+      }
+    });
   } catch (err) {
-    console.error("Surprise assistant error", err);
-    return res.status(500).json({ error: "Surprise suggestion failed" });
+    console.error("❌ Surprise error:", err);
+    return res.json({ 
+      suggestion: null,
+      error: err.message 
+    });
   }
 });
 
